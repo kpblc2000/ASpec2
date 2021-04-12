@@ -9,5 +9,6 @@
         public string LastName { get; set; }
         public string Login { get; set; }
         public string Domain { get; set; }
+        public bool IsDeveloper { get; set; }
     }
 }

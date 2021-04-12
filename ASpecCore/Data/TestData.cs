@@ -26,7 +26,8 @@ namespace ASpecCore.Data
                             MiddleName = $"MidName{i}",
                             LastName = $"LastName{i}-{i}",
                             Login = $"Login-{i}",
-                            Domain = $"server{i}.com"
+                            Domain = $"server{i}.com",
+                            IsDeveloper = i % 3 == 0
                         });
                     }
                 }
