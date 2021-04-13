@@ -14,6 +14,10 @@ namespace ASpec2
         [STAThread]
         static void Main(string[] args)
         {
+
+            // ToDo В основном коде проработать добавление пользователя, дополнение начального списка.
+            // ToDo Проработать инициализацию - чтение и запись в файл
+
             #region Вывод польователей в консоль
             //List<User> userList = TestData.Users;
 
