@@ -18,8 +18,8 @@
             </StatusBarItem>
         </StatusBar>
         <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
-            <Button Content="Cancel" IsCancel="True"/>
-            <Button Content="OK" IsDefault="True"/>
+            <Button Content="OK" IsDefault="True" Margin="2" Padding="2" Width="{Binding ElementName=CancelButton, Path=ActualWidth}"/>
+            <Button x:Name="CancelButton" Content="Отмена" IsCancel="True" Margin="2" Padding="2"/>
         </StackPanel>
         <Grid>
             <Grid.ColumnDefinitions>
