@@ -2,6 +2,9 @@
                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:ASpecCore.Themes">
+    <Style TargetType="Window">
+        <Setter Property="WindowStyle" Value="ToolWindow"/>
+    </Style>
     <Style TargetType="Button">
         <Setter Property="Margin" Value="2"/>
         <Setter Property="Padding" Value="2"/>
@@ -23,5 +26,6 @@
         <Setter Property="AlternatingRowBackground" Value="LightGray"/>
         <Setter Property="SelectionMode" Value="Extended"/>
         <Setter Property="GridLinesVisibility" Value="Vertical"/>
+        <Setter Property="IsReadOnly" Value="True"/>
     </Style>
 </ResourceDictionary>

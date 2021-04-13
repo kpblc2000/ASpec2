@@ -8,6 +8,7 @@
         mc:Ignorable="d" 
         d:DesignHeight="500" d:DesignWidth="800"
         WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterScreen"
         MaxHeight="500"
         MaxWidth="800"
         MinHeight="300"
@@ -36,12 +37,10 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="1" VerticalAlignment="Top" Orientation="Vertical">
-                <Button Content="Добавить"/>
-                <Button Content="Редактировать"/>
+                <Button Content="Добавить" Click="OnAddButtonClick"/>
+                <Button Content="Редактировать" Click="OnEditButtonClick"/>
             </StackPanel>
-            <DataGrid Grid.Column="0" ItemsSource="{x:Static data:TestData.Users}" 
-                      AutoGenerateColumns="True"
-                      />
+            <DataGrid Grid.Column="0" ItemsSource="{x:Static data:TestData.Users}" AutoGenerateColumns="True"/>
         </Grid>
     </DockPanel>
 </Window>

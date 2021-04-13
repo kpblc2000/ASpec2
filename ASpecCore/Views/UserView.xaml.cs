@@ -27,8 +27,19 @@ namespace ASpecCore.Views
 
         private void OnCloseButtonClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("А вот теперь мы закрываемся");
             Close();
+        }
+
+        private void OnAddButtonClick(object sender, RoutedEventArgs e)
+        {
+            UserAddEditView win = new UserAddEditView();
+            win.ShowDialog();
+        }
+
+        private void OnEditButtonClick(object sender, RoutedEventArgs e)
+        {
+            UserAddEditView win = new UserAddEditView();
+            win.ShowDialog();
         }
     }
 }

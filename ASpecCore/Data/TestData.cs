@@ -35,5 +35,6 @@ namespace ASpecCore.Data
             }
             set { _Users = value; }
         }
+
     }
 }
