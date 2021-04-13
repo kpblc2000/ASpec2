@@ -28,4 +28,10 @@
         <Setter Property="GridLinesVisibility" Value="Vertical"/>
         <Setter Property="IsReadOnly" Value="True"/>
     </Style>
+    <Style TargetType="TextBlock">
+        <Setter Property="Margin" Value="2"/>
+    </Style>
+    <Style TargetType="TextBox">
+        <Setter Property="Margin" Value="2"/>
+    </Style>
 </ResourceDictionary>
