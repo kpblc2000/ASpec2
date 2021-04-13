@@ -17,4 +17,11 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    <Style TargetType="DataGrid">
+        <Setter Property="CanUserAddRows" Value="False"/>
+        <Setter Property="CanUserDeleteRows" Value="False"/>
+        <Setter Property="AlternatingRowBackground" Value="LightGray"/>
+        <Setter Property="SelectionMode" Value="Extended"/>
+        <Setter Property="GridLinesVisibility" Value="Vertical"/>
+    </Style>
 </ResourceDictionary>

@@ -24,5 +24,11 @@ namespace ASpecCore.Views
         {
             InitializeComponent();
         }
+
+        private void OnCloseButtonClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("А вот теперь мы закрываемся");
+            Close();
+        }
     }
 }
