@@ -10,7 +10,15 @@
         MaxHeight="500"
         MaxWidth="800"
         MinHeight="300"
-        MinWidth="400">
+        MinWidth="400"
+        Title="Управление пользователями">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Themes\Generic.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <DockPanel>
         <StatusBar DockPanel.Dock="Bottom">
             <StatusBarItem HorizontalAlignment="Right">
@@ -18,8 +26,8 @@
             </StatusBarItem>
         </StatusBar>
         <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
-            <Button Content="OK" IsDefault="True" Margin="2" Padding="2" Width="{Binding ElementName=CancelButton, Path=ActualWidth}"/>
-            <Button x:Name="CancelButton" Content="Отмена" IsCancel="True" Margin="2" Padding="2"/>
+            <!--<Button Content="OK" IsDefault="True" Width="{Binding ActualWidth, ElementName=CancelButton}"/>-->
+            <Button x:Name="CancelButton" Content="Закрыть" IsDefault="True" IsCancel="True" />
         </StackPanel>
         <Grid>
             <Grid.ColumnDefinitions>
