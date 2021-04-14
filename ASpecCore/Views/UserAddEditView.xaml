@@ -27,8 +27,8 @@
             </StatusBarItem>
         </StatusBar>
         <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
-            <Button Content="OK" Width="{Binding ElementName=CancelButton,Path=ActualWidth}" IsDefault="True"/>
-            <Button x:Name="CancelButton" Content="Закрыть" IsCancel="True"/>
+            <Button Content="OK" Width="{Binding ElementName=CancelButton,Path=ActualWidth}" IsDefault="True" Click="OnAcceptButtonClick"/>
+            <Button x:Name="CancelButton" Content="Закрыть" IsCancel="True" Click="OnCancelButtonClick"/>
         </StackPanel>
         <Grid>
             <Grid.Resources>
@@ -59,12 +59,12 @@
             <TextBlock Grid.Column="0" Grid.Row="2" Text="Фамилия"/>
             <TextBlock Grid.Column="0" Grid.Row="3" Text="Логин в почте"/>
             <TextBlock Grid.Column="0" Grid.Row="4" Text="Домен почты"/>
-            <TextBox Grid.Column="1" Grid.Row="0"/>
-            <TextBox Grid.Column="1" Grid.Row="1"/>
-            <TextBox Grid.Column="1" Grid.Row="2"/>
-            <TextBox Grid.Column="1" Grid.Row="3"/>
-            <TextBox Grid.Column="1" Grid.Row="4"/>
-            <CheckBox Grid.Column="1" Grid.Row="5" Content="Является разработчиком"/>
+            <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding FirstName}"/>
+            <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding MiddleName}"/>
+            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding LastName}"/>
+            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Login}"/>
+            <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Domain}"/>
+            <CheckBox Grid.Column="1" Grid.Row="5" Content="Является разработчиком" IsChecked="{Binding IsDeveloper}"/>
         </Grid>
     </DockPanel>
 </Window>

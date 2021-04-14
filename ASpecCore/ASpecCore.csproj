@@ -51,6 +51,7 @@
     <Compile Include="Themes\Generic.xaml.cs">
       <DependentUpon>Generic.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="Views\UserAddEditView.xaml.cs">
       <DependentUpon>UserAddEditView.xaml</DependentUpon>
     </Compile>

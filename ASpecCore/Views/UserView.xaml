@@ -40,7 +40,7 @@
                 <Button Content="Добавить" Click="OnAddButtonClick"/>
                 <Button Content="Редактировать" Click="OnEditButtonClick"/>
             </StackPanel>
-            <DataGrid Grid.Column="0" ItemsSource="{x:Static data:TestData.Users}" AutoGenerateColumns="True"/>
+            <DataGrid Name="UsersDataGrid" Grid.Column="0" ItemsSource="{Binding Users}" AutoGenerateColumns="True"/>
         </Grid>
     </DockPanel>
 </Window>

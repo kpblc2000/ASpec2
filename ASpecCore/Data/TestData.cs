@@ -18,7 +18,7 @@ namespace ASpecCore.Data
                 if (_Users == null)
                 {
                     _Users = new List<User>();
-                    for (int i = 0; i < 20; i++)
+                    for (int i = 0; i < 5; i++)
                     {
                         _Users.Add(new User()
                         {

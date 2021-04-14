@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ASpecCore.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,35 @@ namespace ASpecCore.Views
     /// </summary>
     public partial class UserAddEditView : Window
     {
-        public UserAddEditView()
+        public User CurrentUser { get; }
+        public UserAddEditView(User UserToProceed)
         {
             InitializeComponent();
+
+            CurrentUser = new User();
+
+            if (UserToProceed != null)
+            {
+                CurrentUser.Domain = UserToProceed.Domain;
+                CurrentUser.Login = UserToProceed.Login;
+                CurrentUser.FirstName = UserToProceed.FirstName;
+                CurrentUser.MiddleName = UserToProceed.MiddleName;
+                CurrentUser.LastName = UserToProceed.LastName;
+                CurrentUser.IsDeveloper = UserToProceed.IsDeveloper;
+            }
+            DataContext = CurrentUser;
+        }
+
+        private void OnAcceptButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+            Close();
+        }
+
+        private void OnCancelButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
+            Close();
         }
     }
 }

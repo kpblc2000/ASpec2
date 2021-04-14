@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ASpecCore.Data;
+using ASpecCore.Models;
+using ASpecCore.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,26 +23,48 @@ namespace ASpecCore.Views
     /// </summary>
     public partial class UserView : Window
     {
+        private UserViewModel _UserViewModel;
         public UserView()
         {
             InitializeComponent();
+            _UserViewModel = new UserViewModel();
+            _UserViewModel.Users = TestData.Users;
+            DataContext = _UserViewModel;
         }
 
         private void OnCloseButtonClick(object sender, RoutedEventArgs e)
         {
+            List<User> lst = TestData.Users;
             Close();
         }
 
         private void OnAddButtonClick(object sender, RoutedEventArgs e)
         {
-            UserAddEditView win = new UserAddEditView();
+            User newUser = new User();
+            UserAddEditView win = new UserAddEditView(newUser);
             win.ShowDialog();
         }
 
         private void OnEditButtonClick(object sender, RoutedEventArgs e)
         {
-            UserAddEditView win = new UserAddEditView();
-            win.ShowDialog();
+            User user = UsersDataGrid.SelectedItem as User;
+
+            if (user!=null)
+            {
+                UserAddEditView win = new UserAddEditView(user);
+                win.ShowDialog();
+                bool? res = win.DialogResult;
+                if (res == true)
+                {
+                    user.FirstName = win.CurrentUser.FirstName;
+                    user.MiddleName = win.CurrentUser.MiddleName;
+                    user.LastName = win.CurrentUser.LastName;
+                    user.Domain = win.CurrentUser.Domain;
+                    user.Login = win.CurrentUser.Login;
+                    user.IsDeveloper = win.CurrentUser.IsDeveloper;
+                    _UserViewModel.Update();
+                }
+            }
         }
     }
 }
