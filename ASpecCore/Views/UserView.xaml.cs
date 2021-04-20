@@ -3,6 +3,7 @@ using ASpecCore.Models;
 using ASpecCore.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,13 +29,12 @@ namespace ASpecCore.Views
         {
             InitializeComponent();
             _UserViewModel = new UserViewModel();
-            _UserViewModel.Users = TestData.Users;
             DataContext = _UserViewModel;
         }
 
         private void OnCloseButtonClick(object sender, RoutedEventArgs e)
         {
-            List<User> lst = TestData.Users;
+            ObservableCollection<User> lst = _UserViewModel.Users;
             Close();
         }
 
@@ -62,7 +62,6 @@ namespace ASpecCore.Views
                     user.Domain = win.CurrentUser.Domain;
                     user.Login = win.CurrentUser.Login;
                     user.IsDeveloper = win.CurrentUser.IsDeveloper;
-                    _UserViewModel.Update();
                 }
             }
         }
