@@ -29,7 +29,7 @@
         <Setter Property="IsReadOnly" Value="True"/>
     </Style>
     <!--Override Highlighting so that its easy to see what is selected even when the control is not focused-->
-    <Style TargetType="{x:Type DataGridCell}">
+    <!--<Style TargetType="{x:Type DataGridCell}">
         <Style.Triggers>
             <Trigger  Property="IsSelected" Value="true">
                 <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
@@ -48,6 +48,11 @@
                 </MultiDataTrigger.Setters>
             </MultiDataTrigger>
         </Style.Triggers>
+    </Style>-->
+    <Style TargetType="DataGridRow">
+        <Style.Resources>
+            <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
+        </Style.Resources>
     </Style>
     <Style TargetType="TextBlock">
         <Setter Property="Margin" Value="2"/>
