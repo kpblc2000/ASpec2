@@ -1,6 +1,7 @@
 ﻿using ASpecCore.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,15 +10,15 @@ namespace ASpecCore.Data
 {
     public static class TestData
     {
-        private static List<User> _Users;
+        private static ObservableCollection<User> _Users;
 
-        public static List<User> Users
+        public static ObservableCollection<User> Users
         {
             get
             {
                 if (_Users == null)
                 {
-                    _Users = new List<User>();
+                    _Users = new ObservableCollection<User>();
                     for (int i = 0; i < 5; i++)
                     {
                         _Users.Add(new User()

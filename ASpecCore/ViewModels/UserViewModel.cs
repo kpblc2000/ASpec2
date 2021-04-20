@@ -1,6 +1,7 @@
 ﻿using ASpecCore.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,25 @@ namespace ASpecCore.ViewModels
 {
     public class UserViewModel : INotifyPropertyChanged
     {
+        private static ObservableCollection<User> _Users;
+        static UserViewModel()
+        {
+            _Users = new ObservableCollection<User>();
+            for (int i = 0; i < 5; i++)
+            {
+                _Users.Add(new User()
+                {
+                    FirstName = $"FirstName - {i}",
+                    MiddleName = $"MidName{i}",
+                    LastName = $"LastName{i}-{i}",
+                    Login = $"Login-{i}",
+                    Domain = $"server{i}.com",
+                    IsDeveloper = i % 3 == 0
+                });
+            }
+        }
 
-        private List<User> _Users;
-
-        public List<User> Users
+        public ObservableCollection<User> Users
         {
             get
             { return _Users; }
@@ -22,11 +38,6 @@ namespace ASpecCore.ViewModels
                 _Users = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Users)));
             }
-        }
-
-        public void Update()
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Users)));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
