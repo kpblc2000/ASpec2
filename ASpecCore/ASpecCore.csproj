@@ -51,12 +51,13 @@
     <Compile Include="Themes\Generic.xaml.cs">
       <DependentUpon>Generic.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\UserViewModel.cs" />
-    <Compile Include="Views\UserAddEditView.xaml.cs">
-      <DependentUpon>UserAddEditView.xaml</DependentUpon>
+    <Compile Include="ViewModels\Base\ViewModel.cs" />
+    <Compile Include="ViewModels\UserTabViewModel.cs" />
+    <Compile Include="Views\UserAddEdit.xaml.cs">
+      <DependentUpon>UserAddEdit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\UserView.xaml.cs">
-      <DependentUpon>UserView.xaml</DependentUpon>
+    <Compile Include="Views\UserTab.xaml.cs">
+      <DependentUpon>UserTab.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -67,17 +68,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\UserAddEditView.xaml">
+    <Page Include="Views\UserAddEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\UserView.xaml">
+    <Page Include="Views\UserTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\Base\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

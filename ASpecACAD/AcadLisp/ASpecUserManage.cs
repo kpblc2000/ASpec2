@@ -15,7 +15,7 @@ namespace ASpecACAD.AcadLisp
         [LispFunction("ASpecUserManage")]
         public static void AcadLispUserView(ResultBuffer args)
         {
-            UserView win = new UserView();
+            UserTab win = new UserTab();
             Application.ShowModalWindow(win);
         }
     }

@@ -27,7 +27,7 @@ namespace ASpec2
             //} 
             #endregion
 
-            UserView win = new UserView();
+            UserTab win = new UserTab();
             win.ShowDialog();
 
             Console.WriteLine("Press any key");

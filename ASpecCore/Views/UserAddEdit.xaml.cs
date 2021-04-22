@@ -17,12 +17,12 @@ using System.Windows.Shapes;
 namespace ASpecCore.Views
 {
     /// <summary>
-    /// Логика взаимодействия для UserAddEditView.xaml
+    /// Логика взаимодействия для UserAddEdit.xaml
     /// </summary>
-    public partial class UserAddEditView : Window
+    public partial class UserAddEdit : Window
     {
         public User CurrentUser { get; }
-        public UserAddEditView(User UserToProceed)
+        public UserAddEdit(User UserToProceed)
         {
             InitializeComponent();
 

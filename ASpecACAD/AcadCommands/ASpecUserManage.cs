@@ -14,7 +14,7 @@ namespace ASpecACAD.AcadCommands
         [CommandMethod("ASpecUserManage")]
         public static void AcadCommandUserView()
         {
-            UserView win = new UserView();
+            UserTab win = new UserTab();
             Application.ShowModalWindow(win);
         }
     }
