@@ -18,17 +18,7 @@ namespace ASpecCore.ViewModels
         public string Title
         {
             get { return _Title; }
-            set
-            {
-                //if (_Title == value)
-                //{
-                //    return;
-                //}
-                //_Title = value;
-                ////OnPropertyChanged("Title");
-                //OnPropertyChanged(nameof(Title));
-                Set(ref _Title, value, nameof(Title));
-            }
+            set { Set(ref _Title, value, nameof(Title)); }
         }
         #endregion
 
@@ -39,11 +29,20 @@ namespace ASpecCore.ViewModels
         public ObservableCollection<User> Users
         {
             get { return _Users; }
-            set {
-                Set(ref _Users, value, nameof(Users));
-            }
+            set { Set(ref _Users, value, nameof(Users)); }
         }
         #endregion
+
+        #region SelectedUser
+        private User _SelectedUser;
+
+        public User SelectedUser
+        {
+            get { return _SelectedUser; }
+            set { Set(ref _SelectedUser, value, nameof(SelectedUser)); }
+        } 
+        #endregion
+
 
         public UserTabViewModel()
         {
@@ -52,7 +51,7 @@ namespace ASpecCore.ViewModels
                 {
                     FirstName = $"FirstName{i}",
                     MiddleName = $"MidName{i}",
-                    LastName = "$LastName-{i}",
+                    LastName = $"LastName-{i}",
                     Login = $"login-{i * 2}",
                     Domain = $"server{i}.com",
                     IsDeveloper = i % 4 == 0
