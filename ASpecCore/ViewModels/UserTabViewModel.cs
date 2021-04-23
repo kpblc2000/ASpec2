@@ -1,4 +1,5 @@
-﻿using ASpecCore.Models;
+﻿using ASpecCore.Infrastrucure;
+using ASpecCore.Models;
 using ASpecCore.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace ASpecCore.ViewModels
     {
 
         #region Title
-        private string _Title = "Тестовое окно";
+        private string _Title = StaticData.MakeDialogTitle("Тестовое окно");
 
         public string Title
         {
