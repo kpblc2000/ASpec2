@@ -42,6 +42,7 @@
             <StackPanel Grid.Column="1" VerticalAlignment="Top" Orientation="Vertical">
                 <Button Content="Добавить" />
                 <Button Content="Редактировать"/>
+                <Button Content="Удалить" Click="OnEraseButtonClick"/>
             </StackPanel>
             <DataGrid Name="UsersDataGrid" Grid.Column="0" AutoGenerateColumns="True"
                       ItemsSource="{Binding Users}"

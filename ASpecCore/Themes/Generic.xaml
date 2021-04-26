@@ -24,7 +24,8 @@
         <Setter Property="CanUserAddRows" Value="False"/>
         <Setter Property="CanUserDeleteRows" Value="False"/>
         <Setter Property="AlternatingRowBackground" Value="LightGray"/>
-        <Setter Property="SelectionMode" Value="Extended"/>
+        <Setter Property="SelectionMode" Value="Single"/>
+        <Setter Property="SelectionUnit" Value="FullRow"/>
         <Setter Property="GridLinesVisibility" Value="Vertical"/>
         <Setter Property="IsReadOnly" Value="True"/>
     </Style>

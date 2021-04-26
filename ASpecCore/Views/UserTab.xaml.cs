@@ -28,6 +28,11 @@ namespace ASpecCore.Views
         {
             InitializeComponent();
         }
-        
+
+        private void OnEraseButtonClick(object sender, RoutedEventArgs e)
+        {
+            UserTabViewModel vm = (UserTabViewModel)this.DataContext;
+            vm.Users.Remove(vm.SelectedUser);
+        }
     }
 }

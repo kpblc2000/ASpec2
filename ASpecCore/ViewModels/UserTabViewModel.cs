@@ -60,5 +60,10 @@ namespace ASpecCore.ViewModels
             Users = new ObservableCollection<User>(users);
         }
 
+        public static void RemoveUser()
+        {
+            return;
+        }
+
     }
 }
