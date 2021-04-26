@@ -24,15 +24,33 @@ namespace ASpecCore.Views
     /// </summary>
     public partial class UserTab : Window
     {
+        private UserTabViewModel vm;
+
         public UserTab()
         {
             InitializeComponent();
+            vm = (UserTabViewModel)this.DataContext;
         }
+
+        #region ButtonClicks
 
         private void OnEraseButtonClick(object sender, RoutedEventArgs e)
         {
-            UserTabViewModel vm = (UserTabViewModel)this.DataContext;
+
             vm.Users.Remove(vm.SelectedUser);
         }
+
+        private void OnAddButtonClick(object sender, RoutedEventArgs e)
+        {
+            User user = new User();
+            UserAddEdit win = new UserAddEdit(user);
+            win.ShowDialog();
+            if (win.DialogResult == true)
+            {
+                vm.Users.Add(win.CurUser);
+            }
+        }
+        #endregion
+
     }
 }

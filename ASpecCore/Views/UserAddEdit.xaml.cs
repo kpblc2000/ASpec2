@@ -1,4 +1,5 @@
 ﻿using ASpecCore.Models;
+using ASpecCore.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,23 +22,35 @@ namespace ASpecCore.Views
     /// </summary>
     public partial class UserAddEdit : Window
     {
-        public User CurrentUser { get; }
+
+        private UserAddEditViewModel vm;
+        private User _CurUser;
+
+        public User CurUser
+        {
+            get
+            {
+                return _CurUser;
+            }
+            set
+            {
+                _CurUser = new User();
+                _CurUser.Domain = value.Domain;
+                _CurUser.Login = value.Login;
+                _CurUser.FirstName = value.FirstName;
+                _CurUser.MiddleName = value.MiddleName;
+                _CurUser.LastName = value.LastName;
+                _CurUser.Domain = value.Domain;
+                _CurUser.IsDeveloper = value.IsDeveloper;
+            }
+        }
+
         public UserAddEdit(User UserToProceed)
         {
             InitializeComponent();
-
-            CurrentUser = new User();
-
-            if (UserToProceed != null)
-            {
-                CurrentUser.Domain = UserToProceed.Domain;
-                CurrentUser.Login = UserToProceed.Login;
-                CurrentUser.FirstName = UserToProceed.FirstName;
-                CurrentUser.MiddleName = UserToProceed.MiddleName;
-                CurrentUser.LastName = UserToProceed.LastName;
-                CurrentUser.IsDeveloper = UserToProceed.IsDeveloper;
-            }
-            DataContext = CurrentUser;
+            vm = (UserAddEditViewModel)this.DataContext;
+            CurUser = UserToProceed;
+            vm.User = CurUser;
         }
 
         private void OnAcceptButtonClick(object sender, RoutedEventArgs e)
