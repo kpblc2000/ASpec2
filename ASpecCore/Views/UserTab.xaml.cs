@@ -1,5 +1,4 @@
-﻿using ASpecCore.Data;
-using ASpecCore.Models;
+﻿using ASpecCore.Models;
 using ASpecCore.ViewModels;
 using System;
 using System.Collections.Generic;
