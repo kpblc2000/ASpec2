@@ -1,4 +1,5 @@
-﻿using ASpecCore.Models;
+﻿using ASpecCore.Infrastrucure;
+using ASpecCore.Models;
 using ASpecCore.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -43,6 +44,9 @@ namespace ASpecCore.Views
         {
             User user = new User();
             UserAddEdit win = new UserAddEdit(user);
+            UserAddEditViewModel vmAddEdit = win.DataContext as UserAddEditViewModel;
+            vmAddEdit.Title = "Добавление нового пользователя";
+            win.Owner = this;
             win.ShowDialog();
             if (win.DialogResult == true)
             {
@@ -53,7 +57,15 @@ namespace ASpecCore.Views
         private void OnEditButtonClick(object sender, RoutedEventArgs e)
         {
             User user = vm.SelectedUser;
+            if (user == null)
+            {
+                MessageBox.Show("Сначала выберите пользователя", StaticData.MakeDialogTitle("Ошибка выбора"), MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             UserAddEdit win = new UserAddEdit(user);
+            UserAddEditViewModel vmAddEdit = win.DataContext as UserAddEditViewModel;
+            vmAddEdit.Title = "Редактирование пользователя";
+            win.Owner = this;
             win.ShowDialog();
             if (win.DialogResult == true)
             {

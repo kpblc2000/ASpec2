@@ -1,4 +1,5 @@
-﻿using ASpecCore.Models;
+﻿using ASpecCore.Infrastrucure;
+using ASpecCore.Models;
 using ASpecCore.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace ASpecCore.ViewModels
 {
     internal class UserAddEditViewModel : ViewModel
     {
+        #region User
         private User _User;
 
         public User User
@@ -21,6 +23,21 @@ namespace ASpecCore.ViewModels
             set
             {
                 Set(ref _User, value, nameof(User));
+            }
+        }
+        #endregion
+
+        private string _Title;
+
+        public string Title
+        {
+            get
+            {
+                return _Title;
+            }
+            set
+            {
+                Set(ref _Title, StaticData.MakeDialogTitle(value), nameof(Title));
             }
         }
     }
