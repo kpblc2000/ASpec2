@@ -50,7 +50,20 @@ namespace ASpecCore.Views
                 vm.Users.Add(win.CurUser);
             }
         }
+
+        private void OnEditButtonClick(object sender, RoutedEventArgs e)
+        {
+            User user = vm.SelectedUser;
+            UserAddEdit win = new UserAddEdit(user);
+            win.ShowDialog();
+            if (win.DialogResult == true)
+            {
+                User selUser = vm.Users.ElementAt(vm.Users.IndexOf(user));
+                vm.Users[vm.Users.IndexOf(user)] = win.CurUser;
+            }
+        }
         #endregion
+
 
     }
 }

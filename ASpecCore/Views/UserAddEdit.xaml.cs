@@ -24,6 +24,8 @@ namespace ASpecCore.Views
     {
 
         private UserAddEditViewModel vm;
+
+        #region Текущий пользователь
         private User _CurUser;
 
         public User CurUser
@@ -44,6 +46,7 @@ namespace ASpecCore.Views
                 _CurUser.IsDeveloper = value.IsDeveloper;
             }
         }
+        #endregion
 
         public UserAddEdit(User UserToProceed)
         {
@@ -53,6 +56,7 @@ namespace ASpecCore.Views
             vm.User = CurUser;
         }
 
+        #region Button clicks
         private void OnAcceptButtonClick(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
@@ -64,5 +68,6 @@ namespace ASpecCore.Views
             this.DialogResult = false;
             Close();
         }
+        #endregion
     }
 }

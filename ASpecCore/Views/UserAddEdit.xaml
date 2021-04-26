@@ -27,12 +27,16 @@
     <DockPanel>
         <StatusBar DockPanel.Dock="Bottom">
             <StatusBarItem HorizontalAlignment="Right">
-                <ResizeGrip/>
+                <ResizeGrip IsTabStop="False"/>
             </StatusBarItem>
         </StatusBar>
         <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
-            <Button Content="OK" Width="{Binding ElementName=CancelButton,Path=ActualWidth}" IsDefault="True" Click="OnAcceptButtonClick"/>
-            <Button x:Name="CancelButton" Content="Закрыть" IsCancel="True" Click="OnCancelButtonClick"/>
+            <Button Content="OK" Width="{Binding ElementName=CancelButton,Path=ActualWidth}" IsDefault="True"
+                    TabIndex="6"
+                    Click="OnAcceptButtonClick"/>
+            <Button x:Name="CancelButton" Content="Закрыть" IsCancel="True" 
+                    TabIndex="7"
+                    Click="OnCancelButtonClick"/>
         </StackPanel>
         <Grid>
             <Grid.Resources>
@@ -63,12 +67,29 @@
             <TextBlock Grid.Column="0" Grid.Row="2" Text="Фамилия"/>
             <TextBlock Grid.Column="0" Grid.Row="3" Text="Логин в почте"/>
             <TextBlock Grid.Column="0" Grid.Row="4" Text="Домен почты"/>
-            <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding Path=User.FirstName}"/>
-            <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding User.MiddleName}"/>
-            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding User.LastName}"/>
-            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding User.Login}"/>
-            <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding User.Domain}"/>
-            <CheckBox Grid.Column="1" Grid.Row="5" Content="Является разработчиком" IsChecked="{Binding User.IsDeveloper}"/>
+            <TextBox Grid.Column="1" Grid.Row="0" 
+                     TabIndex="0"
+                     Text="{Binding Path=User.FirstName}"
+                     />
+            <TextBox Grid.Column="1" Grid.Row="1" 
+                     TabIndex="1"
+                     Text="{Binding User.MiddleName}"
+                     />
+            <TextBox Grid.Column="1" Grid.Row="2" 
+                     TabIndex="2"
+                     Text="{Binding User.LastName}"
+                     />
+            <TextBox Grid.Column="1" Grid.Row="3"
+                     TabIndex="3"
+                     Text="{Binding User.Login}"
+                     />
+            <TextBox Grid.Column="1" Grid.Row="4" 
+                     TabIndex="4"
+                     Text="{Binding User.Domain}"/>
+            <CheckBox Grid.Column="1" Grid.Row="5"
+                      TabIndex="5"
+                      Content="Является разработчиком"
+                      IsChecked="{Binding User.IsDeveloper}"/>
         </Grid>
     </DockPanel>
 </Window>
