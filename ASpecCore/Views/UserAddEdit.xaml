@@ -13,6 +13,7 @@
         MinWidth="400"
         MaxHeight="250"
         MaxWidth="1200"
+        Title="{Binding Title}"
         >
     <Window.DataContext>
         <vm:UserAddEditViewModel/>

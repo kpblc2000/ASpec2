@@ -37,6 +37,10 @@ namespace ASpecCore.Views
             set
             {
                 _CurUser = new User();
+                if (value == null)
+                {
+                    return;
+                }
                 _CurUser.Domain = value.Domain;
                 _CurUser.Login = value.Login;
                 _CurUser.FirstName = value.FirstName;

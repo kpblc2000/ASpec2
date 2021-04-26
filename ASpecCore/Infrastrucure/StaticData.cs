@@ -14,7 +14,7 @@ namespace ASpecCore.Infrastrucure
     {
         public static string MakeDialogTitle(string Title)
         {
-            return $"ASpec v.{typeof(StaticData).Assembly.GetName().Version.ToString()}: {Title}";
+            return $"ASpec v.{typeof(StaticData).Assembly.GetName().Version}: {Title}";
         }
     }
 }

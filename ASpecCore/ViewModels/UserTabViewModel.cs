@@ -14,7 +14,7 @@ namespace ASpecCore.ViewModels
     {
 
         #region Title
-        private string _Title = StaticData.MakeDialogTitle("Тестовое окно");
+        private string _Title = StaticData.MakeDialogTitle("Управление пользователями");
 
         public string Title
         {
