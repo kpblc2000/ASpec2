@@ -44,7 +44,12 @@ namespace ASpecCore.Views
 
         private void OnAddButtonClick(object sender, RoutedEventArgs e)
         {
-  
+            if (_ViewModel == null)
+            {
+                MessageBox.Show("Ошибка привязки данных");
+                return;
+            }
+            _ViewModel.AddUser();
         }
 
         private void OnEditButtonClick(object sender, RoutedEventArgs e)

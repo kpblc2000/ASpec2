@@ -1,11 +1,13 @@
 ﻿using ASpecCore.Models;
 using ASpecCore.ViewModels.Base;
+using ASpecCore.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ASpecCore.ViewModels
 {
@@ -76,6 +78,26 @@ namespace ASpecCore.ViewModels
         public void RemoveUser()
         {
             Users.Remove(SelectedUser);
+        }
+
+        public void AddUser()
+        {
+            UserAddEdit win = new UserAddEdit();
+            UserAddEditViewModel vm = win.DataContext as UserAddEditViewModel;
+
+            if (vm == null)
+            {
+                MessageBox.Show("Ошибка привязки данных");
+                return;
+            }
+            vm.Title = "Добавление нового пользователя";
+            vm.CurrentUser = new User();
+
+            win.ShowDialog();
+            if (win.DialogResult == true)
+            {
+                Users.Add(vm.CurrentUser);
+            }
         }
         #endregion
     }

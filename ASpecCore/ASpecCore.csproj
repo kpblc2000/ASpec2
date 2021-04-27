@@ -51,6 +51,7 @@
       <DependentUpon>Generic.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\Base\ViewModel.cs" />
+    <Compile Include="ViewModels\UserAddEditViewModel.cs" />
     <Compile Include="ViewModels\UserTabViewModel.cs" />
     <Compile Include="Views\UserAddEdit.xaml.cs">
       <DependentUpon>UserAddEdit.xaml</DependentUpon>

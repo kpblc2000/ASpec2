@@ -21,9 +21,8 @@ namespace ASpecCore.Views
     /// </summary>
     public partial class UserAddEdit : Window
     {
-
        
-        public UserAddEdit(User UserToProceed)
+        public UserAddEdit()
         {
             InitializeComponent();
         }
