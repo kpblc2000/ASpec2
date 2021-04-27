@@ -34,16 +34,12 @@ namespace ASpecCore.ViewModels
         }
         #endregion
 
-
         public UserTabViewModel()
         {
             Title = "Тестовое окно";
 
-            List<User> lst = new List<User>();
-
-            for (int i = 0; i < 20; i++)
-            {
-                User tmp = new User
+            var lst = Enumerable.Range(1, 26)
+                .Select(i => new User
                 {
                     Id = i + 1,
                     Domain = $"server{i}.com",
@@ -52,9 +48,8 @@ namespace ASpecCore.ViewModels
                     MiddleName = $"MidName{i}",
                     Login = $"login{i}",
                     IsDeveloper = i % 5.5 == 0
-                };
-                lst.Add(tmp);
-            }
+                })
+                .ToList();
 
             Users = new ObservableCollection<User>(lst);
 
