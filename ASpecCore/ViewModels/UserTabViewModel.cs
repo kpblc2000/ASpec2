@@ -58,7 +58,7 @@ namespace ASpecCore.ViewModels
         {
             Title = "Тестовое окно";
 
-            var lst = Enumerable.Range(1, 26)
+            var lst = Enumerable.Range(1, 10)
                 .Select(i => new User
                 {
                     Id = i + 1,
@@ -67,7 +67,7 @@ namespace ASpecCore.ViewModels
                     LastName = $"LastName-{i}",
                     MiddleName = $"MidName{i}",
                     Login = $"login{i}",
-                    IsDeveloper = i % 5.5 == 0
+                    IsDeveloper = i % 4 == 0
                 })
                 .ToList();
 
@@ -100,5 +100,27 @@ namespace ASpecCore.ViewModels
             }
         }
         #endregion
+
+        public void EditUser()
+        {
+            UserAddEdit win = new UserAddEdit();
+            UserAddEditViewModel vm = win.DataContext as UserAddEditViewModel;
+
+            if (vm == null)
+            {
+                MessageBox.Show("Ошибка привязки данных");
+                return;
+            }
+            vm.Title = "Редактирование пользователя";
+            vm.CurrentUser = SelectedUser;
+
+            int idx = Users.IndexOf(SelectedUser);
+
+            win.ShowDialog();
+            if (win.DialogResult == true)
+            {
+                Users[idx] = vm.CurrentUser;
+            }
+        }
     }
 }

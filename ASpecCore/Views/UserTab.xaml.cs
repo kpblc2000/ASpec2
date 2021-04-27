@@ -54,7 +54,7 @@ namespace ASpecCore.Views
 
         private void OnEditButtonClick(object sender, RoutedEventArgs e)
         {
-
+            _ViewModel?.EditUser();
         }
         #endregion
 
