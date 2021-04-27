@@ -45,6 +45,7 @@
             </StackPanel>
             <DataGrid Name="UsersDataGrid" Grid.Column="0" AutoGenerateColumns="True"
                       ItemsSource="{Binding Path=Users}"
+                      SelectedItem="{Binding Path=SelectedUser}"
                       />
         </Grid>
     </DockPanel>

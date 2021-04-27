@@ -30,7 +30,25 @@ namespace ASpecCore.ViewModels
         public ObservableCollection<User> Users
         {
             get { return _Users; }
-            set { _Users = value; }
+            set
+            {
+                _Users = value;
+                OnPropertyChanged(nameof(Users));
+            }
+        }
+        #endregion
+
+        #region SelectedUser
+        private User _SelectedUser;
+        public User SelectedUser
+        {
+            get
+            { return _SelectedUser; }
+            set
+            {
+                _SelectedUser = value;
+                OnPropertyChanged(nameof(SelectedUser));
+            }
         }
         #endregion
 
@@ -52,7 +70,13 @@ namespace ASpecCore.ViewModels
                 .ToList();
 
             Users = new ObservableCollection<User>(lst);
-
         }
+
+        #region ButtonClicks
+        public void RemoveUser()
+        {
+            Users.Remove(SelectedUser);
+        }
+        #endregion
     }
 }
