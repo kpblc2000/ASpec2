@@ -26,8 +26,15 @@ namespace ASpec2
             //} 
             #endregion
 
+            #region Альбомы
+            AlbumTab winAlb = new AlbumTab();
+            winAlb.ShowDialog(); 
+            #endregion
+
+            #region Пользователи
             UserTab win = new UserTab();
             win.ShowDialog();
+            #endregion
 
             Console.WriteLine("Press any key");
             Console.ReadKey();

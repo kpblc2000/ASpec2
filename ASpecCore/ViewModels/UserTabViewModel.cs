@@ -1,12 +1,8 @@
 ﻿using ASpecCore.Infrastrucure;
 using ASpecCore.Models;
 using ASpecCore.ViewModels.Base;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ASpecCore.ViewModels
 {
@@ -44,7 +40,6 @@ namespace ASpecCore.ViewModels
         } 
         #endregion
 
-
         public UserTabViewModel()
         {
             var users = Enumerable.Range(1, 15)
@@ -59,11 +54,6 @@ namespace ASpecCore.ViewModels
                 }
                 );
             Users = new ObservableCollection<User>(users);
-        }
-
-        public static void RemoveUser()
-        {
-            return;
         }
 
     }
