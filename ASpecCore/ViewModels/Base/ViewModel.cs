@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace ASpecCore.ViewModels.Base
 {
@@ -14,7 +15,7 @@ namespace ASpecCore.ViewModels.Base
             }
         }
 
-        public virtual bool Set<T>(ref T Field, T value, string PropertyName)
+        public virtual bool Set<T>(ref T Field, T value, [CallerMemberName] string PropertyName = null)
         {
             if (Equals(Field, value))
             {
