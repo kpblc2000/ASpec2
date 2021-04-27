@@ -14,5 +14,16 @@ namespace ASpecCore.ViewModels.Base
             }
         }
 
+        public virtual bool Set<T>(ref T Field, T value, string PropertyName)
+        {
+            if (Equals(Field, value))
+            {
+                return false;
+            }
+            Field = value;
+            OnPropertyChanged(PropertyName);
+            return true;
+        }
+
     }
 }

@@ -16,8 +16,9 @@ namespace ASpecCore.ViewModels
             get { return _CurrentUser; }
             set
             {
-                _CurrentUser = value;
-                OnPropertyChanged(nameof(CurrentUser));
+                //_CurrentUser = value;
+                //OnPropertyChanged(nameof(CurrentUser));
+                Set(ref _CurrentUser, value, nameof(CurrentUser));
             }
         }
 
