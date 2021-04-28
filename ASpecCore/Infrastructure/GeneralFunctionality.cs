@@ -11,7 +11,7 @@
         {
             var temp = typeof(GeneralFunctionality).Assembly.GetName();
 
-            return $"{temp.Name} {temp.Version} : {Title}";
+            return $"ASpec {temp.Version} : {Title}";
         }
     }
 }
