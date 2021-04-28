@@ -1,4 +1,5 @@
-﻿using ASpecCore.Models;
+﻿using ASpecCore.Infrastructure;
+using ASpecCore.Models;
 using ASpecCore.ViewModels.Base;
 using ASpecCore.Views;
 using System;
@@ -21,7 +22,7 @@ namespace ASpecCore.ViewModels
             get { return _Title; }
             set
             {
-                _Title = value;
+                _Title = GeneralFunctionality.MakeDialogTitle(value);
                 OnPropertyChanged(nameof(Title));
             }
         }

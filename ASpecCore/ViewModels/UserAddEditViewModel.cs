@@ -1,4 +1,5 @@
-﻿using ASpecCore.Models;
+﻿using ASpecCore.Infrastructure;
+using ASpecCore.Models;
 using ASpecCore.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,7 @@ namespace ASpecCore.ViewModels
         public string Title
         {
             get { return _Title; }
-            set { Set(ref _Title, value); }
+            set { Set(ref _Title, GeneralFunctionality.MakeDialogTitle(value)); }
         }
     }
 }

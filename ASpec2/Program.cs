@@ -3,6 +3,7 @@ using ASpecCore.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,6 +29,8 @@ namespace ASpec2
 
             UserTab win = new UserTab();
             win.ShowDialog();
+
+            //Console.WriteLine(typeof(Program).Assembly.GetName().Name);
 
             Console.WriteLine("Press any key");
             Console.ReadKey();
