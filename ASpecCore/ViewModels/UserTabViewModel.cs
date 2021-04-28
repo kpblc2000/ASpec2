@@ -1,43 +1,20 @@
-﻿using ASpecCore.Infrastructure;
-using ASpecCore.Models;
+﻿using ASpecCore.Models;
 using ASpecCore.ViewModels.Base;
 using ASpecCore.Views;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace ASpecCore.ViewModels
 {
     public class UserTabViewModel : ViewModel
     {
-
-        #region Title
-        private string _Title;
-        public string Title
-        {
-            get { return _Title; }
-            set
-            {
-                _Title = GeneralFunctionality.MakeDialogTitle(value);
-                OnPropertyChanged(nameof(Title));
-            }
-        }
-        #endregion
-
         #region Users
         private ObservableCollection<User> _Users;
         public ObservableCollection<User> Users
         {
             get { return _Users; }
-            set
-            {
-                _Users = value;
-                OnPropertyChanged(nameof(Users));
-            }
+            set { Set(ref _Users, value); }
         }
         #endregion
 
@@ -45,19 +22,14 @@ namespace ASpecCore.ViewModels
         private User _SelectedUser;
         public User SelectedUser
         {
-            get
-            { return _SelectedUser; }
-            set
-            {
-                _SelectedUser = value;
-                OnPropertyChanged(nameof(SelectedUser));
-            }
+            get { return _SelectedUser; }
+            set { Set(ref _SelectedUser, value); }
         }
         #endregion
 
         public UserTabViewModel()
         {
-            Title = "Тестовое окно";
+            Title = "Управление пользователями";
 
             var lst = Enumerable.Range(1, 10)
                 .Select(i => new User
@@ -100,7 +72,6 @@ namespace ASpecCore.ViewModels
                 Users.Add(vm.CurrentUser);
             }
         }
-        #endregion
 
         public void EditUser()
         {
@@ -123,5 +94,8 @@ namespace ASpecCore.ViewModels
                 Users[idx] = vm.CurrentUser;
             }
         }
+
+        #endregion
+
     }
 }

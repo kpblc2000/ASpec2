@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using ASpecCore.Infrastructure;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace ASpecCore.ViewModels.Base
@@ -24,6 +25,13 @@ namespace ASpecCore.ViewModels.Base
             Field = value;
             OnPropertyChanged(PropertyName);
             return true;
+        }
+
+        private string _Title;
+        public string Title
+        {
+            get { return _Title; }
+            set { Set(ref _Title, GeneralFunctionality.MakeDialogTitle(value)); }
         }
 
     }

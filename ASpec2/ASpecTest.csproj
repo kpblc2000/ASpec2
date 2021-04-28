@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CB6C9C8E-506B-4964-A025-31FB1A4754AF}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ASpec2</RootNamespace>
-    <AssemblyName>ASpec2</AssemblyName>
+    <RootNamespace>ASpec2Test</RootNamespace>
+    <AssemblyName>ASpec2Test</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

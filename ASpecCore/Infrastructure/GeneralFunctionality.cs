@@ -9,9 +9,7 @@
         /// <returns>Строка заголовка с указанием имени и текущий версии сборки</returns>
         public static string MakeDialogTitle(string Title)
         {
-            var temp = typeof(GeneralFunctionality).Assembly.GetName();
-
-            return $"ASpec {temp.Version} : {Title.Trim()}";
+            return $"ASpec {typeof(GeneralFunctionality).Assembly.GetName().Version} : {Title.Trim()}";
         }
     }
 }
