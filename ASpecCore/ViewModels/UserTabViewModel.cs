@@ -44,7 +44,6 @@ namespace ASpecCore.ViewModels
         } 
         #endregion
 
-
         public UserTabViewModel()
         {
             var users = Enumerable.Range(1, 15)
