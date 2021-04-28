@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ASpecCore.Views"
         xmlns:vm="clr-namespace:ASpecCore.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="220" d:DesignWidth="400"
@@ -13,7 +12,7 @@
         MinWidth="400"
         MaxHeight="250"
         MaxWidth="1200"
-        Title="{Binding Title}"
+        Title="{Binding Path=Title}"
         >
     <Window.DataContext>
         <vm:UserAddEditViewModel/>
@@ -70,27 +69,29 @@
             <TextBlock Grid.Column="0" Grid.Row="4" Text="Домен почты"/>
             <TextBox Grid.Column="1" Grid.Row="0" 
                      TabIndex="0"
-                     Text="{Binding Path=User.FirstName}"
+                     Text="{Binding Path=CurrentUser.FirstName, UpdateSourceTrigger=PropertyChanged}"
                      />
             <TextBox Grid.Column="1" Grid.Row="1" 
                      TabIndex="1"
-                     Text="{Binding User.MiddleName}"
+                     Text="{Binding Path=CurrentUser.MiddleName, UpdateSourceTrigger=PropertyChanged}"
                      />
             <TextBox Grid.Column="1" Grid.Row="2" 
                      TabIndex="2"
-                     Text="{Binding User.LastName}"
+                     Text="{Binding Path=CurrentUser.LastName, UpdateSourceTrigger=PropertyChanged}"
                      />
             <TextBox Grid.Column="1" Grid.Row="3"
                      TabIndex="3"
-                     Text="{Binding User.Login}"
+                     Text="{Binding Path=CurrentUser.Login, UpdateSourceTrigger=PropertyChanged}"
                      />
             <TextBox Grid.Column="1" Grid.Row="4" 
                      TabIndex="4"
-                     Text="{Binding User.Domain}"/>
+                     Text="{Binding Path=CurrentUser.Domain, UpdateSourceTrigger=PropertyChanged}"
+                     />
             <CheckBox Grid.Column="1" Grid.Row="5"
                       TabIndex="5"
                       Content="Является разработчиком"
-                      IsChecked="{Binding User.IsDeveloper}"/>
+                      IsChecked="{Binding Path=CurrentUser.IsDeveloper}"
+                      />
         </Grid>
     </DockPanel>
 </Window>
