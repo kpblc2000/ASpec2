@@ -57,6 +57,7 @@
     </Compile>
     <Compile Include="ViewModels\Base\ViewModel.cs" />
     <Compile Include="ViewModels\NormDocTypeViewModel.cs" />
+    <Compile Include="ViewModels\NormDocViewModel.cs" />
     <Compile Include="ViewModels\UserAddEditViewModel.cs" />
     <Compile Include="ViewModels\UserTabViewModel.cs" />
     <Compile Include="Views\UserAddEdit.xaml.cs">

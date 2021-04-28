@@ -12,12 +12,6 @@ namespace ASpecCore.ViewModels
 {
     public class NormDocTypeViewModel : ViewModel
     {
-        private string _Title;
-        public string Title
-        {
-            get { return _Title; }
-            set { Set(ref _Title, GeneralFunctionality.MakeDialogTitle(value)); }
-        }
 
         private ObservableCollection<NormDocType> _NormDocTypes;
         public ObservableCollection<NormDocType> NormDocTypes
@@ -31,6 +25,17 @@ namespace ASpecCore.ViewModels
         {
             get { return _SelectedNormDocType; }
             set { Set(ref _SelectedNormDocType, value); }
+        }
+
+        public NormDocTypeViewModel()
+        {
+            var temp = new List<NormDocType>
+            {
+                new NormDocType{Id=1, Name="ТУ"},
+                new NormDocType{Id=2, Name="ГОСТ"}
+            };
+
+            NormDocTypes = new ObservableCollection<NormDocType>(temp);
         }
     }
 }

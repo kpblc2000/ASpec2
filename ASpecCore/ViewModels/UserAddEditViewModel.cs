@@ -1,11 +1,5 @@
-﻿using ASpecCore.Infrastructure;
-using ASpecCore.Models;
+﻿using ASpecCore.Models;
 using ASpecCore.ViewModels.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ASpecCore.ViewModels
 {
@@ -24,17 +18,8 @@ namespace ASpecCore.ViewModels
                 temp.Domain = value.Domain;
                 temp.Login = value.Login;
                 temp.IsDeveloper = value.IsDeveloper;
-                //_CurrentUser = value;
-                //OnPropertyChanged(nameof(CurrentUser));
                 Set(ref _CurrentUser, temp);
             }
-        }
-
-        private string _Title;
-        public string Title
-        {
-            get { return _Title; }
-            set { Set(ref _Title, GeneralFunctionality.MakeDialogTitle(value)); }
         }
     }
 }
