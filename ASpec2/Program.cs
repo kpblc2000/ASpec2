@@ -1,4 +1,5 @@
-﻿using ASpecCore.Models;
+﻿using ASpecCore.Infrastructure;
+using ASpecCore.Models;
 using ASpecCore.Views;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,10 @@ namespace ASpec2
             //} 
             #endregion
 
+            GeneralFunctionality genFunc = new GeneralFunctionality();
+            genFunc.RegisterGetBlockNameHandler(AskForName);
+            string res = genFunc.GetBlockName("Введите имя блока : ");
+
             UserTab win = new UserTab();
             win.ShowDialog();
 
@@ -35,6 +40,17 @@ namespace ASpec2
             Console.WriteLine("Press any key");
             Console.ReadKey();
 
+        }
+
+        private static string AskForName(string Message)
+        {
+            Console.Write(Message);
+            string res = Console.ReadLine();
+            if (res == "")
+            {
+                return null;
+            }
+            return res;
         }
     }
 }
