@@ -27,8 +27,12 @@ namespace ASpec2
             //} 
             #endregion
 
-            UserTab win = new UserTab();
-            win.ShowDialog();
+            NormDocView normDocView = new NormDocView();
+            normDocView.ShowDialog();
+
+            UserTab winUserTab = new UserTab();
+            winUserTab.ShowDialog();
+
 
             //Console.WriteLine(typeof(Program).Assembly.GetName().Name);
 
