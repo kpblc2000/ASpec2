@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="AcadCommands\ASpecUserManage.cs" />
     <Compile Include="AcadLisp\ASpecUserManage.cs" />
+    <Compile Include="Infrasructure\UserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

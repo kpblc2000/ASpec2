@@ -1,11 +1,5 @@
-﻿using ASpecCore.Views;
+﻿using ASpecACAD.Infrasructure;
 using Autodesk.AutoCAD.Runtime;
-using Autodesk.AutoCAD.ApplicationServices;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ASpecACAD.AcadCommands
 {
@@ -14,8 +8,7 @@ namespace ASpecACAD.AcadCommands
         [CommandMethod("ASpecUserManage")]
         public static void AcadCommandUserView()
         {
-            UserTab win = new UserTab();
-            Application.ShowModalWindow(win);
+            UserManager.UserManagerCallWindow();
         }
     }
 }
