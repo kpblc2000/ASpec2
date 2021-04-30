@@ -44,9 +44,38 @@
                 <Button Content="Удалить" Click="OnEraseButtonClick"/>
             </StackPanel>
             <DataGrid Name="UsersDataGrid" Grid.Column="0" AutoGenerateColumns="True"
-                      ItemsSource="{Binding Path=Users}"
-                      SelectedItem="{Binding Path=SelectedUser}"
-                      />
+                      ItemsSource="{Binding Users}"
+                      SelectedItem="{Binding SelectedUser}"
+                      >
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width="*" Header="Полное имя пользователя">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding LastName, StringFormat='\{0\} '}"/>
+                                    <TextBlock Text="{Binding FirstName, StringFormat='\{0\} '}"/>
+                                    <TextBlock Text="{Binding MiddleName}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="*" Header="e-mail">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="{Binding Login}"/>
+                                    <TextBlock Text="@"/>
+                                    <TextBlock Text="{Binding Domain}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridCheckBoxColumn Binding="{Binding IsDeveloper}"
+                                            Width="Auto"
+                                            MinWidth="80"
+                                            Header="Разработчик"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
     </DockPanel>
 </Window>
