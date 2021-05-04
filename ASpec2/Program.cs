@@ -27,8 +27,23 @@ namespace ASpec2
             //} 
             #endregion
 
-            UserTab win = new UserTab();
-            win.ShowDialog();
+            var albums = Enumerable.Range(1, 10)
+                .Select(i => new Album
+                {
+                    Name = $"Album{i}"
+                });
+
+            using(NPConDataContext db = new NPConDataContext())
+            {
+                foreach (var item in albums)
+                {
+                    db.Albums.Add(item);
+                }
+                db.SaveChanges();
+            }
+
+            //UserTab win = new UserTab();
+            //win.ShowDialog();
 
             //Console.WriteLine(typeof(Program).Assembly.GetName().Name);
 
