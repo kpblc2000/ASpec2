@@ -1,4 +1,6 @@
-﻿namespace ASpecCore.Infrastructure
+﻿using System;
+
+namespace ASpecCore.Infrastructure
 {
     public class GeneralFunctionality
     {
@@ -9,9 +11,10 @@
         /// <returns>Строка заголовка с указанием имени и текущий версии сборки</returns>
         public static string MakeDialogTitle(string Title)
         {
-            var temp = typeof(GeneralFunctionality).Assembly.GetName();
+            Version temp = typeof(GeneralFunctionality).Assembly.GetName().Version;
+            Title = Title.Trim();
 
-            return $"ASpec {temp.Version} : {Title}";
+            return $"ASpec {temp.Major}.{temp.Minor}.{temp.Build} : {Title}";
         }
     }
 }
