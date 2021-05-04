@@ -33,13 +33,28 @@ namespace ASpec2
                     Name = $"Album{i}"
                 });
 
-            using(NPConDataContext db = new NPConDataContext())
+            foreach (var item in albums)
             {
-                foreach (var item in albums)
+                Console.WriteLine(item.Name);
+            }
+
+            Console.WriteLine("*********************************");
+
+            //using (NPConDataContext db = new NPConDataContext())
+            //{
+            //    foreach (var item in albums)
+            //    {
+            //        db.Albums.Add(item);
+            //    }
+            //    db.SaveChanges();
+            //}
+
+            using (NPConDataContext db = new NPConDataContext())
+            {
+                foreach (var item in db.Albums)
                 {
-                    db.Albums.Add(item);
+                    Console.WriteLine($"{item.Id} : {item.Name}");
                 }
-                db.SaveChanges();
             }
 
             //UserTab win = new UserTab();
