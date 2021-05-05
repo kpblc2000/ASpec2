@@ -28,5 +28,7 @@ namespace ASpec2
         public bool IsActual { get; set; } = true;
 
         public int? SheetRange { get; set; }
+
+        public string CreatorLogin { get; set; } = Environment.GetEnvironmentVariable("username");
     }
 }
