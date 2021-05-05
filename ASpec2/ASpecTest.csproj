@@ -57,6 +57,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Album.cs" />
+    <Compile Include="Factory.cs" />
+    <Compile Include="Migrations\202105041325171_InitialCreate.cs" />
+    <Compile Include="Migrations\202105041325171_InitialCreate.designer.cs">
+      <DependentUpon>202105041325171_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105051250077_AddAlbumDescription.cs" />
+    <Compile Include="Migrations\202105051250077_AddAlbumDescription.designer.cs">
+      <DependentUpon>202105051250077_AddAlbumDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105051301415_ExtenAlbumsAddFactories.cs" />
+    <Compile Include="Migrations\202105051301415_ExtenAlbumsAddFactories.designer.cs">
+      <DependentUpon>202105051301415_ExtenAlbumsAddFactories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NPConDataContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +93,17 @@
       <Project>{028de155-c6e3-4f6f-afe9-7207707ac6b7}</Project>
       <Name>ASpecCore</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202105041325171_InitialCreate.resx">
+      <DependentUpon>202105041325171_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105051250077_AddAlbumDescription.resx">
+      <DependentUpon>202105051250077_AddAlbumDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105051301415_ExtenAlbumsAddFactories.resx">
+      <DependentUpon>202105051301415_ExtenAlbumsAddFactories.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

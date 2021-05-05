@@ -30,7 +30,8 @@ namespace ASpec2
             var albums = Enumerable.Range(1, 10)
                 .Select(i => new Album
                 {
-                    Name = $"Album{i}"
+                    Name = $"Album{i}",
+                    Description = $"Descr {i}"
                 });
 
             foreach (var item in albums)
@@ -40,20 +41,20 @@ namespace ASpec2
 
             Console.WriteLine("*********************************");
 
-            //using (NPConDataContext db = new NPConDataContext())
-            //{
-            //    foreach (var item in albums)
-            //    {
-            //        db.Albums.Add(item);
-            //    }
-            //    db.SaveChanges();
-            //}
+            using (NPConDataContext db = new NPConDataContext())
+            {
+                foreach (var item in albums)
+                {
+                    db.Albums.Add(item);
+                }
+                db.SaveChanges();
+            }
 
             using (NPConDataContext db = new NPConDataContext())
             {
                 foreach (var item in db.Albums)
                 {
-                    Console.WriteLine($"{item.Id} : {item.Name}");
+                    Console.WriteLine($"{item.Id} : {item.Name} {item.Description}");
                 }
             }
 

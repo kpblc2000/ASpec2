@@ -12,5 +12,6 @@ namespace ASpec2
         public NPConDataContext() : base(Properties.Settings.Default.NPConConnectionString) { }
 
         public DbSet<Album> Albums { get; set; }
+        public DbSet<Factory> Factories { get; set; }
     }
 }
