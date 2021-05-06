@@ -27,14 +27,27 @@ namespace ASpec2
             //} 
             #endregion
 
+            #region CodeFirst
             var albums = Enumerable.Range(1, 10)
-                .Select(i => new Album
+                   .Select(i => new Album
+                   {
+                       Name = $"Album{i}",
+                       Description = $"Descr {i}"
+                   });
+            var factories = Enumerable.Range(1, 5)
+                .Select(i => new Factory
                 {
-                    Name = $"Album{i}",
-                    Description = $"Descr {i}"
-                });
+                    Name = $"Factory{i}"
+                }
+                )
+                .ToList();
 
             foreach (var item in albums)
+            {
+                Console.WriteLine(item.Name);
+            }
+
+            foreach (var item in factories)
             {
                 Console.WriteLine(item.Name);
             }
@@ -43,9 +56,21 @@ namespace ASpec2
 
             using (NPConDataContext db = new NPConDataContext())
             {
-                foreach (var item in albums)
+                for (int i = 0; i < factories.ToList().Count; i++)
                 {
-                    db.Albums.Add(item);
+                    Factory item = factories[i];
+
+                    item.Albums = new List<Album>();
+
+                    for (int j = 0; j < db.Albums.Count(); j++)
+                    {
+                        if (j == 2 * i)
+                        {
+                            item.Albums.Add(db.Albums.ToList()[j]);
+                        }
+                    }
+
+                    db.Factories.Add(item);
                 }
                 db.SaveChanges();
             }
@@ -57,6 +82,7 @@ namespace ASpec2
                     Console.WriteLine($"{item.Id} : {item.Name} {item.Description}");
                 }
             }
+            #endregion
 
             //UserTab win = new UserTab();
             //win.ShowDialog();

@@ -74,6 +74,10 @@
     <Compile Include="Migrations\202105051338310_AlbumAddCreatorLogin.designer.cs">
       <DependentUpon>202105051338310_AlbumAddCreatorLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105060955530_EmptyMigration.cs" />
+    <Compile Include="Migrations\202105060955530_EmptyMigration.designer.cs">
+      <DependentUpon>202105060955530_EmptyMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NPConDataContext.cs" />
     <Compile Include="Program.cs" />
@@ -110,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105051338310_AlbumAddCreatorLogin.resx">
       <DependentUpon>202105051338310_AlbumAddCreatorLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105060955530_EmptyMigration.resx">
+      <DependentUpon>202105060955530_EmptyMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

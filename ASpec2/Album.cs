@@ -30,5 +30,7 @@ namespace ASpec2
         public int? SheetRange { get; set; }
 
         public string CreatorLogin { get; set; } = Environment.GetEnvironmentVariable("username");
+
+        public Factory Factory { get; set; }
     }
 }
