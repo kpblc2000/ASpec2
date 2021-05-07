@@ -28,6 +28,7 @@ namespace ASpec2
             #endregion
 
             #region CodeFirst
+            /*
             var albums = Enumerable.Range(1, 10)
                    .Select(i => new Album
                    {
@@ -82,6 +83,7 @@ namespace ASpec2
                     Console.WriteLine($"{item.Id} : {item.Name} {item.Description}");
                 }
             }
+            */
             #endregion
 
             //UserTab win = new UserTab();
