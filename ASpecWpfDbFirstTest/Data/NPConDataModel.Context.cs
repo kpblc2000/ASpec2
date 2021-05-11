@@ -7,21 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ASpecCore.Models.Data
+namespace ASpecWpfDbFirstTest.Data
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
-    public partial class Entities : DbContext
+    
+    public partial class NPConConnectionString : DbContext
     {
-        public Entities() : base("name=Entities") { }
-
+        public NPConConnectionString()
+            : base("name=NPConConnectionString")
+        {
+        }
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-
+    
         public virtual DbSet<album> albums { get; set; }
         public virtual DbSet<factory> factories { get; set; }
     }

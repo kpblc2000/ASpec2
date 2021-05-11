@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASpecACAD", "ASpecACAD\ASpe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASpecCore", "ASpecCore\ASpecCore.csproj", "{028DE155-C6E3-4F6F-AFE9-7207707AC6B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASpecWpfDbFirstTest", "ASpecWpfDbFirstTest\ASpecWpfDbFirstTest.csproj", "{C097DEC5-85AC-4369-82C0-5EBF2EBBC56F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{028DE155-C6E3-4F6F-AFE9-7207707AC6B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{028DE155-C6E3-4F6F-AFE9-7207707AC6B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{028DE155-C6E3-4F6F-AFE9-7207707AC6B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C097DEC5-85AC-4369-82C0-5EBF2EBBC56F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C097DEC5-85AC-4369-82C0-5EBF2EBBC56F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C097DEC5-85AC-4369-82C0-5EBF2EBBC56F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C097DEC5-85AC-4369-82C0-5EBF2EBBC56F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
