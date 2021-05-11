@@ -28,13 +28,6 @@ namespace ASpecCore.ViewModels
                 //OnPropertyChanged(nameof(CurrentUser));
                 Set(ref _CurrentUser, temp);
             }
-        }
-
-        private string _Title;
-        public string Title
-        {
-            get { return _Title; }
-            set { Set(ref _Title, GeneralFunctionality.MakeDialogTitle(value)); }
-        }
+        }        
     }
 }
