@@ -23,29 +23,12 @@ namespace ASpecCore.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source = KPBLC-VMWARE; Initial Catalog = npcon; Persist Security Info = Fals" +
-            "e; Integrated Security = SSPI;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=kpblc-vmware;Initial Catalog=NPCon;Integrated Security=True")]
         public string NPConConnectionString {
             get {
                 return ((string)(this["NPConConnectionString"]));
-            }
-            set {
-                this["NPConConnectionString"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source = KPBLC-VMWARE; Initial Catalog = npcon; Persist Security Info = Fals" +
-            "e; Integrated Security = SSPI;")]
-        public string Entities {
-            get {
-                return ((string)(this["Entities"]));
-            }
-            set {
-                this["Entities"] = value;
             }
         }
     }

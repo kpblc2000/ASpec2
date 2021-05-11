@@ -2,11 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ASpecCore.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="NPConConnectionString" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source = KPBLC-VMWARE; Initial Catalog = npcon; Persist Security Info = False; Integrated Security = SSPI;</Value>
-    </Setting>
-    <Setting Name="Entities" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source = KPBLC-VMWARE; Initial Catalog = npcon; Persist Security Info = False; Integrated Security = SSPI;</Value>
+    <Setting Name="NPConConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=kpblc-vmware;Initial Catalog=NPCon;Integrated Security=True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

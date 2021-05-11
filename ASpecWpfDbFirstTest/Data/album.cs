@@ -14,6 +14,14 @@ namespace ASpecWpfDbFirstTest.Data
     
     public partial class album
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public album()
+        {
+            this.tblNodeDepths = new HashSet<tblNodeDepth>();
+            this.tblNodesContents = new HashSet<tblNodesContent>();
+            this.listalbs = new HashSet<listalb>();
+        }
+    
         public int id_album { get; set; }
         public string name_alb { get; set; }
         public string description_alb { get; set; }
@@ -25,5 +33,11 @@ namespace ASpecWpfDbFirstTest.Data
         public Nullable<int> id_fact { get; set; }
     
         public virtual factory factory { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblNodeDepth> tblNodeDepths { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblNodesContent> tblNodesContents { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<listalb> listalbs { get; set; }
     }
 }

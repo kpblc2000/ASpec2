@@ -13,20 +13,20 @@ namespace ASpecCore.ViewModels
         public AlbumViewModel()
         {
             Title = "Альбомы";
-            using (Entities db = new Entities())
-            {
-                Albums = db.albums.ToList();
-            }
+            //using (NPConDataContext db = new NPConDataContext())
+            //{
+            //    Albums = new List<album>(db.Albums);
+            //}
         }
 
-        public List<album> Albums
-        {
-            get { return _Albums; }
-            set { Set(ref _Albums, value); }
-        }
+        //public List<album> Albums
+        //{
+        //    get { return _Albums; }
+        //    set { Set(ref _Albums, value); }
+        //}
 
 
-        private List<album> _Albums;
+        //private List<album> _Albums;
 
     }
 }

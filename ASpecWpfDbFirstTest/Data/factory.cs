@@ -18,6 +18,7 @@ namespace ASpecWpfDbFirstTest.Data
         public factory()
         {
             this.albums = new HashSet<album>();
+            this.factory_lines = new HashSet<factory_lines>();
         }
     
         public int id_fact { get; set; }
@@ -26,5 +27,7 @@ namespace ASpecWpfDbFirstTest.Data
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<album> albums { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<factory_lines> factory_lines { get; set; }
     }
 }

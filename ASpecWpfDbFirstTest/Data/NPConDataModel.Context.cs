@@ -12,6 +12,8 @@ namespace ASpecWpfDbFirstTest.Data
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class NPConConnectionString : DbContext
     {
@@ -27,5 +29,1411 @@ namespace ASpecWpfDbFirstTest.Data
     
         public virtual DbSet<album> albums { get; set; }
         public virtual DbSet<factory> factories { get; set; }
+        public virtual DbSet<allLayer> allLayers { get; set; }
+        public virtual DbSet<angle> angles { get; set; }
+        public virtual DbSet<arm> arms { get; set; }
+        public virtual DbSet<arm_type> arm_type { get; set; }
+        public virtual DbSet<classType> classTypes { get; set; }
+        public virtual DbSet<cmd_alias> cmd_alias { get; set; }
+        public virtual DbSet<cmd_groups> cmd_groups { get; set; }
+        public virtual DbSet<cmd_lisp> cmd_lisp { get; set; }
+        public virtual DbSet<cmd_user_lisp> cmd_user_lisp { get; set; }
+        public virtual DbSet<cmd_userdomains> cmd_userdomains { get; set; }
+        public virtual DbSet<cmd_userlogins> cmd_userlogins { get; set; }
+        public virtual DbSet<cmd_users> cmd_users { get; set; }
+        public virtual DbSet<concrType> concrTypes { get; set; }
+        public virtual DbSet<end_prod_ver_consist> end_prod_ver_consist { get; set; }
+        public virtual DbSet<end_prod_ver_RawConsist> end_prod_ver_RawConsist { get; set; }
+        public virtual DbSet<end_product_version> end_product_version { get; set; }
+        public virtual DbSet<factory_lines> factory_lines { get; set; }
+        public virtual DbSet<formingEquip> formingEquips { get; set; }
+        public virtual DbSet<fstn_element> fstn_element { get; set; }
+        public virtual DbSet<fstn_name> fstn_name { get; set; }
+        public virtual DbSet<galvanized_iron> galvanized_iron { get; set; }
+        public virtual DbSet<Line> Lines { get; set; }
+        public virtual DbSet<lisp_interface> lisp_interface { get; set; }
+        public virtual DbSet<listalb> listalbs { get; set; }
+        public virtual DbSet<m_box> m_box { get; set; }
+        public virtual DbSet<mark_type> mark_type { get; set; }
+        public virtual DbSet<mdm_Item_modification_t> mdm_Item_modification_t { get; set; }
+        public virtual DbSet<mdm_Item_modification_type_t> mdm_Item_modification_type_t { get; set; }
+        public virtual DbSet<mdm_object_plain> mdm_object_plain { get; set; }
+        public virtual DbSet<mod_param_value_pool> mod_param_value_pool { get; set; }
+        public virtual DbSet<modification_parameter> modification_parameter { get; set; }
+        public virtual DbSet<modificationType4object_type> modificationType4object_type { get; set; }
+        public virtual DbSet<normdoc> normdocs { get; set; }
+        public virtual DbSet<npcon_changes> npcon_changes { get; set; }
+        public virtual DbSet<npcon_changes_22_12_2019> npcon_changes_22_12_2019 { get; set; }
+        public virtual DbSet<objectconsist> objectconsists { get; set; }
+        public virtual DbSet<objectmark> objectmarks { get; set; }
+        public virtual DbSet<objectprefix> objectprefixes { get; set; }
+        public virtual DbSet<Object> Objects { get; set; }
+        public virtual DbSet<objecttype> objecttypes { get; set; }
+        public virtual DbSet<p_concr_binder> p_concr_binder { get; set; }
+        public virtual DbSet<p_concr_class> p_concr_class { get; set; }
+        public virtual DbSet<p_concr_comp> p_concr_comp { get; set; }
+        public virtual DbSet<p_concr_frost> p_concr_frost { get; set; }
+        public virtual DbSet<p_concr_waterres> p_concr_waterres { get; set; }
+        public virtual DbSet<p_concrete> p_concrete { get; set; }
+        public virtual DbSet<p_hdpe> p_hdpe { get; set; }
+        public virtual DbSet<p_object> p_object { get; set; }
+        public virtual DbSet<p_PEfilm> p_PEfilm { get; set; }
+        public virtual DbSet<p_units> p_units { get; set; }
+        public virtual DbSet<parameter> parameters { get; set; }
+        public virtual DbSet<prod_work_file> prod_work_file { get; set; }
+        public virtual DbSet<product> products { get; set; }
+        public virtual DbSet<product_modification> product_modification { get; set; }
+        public virtual DbSet<raw> raws { get; set; }
+        public virtual DbSet<rep_prod> rep_prod { get; set; }
+        public virtual DbSet<spiral_hose> spiral_hose { get; set; }
+        public virtual DbSet<sql_data_type> sql_data_type { get; set; }
+        public virtual DbSet<steelClass> steelClasses { get; set; }
+        public virtual DbSet<strip> strips { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<tbl_mark_code_type_C1P> tbl_mark_code_type_C1P { get; set; }
+        public virtual DbSet<tbl_mark_parsing> tbl_mark_parsing { get; set; }
+        public virtual DbSet<tblNodeDepth> tblNodeDepths { get; set; }
+        public virtual DbSet<tblNodesContent> tblNodesContents { get; set; }
+        public virtual DbSet<temp_fio_makr> temp_fio_makr { get; set; }
+        public virtual DbSet<Temp_load_thickness> Temp_load_thickness { get; set; }
+        public virtual DbSet<temp_load1C> temp_load1C { get; set; }
+        public virtual DbSet<TEMP_PR> TEMP_PR { get; set; }
+        public virtual DbSet<TEMP_PR_ver1> TEMP_PR_ver1 { get; set; }
+        public virtual DbSet<test_mark09> test_mark09 { get; set; }
+        public virtual DbSet<test_mark10> test_mark10 { get; set; }
+        public virtual DbSet<tmp_DoubleModif_all> tmp_DoubleModif_all { get; set; }
+        public virtual DbSet<tube> tubes { get; set; }
+        public virtual DbSet<user> users { get; set; }
+        public virtual DbSet<version_status> version_status { get; set; }
+        public virtual DbSet<wood> woods { get; set; }
+        public virtual DbSet<work_file> work_file { get; set; }
+        public virtual DbSet<wpf_control> wpf_control { get; set; }
+        public virtual DbSet<wpf_property> wpf_property { get; set; }
+        public virtual DbSet<wrk_file_type> wrk_file_type { get; set; }
+        public virtual DbSet<zone> zones { get; set; }
+        public virtual DbSet<Assembly> Assemblies { get; set; }
+        public virtual DbSet<color> colors { get; set; }
+        public virtual DbSet<floor> floors { get; set; }
+        public virtual DbSet<floors_OLD> floors_OLD { get; set; }
+        public virtual DbSet<Geometry> Geometries { get; set; }
+        public virtual DbSet<KZI> KZIs { get; set; }
+        public virtual DbSet<KZI_Name> KZI_Name { get; set; }
+        public virtual DbSet<nomenclature> nomenclatures { get; set; }
+        public virtual DbSet<nomenclature_current> nomenclature_current { get; set; }
+        public virtual DbSet<Parameter1> Parameters1 { get; set; }
+        public virtual DbSet<Part> Parts { get; set; }
+        public virtual DbSet<project_specific> project_specific { get; set; }
+        public virtual DbSet<project> projects { get; set; }
+        public virtual DbSet<projects_OLD> projects_OLD { get; set; }
+        public virtual DbSet<section> sections { get; set; }
+        public virtual DbSet<sections_OLD> sections_OLD { get; set; }
+        public virtual DbSet<tblModificator> tblModificators { get; set; }
+        public virtual DbSet<tblModificators_OLD> tblModificators_OLD { get; set; }
+        public virtual DbSet<tblProject> tblProjects { get; set; }
+        public virtual DbSet<tblSery> tblSeries { get; set; }
+        public virtual DbSet<tbl_AspecificErrorLog> tbl_AspecificErrorLog { get; set; }
+        public virtual DbSet<tbl_UserActivityLog> tbl_UserActivityLog { get; set; }
+        public virtual DbSet<tbl_UserActivityStat> tbl_UserActivityStat { get; set; }
+        public virtual DbSet<tbl_UserLispErrorLog> tbl_UserLispErrorLog { get; set; }
+        public virtual DbSet<tbl_UserLoginForLogging> tbl_UserLoginForLogging { get; set; }
+        public virtual DbSet<Colour_article> Colour_article { get; set; }
+        public virtual DbSet<Colour_index> Colour_index { get; set; }
+        public virtual DbSet<RCP_consistancy> RCP_consistancy { get; set; }
+        public virtual DbSet<RCP_nomenclature> RCP_nomenclature { get; set; }
+        public virtual DbSet<somemаrk> somemаrk { get; set; }
+        public virtual DbSet<coloristic> coloristics { get; set; }
+        public virtual DbSet<addmods_from_C1> addmods_from_C1 { get; set; }
+        public virtual DbSet<addmods_from_C1_ver2> addmods_from_C1_ver2 { get; set; }
+        public virtual DbSet<addmods_from_C1_ver3> addmods_from_C1_ver3 { get; set; }
+        public virtual DbSet<albName_exep> albName_exep { get; set; }
+        public virtual DbSet<aspa_entity> aspa_entity { get; set; }
+        public virtual DbSet<base_ch_npcon> base_ch_npcon { get; set; }
+        public virtual DbSet<base_changes_delete> base_changes_delete { get; set; }
+        public virtual DbSet<cmd_log> cmd_log { get; set; }
+        public virtual DbSet<end_prod_ver_consist_OS_26_02_2021> end_prod_ver_consist_OS_26_02_2021 { get; set; }
+        public virtual DbSet<end_product_version_06_05_2020> end_product_version_06_05_2020 { get; set; }
+        public virtual DbSet<end_product_version_20072020> end_product_version_20072020 { get; set; }
+        public virtual DbSet<end_product_version_temp> end_product_version_temp { get; set; }
+        public virtual DbSet<factory_lines_old> factory_lines_old { get; set; }
+        public virtual DbSet<factory_old> factory_old { get; set; }
+        public virtual DbSet<from_view_product_dim_1_Tbl> from_view_product_dim_1_Tbl { get; set; }
+        public virtual DbSet<IDMDM_ModId_from_1c> IDMDM_ModId_from_1c { get; set; }
+        public virtual DbSet<IDMDM_ModId_from_1c_ver2> IDMDM_ModId_from_1c_ver2 { get; set; }
+        public virtual DbSet<IDMDM_ModId_from_1c_ver3> IDMDM_ModId_from_1c_ver3 { get; set; }
+        public virtual DbSet<IlastModsMarksfrom1C_ver2> IlastModsMarksfrom1C_ver2 { get; set; }
+        public virtual DbSet<IlastModsMarksfrom1C_ver3> IlastModsMarksfrom1C_ver3 { get; set; }
+        public virtual DbSet<last_changes_mark_ver> last_changes_mark_ver { get; set; }
+        public virtual DbSet<lastModsMarksfrom1C> lastModsMarksfrom1C { get; set; }
+        public virtual DbSet<lines_old> lines_old { get; set; }
+        public virtual DbSet<LOAD_T_16_072020_end> LOAD_T_16_072020_end { get; set; }
+        public virtual DbSet<LOAD_T_16_082020_end> LOAD_T_16_082020_end { get; set; }
+        public virtual DbSet<LOAD_T_16_082020_SH> LOAD_T_16_082020_SH { get; set; }
+        public virtual DbSet<LOAD_T_16_082020_v2> LOAD_T_16_082020_v2 { get; set; }
+        public virtual DbSet<LOAD_T_17_072020_end> LOAD_T_17_072020_end { get; set; }
+        public virtual DbSet<LOAD_T_17_082020_end> LOAD_T_17_082020_end { get; set; }
+        public virtual DbSet<LOAD_T_17_082020_SH> LOAD_T_17_082020_SH { get; set; }
+        public virtual DbSet<LOAD_T_17_082020_v2> LOAD_T_17_082020_v2 { get; set; }
+        public virtual DbSet<LOAD_T_18_072020_end> LOAD_T_18_072020_end { get; set; }
+        public virtual DbSet<LOAD_T_18_082020_SH> LOAD_T_18_082020_SH { get; set; }
+        public virtual DbSet<LOAD_T_18_082020_v2> LOAD_T_18_082020_v2 { get; set; }
+        public virtual DbSet<LOAD_T_31_64_072020_end> LOAD_T_31_64_072020_end { get; set; }
+        public virtual DbSet<LOAD_T_31_73_082020_end> LOAD_T_31_73_082020_end { get; set; }
+        public virtual DbSet<LOAD_T_31_73_082020_SH> LOAD_T_31_73_082020_SH { get; set; }
+        public virtual DbSet<LOAD_T_31_73_082020_v2> LOAD_T_31_73_082020_v2 { get; set; }
+        public virtual DbSet<LOAD_T_34_072020_end> LOAD_T_34_072020_end { get; set; }
+        public virtual DbSet<LOAD_T_34_082020_end> LOAD_T_34_082020_end { get; set; }
+        public virtual DbSet<LOAD_T_34_082020_SH> LOAD_T_34_082020_SH { get; set; }
+        public virtual DbSet<LOAD_T_34_082020_v2> LOAD_T_34_082020_v2 { get; set; }
+        public virtual DbSet<LOAD_T_35_47_082020_end> LOAD_T_35_47_082020_end { get; set; }
+        public virtual DbSet<LOAD_T_35_47_082020_SH> LOAD_T_35_47_082020_SH { get; set; }
+        public virtual DbSet<LOAD_T_35_47_082020_v2> LOAD_T_35_47_082020_v2 { get; set; }
+        public virtual DbSet<LOAD_T_47_072020_end> LOAD_T_47_072020_end { get; set; }
+        public virtual DbSet<loaded_Job_Files> loaded_Job_Files { get; set; }
+        public virtual DbSet<loaded_Marks_from_1C> loaded_Marks_from_1C { get; set; }
+        public virtual DbSet<loaded_Marks_from_1C_ver2> loaded_Marks_from_1C_ver2 { get; set; }
+        public virtual DbSet<loaded_Marks_from_1C_ver3> loaded_Marks_from_1C_ver3 { get; set; }
+        public virtual DbSet<mark_geometry> mark_geometry { get; set; }
+        public virtual DbSet<Marks_and_modifications> Marks_and_modifications { get; set; }
+        public virtual DbSet<Marks_and_modifications_from_EXCEL> Marks_and_modifications_from_EXCEL { get; set; }
+        public virtual DbSet<Marks_and_modifications_MDMdeleted> Marks_and_modifications_MDMdeleted { get; set; }
+        public virtual DbSet<Marks_and_modifications_nm> Marks_and_modifications_nm { get; set; }
+        public virtual DbSet<Marks_and_modifications_to_1C> Marks_and_modifications_to_1C { get; set; }
+        public virtual DbSet<mdm_forming_dimension> mdm_forming_dimension { get; set; }
+        public virtual DbSet<mdm_forming_lifting> mdm_forming_lifting { get; set; }
+        public virtual DbSet<mdm_Forming_type> mdm_Forming_type { get; set; }
+        public virtual DbSet<mdm_Item_colour> mdm_Item_colour { get; set; }
+        public virtual DbSet<mdm_Item_group_long_t> mdm_Item_group_long_t { get; set; }
+        public virtual DbSet<mdm_Layer_documents_state_actual_t> mdm_Layer_documents_state_actual_t { get; set; }
+        public virtual DbSet<mdm_Side> mdm_Side { get; set; }
+        public virtual DbSet<MetPref> MetPrefs { get; set; }
+        public virtual DbSet<mod_param_value_pool_07042020> mod_param_value_pool_07042020 { get; set; }
+        public virtual DbSet<modificationType4object_type_COPY25102019> modificationType4object_type_COPY25102019 { get; set; }
+        public virtual DbSet<mods_loaded_from_1c> mods_loaded_from_1c { get; set; }
+        public virtual DbSet<mods_loaded_from_1c_05> mods_loaded_from_1c_05 { get; set; }
+        public virtual DbSet<mods_loaded_from_1c_old> mods_loaded_from_1c_old { get; set; }
+        public virtual DbSet<mods_loaded_from_1c_ver2> mods_loaded_from_1c_ver2 { get; set; }
+        public virtual DbSet<mods_loaded_from_1c_ver3> mods_loaded_from_1c_ver3 { get; set; }
+        public virtual DbSet<ModsMarksfrom1C> ModsMarksfrom1C { get; set; }
+        public virtual DbSet<ModsMarksfrom1C_ver2> ModsMarksfrom1C_ver2 { get; set; }
+        public virtual DbSet<ModsMarksfrom1C_ver3> ModsMarksfrom1C_ver3 { get; set; }
+        public virtual DbSet<no_weight_TEMP> no_weight_TEMP { get; set; }
+        public virtual DbSet<npcon_ch_temp> npcon_ch_temp { get; set; }
+        public virtual DbSet<npcon_changes_13_02_2020> npcon_changes_13_02_2020 { get; set; }
+        public virtual DbSet<npcon_changes_18_02_2020> npcon_changes_18_02_2020 { get; set; }
+        public virtual DbSet<npcon_changes_20_02_2020> npcon_changes_20_02_2020 { get; set; }
+        public virtual DbSet<npcon_changes_23_04_2020> npcon_changes_23_04_2020 { get; set; }
+        public virtual DbSet<npcon_changes_24_12_2019> npcon_changes_24_12_2019 { get; set; }
+        public virtual DbSet<npcon_changes_24_12_2019_aftnn> npcon_changes_24_12_2019_aftnn { get; set; }
+        public virtual DbSet<npcon_changes_dev> npcon_changes_dev { get; set; }
+        public virtual DbSet<npcon_changes_dev2> npcon_changes_dev2 { get; set; }
+        public virtual DbSet<npcon_changes_er> npcon_changes_er { get; set; }
+        public virtual DbSet<npcon_changes_er_08_06_2020> npcon_changes_er_08_06_2020 { get; set; }
+        public virtual DbSet<npcon_changes_ok> npcon_changes_ok { get; set; }
+        public virtual DbSet<p_object_20072020> p_object_20072020 { get; set; }
+        public virtual DbSet<p_object_Dev> p_object_Dev { get; set; }
+        public virtual DbSet<p_object_OS_26_02_2021> p_object_OS_26_02_2021 { get; set; }
+        public virtual DbSet<params_loaded_from_1c> params_loaded_from_1c { get; set; }
+        public virtual DbSet<params_loaded_from_1c_05> params_loaded_from_1c_05 { get; set; }
+        public virtual DbSet<params_loaded_from_1c_old> params_loaded_from_1c_old { get; set; }
+        public virtual DbSet<params_loaded_from_1c_ver2> params_loaded_from_1c_ver2 { get; set; }
+        public virtual DbSet<params_loaded_from_1c_ver3> params_loaded_from_1c_ver3 { get; set; }
+        public virtual DbSet<product_20072020> product_20072020 { get; set; }
+        public virtual DbSet<product_2020_10_20> product_2020_10_20 { get; set; }
+        public virtual DbSet<product_Dev> product_Dev { get; set; }
+        public virtual DbSet<product_modification_20072020> product_modification_20072020 { get; set; }
+        public virtual DbSet<product_modification_deleted_14_09_2020> product_modification_deleted_14_09_2020 { get; set; }
+        public virtual DbSet<product_modification_test> product_modification_test { get; set; }
+        public virtual DbSet<product_modification1> product_modification1 { get; set; }
+        public virtual DbSet<product_OS_26_02_2021> product_OS_26_02_2021 { get; set; }
+        public virtual DbSet<some_new_mods> some_new_mods { get; set; }
+        public virtual DbSet<temp_1C_PO> temp_1C_PO { get; set; }
+        public virtual DbSet<TEMP_add_heater> TEMP_add_heater { get; set; }
+        public virtual DbSet<Temp_del_KTD__ASpecific_> Temp_del_KTD__ASpecific_ { get; set; }
+        public virtual DbSet<temp_del_marks> temp_del_marks { get; set; }
+        public virtual DbSet<temp_NP_PO> temp_NP_PO { get; set; }
+        public virtual DbSet<TEMP_PR_new_mods> TEMP_PR_new_mods { get; set; }
+        public virtual DbSet<Temp1C> Temp1C { get; set; }
+        public virtual DbSet<Temp1C_05> Temp1C_05 { get; set; }
+        public virtual DbSet<temporary1> temporary1 { get; set; }
+        public virtual DbSet<temporary1_1> temporary1_1 { get; set; }
+        public virtual DbSet<temporary2> temporary2 { get; set; }
+        public virtual DbSet<temporary3> temporary3 { get; set; }
+        public virtual DbSet<temporary4> temporary4 { get; set; }
+        public virtual DbSet<temporary5> temporary5 { get; set; }
+        public virtual DbSet<temporary6> temporary6 { get; set; }
+        public virtual DbSet<temporary7> temporary7 { get; set; }
+        public virtual DbSet<temporary8> temporary8 { get; set; }
+        public virtual DbSet<Test_Error_LHW_07> Test_Error_LHW_07 { get; set; }
+        public virtual DbSet<Test_Error_PVL_07> Test_Error_PVL_07 { get; set; }
+        public virtual DbSet<Test_Error_V_07> Test_Error_V_07 { get; set; }
+        public virtual DbSet<test_mark06_del> test_mark06_del { get; set; }
+        public virtual DbSet<test_mark07_end> test_mark07_end { get; set; }
+        public virtual DbSet<test_mark08> test_mark08 { get; set; }
+        public virtual DbSet<test_mark08_ALL> test_mark08_ALL { get; set; }
+        public virtual DbSet<Test_mark1Layer> Test_mark1Layer { get; set; }
+        public virtual DbSet<tmp_DoubleModif_all_double> tmp_DoubleModif_all_double { get; set; }
+        public virtual DbSet<tmp_DoubleModif_all_PO_num> tmp_DoubleModif_all_PO_num { get; set; }
+        public virtual DbSet<tmp_npcontmp_tbl_mark_parsing> tmp_npcontmp_tbl_mark_parsing { get; set; }
+        public virtual DbSet<to_SerOfMarks_t> to_SerOfMarks_t { get; set; }
+        public virtual DbSet<toLocal_del> toLocal_del { get; set; }
+        public virtual DbSet<WINDOWS_DOORS_to_1C> WINDOWS_DOORS_to_1C { get; set; }
+        public virtual DbSet<work_file_mark_type> work_file_mark_type { get; set; }
+        public virtual DbSet<ГабаритыNPCon> ГабаритыNPCon { get; set; }
+        public virtual DbSet<каркасыДочерние> каркасыДочерние { get; set; }
+        public virtual DbSet<каркасыПовторение> каркасыПовторение { get; set; }
+        public virtual DbSet<каркасыРодительские> каркасыРодительские { get; set; }
+        public virtual DbSet<РолиУКРна_05_06_2019> РолиУКРна_05_06_2019 { get; set; }
+        public virtual DbSet<Assembly_structure> Assembly_structure { get; set; }
+        public virtual DbSet<nomenclature_all> nomenclature_all { get; set; }
+        public virtual DbSet<project_specific_OLD> project_specific_OLD { get; set; }
+        public virtual DbSet<TEST_TEMP> TEST_TEMP { get; set; }
+        public virtual DbSet<C1stg_modificators> C1stg_modificators { get; set; }
+        public virtual DbSet<ALLPLAN_KB_differ> ALLPLAN_KB_differ { get; set; }
+        public virtual DbSet<ALLPLAN_mods_to_NPCon> ALLPLAN_mods_to_NPCon { get; set; }
+        public virtual DbSet<ALLPLAN_to_NPCon> ALLPLAN_to_NPCon { get; set; }
+        public virtual DbSet<RD> RDS { get; set; }
+        public virtual DbSet<rds_ins> rds_ins { get; set; }
+        public virtual DbSet<view_coloristics> view_coloristics { get; set; }
+        public virtual DbSet<C_v_entity_rem> C_v_entity_rem { get; set; }
+        public virtual DbSet<C_v_relation_rem> C_v_relation_rem { get; set; }
+        public virtual DbSet<a_view_Shelf_mark_MaxID> a_view_Shelf_mark_MaxID { get; set; }
+        public virtual DbSet<ecp_wip_rem> ecp_wip_rem { get; set; }
+        public virtual DbSet<entity_mark_trim_rem> entity_mark_trim_rem { get; set; }
+        public virtual DbSet<ERRORS_IN_APERTURES> ERRORS_IN_APERTURES { get; set; }
+        public virtual DbSet<ERRORS_IN_APERTURES_WD> ERRORS_IN_APERTURES_WD { get; set; }
+        public virtual DbSet<IdObjViewNPCChExpt> IdObjViewNPCChExpts { get; set; }
+        public virtual DbSet<mdm_forming_dimension_v> mdm_forming_dimension_v { get; set; }
+        public virtual DbSet<mdm_forming_lifting_v> mdm_forming_lifting_v { get; set; }
+        public virtual DbSet<mdm_Forming_type_v> mdm_Forming_type_v { get; set; }
+        public virtual DbSet<mdm_Item_construction> mdm_Item_construction { get; set; }
+        public virtual DbSet<mdm_Item_construction_Forming> mdm_Item_construction_Forming { get; set; }
+        public virtual DbSet<mdm_Item_construction_modification> mdm_Item_construction_modification { get; set; }
+        public virtual DbSet<mdm_Item_modification> mdm_Item_modification { get; set; }
+        public virtual DbSet<mods_4_EPV_chk_KTD> mods_4_EPV_chk_KTD { get; set; }
+        public virtual DbSet<stage_1_2_mods> stage_1_2_mods { get; set; }
+        public virtual DbSet<stage_1_2_mods_constr> stage_1_2_mods_constr { get; set; }
+        public virtual DbSet<stage_1_mods_KTD> stage_1_mods_KTD { get; set; }
+        public virtual DbSet<TEMP_marks_mods_4_1C> TEMP_marks_mods_4_1C { get; set; }
+        public virtual DbSet<TEMP_newI_IDMDM_in_tableout> TEMP_newI_IDMDM_in_tableout { get; set; }
+        public virtual DbSet<TEMP_OC_ALL> TEMP_OC_ALL { get; set; }
+        public virtual DbSet<Temp_PG_View_UnicEndProd> Temp_PG_View_UnicEndProd { get; set; }
+        public virtual DbSet<TEMP_View_1_Rec> TEMP_View_1_Rec { get; set; }
+        public virtual DbSet<TEMP_view_idSubObj4objType> TEMP_view_idSubObj4objType { get; set; }
+        public virtual DbSet<TEMP_View_Product> TEMP_View_Product { get; set; }
+        public virtual DbSet<TEMP_View_Row_Test> TEMP_View_Row_Test { get; set; }
+        public virtual DbSet<TEMP_View_TypePrefix> TEMP_View_TypePrefix { get; set; }
+        public virtual DbSet<TEMP_View_Арматура> TEMP_View_Арматура { get; set; }
+        public virtual DbSet<TEMP_View_Дерево> TEMP_View_Дерево { get; set; }
+        public virtual DbSet<TEMP_View_Коробки> TEMP_View_Коробки { get; set; }
+        public virtual DbSet<TEMP_View_Крепёж> TEMP_View_Крепёж { get; set; }
+        public virtual DbSet<TEMP_View_Полоска> TEMP_View_Полоска { get; set; }
+        public virtual DbSet<TEMP_View_Уголок> TEMP_View_Уголок { get; set; }
+        public virtual DbSet<TEMP_View_Утеплитель> TEMP_View_Утеплитель { get; set; }
+        public virtual DbSet<TEMP_Модификаторы_все> TEMP_Модификаторы_все { get; set; }
+        public virtual DbSet<TEMP_Модификаторы_используемые> TEMP_Модификаторы_используемые { get; set; }
+        public virtual DbSet<TEMP_Модификаторы_с_параметрами> TEMP_Модификаторы_с_параметрами { get; set; }
+        public virtual DbSet<TEMP_Модификаторы_Типов_изделий> TEMP_Модификаторы_Типов_изделий { get; set; }
+        public virtual DbSet<TEMP_ОС_ОСг_АСг_ОСф> TEMP_ОС_ОСг_АСг_ОСф { get; set; }
+        public virtual DbSet<TEMP_СК_МН_ЕстьВ_изделиях> TEMP_СК_МН_ЕстьВ_изделиях { get; set; }
+        public virtual DbSet<TEMP_СкобаЗакладная> TEMP_СкобаЗакладная { get; set; }
+        public virtual DbSet<v_actual_ver_1c> v_actual_ver_1c { get; set; }
+        public virtual DbSet<v_factory_lines> v_factory_lines { get; set; }
+        public virtual DbSet<v_ind_rods> v_ind_rods { get; set; }
+        public virtual DbSet<v_ind_rods_fix> v_ind_rods_fix { get; set; }
+        public virtual DbSet<v_MARKS_MODS_to_delete_from_MDM> v_MARKS_MODS_to_delete_from_MDM { get; set; }
+        public virtual DbSet<v_Marks_with_ends> v_Marks_with_ends { get; set; }
+        public virtual DbSet<v_Marks_with_tooth> v_Marks_with_tooth { get; set; }
+        public virtual DbSet<view_1C_mods> view_1C_mods { get; set; }
+        public virtual DbSet<view_1C_mods_1> view_1C_mods_1 { get; set; }
+        public virtual DbSet<view_3D_Zakl_Stripe> view_3D_Zakl_Stripe { get; set; }
+        public virtual DbSet<View_4_ASPA_wf_Z> View_4_ASPA_wf_Z { get; set; }
+        public virtual DbSet<view_addNewMark> view_addNewMark { get; set; }
+        public virtual DbSet<view_ALL_alias_4_login_users> view_ALL_alias_4_login_users { get; set; }
+        public virtual DbSet<view_ALL_alias_login_users_essential> view_ALL_alias_login_users_essential { get; set; }
+        public virtual DbSet<view_angle> view_angle { get; set; }
+        public virtual DbSet<view_arm> view_arm { get; set; }
+        public virtual DbSet<view_arm_rope> view_arm_rope { get; set; }
+        public virtual DbSet<view_ASPA_123> view_ASPA_123 { get; set; }
+        public virtual DbSet<view_Building_Area_ASPA> view_Building_Area_ASPA { get; set; }
+        public virtual DbSet<view_Building_Area_ASPA_rem> view_Building_Area_ASPA_rem { get; set; }
+        public virtual DbSet<view_cmd_group_lisp> view_cmd_group_lisp { get; set; }
+        public virtual DbSet<view_cmd_lisp_alias> view_cmd_lisp_alias { get; set; }
+        public virtual DbSet<view_concreteInObjects> view_concreteInObjects { get; set; }
+        public virtual DbSet<View_Count_Ropes> View_Count_Ropes { get; set; }
+        public virtual DbSet<View_Count_Ropes_4MaxVer> View_Count_Ropes_4MaxVer { get; set; }
+        public virtual DbSet<view_DOORS> view_DOORS { get; set; }
+        public virtual DbSet<view_dry_mix> view_dry_mix { get; set; }
+        public virtual DbSet<view_elementobjecttype> view_elementobjecttype { get; set; }
+        public virtual DbSet<view_end_prod_consist> view_end_prod_consist { get; set; }
+        public virtual DbSet<view_end_prod_consist_Mark_2ASPA> view_end_prod_consist_Mark_2ASPA { get; set; }
+        public virtual DbSet<view_end_prod_consist_2ASPA> view_end_prod_consist_2ASPA { get; set; }
+        public virtual DbSet<view_end_prod_Status_fromExcel> view_end_prod_Status_fromExcel { get; set; }
+        public virtual DbSet<view_end_prod_ver_allMass> view_end_prod_ver_allMass { get; set; }
+        public virtual DbSet<view_end_prod_ver_RawConsist_Sum> view_end_prod_ver_RawConsist_Sum { get; set; }
+        public virtual DbSet<view_end_prod_ver_RawConsist_SumKg> view_end_prod_ver_RawConsist_SumKg { get; set; }
+        public virtual DbSet<view_end_prod_ver_RawConsist_SumKg_2ASPA> view_end_prod_ver_RawConsist_SumKg_2ASPA { get; set; }
+        public virtual DbSet<view_EndPod_TotalDim> view_EndPod_TotalDim { get; set; }
+        public virtual DbSet<view_EndPod_TotalDim_2ASPA> view_EndPod_TotalDim_2ASPA { get; set; }
+        public virtual DbSet<view_EndProd_Raw> view_EndProd_Raw { get; set; }
+        public virtual DbSet<view_endproduct> view_endproduct { get; set; }
+        public virtual DbSet<view_endproduct_cut> view_endproduct_cut { get; set; }
+        public virtual DbSet<view_entity_mark_trim_ASPA> view_entity_mark_trim_ASPA { get; set; }
+        public virtual DbSet<view_entity_mark_trim_ASPA_rem> view_entity_mark_trim_ASPA_rem { get; set; }
+        public virtual DbSet<view_entity_mark_type_C1P> view_entity_mark_type_C1P { get; set; }
+        public virtual DbSet<view_fact_lines> view_fact_lines { get; set; }
+        public virtual DbSet<view_forming_type_C1P> view_forming_type_C1P { get; set; }
+        public virtual DbSet<view_forming_type_C1P_rem> view_forming_type_C1P_rem { get; set; }
+        public virtual DbSet<view_fstn_element> view_fstn_element { get; set; }
+        public virtual DbSet<view_galvanized_iron> view_galvanized_iron { get; set; }
+        public virtual DbSet<view_group_alias_4_login_users> view_group_alias_4_login_users { get; set; }
+        public virtual DbSet<view_GroupMarkOkStatus> view_GroupMarkOkStatus { get; set; }
+        public virtual DbSet<view_heater> view_heater { get; set; }
+        public virtual DbSet<View_ID_Bracket> View_ID_Bracket { get; set; }
+        public virtual DbSet<View_id_modif_Bracket> View_id_modif_Bracket { get; set; }
+        public virtual DbSet<view_id_object_SEM_3layers> view_id_object_SEM_3layers { get; set; }
+        public virtual DbSet<view_id_object_SEM_REN_3layers> view_id_object_SEM_REN_3layers { get; set; }
+        public virtual DbSet<view_Id_outer_user_login> view_Id_outer_user_login { get; set; }
+        public virtual DbSet<view_Id_PIC_user_login> view_Id_PIC_user_login { get; set; }
+        public virtual DbSet<View_ID_RDS> View_ID_RDS { get; set; }
+        public virtual DbSet<view_idObType4MarkPref> view_idObType4MarkPref { get; set; }
+        public virtual DbSet<view_item_const_forming_C1P> view_item_const_forming_C1P { get; set; }
+        public virtual DbSet<view_Item_construction_C1P> view_Item_construction_C1P { get; set; }
+        public virtual DbSet<view_Item_construction_modification_list_C1P> view_Item_construction_modification_list_C1P { get; set; }
+        public virtual DbSet<view_Item_modification_list_C1P> view_Item_modification_list_C1P { get; set; }
+        public virtual DbSet<view_ItemConstModif> view_ItemConstModif { get; set; }
+        public virtual DbSet<View_ItmConsID_by_idEndProdVer> View_ItmConsID_by_idEndProdVer { get; set; }
+        public virtual DbSet<View_ItmConsID_by_idEndProdVer2> View_ItmConsID_by_idEndProdVer2 { get; set; }
+        public virtual DbSet<View_ItmConsID_by_idEndProdVer3> View_ItmConsID_by_idEndProdVer3 { get; set; }
+        public virtual DbSet<View_ItmConsID_by_idEndProdVer4> View_ItmConsID_by_idEndProdVer4 { get; set; }
+        public virtual DbSet<View_ItmConsID_by_idEndProdVer5> View_ItmConsID_by_idEndProdVer5 { get; set; }
+        public virtual DbSet<View_ItmConsID_by_idEndProdVer6> View_ItmConsID_by_idEndProdVer6 { get; set; }
+        public virtual DbSet<view_ItmConsId_by_IdNPCon> view_ItmConsId_by_IdNPCon { get; set; }
+        public virtual DbSet<view_job_files> view_job_files { get; set; }
+        public virtual DbSet<view_job_files_4_Load> view_job_files_4_Load { get; set; }
+        public virtual DbSet<view_job_files_UUID_4_Load> view_job_files_UUID_4_Load { get; set; }
+        public virtual DbSet<view_ktd_heater_3d> view_ktd_heater_3d { get; set; }
+        public virtual DbSet<view_lines> view_lines { get; set; }
+        public virtual DbSet<view_managed_outer_alias> view_managed_outer_alias { get; set; }
+        public virtual DbSet<view_managed_outer_command> view_managed_outer_command { get; set; }
+        public virtual DbSet<view_managed_outer_group> view_managed_outer_group { get; set; }
+        public virtual DbSet<view_managed_PIC_command> view_managed_PIC_command { get; set; }
+        public virtual DbSet<view_managed_PIC_group> view_managed_PIC_group { get; set; }
+        public virtual DbSet<view_mark_code_type_C1P> view_mark_code_type_C1P { get; set; }
+        public virtual DbSet<view_mark4OSOSf> view_mark4OSOSf { get; set; }
+        public virtual DbSet<view_markName_Npcon_Mdm> view_markName_Npcon_Mdm { get; set; }
+        public virtual DbSet<view_markUnicNameT_cancel> view_markUnicNameT_cancel { get; set; }
+        public virtual DbSet<view_markUnicNameT_status> view_markUnicNameT_status { get; set; }
+        public virtual DbSet<view_Max_ID_EndPodVer_4_ID_EndProd> view_Max_ID_EndPodVer_4_ID_EndProd { get; set; }
+        public virtual DbSet<view_mbox> view_mbox { get; set; }
+        public virtual DbSet<view_MDM_NpCon_mark_C1P> view_MDM_NpCon_mark_C1P { get; set; }
+        public virtual DbSet<view_modif_and_param_4add> view_modif_and_param_4add { get; set; }
+        public virtual DbSet<view_modificators> view_modificators { get; set; }
+        public virtual DbSet<view_modificators_oldver> view_modificators_oldver { get; set; }
+        public virtual DbSet<view_modifType_4objType> view_modifType_4objType { get; set; }
+        public virtual DbSet<view_MODS_TO_MDM> view_MODS_TO_MDM { get; set; }
+        public virtual DbSet<view_msaspa_taskmanager_items_ALL> view_msaspa_taskmanager_items_ALL { get; set; }
+        public virtual DbSet<view_msaspa_taskmanager_items_work> view_msaspa_taskmanager_items_work { get; set; }
+        public virtual DbSet<view_node> view_node { get; set; }
+        public virtual DbSet<View_npcon_changed_idProd> View_npcon_changed_idProd { get; set; }
+        public virtual DbSet<View_npcon_changed_maxIdEndProdVer> View_npcon_changed_maxIdEndProdVer { get; set; }
+        public virtual DbSet<View_npcon_changed_product> View_npcon_changed_product { get; set; }
+        public virtual DbSet<View_npcon_changed_product_22_06_2020> View_npcon_changed_product_22_06_2020 { get; set; }
+        public virtual DbSet<View_npcon_changed_product_alter> View_npcon_changed_product_alter { get; set; }
+        public virtual DbSet<View_npcon_changed_product_chk_KTD> View_npcon_changed_product_chk_KTD { get; set; }
+        public virtual DbSet<View_npcon_changed_product_reserve_del> View_npcon_changed_product_reserve_del { get; set; }
+        public virtual DbSet<View_npcon_changed_product1> View_npcon_changed_product1 { get; set; }
+        public virtual DbSet<View_npcon_changed_product3> View_npcon_changed_product3 { get; set; }
+        public virtual DbSet<View_npcon_changed_product4> View_npcon_changed_product4 { get; set; }
+        public virtual DbSet<view_NPCon_mods> view_NPCon_mods { get; set; }
+        public virtual DbSet<view_NPCon_mods_1> view_NPCon_mods_1 { get; set; }
+        public virtual DbSet<view_objalbumorgost> view_objalbumorgost { get; set; }
+        public virtual DbSet<view_objconsist> view_objconsist { get; set; }
+        public virtual DbSet<view_OS_Ropes> view_OS_Ropes { get; set; }
+        public virtual DbSet<view_permtype> view_permtype { get; set; }
+        public virtual DbSet<view_person_alias_4_login_users> view_person_alias_4_login_users { get; set; }
+        public virtual DbSet<view_product> view_product { get; set; }
+        public virtual DbSet<view_product_dim_1> view_product_dim_1 { get; set; }
+        public virtual DbSet<view_product_dim_1_Group> view_product_dim_1_Group { get; set; }
+        public virtual DbSet<view_Product_Mark_C1P> view_Product_Mark_C1P { get; set; }
+        public virtual DbSet<view_product_modification> view_product_modification { get; set; }
+        public virtual DbSet<view_Raw_Units> view_Raw_Units { get; set; }
+        public virtual DbSet<view_RDS> view_RDS { get; set; }
+        public virtual DbSet<view_Shelf_mark_MaxID> view_Shelf_mark_MaxID { get; set; }
+        public virtual DbSet<view_spiral_hose> view_spiral_hose { get; set; }
+        public virtual DbSet<view_strip> view_strip { get; set; }
+        public virtual DbSet<view_svod_ASPA> view_svod_ASPA { get; set; }
+        public virtual DbSet<view_TEMP_PR_last_UUID> view_TEMP_PR_last_UUID { get; set; }
+        public virtual DbSet<View_TEMP1C> View_TEMP1C { get; set; }
+        public virtual DbSet<view_test_mark07> view_test_mark07 { get; set; }
+        public virtual DbSet<view_tube> view_tube { get; set; }
+        public virtual DbSet<view_user_alias_lisp> view_user_alias_lisp { get; set; }
+        public virtual DbSet<view_user_domain> view_user_domain { get; set; }
+        public virtual DbSet<view_user_domain_roles> view_user_domain_roles { get; set; }
+        public virtual DbSet<view_WINDOWS> view_WINDOWS { get; set; }
+        public virtual DbSet<view_wood> view_wood { get; set; }
+        public virtual DbSet<view_WrkFile_MarkMails> view_WrkFile_MarkMails { get; set; }
+        public virtual DbSet<view_WrkFile_MarkPlans> view_WrkFile_MarkPlans { get; set; }
+        public virtual DbSet<view_WrkFile_MarkProducts> view_WrkFile_MarkProducts { get; set; }
+        public virtual DbSet<view_ПравильныеПроёмыМарок> view_ПравильныеПроёмыМарок { get; set; }
+        public virtual DbSet<view_РазницаПараметров2> view_РазницаПараметров2 { get; set; }
+        public virtual DbSet<View_РазницаПараметров3> View_РазницаПараметров3 { get; set; }
+        public virtual DbSet<View_РазницаПараметров4> View_РазницаПараметров4 { get; set; }
+        public virtual DbSet<View_РазницаПараметров5> View_РазницаПараметров5 { get; set; }
+        public virtual DbSet<View_СравнениеПараметров_1С_МДМ_NPCon> View_СравнениеПараметров_1С_МДМ_NPCon { get; set; }
+        public virtual DbSet<view1> view1 { get; set; }
+        public virtual DbSet<viewNodesContent> viewNodesContents { get; set; }
+        public virtual DbSet<ZAKL_ANKERA_all_comp> ZAKL_ANKERA_all_comp { get; set; }
+        public virtual DbSet<viewIfcModificator> viewIfcModificators { get; set; }
+        public virtual DbSet<viewProjectData> viewProjectDatas { get; set; }
+        public virtual DbSet<view_UserActivityStat> view_UserActivityStat { get; set; }
+    
+        public virtual int add_product_modification(Nullable<int> id_object_prod, Nullable<int> id_prod_modif, Nullable<int> id_modif, Nullable<bool> modif_exist, string modif_param_value, Nullable<int> height, Nullable<int> width, Nullable<int> thickness)
+        {
+            var id_object_prodParameter = id_object_prod.HasValue ?
+                new ObjectParameter("id_object_prod", id_object_prod) :
+                new ObjectParameter("id_object_prod", typeof(int));
+    
+            var id_prod_modifParameter = id_prod_modif.HasValue ?
+                new ObjectParameter("id_prod_modif", id_prod_modif) :
+                new ObjectParameter("id_prod_modif", typeof(int));
+    
+            var id_modifParameter = id_modif.HasValue ?
+                new ObjectParameter("id_modif", id_modif) :
+                new ObjectParameter("id_modif", typeof(int));
+    
+            var modif_existParameter = modif_exist.HasValue ?
+                new ObjectParameter("modif_exist", modif_exist) :
+                new ObjectParameter("modif_exist", typeof(bool));
+    
+            var modif_param_valueParameter = modif_param_value != null ?
+                new ObjectParameter("modif_param_value", modif_param_value) :
+                new ObjectParameter("modif_param_value", typeof(string));
+    
+            var heightParameter = height.HasValue ?
+                new ObjectParameter("height", height) :
+                new ObjectParameter("height", typeof(int));
+    
+            var widthParameter = width.HasValue ?
+                new ObjectParameter("width", width) :
+                new ObjectParameter("width", typeof(int));
+    
+            var thicknessParameter = thickness.HasValue ?
+                new ObjectParameter("thickness", thickness) :
+                new ObjectParameter("thickness", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("add_product_modification", id_object_prodParameter, id_prod_modifParameter, id_modifParameter, modif_existParameter, modif_param_valueParameter, heightParameter, widthParameter, thicknessParameter);
+        }
+    
+        public virtual int Aperture_deletion(Nullable<int> ver, Nullable<int> aper_type, Nullable<int> quan, Nullable<int> aper_type1, Nullable<int> quan1)
+        {
+            var verParameter = ver.HasValue ?
+                new ObjectParameter("ver", ver) :
+                new ObjectParameter("ver", typeof(int));
+    
+            var aper_typeParameter = aper_type.HasValue ?
+                new ObjectParameter("aper_type", aper_type) :
+                new ObjectParameter("aper_type", typeof(int));
+    
+            var quanParameter = quan.HasValue ?
+                new ObjectParameter("quan", quan) :
+                new ObjectParameter("quan", typeof(int));
+    
+            var aper_type1Parameter = aper_type1.HasValue ?
+                new ObjectParameter("aper_type1", aper_type1) :
+                new ObjectParameter("aper_type1", typeof(int));
+    
+            var quan1Parameter = quan1.HasValue ?
+                new ObjectParameter("quan1", quan1) :
+                new ObjectParameter("quan1", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Aperture_deletion", verParameter, aper_typeParameter, quanParameter, aper_type1Parameter, quan1Parameter);
+        }
+    
+        public virtual int backup_NPCon()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("backup_NPCon");
+        }
+    
+        public virtual int charlist_to_table_sp(string list, string delimiter)
+        {
+            var listParameter = list != null ?
+                new ObjectParameter("list", list) :
+                new ObjectParameter("list", typeof(string));
+    
+            var delimiterParameter = delimiter != null ?
+                new ObjectParameter("delimiter", delimiter) :
+                new ObjectParameter("delimiter", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("charlist_to_table_sp", listParameter, delimiterParameter);
+        }
+    
+        [DbFunction("NPConConnectionString", "charlistMark_to_type")]
+        public virtual IQueryable<charlistMark_to_type_Result> charlistMark_to_type(string list, string delimiter)
+        {
+            var listParameter = list != null ?
+                new ObjectParameter("list", list) :
+                new ObjectParameter("list", typeof(string));
+    
+            var delimiterParameter = delimiter != null ?
+                new ObjectParameter("delimiter", delimiter) :
+                new ObjectParameter("delimiter", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<charlistMark_to_type_Result>("[NPConConnectionString].[charlistMark_to_type](@list, @delimiter)", listParameter, delimiterParameter);
+        }
+    
+        [DbFunction("NPConConnectionString", "chk_elements")]
+        public virtual IQueryable<chk_elements_Result> chk_elements(string defContent)
+        {
+            var defContentParameter = defContent != null ?
+                new ObjectParameter("DefContent", defContent) :
+                new ObjectParameter("DefContent", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<chk_elements_Result>("[NPConConnectionString].[chk_elements](@DefContent)", defContentParameter);
+        }
+    
+        public virtual int copy_MDM_Objects()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("copy_MDM_Objects");
+        }
+    
+        public virtual int DaylyBackUp()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DaylyBackUp");
+        }
+    
+        public virtual ObjectResult<findddldmltriggers_Result> findddldmltriggers()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<findddldmltriggers_Result>("findddldmltriggers");
+        }
+    
+        public virtual int get_lastMark_rank(string makr)
+        {
+            var makrParameter = makr != null ?
+                new ObjectParameter("makr", makr) :
+                new ObjectParameter("makr", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("get_lastMark_rank", makrParameter);
+        }
+    
+        [DbFunction("NPConConnectionString", "get_property_4_control")]
+        public virtual IQueryable<string> get_property_4_control(string controlName)
+        {
+            var controlNameParameter = controlName != null ?
+                new ObjectParameter("controlName", controlName) :
+                new ObjectParameter("controlName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<string>("[NPConConnectionString].[get_property_4_control](@controlName)", controlNameParameter);
+        }
+    
+        [DbFunction("NPConConnectionString", "get_Zaklad_ByParam")]
+        public virtual IQueryable<get_Zaklad_ByParam_Result> get_Zaklad_ByParam(Nullable<int> a, Nullable<int> b)
+        {
+            var aParameter = a.HasValue ?
+                new ObjectParameter("a", a) :
+                new ObjectParameter("a", typeof(int));
+    
+            var bParameter = b.HasValue ?
+                new ObjectParameter("b", b) :
+                new ObjectParameter("b", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<get_Zaklad_ByParam_Result>("[NPConConnectionString].[get_Zaklad_ByParam](@a, @b)", aParameter, bParameter);
+        }
+    
+        [DbFunction("NPConConnectionString", "GetMailDate4WrkFile")]
+        public virtual IQueryable<string> GetMailDate4WrkFile(Nullable<int> varr2)
+        {
+            var varr2Parameter = varr2.HasValue ?
+                new ObjectParameter("varr2", varr2) :
+                new ObjectParameter("varr2", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<string>("[NPConConnectionString].[GetMailDate4WrkFile](@varr2)", varr2Parameter);
+        }
+    
+        public virtual int GetRightMark_v3_DELETE(string markName, ObjectParameter rightMark)
+        {
+            var markNameParameter = markName != null ?
+                new ObjectParameter("markName", markName) :
+                new ObjectParameter("markName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GetRightMark_v3_DELETE", markNameParameter, rightMark);
+        }
+    
+        public virtual ObjectResult<string> GetRightMark_v4_DELETE(string markName)
+        {
+            var markNameParameter = markName != null ?
+                new ObjectParameter("markName", markName) :
+                new ObjectParameter("markName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("GetRightMark_v4_DELETE", markNameParameter);
+        }
+    
+        [DbFunction("NPConConnectionString", "idObjectContainsThis")]
+        public virtual IQueryable<Nullable<int>> idObjectContainsThis(Nullable<int> varr2)
+        {
+            var varr2Parameter = varr2.HasValue ?
+                new ObjectParameter("varr2", varr2) :
+                new ObjectParameter("varr2", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Nullable<int>>("[NPConConnectionString].[idObjectContainsThis](@varr2)", varr2Parameter);
+        }
+    
+        [DbFunction("NPConConnectionString", "IdWorkFiles4Mark")]
+        public virtual IQueryable<IdWorkFiles4Mark_Result> IdWorkFiles4Mark(string markTrim, Nullable<int> idWorkType)
+        {
+            var markTrimParameter = markTrim != null ?
+                new ObjectParameter("MarkTrim", markTrim) :
+                new ObjectParameter("MarkTrim", typeof(string));
+    
+            var idWorkTypeParameter = idWorkType.HasValue ?
+                new ObjectParameter("IdWorkType", idWorkType) :
+                new ObjectParameter("IdWorkType", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<IdWorkFiles4Mark_Result>("[NPConConnectionString].[IdWorkFiles4Mark](@MarkTrim, @IdWorkType)", markTrimParameter, idWorkTypeParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> InteractiveAlbumsFill(string albName, string nodeName, Nullable<int> thick, Nullable<int> depth, string descr, Nullable<bool> update)
+        {
+            var albNameParameter = albName != null ?
+                new ObjectParameter("albName", albName) :
+                new ObjectParameter("albName", typeof(string));
+    
+            var nodeNameParameter = nodeName != null ?
+                new ObjectParameter("nodeName", nodeName) :
+                new ObjectParameter("nodeName", typeof(string));
+    
+            var thickParameter = thick.HasValue ?
+                new ObjectParameter("thick", thick) :
+                new ObjectParameter("thick", typeof(int));
+    
+            var depthParameter = depth.HasValue ?
+                new ObjectParameter("depth", depth) :
+                new ObjectParameter("depth", typeof(int));
+    
+            var descrParameter = descr != null ?
+                new ObjectParameter("descr", descr) :
+                new ObjectParameter("descr", typeof(string));
+    
+            var updateParameter = update.HasValue ?
+                new ObjectParameter("update", update) :
+                new ObjectParameter("update", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("InteractiveAlbumsFill", albNameParameter, nodeNameParameter, thickParameter, depthParameter, descrParameter, updateParameter);
+        }
+    
+        [DbFunction("NPConConnectionString", "job_files_4_Load_limitDate")]
+        public virtual IQueryable<job_files_4_Load_limitDate_Result> job_files_4_Load_limitDate()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<job_files_4_Load_limitDate_Result>("[NPConConnectionString].[job_files_4_Load_limitDate]()");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> k1_to_objectconsist_LSP(Nullable<int> id_New_object_prod, string mainBlkName, Nullable<int> len_in_mm, ObjectParameter retId_objectconsist)
+        {
+            var id_New_object_prodParameter = id_New_object_prod.HasValue ?
+                new ObjectParameter("id_New_object_prod", id_New_object_prod) :
+                new ObjectParameter("id_New_object_prod", typeof(int));
+    
+            var mainBlkNameParameter = mainBlkName != null ?
+                new ObjectParameter("MainBlkName", mainBlkName) :
+                new ObjectParameter("MainBlkName", typeof(string));
+    
+            var len_in_mmParameter = len_in_mm.HasValue ?
+                new ObjectParameter("Len_in_mm", len_in_mm) :
+                new ObjectParameter("Len_in_mm", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("k1_to_objectconsist_LSP", id_New_object_prodParameter, mainBlkNameParameter, len_in_mmParameter, retId_objectconsist);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> k1_to_p_object_LSP(string mainBlkName, Nullable<int> len_in_mm, ObjectParameter retId)
+        {
+            var mainBlkNameParameter = mainBlkName != null ?
+                new ObjectParameter("MainBlkName", mainBlkName) :
+                new ObjectParameter("MainBlkName", typeof(string));
+    
+            var len_in_mmParameter = len_in_mm.HasValue ?
+                new ObjectParameter("Len_in_mm", len_in_mm) :
+                new ObjectParameter("Len_in_mm", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("k1_to_p_object_LSP", mainBlkNameParameter, len_in_mmParameter, retId);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> k1_to_product_LSP(Nullable<int> id_New_object_prod, string mainBlkName, Nullable<int> len_in_mm, ObjectParameter retId_prod)
+        {
+            var id_New_object_prodParameter = id_New_object_prod.HasValue ?
+                new ObjectParameter("id_New_object_prod", id_New_object_prod) :
+                new ObjectParameter("id_New_object_prod", typeof(int));
+    
+            var mainBlkNameParameter = mainBlkName != null ?
+                new ObjectParameter("MainBlkName", mainBlkName) :
+                new ObjectParameter("MainBlkName", typeof(string));
+    
+            var len_in_mmParameter = len_in_mm.HasValue ?
+                new ObjectParameter("Len_in_mm", len_in_mm) :
+                new ObjectParameter("Len_in_mm", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("k1_to_product_LSP", id_New_object_prodParameter, mainBlkNameParameter, len_in_mmParameter, retId_prod);
+        }
+    
+        public virtual int load_from_tableau()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("load_from_tableau");
+        }
+    
+        public virtual int Load_Modif_thicknessByTable()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Load_Modif_thicknessByTable");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> NetAWM_insertion(string mark, string route, string album, string list, string netMark, string blkMark, string elements)
+        {
+            var markParameter = mark != null ?
+                new ObjectParameter("mark", mark) :
+                new ObjectParameter("mark", typeof(string));
+    
+            var routeParameter = route != null ?
+                new ObjectParameter("route", route) :
+                new ObjectParameter("route", typeof(string));
+    
+            var albumParameter = album != null ?
+                new ObjectParameter("album", album) :
+                new ObjectParameter("album", typeof(string));
+    
+            var listParameter = list != null ?
+                new ObjectParameter("list", list) :
+                new ObjectParameter("list", typeof(string));
+    
+            var netMarkParameter = netMark != null ?
+                new ObjectParameter("NetMark", netMark) :
+                new ObjectParameter("NetMark", typeof(string));
+    
+            var blkMarkParameter = blkMark != null ?
+                new ObjectParameter("blkMark", blkMark) :
+                new ObjectParameter("blkMark", typeof(string));
+    
+            var elementsParameter = elements != null ?
+                new ObjectParameter("Elements", elements) :
+                new ObjectParameter("Elements", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("NetAWM_insertion", markParameter, routeParameter, albumParameter, listParameter, netMarkParameter, blkMarkParameter, elementsParameter);
+        }
+    
+        public virtual int nm_ST0_get_nm_from_parsing()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("nm_ST0_get_nm_from_parsing");
+        }
+    
+        public virtual int nm_ST1_4_to_check_rows()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("nm_ST1_4_to_check_rows");
+        }
+    
+        public virtual ObjectResult<nm_ST10_insert_mark_geometry_to_MMG_Result> nm_ST10_insert_mark_geometry_to_MMG()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<nm_ST10_insert_mark_geometry_to_MMG_Result>("nm_ST10_insert_mark_geometry_to_MMG");
+        }
+    
+        public virtual int nm_ST11_add_mark_geometry_to_MDM()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("nm_ST11_add_mark_geometry_to_MDM");
+        }
+    
+        public virtual int nm_ST1_1_MDM_unknown_mark_insert()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("nm_ST1_1_MDM_unknown_mark_insert");
+        }
+    
+        public virtual int nm_ST2_to_check_DELETED()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("nm_ST2_to_check_DELETED");
+        }
+    
+        public virtual int nm_ST3_delete_confirmation()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("nm_ST3_delete_confirmation");
+        }
+    
+        public virtual int nm_ST5_confirm_rows_to_MDM()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("nm_ST5_confirm_rows_to_MDM");
+        }
+    
+        public virtual int nm_ST9_get_geometry(string marks)
+        {
+            var marksParameter = marks != null ?
+                new ObjectParameter("marks", marks) :
+                new ObjectParameter("marks", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("nm_ST9_get_geometry", marksParameter);
+        }
+    
+        public virtual int nodeSaveAlbum(string albumString)
+        {
+            var albumStringParameter = albumString != null ?
+                new ObjectParameter("albumString", albumString) :
+                new ObjectParameter("albumString", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("nodeSaveAlbum", albumStringParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<System.Guid>> nodeSaveDrawing(string nodeContentString)
+        {
+            var nodeContentStringParameter = nodeContentString != null ?
+                new ObjectParameter("nodeContentString", nodeContentString) :
+                new ObjectParameter("nodeContentString", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<System.Guid>>("nodeSaveDrawing", nodeContentStringParameter);
+        }
+    
+        [DbFunction("NPConConnectionString", "Permissions_4DB")]
+        public virtual IQueryable<Permissions_4DB_Result> Permissions_4DB()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Permissions_4DB_Result>("[NPConConnectionString].[Permissions_4DB]()");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> procASpecCreatePObjecItem(string markName)
+        {
+            var markNameParameter = markName != null ?
+                new ObjectParameter("MarkName", markName) :
+                new ObjectParameter("MarkName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("procASpecCreatePObjecItem", markNameParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> RUN_k1_to_P_Obj_Prod_OjbCons_LSP(string mainBlkName, Nullable<int> len_in_mm, ObjectParameter retId_k1)
+        {
+            var mainBlkNameParameter = mainBlkName != null ?
+                new ObjectParameter("MainBlkName", mainBlkName) :
+                new ObjectParameter("MainBlkName", typeof(string));
+    
+            var len_in_mmParameter = len_in_mm.HasValue ?
+                new ObjectParameter("Len_in_mm", len_in_mm) :
+                new ObjectParameter("Len_in_mm", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("RUN_k1_to_P_Obj_Prod_OjbCons_LSP", mainBlkNameParameter, len_in_mmParameter, retId_k1);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> RUN_k1_to_P_Obj_Prod_OjbCons_silent_LSP(string mainBlkName, Nullable<int> len_in_mm)
+        {
+            var mainBlkNameParameter = mainBlkName != null ?
+                new ObjectParameter("MainBlkName", mainBlkName) :
+                new ObjectParameter("MainBlkName", typeof(string));
+    
+            var len_in_mmParameter = len_in_mm.HasValue ?
+                new ObjectParameter("Len_in_mm", len_in_mm) :
+                new ObjectParameter("Len_in_mm", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("RUN_k1_to_P_Obj_Prod_OjbCons_silent_LSP", mainBlkNameParameter, len_in_mmParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> save_Concrete(string comp, string @class, string binder, string frost, string water, string concLayer)
+        {
+            var compParameter = comp != null ?
+                new ObjectParameter("comp", comp) :
+                new ObjectParameter("comp", typeof(string));
+    
+            var classParameter = @class != null ?
+                new ObjectParameter("class", @class) :
+                new ObjectParameter("class", typeof(string));
+    
+            var binderParameter = binder != null ?
+                new ObjectParameter("binder", binder) :
+                new ObjectParameter("binder", typeof(string));
+    
+            var frostParameter = frost != null ?
+                new ObjectParameter("frost", frost) :
+                new ObjectParameter("frost", typeof(string));
+    
+            var waterParameter = water != null ?
+                new ObjectParameter("water", water) :
+                new ObjectParameter("water", typeof(string));
+    
+            var concLayerParameter = concLayer != null ?
+                new ObjectParameter("ConcLayer", concLayer) :
+                new ObjectParameter("ConcLayer", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("save_Concrete", compParameter, classParameter, binderParameter, frostParameter, waterParameter, concLayerParameter);
+        }
+    
+        public virtual int sleeve_insertion(string slName, string slPattern, string lng)
+        {
+            var slNameParameter = slName != null ?
+                new ObjectParameter("SlName", slName) :
+                new ObjectParameter("SlName", typeof(string));
+    
+            var slPatternParameter = slPattern != null ?
+                new ObjectParameter("SlPattern", slPattern) :
+                new ObjectParameter("SlPattern", typeof(string));
+    
+            var lngParameter = lng != null ?
+                new ObjectParameter("lng", lng) :
+                new ObjectParameter("lng", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sleeve_insertion", slNameParameter, slPatternParameter, lngParameter);
+        }
+    
+        public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var versionParameter = version.HasValue ?
+                new ObjectParameter("version", version) :
+                new ObjectParameter("version", typeof(int));
+    
+            var definitionParameter = definition != null ?
+                new ObjectParameter("definition", definition) :
+                new ObjectParameter("definition", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+        }
+    
+        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var versionParameter = version.HasValue ?
+                new ObjectParameter("version", version) :
+                new ObjectParameter("version", typeof(int));
+    
+            var definitionParameter = definition != null ?
+                new ObjectParameter("definition", definition) :
+                new ObjectParameter("definition", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+        }
+    
+        public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual int sp_enumerrorlogs(Nullable<int> p1)
+        {
+            var p1Parameter = p1.HasValue ?
+                new ObjectParameter("p1", p1) :
+                new ObjectParameter("p1", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_enumerrorlogs", p1Parameter);
+        }
+    
+        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var new_diagramnameParameter = new_diagramname != null ?
+                new ObjectParameter("new_diagramname", new_diagramname) :
+                new ObjectParameter("new_diagramname", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
+        }
+    
+        public virtual int sp_upgraddiagrams()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        public virtual ObjectResult<ST_AP_1_check_and_insert_Result> ST_AP_1_check_and_insert()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ST_AP_1_check_and_insert_Result>("ST_AP_1_check_and_insert");
+        }
+    
+        public virtual ObjectResult<ST_AP_2_transfer_to__tabs_Result> ST_AP_2_transfer_to__tabs()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ST_AP_2_transfer_to__tabs_Result>("ST_AP_2_transfer_to__tabs");
+        }
+    
+        public virtual ObjectResult<ST_AP_3_mods_checking_Result> ST_AP_3_mods_checking()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ST_AP_3_mods_checking_Result>("ST_AP_3_mods_checking");
+        }
+    
+        public virtual int ST_Modifs_to_1C_all(string marks)
+        {
+            var marksParameter = marks != null ?
+                new ObjectParameter("marks", marks) :
+                new ObjectParameter("marks", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ST_Modifs_to_1C_all", marksParameter);
+        }
+    
+        public virtual int ST_Modifs_to_1C_all_new_mods(string marks)
+        {
+            var marksParameter = marks != null ?
+                new ObjectParameter("marks", marks) :
+                new ObjectParameter("marks", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ST_Modifs_to_1C_all_new_mods", marksParameter);
+        }
+    
+        public virtual int ST_Modifs_to_1C_WO_ERR(string marks)
+        {
+            var marksParameter = marks != null ?
+                new ObjectParameter("marks", marks) :
+                new ObjectParameter("marks", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ST_Modifs_to_1C_WO_ERR", marksParameter);
+        }
+    
+        public virtual int ST_parsing_to_1C(string marks)
+        {
+            var marksParameter = marks != null ?
+                new ObjectParameter("marks", marks) :
+                new ObjectParameter("marks", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ST_parsing_to_1C", marksParameter);
+        }
+    
+        public virtual ObjectResult<ST6_W_D_to_chk_Result> ST6_W_D_to_chk()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ST6_W_D_to_chk_Result>("ST6_W_D_to_chk");
+        }
+    
+        public virtual ObjectResult<ST7_chk_to_WINDOWS_Result> ST7_chk_to_WINDOWS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ST7_chk_to_WINDOWS_Result>("ST7_chk_to_WINDOWS");
+        }
+    
+        public virtual ObjectResult<ST8_chk_to_DOORs_Result> ST8_chk_to_DOORs()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ST8_chk_to_DOORs_Result>("ST8_chk_to_DOORs");
+        }
+    
+        public virtual int temp_Load_Modif(string pref, Nullable<int> modif_66_value, Nullable<int> modif_67_value, Nullable<int> modif_68_value)
+        {
+            var prefParameter = pref != null ?
+                new ObjectParameter("pref", pref) :
+                new ObjectParameter("pref", typeof(string));
+    
+            var modif_66_valueParameter = modif_66_value.HasValue ?
+                new ObjectParameter("modif_66_value", modif_66_value) :
+                new ObjectParameter("modif_66_value", typeof(int));
+    
+            var modif_67_valueParameter = modif_67_value.HasValue ?
+                new ObjectParameter("modif_67_value", modif_67_value) :
+                new ObjectParameter("modif_67_value", typeof(int));
+    
+            var modif_68_valueParameter = modif_68_value.HasValue ?
+                new ObjectParameter("modif_68_value", modif_68_value) :
+                new ObjectParameter("modif_68_value", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("temp_Load_Modif", prefParameter, modif_66_valueParameter, modif_67_valueParameter, modif_68_valueParameter);
+        }
+    
+        [DbFunction("NPConConnectionString", "User_CmdAlias")]
+        public virtual IQueryable<string> User_CmdAlias(string userName)
+        {
+            var userNameParameter = userName != null ?
+                new ObjectParameter("userName", userName) :
+                new ObjectParameter("userName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<string>("[NPConConnectionString].[User_CmdAlias](@userName)", userNameParameter);
+        }
+    
+        public virtual int VC_chk_el(string idVer, string defContent, ObjectParameter defaultContent)
+        {
+            var idVerParameter = idVer != null ?
+                new ObjectParameter("IdVer", idVer) :
+                new ObjectParameter("IdVer", typeof(string));
+    
+            var defContentParameter = defContent != null ?
+                new ObjectParameter("DefContent", defContent) :
+                new ObjectParameter("DefContent", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("VC_chk_el", idVerParameter, defContentParameter, defaultContent);
+        }
+    
+        [DbFunction("NPConConnectionString", "ver_change_last_time")]
+        public virtual IQueryable<ver_change_last_time_Result> ver_change_last_time(Nullable<int> id_ver)
+        {
+            var id_verParameter = id_ver.HasValue ?
+                new ObjectParameter("id_ver", id_ver) :
+                new ObjectParameter("id_ver", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<ver_change_last_time_Result>("[NPConConnectionString].[ver_change_last_time](@id_ver)", id_verParameter);
+        }
+    
+        public virtual int ver_consistancy(string idVerArray, string buttonName, string defaultContent, string addContent)
+        {
+            var idVerArrayParameter = idVerArray != null ?
+                new ObjectParameter("IdVerArray", idVerArray) :
+                new ObjectParameter("IdVerArray", typeof(string));
+    
+            var buttonNameParameter = buttonName != null ?
+                new ObjectParameter("ButtonName", buttonName) :
+                new ObjectParameter("ButtonName", typeof(string));
+    
+            var defaultContentParameter = defaultContent != null ?
+                new ObjectParameter("DefaultContent", defaultContent) :
+                new ObjectParameter("DefaultContent", typeof(string));
+    
+            var addContentParameter = addContent != null ?
+                new ObjectParameter("AddContent", addContent) :
+                new ObjectParameter("AddContent", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ver_consistancy", idVerArrayParameter, buttonNameParameter, defaultContentParameter, addContentParameter);
+        }
+    
+        [DbFunction("NPConConnectionString", "view_job_files_4_Load_limitDate")]
+        public virtual IQueryable<view_job_files_4_Load_limitDate_Result> view_job_files_4_Load_limitDate(Nullable<System.DateTime> dd)
+        {
+            var ddParameter = dd.HasValue ?
+                new ObjectParameter("dd", dd) :
+                new ObjectParameter("dd", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<view_job_files_4_Load_limitDate_Result>("[NPConConnectionString].[view_job_files_4_Load_limitDate](@dd)", ddParameter);
+        }
+    
+        [DbFunction("NPConConnectionString", "WorkFiles4Mark")]
+        public virtual IQueryable<WorkFiles4Mark_Result> WorkFiles4Mark(string markTrim, Nullable<int> idWorkType)
+        {
+            var markTrimParameter = markTrim != null ?
+                new ObjectParameter("MarkTrim", markTrim) :
+                new ObjectParameter("MarkTrim", typeof(string));
+    
+            var idWorkTypeParameter = idWorkType.HasValue ?
+                new ObjectParameter("IdWorkType", idWorkType) :
+                new ObjectParameter("IdWorkType", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<WorkFiles4Mark_Result>("[NPConConnectionString].[WorkFiles4Mark](@MarkTrim, @IdWorkType)", markTrimParameter, idWorkTypeParameter);
+        }
+    
+        public virtual int clearAllDatas()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("clearAllDatas");
+        }
+    
+        public virtual ObjectResult<Nullable<System.Guid>> procAddAssemble(string assembly_Compare_LISP, string assembly_Parameters_LISP)
+        {
+            var assembly_Compare_LISPParameter = assembly_Compare_LISP != null ?
+                new ObjectParameter("Assembly_Compare_LISP", assembly_Compare_LISP) :
+                new ObjectParameter("Assembly_Compare_LISP", typeof(string));
+    
+            var assembly_Parameters_LISPParameter = assembly_Parameters_LISP != null ?
+                new ObjectParameter("Assembly_Parameters_LISP", assembly_Parameters_LISP) :
+                new ObjectParameter("Assembly_Parameters_LISP", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<System.Guid>>("procAddAssemble", assembly_Compare_LISPParameter, assembly_Parameters_LISPParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<System.Guid>> procAddKzi(string name_KZI, Nullable<System.Guid> uID_Assembly, string p2d_plane, string p2d_facade, Nullable<int> workFileId)
+        {
+            var name_KZIParameter = name_KZI != null ?
+                new ObjectParameter("Name_KZI", name_KZI) :
+                new ObjectParameter("Name_KZI", typeof(string));
+    
+            var uID_AssemblyParameter = uID_Assembly.HasValue ?
+                new ObjectParameter("UID_Assembly", uID_Assembly) :
+                new ObjectParameter("UID_Assembly", typeof(System.Guid));
+    
+            var p2d_planeParameter = p2d_plane != null ?
+                new ObjectParameter("p2d_plane", p2d_plane) :
+                new ObjectParameter("p2d_plane", typeof(string));
+    
+            var p2d_facadeParameter = p2d_facade != null ?
+                new ObjectParameter("p2d_facade", p2d_facade) :
+                new ObjectParameter("p2d_facade", typeof(string));
+    
+            var workFileIdParameter = workFileId.HasValue ?
+                new ObjectParameter("WorkFileId", workFileId) :
+                new ObjectParameter("WorkFileId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<System.Guid>>("procAddKzi", name_KZIParameter, uID_AssemblyParameter, p2d_planeParameter, p2d_facadeParameter, workFileIdParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<System.Guid>> procAddNomenclature(string name, string geometry_Compare, string parameter_Compare, string geometry_Part, string matrix_Assembly)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            var geometry_CompareParameter = geometry_Compare != null ?
+                new ObjectParameter("Geometry_Compare", geometry_Compare) :
+                new ObjectParameter("Geometry_Compare", typeof(string));
+    
+            var parameter_CompareParameter = parameter_Compare != null ?
+                new ObjectParameter("Parameter_Compare", parameter_Compare) :
+                new ObjectParameter("Parameter_Compare", typeof(string));
+    
+            var geometry_PartParameter = geometry_Part != null ?
+                new ObjectParameter("Geometry_Part", geometry_Part) :
+                new ObjectParameter("Geometry_Part", typeof(string));
+    
+            var matrix_AssemblyParameter = matrix_Assembly != null ?
+                new ObjectParameter("Matrix_Assembly", matrix_Assembly) :
+                new ObjectParameter("Matrix_Assembly", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<System.Guid>>("procAddNomenclature", nameParameter, geometry_CompareParameter, parameter_CompareParameter, geometry_PartParameter, matrix_AssemblyParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<System.Guid>> procAddpart(string part_Geometry_LISP, string part_Compare_LISP, string part_Parameters_LISP)
+        {
+            var part_Geometry_LISPParameter = part_Geometry_LISP != null ?
+                new ObjectParameter("Part_Geometry_LISP", part_Geometry_LISP) :
+                new ObjectParameter("Part_Geometry_LISP", typeof(string));
+    
+            var part_Compare_LISPParameter = part_Compare_LISP != null ?
+                new ObjectParameter("Part_Compare_LISP", part_Compare_LISP) :
+                new ObjectParameter("Part_Compare_LISP", typeof(string));
+    
+            var part_Parameters_LISPParameter = part_Parameters_LISP != null ?
+                new ObjectParameter("Part_Parameters_LISP", part_Parameters_LISP) :
+                new ObjectParameter("Part_Parameters_LISP", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<System.Guid>>("procAddpart", part_Geometry_LISPParameter, part_Compare_LISPParameter, part_Parameters_LISPParameter);
+        }
+    
+        public virtual int procSaveAllData(string xmlDoc)
+        {
+            var xmlDocParameter = xmlDoc != null ?
+                new ObjectParameter("XmlDoc", xmlDoc) :
+                new ObjectParameter("XmlDoc", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("procSaveAllData", xmlDocParameter);
+        }
+    
+        public virtual int procSaveParse(string projectString, string parseString, string listString)
+        {
+            var projectStringParameter = projectString != null ?
+                new ObjectParameter("ProjectString", projectString) :
+                new ObjectParameter("ProjectString", typeof(string));
+    
+            var parseStringParameter = parseString != null ?
+                new ObjectParameter("ParseString", parseString) :
+                new ObjectParameter("ParseString", typeof(string));
+    
+            var listStringParameter = listString != null ?
+                new ObjectParameter("ListString", listString) :
+                new ObjectParameter("ListString", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("procSaveParse", projectStringParameter, parseStringParameter, listStringParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<System.Guid>> procSaveProjectData(string projectString)
+        {
+            var projectStringParameter = projectString != null ?
+                new ObjectParameter("ProjectString", projectString) :
+                new ObjectParameter("ProjectString", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<System.Guid>>("procSaveProjectData", projectStringParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<System.Guid>> procSaveProjectSpec(Nullable<System.Guid> floorId, string projectSpecString)
+        {
+            var floorIdParameter = floorId.HasValue ?
+                new ObjectParameter("FloorId", floorId) :
+                new ObjectParameter("FloorId", typeof(System.Guid));
+    
+            var projectSpecStringParameter = projectSpecString != null ?
+                new ObjectParameter("ProjectSpecString", projectSpecString) :
+                new ObjectParameter("ProjectSpecString", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<System.Guid>>("procSaveProjectSpec", floorIdParameter, projectSpecStringParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<System.Guid>> procSaveDatas(string pUserLogin, string pCompName, string pStartAcad, string pEndAcad, Nullable<int> pFullTimeWork)
+        {
+            var pUserLoginParameter = pUserLogin != null ?
+                new ObjectParameter("pUserLogin", pUserLogin) :
+                new ObjectParameter("pUserLogin", typeof(string));
+    
+            var pCompNameParameter = pCompName != null ?
+                new ObjectParameter("pCompName", pCompName) :
+                new ObjectParameter("pCompName", typeof(string));
+    
+            var pStartAcadParameter = pStartAcad != null ?
+                new ObjectParameter("pStartAcad", pStartAcad) :
+                new ObjectParameter("pStartAcad", typeof(string));
+    
+            var pEndAcadParameter = pEndAcad != null ?
+                new ObjectParameter("pEndAcad", pEndAcad) :
+                new ObjectParameter("pEndAcad", typeof(string));
+    
+            var pFullTimeWorkParameter = pFullTimeWork.HasValue ?
+                new ObjectParameter("pFullTimeWork", pFullTimeWork) :
+                new ObjectParameter("pFullTimeWork", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<System.Guid>>("procSaveDatas", pUserLoginParameter, pCompNameParameter, pStartAcadParameter, pEndAcadParameter, pFullTimeWorkParameter);
+        }
+    
+        [DbFunction("NPConConnectionString", "fnList")]
+        public virtual IQueryable<fnList_Result> fnList(string x, string y, string list, string delimeter)
+        {
+            var xParameter = x != null ?
+                new ObjectParameter("x", x) :
+                new ObjectParameter("x", typeof(string));
+    
+            var yParameter = y != null ?
+                new ObjectParameter("y", y) :
+                new ObjectParameter("y", typeof(string));
+    
+            var listParameter = list != null ?
+                new ObjectParameter("List", list) :
+                new ObjectParameter("List", typeof(string));
+    
+            var delimeterParameter = delimeter != null ?
+                new ObjectParameter("Delimeter", delimeter) :
+                new ObjectParameter("Delimeter", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fnList_Result>("[NPConConnectionString].[fnList](@x, @y, @List, @Delimeter)", xParameter, yParameter, listParameter, delimeterParameter);
+        }
+    
+        public virtual int ST_marks_2__table(string marks)
+        {
+            var marksParameter = marks != null ?
+                new ObjectParameter("marks", marks) :
+                new ObjectParameter("marks", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ST_marks_2__table", marksParameter);
+        }
     }
 }

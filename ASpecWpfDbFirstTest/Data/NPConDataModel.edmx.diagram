@@ -8,6 +8,574 @@
         <EntityTypeShape EntityType="NPConContext.album" Width="1.5" PointX="3" PointY="1" />
         <EntityTypeShape EntityType="NPConContext.factory" Width="1.5" PointX="0.75" PointY="1.5" />
         <AssociationConnector Association="NPConContext.FK_album_factory" />
+        <EntityTypeShape EntityType="NPConContext.allLayer" Width="1.5" PointX="8.75" PointY="39.75" />
+        <EntityTypeShape EntityType="NPConContext.angle" Width="1.5" PointX="23.75" PointY="36.5" />
+        <EntityTypeShape EntityType="NPConContext.arm" Width="1.5" PointX="23.75" PointY="45.125" />
+        <EntityTypeShape EntityType="NPConContext.arm_type" Width="1.5" PointX="16.25" PointY="52.25" />
+        <EntityTypeShape EntityType="NPConContext.classType" Width="1.5" PointX="19.25" PointY="69.75" />
+        <EntityTypeShape EntityType="NPConContext.cmd_alias" Width="1.5" PointX="10.25" PointY="10.5" />
+        <EntityTypeShape EntityType="NPConContext.cmd_groups" Width="1.5" PointX="5.75" PointY="4.375" />
+        <EntityTypeShape EntityType="NPConContext.cmd_lisp" Width="1.5" PointX="8" PointY="7.625" />
+        <EntityTypeShape EntityType="NPConContext.cmd_user_lisp" Width="1.5" PointX="10.25" PointY="6" />
+        <EntityTypeShape EntityType="NPConContext.cmd_userdomains" Width="1.5" PointX="5.75" PointY="7.875" />
+        <EntityTypeShape EntityType="NPConContext.cmd_userlogins" Width="1.5" PointX="8" PointY="4.125" />
+        <EntityTypeShape EntityType="NPConContext.cmd_users" Width="1.5" PointX="5.75" PointY="1.375" />
+        <EntityTypeShape EntityType="NPConContext.concrType" Width="1.5" PointX="16.25" PointY="47.5" />
+        <EntityTypeShape EntityType="NPConContext.end_prod_ver_consist" Width="1.5" PointX="8" PointY="48.625" />
+        <EntityTypeShape EntityType="NPConContext.end_prod_ver_RawConsist" Width="1.5" PointX="26.75" PointY="48.625" />
+        <EntityTypeShape EntityType="NPConContext.end_product_version" Width="1.5" PointX="20.75" PointY="58" />
+        <EntityTypeShape EntityType="NPConContext.factory_lines" Width="1.5" PointX="20.75" PointY="27.25" />
+        <EntityTypeShape EntityType="NPConContext.formingEquip" Width="1.5" PointX="16.25" PointY="54.625" />
+        <EntityTypeShape EntityType="NPConContext.fstn_element" Width="1.5" PointX="26.75" PointY="32.25" />
+        <EntityTypeShape EntityType="NPConContext.fstn_name" Width="1.5" PointX="24.5" PointY="24.625" />
+        <EntityTypeShape EntityType="NPConContext.galvanized_iron" Width="1.5" PointX="23.75" PointY="63.375" />
+        <EntityTypeShape EntityType="NPConContext.Line" Width="1.5" PointX="18.5" PointY="49" />
+        <EntityTypeShape EntityType="NPConContext.lisp_interface" Width="1.5" PointX="15.75" PointY="16.25" />
+        <EntityTypeShape EntityType="NPConContext.listalb" Width="1.5" PointX="5.625" PointY="25" />
+        <EntityTypeShape EntityType="NPConContext.m_box" Width="1.5" PointX="23.75" PointY="55.875" />
+        <EntityTypeShape EntityType="NPConContext.mark_type" Width="1.5" PointX="3.5" PointY="32" />
+        <EntityTypeShape EntityType="NPConContext.mdm_Item_modification_t" Width="1.5" PointX="11" PointY="30.5" />
+        <EntityTypeShape EntityType="NPConContext.mdm_Item_modification_type_t" Width="1.5" PointX="0.75" PointY="6" />
+        <EntityTypeShape EntityType="NPConContext.mdm_object_plain" Width="1.5" PointX="19.25" PointY="72.125" />
+        <EntityTypeShape EntityType="NPConContext.mod_param_value_pool" Width="1.5" PointX="15.5" PointY="29.875" />
+        <EntityTypeShape EntityType="NPConContext.modification_parameter" Width="1.5" PointX="13.25" PointY="32" />
+        <EntityTypeShape EntityType="NPConContext.modificationType4object_type" Width="1.5" PointX="13.25" PointY="36.25" />
+        <EntityTypeShape EntityType="NPConContext.normdoc" Width="1.5" PointX="3.5" PointY="29.125" />
+        <EntityTypeShape EntityType="NPConContext.npcon_changes" Width="1.5" PointX="2.75" PointY="6" />
+        <EntityTypeShape EntityType="NPConContext.npcon_changes_22_12_2019" Width="1.5" PointX="7.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.objectconsist" Width="1.5" PointX="8" PointY="31.625" />
+        <EntityTypeShape EntityType="NPConContext.objectmark" Width="1.5" PointX="5.75" PointY="30.25" />
+        <EntityTypeShape EntityType="NPConContext.objectprefix" Width="1.5" PointX="13.25" PointY="48" />
+        <EntityTypeShape EntityType="NPConContext.Object" Width="1.5" PointX="20" PointY="77.875" />
+        <EntityTypeShape EntityType="NPConContext.objecttype" Width="1.5" PointX="11" PointY="35.375" />
+        <EntityTypeShape EntityType="NPConContext.p_concr_binder" Width="1.5" PointX="24.5" PointY="66.5" />
+        <EntityTypeShape EntityType="NPConContext.p_concr_class" Width="1.5" PointX="24.5" PointY="15.375" />
+        <EntityTypeShape EntityType="NPConContext.p_concr_comp" Width="1.5" PointX="24.5" PointY="21.75" />
+        <EntityTypeShape EntityType="NPConContext.p_concr_frost" Width="1.5" PointX="24.5" PointY="19" />
+        <EntityTypeShape EntityType="NPConContext.p_concr_waterres" Width="1.5" PointX="24.5" PointY="48.125" />
+        <EntityTypeShape EntityType="NPConContext.p_concrete" Width="1.5" PointX="26.75" PointY="35.75" />
+        <EntityTypeShape EntityType="NPConContext.p_hdpe" Width="1.5" PointX="23.75" PointY="30.25" />
+        <EntityTypeShape EntityType="NPConContext.p_object" Width="1.5" PointX="16.25" PointY="34.25" />
+        <EntityTypeShape EntityType="NPConContext.p_PEfilm" Width="1.5" PointX="26.75" PointY="40.375" />
+        <EntityTypeShape EntityType="NPConContext.p_units" Width="1.5" PointX="5.75" PointY="35.375" />
+        <EntityTypeShape EntityType="NPConContext.parameter" Width="1.5" PointX="8" PointY="36" />
+        <EntityTypeShape EntityType="NPConContext.prod_work_file" Width="1.5" PointX="23.75" PointY="60.125" />
+        <EntityTypeShape EntityType="NPConContext.product" Width="1.5" PointX="18.5" PointY="57.625" />
+        <EntityTypeShape EntityType="NPConContext.product_modification" Width="1.5" PointX="20.75" PointY="45.25" />
+        <EntityTypeShape EntityType="NPConContext.raw" Width="1.5" PointX="21.5" PointY="35" />
+        <EntityTypeShape EntityType="NPConContext.rep_prod" Width="1.5" PointX="20.75" PointY="51.25" />
+        <EntityTypeShape EntityType="NPConContext.spiral_hose" Width="1.5" PointX="23.75" PointY="53.5" />
+        <EntityTypeShape EntityType="NPConContext.sql_data_type" Width="1.5" PointX="5.75" PointY="40.25" />
+        <EntityTypeShape EntityType="NPConContext.steelClass" Width="1.5" PointX="16.25" PointY="49.875" />
+        <EntityTypeShape EntityType="NPConContext.strip" Width="1.5" PointX="23.75" PointY="34" />
+        <EntityTypeShape EntityType="NPConContext.sysdiagram" Width="1.5" PointX="9.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.tbl_mark_code_type_C1P" Width="1.5" PointX="2.75" PointY="10" />
+        <EntityTypeShape EntityType="NPConContext.tbl_mark_parsing" Width="1.5" PointX="17.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.tblNodeDepth" Width="1.5" PointX="5.625" PointY="43.25" />
+        <EntityTypeShape EntityType="NPConContext.tblNodesContent" Width="1.5" PointX="5.625" PointY="20.5" />
+        <EntityTypeShape EntityType="NPConContext.temp_fio_makr" Width="1.5" PointX="14.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.Temp_load_thickness" Width="1.5" PointX="17.75" PointY="5" />
+        <EntityTypeShape EntityType="NPConContext.temp_load1C" Width="1.5" PointX="10.75" PointY="14" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_PR" Width="1.5" PointX="17.75" PointY="8" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_PR_ver1" Width="1.5" PointX="17.75" PointY="12" />
+        <EntityTypeShape EntityType="NPConContext.test_mark09" Width="1.5" PointX="8.75" PointY="19" />
+        <EntityTypeShape EntityType="NPConContext.test_mark10" Width="1.5" PointX="10.75" PointY="19" />
+        <EntityTypeShape EntityType="NPConContext.tmp_DoubleModif_all" Width="1.5" PointX="12.75" PointY="19" />
+        <EntityTypeShape EntityType="NPConContext.tube" Width="1.5" PointX="23.75" PointY="27.25" />
+        <EntityTypeShape EntityType="NPConContext.user" Width="1.5" PointX="18" PointY="16.375" />
+        <EntityTypeShape EntityType="NPConContext.version_status" Width="1.5" PointX="18.5" PointY="66" />
+        <EntityTypeShape EntityType="NPConContext.wood" Width="1.5" PointX="23.75" PointY="51" />
+        <EntityTypeShape EntityType="NPConContext.work_file" Width="1.5" PointX="21.5" PointY="69.625" />
+        <EntityTypeShape EntityType="NPConContext.wpf_control" Width="1.5" PointX="10.75" PointY="16.125" />
+        <EntityTypeShape EntityType="NPConContext.wpf_property" Width="1.5" PointX="13" PointY="16.125" />
+        <EntityTypeShape EntityType="NPConContext.wrk_file_type" Width="1.5" PointX="21.5" PointY="66.375" />
+        <EntityTypeShape EntityType="NPConContext.zone" Width="1.5" PointX="23.75" PointY="75.125" />
+        <EntityTypeShape EntityType="NPConContext.Assembly" Width="1.5" PointX="12.75" PointY="3.625" />
+        <EntityTypeShape EntityType="NPConContext.color" Width="1.5" PointX="24.5" PointY="72.125" />
+        <EntityTypeShape EntityType="NPConContext.floor" Width="1.5" PointX="26.75" PointY="79.75" />
+        <EntityTypeShape EntityType="NPConContext.floors_OLD" Width="1.5" PointX="6" PointY="17.5" />
+        <EntityTypeShape EntityType="NPConContext.Geometry" Width="1.5" PointX="0.75" PointY="10.5" />
+        <EntityTypeShape EntityType="NPConContext.KZI" Width="1.5" PointX="26.75" PointY="43.5" />
+        <EntityTypeShape EntityType="NPConContext.KZI_Name" Width="1.5" PointX="24.5" PointY="69.25" />
+        <EntityTypeShape EntityType="NPConContext.nomenclature" Width="1.5" PointX="26.75" PointY="68.75" />
+        <EntityTypeShape EntityType="NPConContext.nomenclature_current" Width="1.5" PointX="3" PointY="13.125" />
+        <EntityTypeShape EntityType="NPConContext.Parameter1" Width="1.5" PointX="0.75" PointY="13.5" />
+        <EntityTypeShape EntityType="NPConContext.Part" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="NPConContext.project_specific" Width="1.5" PointX="29" PointY="68.875" />
+        <EntityTypeShape EntityType="NPConContext.project" Width="1.5" PointX="22.25" PointY="79.75" />
+        <EntityTypeShape EntityType="NPConContext.projects_OLD" Width="1.5" PointX="1.5" PointY="17.75" />
+        <EntityTypeShape EntityType="NPConContext.section" Width="1.5" PointX="24.5" PointY="79.875" />
+        <EntityTypeShape EntityType="NPConContext.sections_OLD" Width="1.5" PointX="3.75" PointY="17.5" />
+        <EntityTypeShape EntityType="NPConContext.tblModificator" Width="1.5" PointX="17.75" PointY="19" />
+        <EntityTypeShape EntityType="NPConContext.tblModificators_OLD" Width="1.5" PointX="15" PointY="7.5" />
+        <EntityTypeShape EntityType="NPConContext.tblProject" Width="1.5" PointX="12.75" PointY="10.125" />
+        <EntityTypeShape EntityType="NPConContext.tblSery" Width="1.5" PointX="12.75" PointY="7.25" />
+        <EntityTypeShape EntityType="NPConContext.tbl_AspecificErrorLog" Width="1.5" PointX="19.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.tbl_UserActivityLog" Width="1.5" PointX="19.75" PointY="5" />
+        <EntityTypeShape EntityType="NPConContext.tbl_UserActivityStat" Width="1.5" PointX="19.75" PointY="9" />
+        <EntityTypeShape EntityType="NPConContext.tbl_UserLispErrorLog" Width="1.5" PointX="19.75" PointY="12" />
+        <EntityTypeShape EntityType="NPConContext.tbl_UserLoginForLogging" Width="1.5" PointX="14.75" PointY="20" />
+        <EntityTypeShape EntityType="NPConContext.Colour_article" Width="1.5" PointX="21.5" PointY="41" />
+        <EntityTypeShape EntityType="NPConContext.Colour_index" Width="1.5" PointX="16.25" PointY="41.5" />
+        <EntityTypeShape EntityType="NPConContext.RCP_consistancy" Width="1.5" PointX="23.75" PointY="40.25" />
+        <EntityTypeShape EntityType="NPConContext.RCP_nomenclature" Width="1.5" PointX="18.5" PointY="36.25" />
+        <EntityTypeShape EntityType="NPConContext.somemаrk" Width="1.5" PointX="19.75" PointY="19" />
+        <EntityTypeShape EntityType="NPConContext.coloristic" Width="1.5" PointX="0.75" PointY="21" />
+        <EntityTypeShape EntityType="NPConContext.addmods_from_C1" Width="1.5" PointX="2.75" PointY="21" />
+        <EntityTypeShape EntityType="NPConContext.addmods_from_C1_ver2" Width="1.5" PointX="20.75" PointY="16" />
+        <EntityTypeShape EntityType="NPConContext.addmods_from_C1_ver3" Width="1.5" PointX="21.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.albName_exep" Width="1.5" PointX="21.75" PointY="4" />
+        <EntityTypeShape EntityType="NPConContext.aspa_entity" Width="1.5" PointX="21.75" PointY="7" />
+        <EntityTypeShape EntityType="NPConContext.base_ch_npcon" Width="1.5" PointX="7.75" PointY="22" />
+        <EntityTypeShape EntityType="NPConContext.base_changes_delete" Width="1.5" PointX="21.75" PointY="10" />
+        <EntityTypeShape EntityType="NPConContext.cmd_log" Width="1.5" PointX="9.75" PointY="22" />
+        <EntityTypeShape EntityType="NPConContext.end_prod_ver_consist_OS_26_02_2021" Width="1.5" PointX="11.75" PointY="22" />
+        <EntityTypeShape EntityType="NPConContext.end_product_version_06_05_2020" Width="1.5" PointX="21.75" PointY="19" />
+        <EntityTypeShape EntityType="NPConContext.end_product_version_20072020" Width="1.5" PointX="13.75" PointY="23" />
+        <EntityTypeShape EntityType="NPConContext.end_product_version_temp" Width="1.5" PointX="23.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.factory_lines_old" Width="1.5" PointX="2.75" PointY="24" />
+        <EntityTypeShape EntityType="NPConContext.factory_old" Width="1.5" PointX="23.75" PointY="7" />
+        <EntityTypeShape EntityType="NPConContext.from_view_product_dim_1_Tbl" Width="1.5" PointX="23.75" PointY="10" />
+        <EntityTypeShape EntityType="NPConContext.IDMDM_ModId_from_1c" Width="1.5" PointX="19.75" PointY="25" />
+        <EntityTypeShape EntityType="NPConContext.IDMDM_ModId_from_1c_ver2" Width="1.5" PointX="21.75" PointY="25" />
+        <EntityTypeShape EntityType="NPConContext.IDMDM_ModId_from_1c_ver3" Width="1.5" PointX="25.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.IlastModsMarksfrom1C_ver2" Width="1.5" PointX="25.75" PointY="4" />
+        <EntityTypeShape EntityType="NPConContext.IlastModsMarksfrom1C_ver3" Width="1.5" PointX="0.75" PointY="27" />
+        <EntityTypeShape EntityType="NPConContext.last_changes_mark_ver" Width="1.5" PointX="7.75" PointY="26" />
+        <EntityTypeShape EntityType="NPConContext.lastModsMarksfrom1C" Width="1.5" PointX="25.75" PointY="10" />
+        <EntityTypeShape EntityType="NPConContext.lines_old" Width="1.5" PointX="26.75" PointY="14" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_16_072020_end" Width="1.5" PointX="26.75" PointY="19" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_16_082020_end" Width="1.5" PointX="26.75" PointY="25" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_16_082020_SH" Width="1.5" PointX="27.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_16_082020_v2" Width="1.5" PointX="17.75" PointY="28" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_17_072020_end" Width="1.5" PointX="28.75" PointY="8" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_17_082020_end" Width="1.5" PointX="28.75" PointY="17" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_17_082020_SH" Width="1.5" PointX="28.75" PointY="26" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_17_082020_v2" Width="1.5" PointX="30.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_18_072020_end" Width="1.5" PointX="30.75" PointY="10" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_18_082020_SH" Width="1.5" PointX="30.75" PointY="19" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_18_082020_v2" Width="1.5" PointX="30.75" PointY="28" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_31_64_072020_end" Width="1.5" PointX="9.75" PointY="26" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_31_73_082020_end" Width="1.5" PointX="32.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_31_73_082020_SH" Width="1.5" PointX="32.75" PointY="6" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_31_73_082020_v2" Width="1.5" PointX="32.75" PointY="11" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_34_072020_end" Width="1.5" PointX="32.75" PointY="16" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_34_082020_end" Width="1.5" PointX="32.75" PointY="22" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_34_082020_SH" Width="1.5" PointX="32.75" PointY="28" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_34_082020_v2" Width="1.5" PointX="0.75" PointY="34" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_35_47_082020_end" Width="1.5" PointX="32.75" PointY="34" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_35_47_082020_SH" Width="1.5" PointX="34.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_35_47_082020_v2" Width="1.5" PointX="2.75" PointY="35" />
+        <EntityTypeShape EntityType="NPConContext.LOAD_T_47_072020_end" Width="1.5" PointX="34.75" PointY="10" />
+        <EntityTypeShape EntityType="NPConContext.loaded_Job_Files" Width="1.5" PointX="19.75" PointY="31" />
+        <EntityTypeShape EntityType="NPConContext.loaded_Marks_from_1C" Width="1.5" PointX="34.75" PointY="19" />
+        <EntityTypeShape EntityType="NPConContext.loaded_Marks_from_1C_ver2" Width="1.5" PointX="34.75" PointY="23" />
+        <EntityTypeShape EntityType="NPConContext.loaded_Marks_from_1C_ver3" Width="1.5" PointX="34.75" PointY="29" />
+        <EntityTypeShape EntityType="NPConContext.mark_geometry" Width="1.5" PointX="34.75" PointY="35" />
+        <EntityTypeShape EntityType="NPConContext.Marks_and_modifications" Width="1.5" PointX="36.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.Marks_and_modifications_from_EXCEL" Width="1.5" PointX="36.75" PointY="8" />
+        <EntityTypeShape EntityType="NPConContext.Marks_and_modifications_MDMdeleted" Width="1.5" PointX="36.75" PointY="14" />
+        <EntityTypeShape EntityType="NPConContext.Marks_and_modifications_nm" Width="1.5" PointX="36.75" PointY="17" />
+        <EntityTypeShape EntityType="NPConContext.Marks_and_modifications_to_1C" Width="1.5" PointX="36.75" PointY="27" />
+        <EntityTypeShape EntityType="NPConContext.mdm_forming_dimension" Width="1.5" PointX="28.75" PointY="37" />
+        <EntityTypeShape EntityType="NPConContext.mdm_forming_lifting" Width="1.5" PointX="36.75" PointY="32" />
+        <EntityTypeShape EntityType="NPConContext.mdm_Forming_type" Width="1.5" PointX="36.75" PointY="35" />
+        <EntityTypeShape EntityType="NPConContext.mdm_Item_colour" Width="1.5" PointX="36.75" PointY="38" />
+        <EntityTypeShape EntityType="NPConContext.mdm_Item_group_long_t" Width="1.5" PointX="38.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.mdm_Layer_documents_state_actual_t" Width="1.5" PointX="38.75" PointY="4" />
+        <EntityTypeShape EntityType="NPConContext.mdm_Side" Width="1.5" PointX="38.75" PointY="7" />
+        <EntityTypeShape EntityType="NPConContext.MetPref" Width="1.5" PointX="38.75" PointY="10" />
+        <EntityTypeShape EntityType="NPConContext.mod_param_value_pool_07042020" Width="1.5" PointX="38.75" PointY="13" />
+        <EntityTypeShape EntityType="NPConContext.modificationType4object_type_COPY25102019" Width="1.5" PointX="38.75" PointY="17" />
+        <EntityTypeShape EntityType="NPConContext.mods_loaded_from_1c" Width="1.5" PointX="38.75" PointY="20" />
+        <EntityTypeShape EntityType="NPConContext.mods_loaded_from_1c_05" Width="1.5" PointX="38.75" PointY="25" />
+        <EntityTypeShape EntityType="NPConContext.mods_loaded_from_1c_old" Width="1.5" PointX="38.75" PointY="30" />
+        <EntityTypeShape EntityType="NPConContext.mods_loaded_from_1c_ver2" Width="1.5" PointX="38.75" PointY="35" />
+        <EntityTypeShape EntityType="NPConContext.mods_loaded_from_1c_ver3" Width="1.5" PointX="28.75" PointY="40" />
+        <EntityTypeShape EntityType="NPConContext.ModsMarksfrom1C" Width="1.5" PointX="18.75" PointY="40" />
+        <EntityTypeShape EntityType="NPConContext.ModsMarksfrom1C_ver2" Width="1.5" PointX="40.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.ModsMarksfrom1C_ver3" Width="1.5" PointX="40.75" PointY="7" />
+        <EntityTypeShape EntityType="NPConContext.no_weight_TEMP" Width="1.5" PointX="10.75" PointY="41" />
+        <EntityTypeShape EntityType="NPConContext.npcon_ch_temp" Width="1.5" PointX="40.75" PointY="13" />
+        <EntityTypeShape EntityType="NPConContext.npcon_changes_13_02_2020" Width="1.5" PointX="12.75" PointY="41" />
+        <EntityTypeShape EntityType="NPConContext.npcon_changes_18_02_2020" Width="1.5" PointX="40.75" PointY="16" />
+        <EntityTypeShape EntityType="NPConContext.npcon_changes_20_02_2020" Width="1.5" PointX="40.75" PointY="20" />
+        <EntityTypeShape EntityType="NPConContext.npcon_changes_23_04_2020" Width="1.5" PointX="40.75" PointY="24" />
+        <EntityTypeShape EntityType="NPConContext.npcon_changes_24_12_2019" Width="1.5" PointX="40.75" PointY="28" />
+        <EntityTypeShape EntityType="NPConContext.npcon_changes_24_12_2019_aftnn" Width="1.5" PointX="40.75" PointY="31" />
+        <EntityTypeShape EntityType="NPConContext.npcon_changes_dev" Width="1.5" PointX="40.75" PointY="34" />
+        <EntityTypeShape EntityType="NPConContext.npcon_changes_dev2" Width="1.5" PointX="34.75" PointY="41" />
+        <EntityTypeShape EntityType="NPConContext.npcon_changes_er" Width="1.5" PointX="36.75" PointY="41" />
+        <EntityTypeShape EntityType="NPConContext.npcon_changes_er_08_06_2020" Width="1.5" PointX="40.75" PointY="38" />
+        <EntityTypeShape EntityType="NPConContext.npcon_changes_ok" Width="1.5" PointX="38.75" PointY="42" />
+        <EntityTypeShape EntityType="NPConContext.p_object_20072020" Width="1.5" PointX="40.75" PointY="42" />
+        <EntityTypeShape EntityType="NPConContext.p_object_Dev" Width="1.5" PointX="42.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.p_object_OS_26_02_2021" Width="1.5" PointX="42.75" PointY="7" />
+        <EntityTypeShape EntityType="NPConContext.params_loaded_from_1c" Width="1.5" PointX="42.75" PointY="13" />
+        <EntityTypeShape EntityType="NPConContext.params_loaded_from_1c_05" Width="1.5" PointX="42.75" PointY="17" />
+        <EntityTypeShape EntityType="NPConContext.params_loaded_from_1c_old" Width="1.5" PointX="42.75" PointY="21" />
+        <EntityTypeShape EntityType="NPConContext.params_loaded_from_1c_ver2" Width="1.5" PointX="42.75" PointY="25" />
+        <EntityTypeShape EntityType="NPConContext.params_loaded_from_1c_ver3" Width="1.5" PointX="42.75" PointY="29" />
+        <EntityTypeShape EntityType="NPConContext.product_20072020" Width="1.5" PointX="30.75" PointY="43" />
+        <EntityTypeShape EntityType="NPConContext.product_2020_10_20" Width="1.5" PointX="42.75" PointY="33" />
+        <EntityTypeShape EntityType="NPConContext.product_Dev" Width="1.5" PointX="42.75" PointY="42" />
+        <EntityTypeShape EntityType="NPConContext.product_modification_20072020" Width="1.5" PointX="0.75" PointY="44" />
+        <EntityTypeShape EntityType="NPConContext.product_modification_deleted_14_09_2020" Width="1.5" PointX="2.75" PointY="44" />
+        <EntityTypeShape EntityType="NPConContext.product_modification_test" Width="1.5" PointX="7.75" PointY="44" />
+        <EntityTypeShape EntityType="NPConContext.product_modification1" Width="1.5" PointX="9.75" PointY="44" />
+        <EntityTypeShape EntityType="NPConContext.product_OS_26_02_2021" Width="1.5" PointX="44.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.some_new_mods" Width="1.5" PointX="44.75" PointY="9" />
+        <EntityTypeShape EntityType="NPConContext.temp_1C_PO" Width="1.5" PointX="44.75" PointY="12" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_add_heater" Width="1.5" PointX="11.75" PointY="45" />
+        <EntityTypeShape EntityType="NPConContext.Temp_del_KTD__ASpecific_" Width="1.5" PointX="44.75" PointY="15" />
+        <EntityTypeShape EntityType="NPConContext.temp_del_marks" Width="1.5" PointX="4.75" PointY="11" />
+        <EntityTypeShape EntityType="NPConContext.temp_NP_PO" Width="1.5" PointX="44.75" PointY="18" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_PR_new_mods" Width="1.5" PointX="44.75" PointY="21" />
+        <EntityTypeShape EntityType="NPConContext.Temp1C" Width="1.5" PointX="44.75" PointY="25" />
+        <EntityTypeShape EntityType="NPConContext.Temp1C_05" Width="1.5" PointX="44.75" PointY="30" />
+        <EntityTypeShape EntityType="NPConContext.temporary1" Width="1.5" PointX="32.75" PointY="45" />
+        <EntityTypeShape EntityType="NPConContext.temporary1_1" Width="1.5" PointX="44.75" PointY="35" />
+        <EntityTypeShape EntityType="NPConContext.temporary2" Width="1.5" PointX="34.75" PointY="45" />
+        <EntityTypeShape EntityType="NPConContext.temporary3" Width="1.5" PointX="44.75" PointY="39" />
+        <EntityTypeShape EntityType="NPConContext.temporary4" Width="1.5" PointX="44.75" PointY="44" />
+        <EntityTypeShape EntityType="NPConContext.temporary5" Width="1.5" PointX="36.75" PointY="46" />
+        <EntityTypeShape EntityType="NPConContext.temporary6" Width="1.5" PointX="46.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.temporary7" Width="1.5" PointX="4.75" PointY="47" />
+        <EntityTypeShape EntityType="NPConContext.temporary8" Width="1.5" PointX="46.75" PointY="7" />
+        <EntityTypeShape EntityType="NPConContext.Test_Error_LHW_07" Width="1.5" PointX="46.75" PointY="12" />
+        <EntityTypeShape EntityType="NPConContext.Test_Error_PVL_07" Width="1.5" PointX="46.75" PointY="16" />
+        <EntityTypeShape EntityType="NPConContext.Test_Error_V_07" Width="1.5" PointX="46.75" PointY="19" />
+        <EntityTypeShape EntityType="NPConContext.test_mark06_del" Width="1.5" PointX="13.75" PointY="45" />
+        <EntityTypeShape EntityType="NPConContext.test_mark07_end" Width="1.5" PointX="15.75" PointY="45" />
+        <EntityTypeShape EntityType="NPConContext.test_mark08" Width="1.5" PointX="17.75" PointY="45" />
+        <EntityTypeShape EntityType="NPConContext.test_mark08_ALL" Width="1.5" PointX="46.75" PointY="22" />
+        <EntityTypeShape EntityType="NPConContext.Test_mark1Layer" Width="1.5" PointX="46.75" PointY="25" />
+        <EntityTypeShape EntityType="NPConContext.tmp_DoubleModif_all_double" Width="1.5" PointX="46.75" PointY="28" />
+        <EntityTypeShape EntityType="NPConContext.tmp_DoubleModif_all_PO_num" Width="1.5" PointX="46.75" PointY="31" />
+        <EntityTypeShape EntityType="NPConContext.tmp_npcontmp_tbl_mark_parsing" Width="1.5" PointX="46.75" PointY="34" />
+        <EntityTypeShape EntityType="NPConContext.to_SerOfMarks_t" Width="1.5" PointX="46.75" PointY="38" />
+        <EntityTypeShape EntityType="NPConContext.toLocal_del" Width="1.5" PointX="6.75" PointY="11" />
+        <EntityTypeShape EntityType="NPConContext.WINDOWS_DOORS_to_1C" Width="1.5" PointX="46.75" PointY="41" />
+        <EntityTypeShape EntityType="NPConContext.work_file_mark_type" Width="1.5" PointX="23.75" PointY="83.5" />
+        <EntityTypeShape EntityType="NPConContext.ГабаритыNPCon" Width="1.5" PointX="46.75" PointY="45" />
+        <EntityTypeShape EntityType="NPConContext.каркасыДочерние" Width="1.5" PointX="38.75" PointY="48" />
+        <EntityTypeShape EntityType="NPConContext.каркасыПовторение" Width="1.5" PointX="48.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.каркасыРодительские" Width="1.5" PointX="0.75" PointY="49" />
+        <EntityTypeShape EntityType="NPConContext.РолиУКРна_05_06_2019" Width="1.5" PointX="48.75" PointY="4" />
+        <EntityTypeShape EntityType="NPConContext.Assembly_structure" Width="1.5" PointX="15" PointY="3.5" />
+        <EntityTypeShape EntityType="NPConContext.nomenclature_all" Width="1.5" PointX="6" PointY="13.125" />
+        <EntityTypeShape EntityType="NPConContext.project_specific_OLD" Width="1.5" PointX="8.25" PointY="13.25" />
+        <EntityTypeShape EntityType="NPConContext.TEST_TEMP" Width="1.5" PointX="48.75" PointY="7" />
+        <EntityTypeShape EntityType="NPConContext.C1stg_modificators" Width="1.5" PointX="48.75" PointY="10" />
+        <EntityTypeShape EntityType="NPConContext.ALLPLAN_KB_differ" Width="1.5" PointX="48.75" PointY="13" />
+        <EntityTypeShape EntityType="NPConContext.ALLPLAN_mods_to_NPCon" Width="1.5" PointX="48.75" PointY="26" />
+        <EntityTypeShape EntityType="NPConContext.ALLPLAN_to_NPCon" Width="1.5" PointX="48.75" PointY="31" />
+        <EntityTypeShape EntityType="NPConContext.RD" Width="1.5" PointX="48.75" PointY="39" />
+        <EntityTypeShape EntityType="NPConContext.rds_ins" Width="1.5" PointX="48.75" PointY="42" />
+        <EntityTypeShape EntityType="NPConContext.view_coloristics" Width="1.5" PointX="48.75" PointY="46" />
+        <EntityTypeShape EntityType="NPConContext.C_v_entity_rem" Width="1.5" PointX="32.75" PointY="50" />
+        <EntityTypeShape EntityType="NPConContext.C_v_relation_rem" Width="1.5" PointX="40.75" PointY="50" />
+        <EntityTypeShape EntityType="NPConContext.a_view_Shelf_mark_MaxID" Width="1.5" PointX="42.75" PointY="50" />
+        <EntityTypeShape EntityType="NPConContext.ecp_wip_rem" Width="1.5" PointX="48.75" PointY="50" />
+        <EntityTypeShape EntityType="NPConContext.entity_mark_trim_rem" Width="1.5" PointX="50.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.ERRORS_IN_APERTURES" Width="1.5" PointX="50.75" PointY="4" />
+        <EntityTypeShape EntityType="NPConContext.ERRORS_IN_APERTURES_WD" Width="1.5" PointX="50.75" PointY="8" />
+        <EntityTypeShape EntityType="NPConContext.IdObjViewNPCChExpt" Width="1.5" PointX="2.75" PointY="27" />
+        <EntityTypeShape EntityType="NPConContext.mdm_forming_dimension_v" Width="1.5" PointX="10.75" PointY="51" />
+        <EntityTypeShape EntityType="NPConContext.mdm_forming_lifting_v" Width="1.5" PointX="50.75" PointY="12" />
+        <EntityTypeShape EntityType="NPConContext.mdm_Forming_type_v" Width="1.5" PointX="12.75" PointY="51" />
+        <EntityTypeShape EntityType="NPConContext.mdm_Item_construction" Width="1.5" PointX="50.75" PointY="15" />
+        <EntityTypeShape EntityType="NPConContext.mdm_Item_construction_Forming" Width="1.5" PointX="50.75" PointY="21" />
+        <EntityTypeShape EntityType="NPConContext.mdm_Item_construction_modification" Width="1.5" PointX="50.75" PointY="24" />
+        <EntityTypeShape EntityType="NPConContext.mdm_Item_modification" Width="1.5" PointX="50.75" PointY="27" />
+        <EntityTypeShape EntityType="NPConContext.mods_4_EPV_chk_KTD" Width="1.5" PointX="28.75" PointY="51" />
+        <EntityTypeShape EntityType="NPConContext.stage_1_2_mods" Width="1.5" PointX="50.75" PointY="31" />
+        <EntityTypeShape EntityType="NPConContext.stage_1_2_mods_constr" Width="1.5" PointX="50.75" PointY="35" />
+        <EntityTypeShape EntityType="NPConContext.stage_1_mods_KTD" Width="1.5" PointX="34.75" PointY="51" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_marks_mods_4_1C" Width="1.5" PointX="36.75" PointY="51" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_newI_IDMDM_in_tableout" Width="1.5" PointX="50.75" PointY="39" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_OC_ALL" Width="1.5" PointX="50.75" PointY="41" />
+        <EntityTypeShape EntityType="NPConContext.Temp_PG_View_UnicEndProd" Width="1.5" PointX="44.75" PointY="51" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_View_1_Rec" Width="1.5" PointX="50.75" PointY="46" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_view_idSubObj4objType" Width="1.5" PointX="50.75" PointY="49" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_View_Product" Width="1.5" PointX="0.75" PointY="52" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_View_Row_Test" Width="1.5" PointX="25.75" PointY="52" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_View_TypePrefix" Width="1.5" PointX="50.75" PointY="52" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_View_Арматура" Width="1.5" PointX="52.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_View_Дерево" Width="1.5" PointX="2.75" PointY="53" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_View_Коробки" Width="1.5" PointX="4.75" PointY="53" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_View_Крепёж" Width="1.5" PointX="52.75" PointY="6" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_View_Полоска" Width="1.5" PointX="6.75" PointY="53" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_View_Уголок" Width="1.5" PointX="52.75" PointY="11" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_View_Утеплитель" Width="1.5" PointX="52.75" PointY="16" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_Модификаторы_все" Width="1.5" PointX="52.75" PointY="20" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_Модификаторы_используемые" Width="1.5" PointX="52.75" PointY="23" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_Модификаторы_с_параметрами" Width="1.5" PointX="52.75" PointY="27" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_Модификаторы_Типов_изделий" Width="1.5" PointX="52.75" PointY="31" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_ОС_ОСг_АСг_ОСф" Width="1.5" PointX="30.75" PointY="53" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_СК_МН_ЕстьВ_изделиях" Width="1.5" PointX="52.75" PointY="34" />
+        <EntityTypeShape EntityType="NPConContext.TEMP_СкобаЗакладная" Width="1.5" PointX="38.75" PointY="53" />
+        <EntityTypeShape EntityType="NPConContext.v_actual_ver_1c" Width="1.5" PointX="52.75" PointY="41" />
+        <EntityTypeShape EntityType="NPConContext.v_factory_lines" Width="1.5" PointX="52.75" PointY="47" />
+        <EntityTypeShape EntityType="NPConContext.v_ind_rods" Width="1.5" PointX="46.75" PointY="53" />
+        <EntityTypeShape EntityType="NPConContext.v_ind_rods_fix" Width="1.5" PointX="52.75" PointY="52" />
+        <EntityTypeShape EntityType="NPConContext.v_MARKS_MODS_to_delete_from_MDM" Width="1.5" PointX="8.75" PointY="54" />
+        <EntityTypeShape EntityType="NPConContext.v_Marks_with_ends" Width="1.5" PointX="10.75" PointY="54" />
+        <EntityTypeShape EntityType="NPConContext.v_Marks_with_tooth" Width="1.5" PointX="12.75" PointY="54" />
+        <EntityTypeShape EntityType="NPConContext.view_1C_mods" Width="1.5" PointX="32.75" PointY="54" />
+        <EntityTypeShape EntityType="NPConContext.view_1C_mods_1" Width="1.5" PointX="40.75" PointY="54" />
+        <EntityTypeShape EntityType="NPConContext.view_3D_Zakl_Stripe" Width="1.5" PointX="42.75" PointY="54" />
+        <EntityTypeShape EntityType="NPConContext.View_4_ASPA_wf_Z" Width="1.5" PointX="54.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.view_addNewMark" Width="1.5" PointX="54.75" PointY="7" />
+        <EntityTypeShape EntityType="NPConContext.view_ALL_alias_4_login_users" Width="1.5" PointX="54.75" PointY="10" />
+        <EntityTypeShape EntityType="NPConContext.view_ALL_alias_login_users_essential" Width="1.5" PointX="54.75" PointY="14" />
+        <EntityTypeShape EntityType="NPConContext.view_angle" Width="1.5" PointX="54.75" PointY="17" />
+        <EntityTypeShape EntityType="NPConContext.view_arm" Width="1.5" PointX="54.75" PointY="25" />
+        <EntityTypeShape EntityType="NPConContext.view_arm_rope" Width="1.5" PointX="54.75" PointY="33" />
+        <EntityTypeShape EntityType="NPConContext.view_ASPA_123" Width="1.5" PointX="54.75" PointY="35" />
+        <EntityTypeShape EntityType="NPConContext.view_Building_Area_ASPA" Width="1.5" PointX="54.75" PointY="38" />
+        <EntityTypeShape EntityType="NPConContext.view_Building_Area_ASPA_rem" Width="1.5" PointX="54.75" PointY="41" />
+        <EntityTypeShape EntityType="NPConContext.view_cmd_group_lisp" Width="1.5" PointX="54.75" PointY="44" />
+        <EntityTypeShape EntityType="NPConContext.view_cmd_lisp_alias" Width="1.5" PointX="54.75" PointY="47" />
+        <EntityTypeShape EntityType="NPConContext.view_concreteInObjects" Width="1.5" PointX="48.75" PointY="55" />
+        <EntityTypeShape EntityType="NPConContext.View_Count_Ropes" Width="1.5" PointX="54.75" PointY="50" />
+        <EntityTypeShape EntityType="NPConContext.View_Count_Ropes_4MaxVer" Width="1.5" PointX="54.75" PointY="53" />
+        <EntityTypeShape EntityType="NPConContext.view_DOORS" Width="1.5" PointX="10.75" PointY="56" />
+        <EntityTypeShape EntityType="NPConContext.view_dry_mix" Width="1.5" PointX="12.75" PointY="56" />
+        <EntityTypeShape EntityType="NPConContext.view_elementobjecttype" Width="1.5" PointX="27.75" PointY="56" />
+        <EntityTypeShape EntityType="NPConContext.view_end_prod_consist" Width="1.5" PointX="54.75" PointY="56" />
+        <EntityTypeShape EntityType="NPConContext.view_end_prod_consist_Mark_2ASPA" Width="1.5" PointX="56.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.view_end_prod_consist_2ASPA" Width="1.5" PointX="56.75" PointY="5" />
+        <EntityTypeShape EntityType="NPConContext.view_end_prod_Status_fromExcel" Width="1.5" PointX="56.75" PointY="9" />
+        <EntityTypeShape EntityType="NPConContext.view_end_prod_ver_allMass" Width="1.5" PointX="56.75" PointY="13" />
+        <EntityTypeShape EntityType="NPConContext.view_end_prod_ver_RawConsist_Sum" Width="1.5" PointX="14.75" PointY="57" />
+        <EntityTypeShape EntityType="NPConContext.view_end_prod_ver_RawConsist_SumKg" Width="1.5" PointX="56.75" PointY="16" />
+        <EntityTypeShape EntityType="NPConContext.view_end_prod_ver_RawConsist_SumKg_2ASPA" Width="1.5" PointX="56.75" PointY="19" />
+        <EntityTypeShape EntityType="NPConContext.view_EndPod_TotalDim" Width="1.5" PointX="56.75" PointY="23" />
+        <EntityTypeShape EntityType="NPConContext.view_EndPod_TotalDim_2ASPA" Width="1.5" PointX="56.75" PointY="28" />
+        <EntityTypeShape EntityType="NPConContext.view_EndProd_Raw" Width="1.5" PointX="32.75" PointY="57" />
+        <EntityTypeShape EntityType="NPConContext.view_endproduct" Width="1.5" PointX="56.75" PointY="34" />
+        <EntityTypeShape EntityType="NPConContext.view_endproduct_cut" Width="1.5" PointX="56.75" PointY="50" />
+        <EntityTypeShape EntityType="NPConContext.view_entity_mark_trim_ASPA" Width="1.5" PointX="2.75" PointY="58" />
+        <EntityTypeShape EntityType="NPConContext.view_entity_mark_trim_ASPA_rem" Width="1.5" PointX="4.75" PointY="58" />
+        <EntityTypeShape EntityType="NPConContext.view_entity_mark_type_C1P" Width="1.5" PointX="6.75" PointY="58" />
+        <EntityTypeShape EntityType="NPConContext.view_fact_lines" Width="1.5" PointX="34.75" PointY="58" />
+        <EntityTypeShape EntityType="NPConContext.view_forming_type_C1P" Width="1.5" PointX="40.75" PointY="58" />
+        <EntityTypeShape EntityType="NPConContext.view_forming_type_C1P_rem" Width="1.5" PointX="42.75" PointY="58" />
+        <EntityTypeShape EntityType="NPConContext.view_fstn_element" Width="1.5" PointX="50.75" PointY="58" />
+        <EntityTypeShape EntityType="NPConContext.view_galvanized_iron" Width="1.5" PointX="56.75" PointY="58" />
+        <EntityTypeShape EntityType="NPConContext.view_group_alias_4_login_users" Width="1.5" PointX="58.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.view_GroupMarkOkStatus" Width="1.5" PointX="58.75" PointY="5" />
+        <EntityTypeShape EntityType="NPConContext.view_heater" Width="1.5" PointX="58.75" PointY="8" />
+        <EntityTypeShape EntityType="NPConContext.View_ID_Bracket" Width="1.5" PointX="8.75" PointY="59" />
+        <EntityTypeShape EntityType="NPConContext.View_id_modif_Bracket" Width="1.5" PointX="58.75" PointY="19" />
+        <EntityTypeShape EntityType="NPConContext.view_id_object_SEM_3layers" Width="1.5" PointX="58.75" PointY="21" />
+        <EntityTypeShape EntityType="NPConContext.view_id_object_SEM_REN_3layers" Width="1.5" PointX="58.75" PointY="23" />
+        <EntityTypeShape EntityType="NPConContext.view_Id_outer_user_login" Width="1.5" PointX="58.75" PointY="25" />
+        <EntityTypeShape EntityType="NPConContext.view_Id_PIC_user_login" Width="1.5" PointX="58.75" PointY="28" />
+        <EntityTypeShape EntityType="NPConContext.View_ID_RDS" Width="1.5" PointX="29.75" PointY="59" />
+        <EntityTypeShape EntityType="NPConContext.view_idObType4MarkPref" Width="1.5" PointX="58.75" PointY="31" />
+        <EntityTypeShape EntityType="NPConContext.view_item_const_forming_C1P" Width="1.5" PointX="58.75" PointY="34" />
+        <EntityTypeShape EntityType="NPConContext.view_Item_construction_C1P" Width="1.5" PointX="58.75" PointY="38" />
+        <EntityTypeShape EntityType="NPConContext.view_Item_construction_modification_list_C1P" Width="1.5" PointX="58.75" PointY="44" />
+        <EntityTypeShape EntityType="NPConContext.view_Item_modification_list_C1P" Width="1.5" PointX="44.75" PointY="59" />
+        <EntityTypeShape EntityType="NPConContext.view_ItemConstModif" Width="1.5" PointX="46.75" PointY="59" />
+        <EntityTypeShape EntityType="NPConContext.View_ItmConsID_by_idEndProdVer" Width="1.5" PointX="58.75" PointY="49" />
+        <EntityTypeShape EntityType="NPConContext.View_ItmConsID_by_idEndProdVer2" Width="1.5" PointX="52.75" PointY="59" />
+        <EntityTypeShape EntityType="NPConContext.View_ItmConsID_by_idEndProdVer3" Width="1.5" PointX="58.75" PointY="56" />
+        <EntityTypeShape EntityType="NPConContext.View_ItmConsID_by_idEndProdVer4" Width="1.5" PointX="14.75" PointY="60" />
+        <EntityTypeShape EntityType="NPConContext.View_ItmConsID_by_idEndProdVer5" Width="1.5" PointX="26.75" PointY="60" />
+        <EntityTypeShape EntityType="NPConContext.View_ItmConsID_by_idEndProdVer6" Width="1.5" PointX="36.75" PointY="60" />
+        <EntityTypeShape EntityType="NPConContext.view_ItmConsId_by_IdNPCon" Width="1.5" PointX="60.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.view_job_files" Width="1.5" PointX="0.75" PointY="61" />
+        <EntityTypeShape EntityType="NPConContext.view_job_files_4_Load" Width="1.5" PointX="2.75" PointY="61" />
+        <EntityTypeShape EntityType="NPConContext.view_job_files_UUID_4_Load" Width="1.5" PointX="60.75" PointY="4" />
+        <EntityTypeShape EntityType="NPConContext.view_ktd_heater_3d" Width="1.5" PointX="60.75" PointY="6" />
+        <EntityTypeShape EntityType="NPConContext.view_lines" Width="1.5" PointX="60.75" PointY="9" />
+        <EntityTypeShape EntityType="NPConContext.view_managed_outer_alias" Width="1.5" PointX="8.75" PointY="61" />
+        <EntityTypeShape EntityType="NPConContext.view_managed_outer_command" Width="1.5" PointX="60.75" PointY="15" />
+        <EntityTypeShape EntityType="NPConContext.view_managed_outer_group" Width="1.5" PointX="60.75" PointY="17" />
+        <EntityTypeShape EntityType="NPConContext.view_managed_PIC_command" Width="1.5" PointX="60.75" PointY="20" />
+        <EntityTypeShape EntityType="NPConContext.view_managed_PIC_group" Width="1.5" PointX="60.75" PointY="22" />
+        <EntityTypeShape EntityType="NPConContext.view_mark_code_type_C1P" Width="1.5" PointX="60.75" PointY="25" />
+        <EntityTypeShape EntityType="NPConContext.view_mark4OSOSf" Width="1.5" PointX="60.75" PointY="28" />
+        <EntityTypeShape EntityType="NPConContext.view_markName_Npcon_Mdm" Width="1.5" PointX="28.75" PointY="61" />
+        <EntityTypeShape EntityType="NPConContext.view_markUnicNameT_cancel" Width="1.5" PointX="60.75" PointY="32" />
+        <EntityTypeShape EntityType="NPConContext.view_markUnicNameT_status" Width="1.5" PointX="60.75" PointY="35" />
+        <EntityTypeShape EntityType="NPConContext.view_Max_ID_EndPodVer_4_ID_EndProd" Width="1.5" PointX="60.75" PointY="38" />
+        <EntityTypeShape EntityType="NPConContext.view_mbox" Width="1.5" PointX="38.75" PointY="61" />
+        <EntityTypeShape EntityType="NPConContext.view_MDM_NpCon_mark_C1P" Width="1.5" PointX="60.75" PointY="41" />
+        <EntityTypeShape EntityType="NPConContext.view_modif_and_param_4add" Width="1.5" PointX="40.75" PointY="61" />
+        <EntityTypeShape EntityType="NPConContext.view_modificators" Width="1.5" PointX="60.75" PointY="45" />
+        <EntityTypeShape EntityType="NPConContext.view_modificators_oldver" Width="1.5" PointX="60.75" PointY="49" />
+        <EntityTypeShape EntityType="NPConContext.view_modifType_4objType" Width="1.5" PointX="60.75" PointY="53" />
+        <EntityTypeShape EntityType="NPConContext.view_MODS_TO_MDM" Width="1.5" PointX="60.75" PointY="57" />
+        <EntityTypeShape EntityType="NPConContext.view_msaspa_taskmanager_items_ALL" Width="1.5" PointX="60.75" PointY="60" />
+        <EntityTypeShape EntityType="NPConContext.view_msaspa_taskmanager_items_work" Width="1.5" PointX="4.75" PointY="62" />
+        <EntityTypeShape EntityType="NPConContext.view_node" Width="1.5" PointX="31.75" PointY="62" />
+        <EntityTypeShape EntityType="NPConContext.View_npcon_changed_idProd" Width="1.5" PointX="42.75" PointY="62" />
+        <EntityTypeShape EntityType="NPConContext.View_npcon_changed_maxIdEndProdVer" Width="1.5" PointX="62.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.View_npcon_changed_product" Width="1.5" PointX="62.75" PointY="4" />
+        <EntityTypeShape EntityType="NPConContext.View_npcon_changed_product_22_06_2020" Width="1.5" PointX="10.75" PointY="63" />
+        <EntityTypeShape EntityType="NPConContext.View_npcon_changed_product_alter" Width="1.5" PointX="62.75" PointY="13" />
+        <EntityTypeShape EntityType="NPConContext.View_npcon_changed_product_chk_KTD" Width="1.5" PointX="62.75" PointY="20" />
+        <EntityTypeShape EntityType="NPConContext.View_npcon_changed_product_reserve_del" Width="1.5" PointX="62.75" PointY="29" />
+        <EntityTypeShape EntityType="NPConContext.View_npcon_changed_product1" Width="1.5" PointX="62.75" PointY="37" />
+        <EntityTypeShape EntityType="NPConContext.View_npcon_changed_product3" Width="1.5" PointX="62.75" PointY="44" />
+        <EntityTypeShape EntityType="NPConContext.View_npcon_changed_product4" Width="1.5" PointX="44.75" PointY="63" />
+        <EntityTypeShape EntityType="NPConContext.view_NPCon_mods" Width="1.5" PointX="28.75" PointY="63" />
+        <EntityTypeShape EntityType="NPConContext.view_NPCon_mods_1" Width="1.5" PointX="46.75" PointY="63" />
+        <EntityTypeShape EntityType="NPConContext.view_objalbumorgost" Width="1.5" PointX="62.75" PointY="51" />
+        <EntityTypeShape EntityType="NPConContext.view_objconsist" Width="1.5" PointX="62.75" PointY="55" />
+        <EntityTypeShape EntityType="NPConContext.view_OS_Ropes" Width="1.5" PointX="62.75" PointY="61" />
+        <EntityTypeShape EntityType="NPConContext.view_permtype" Width="1.5" PointX="62.75" PointY="63" />
+        <EntityTypeShape EntityType="NPConContext.view_person_alias_4_login_users" Width="1.5" PointX="0.75" PointY="64" />
+        <EntityTypeShape EntityType="NPConContext.view_product" Width="1.5" PointX="6.75" PointY="64" />
+        <EntityTypeShape EntityType="NPConContext.view_product_dim_1" Width="1.5" PointX="33.75" PointY="64" />
+        <EntityTypeShape EntityType="NPConContext.view_product_dim_1_Group" Width="1.5" PointX="58.75" PointY="64" />
+        <EntityTypeShape EntityType="NPConContext.view_Product_Mark_C1P" Width="1.5" PointX="64.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.view_product_modification" Width="1.5" PointX="64.75" PointY="6" />
+        <EntityTypeShape EntityType="NPConContext.view_Raw_Units" Width="1.5" PointX="64.75" PointY="12" />
+        <EntityTypeShape EntityType="NPConContext.view_RDS" Width="1.5" PointX="64.75" PointY="15" />
+        <EntityTypeShape EntityType="NPConContext.view_Shelf_mark_MaxID" Width="1.5" PointX="64.75" PointY="26" />
+        <EntityTypeShape EntityType="NPConContext.view_spiral_hose" Width="1.5" PointX="64.75" PointY="30" />
+        <EntityTypeShape EntityType="NPConContext.view_strip" Width="1.5" PointX="64.75" PointY="37" />
+        <EntityTypeShape EntityType="NPConContext.view_svod_ASPA" Width="1.5" PointX="40.75" PointY="65" />
+        <EntityTypeShape EntityType="NPConContext.view_TEMP_PR_last_UUID" Width="1.5" PointX="64.75" PointY="44" />
+        <EntityTypeShape EntityType="NPConContext.View_TEMP1C" Width="1.5" PointX="64.75" PointY="48" />
+        <EntityTypeShape EntityType="NPConContext.view_test_mark07" Width="1.5" PointX="64.75" PointY="54" />
+        <EntityTypeShape EntityType="NPConContext.view_tube" Width="1.5" PointX="64.75" PointY="59" />
+        <EntityTypeShape EntityType="NPConContext.view_user_alias_lisp" Width="1.5" PointX="2.75" PointY="66" />
+        <EntityTypeShape EntityType="NPConContext.view_user_domain" Width="1.5" PointX="48.75" PointY="66" />
+        <EntityTypeShape EntityType="NPConContext.view_user_domain_roles" Width="1.5" PointX="50.75" PointY="66" />
+        <EntityTypeShape EntityType="NPConContext.view_WINDOWS" Width="1.5" PointX="52.75" PointY="66" />
+        <EntityTypeShape EntityType="NPConContext.view_wood" Width="1.5" PointX="54.75" PointY="66" />
+        <EntityTypeShape EntityType="NPConContext.view_WrkFile_MarkMails" Width="1.5" PointX="64.75" PointY="66" />
+        <EntityTypeShape EntityType="NPConContext.view_WrkFile_MarkPlans" Width="1.5" PointX="66.75" PointY="1" />
+        <EntityTypeShape EntityType="NPConContext.view_WrkFile_MarkProducts" Width="1.5" PointX="66.75" PointY="7" />
+        <EntityTypeShape EntityType="NPConContext.view_ПравильныеПроёмыМарок" Width="1.5" PointX="66.75" PointY="13" />
+        <EntityTypeShape EntityType="NPConContext.view_РазницаПараметров2" Width="1.5" PointX="12.75" PointY="67" />
+        <EntityTypeShape EntityType="NPConContext.View_РазницаПараметров3" Width="1.5" PointX="14.75" PointY="67" />
+        <EntityTypeShape EntityType="NPConContext.View_РазницаПараметров4" Width="1.5" PointX="66.75" PointY="17" />
+        <EntityTypeShape EntityType="NPConContext.View_РазницаПараметров5" Width="1.5" PointX="66.75" PointY="24" />
+        <EntityTypeShape EntityType="NPConContext.View_СравнениеПараметров_1С_МДМ_NPCon" Width="1.5" PointX="66.75" PointY="31" />
+        <EntityTypeShape EntityType="NPConContext.view1" Width="1.5" PointX="66.75" PointY="38" />
+        <EntityTypeShape EntityType="NPConContext.viewNodesContent" Width="1.5" PointX="66.75" PointY="41" />
+        <EntityTypeShape EntityType="NPConContext.ZAKL_ANKERA_all_comp" Width="1.5" PointX="66.75" PointY="46" />
+        <EntityTypeShape EntityType="NPConContext.viewIfcModificator" Width="1.5" PointX="66.75" PointY="50" />
+        <EntityTypeShape EntityType="NPConContext.viewProjectData" Width="1.5" PointX="66.75" PointY="58" />
+        <EntityTypeShape EntityType="NPConContext.view_UserActivityStat" Width="1.5" PointX="60.75" PointY="67" />
+        <AssociationConnector Association="NPConContext.FK_tblNodeDepth_album" />
+        <AssociationConnector Association="NPConContext.FK_tblNodesContent_album" />
+        <AssociationConnector Association="NPConContext.R_8" />
+        <AssociationConnector Association="NPConContext.FK__angle__id_object__25869641" />
+        <AssociationConnector Association="NPConContext.FK__arm__id_object__267ABA7A" />
+        <AssociationConnector Association="NPConContext.FK_FactoryLines_arm_type" />
+        <AssociationConnector Association="NPConContext.FK_work_file_classType" />
+        <AssociationConnector Association="NPConContext.FK_cmd_alias_cmd_lisp" />
+        <AssociationConnector Association="NPConContext.FK_cmd_user_lisp_cmd_lisp" />
+        <AssociationConnector Association="NPConContext.FK_cmd_user_lisp_cmd_userlogins" />
+        <AssociationConnector Association="NPConContext.FK_cmd_userlogins_cmd_userdomains" />
+        <AssociationConnector Association="NPConContext.FK_cmd_userlogins_cmd_users" />
+        <AssociationConnector Association="NPConContext.FK_FactoryLines_concrType" />
+        <AssociationConnector Association="NPConContext.FK_end_prod_ver_consist_p_units" />
+        <AssociationConnector Association="NPConContext.FK_end_prod_ver_RawConsist_end_product_version" />
+        <AssociationConnector Association="NPConContext.FK_end_prod_ver_RawConsist_raw" />
+        <AssociationConnector Association="NPConContext.FK_end_product_version_Lines" />
+        <AssociationConnector Association="NPConContext.FK_end_product_version_prod_work_file" />
+        <AssociationConnector Association="NPConContext.FK_end_product_version_product" />
+        <AssociationConnector Association="NPConContext.FK_end_product_version_version_status" />
+        <AssociationConnector Association="NPConContext.FK_factory_lines_factory" />
+        <AssociationConnector Association="NPConContext.FK_factory_lines_Lines" />
+        <AssociationConnector Association="NPConContext.FK_FactoryLines_formingEquip" />
+        <AssociationConnector Association="NPConContext.FK_fstn_element_fstn_name" />
+        <AssociationConnector Association="NPConContext.FK_fstn_element_raw" />
+        <AssociationConnector Association="NPConContext.FK_galvanized_iron_raw" />
+        <AssociationConnector Association="NPConContext.FK_FactoryLines_steelClasses" />
+        <AssociationConnector Association="NPConContext.FK_rep_prod_factoryLines" />
+        <AssociationConnector Association="NPConContext.FK_m_box_raw" />
+        <AssociationConnector Association="NPConContext.FK_objectmark_mark_type" />
+        <AssociationConnector Association="NPConContext.FK_objecttype_mark_type" />
+        <AssociationConnector Association="NPConContext.FK_modification_parameter_mdm_Item_modification_t" />
+        <AssociationConnector Association="NPConContext.FK_modificationType4object_type_mdm_Item_modification_t" />
+        <AssociationConnector Association="NPConContext.FK_mod_param_value_pool_modification_parameter1" />
+        <AssociationConnector Association="NPConContext.FK_product_modification_mod_param_value_pool" />
+        <AssociationConnector Association="NPConContext.FK_modification_parameter_parameter" />
+        <AssociationConnector Association="NPConContext.FK_product_modification_modification_parameter" />
+        <AssociationConnector Association="NPConContext.FK_modificationType4object_type_objecttype" />
+        <AssociationConnector Association="NPConContext.FK_product_modification_modificationType4object_type" />
+        <AssociationConnector Association="NPConContext.FK_objectmark_normdoc" />
+        <AssociationConnector Association="NPConContext.R_28" />
+        <AssociationConnector Association="NPConContext.FK_objectconsist_objectmark" />
+        <AssociationConnector Association="NPConContext.FK_objectconsist_p_units" />
+        <AssociationConnector Association="NPConContext.R_51" />
+        <AssociationConnector Association="NPConContext.R_52" />
+        <AssociationConnector Association="NPConContext.R_31" />
+        <AssociationConnector Association="NPConContext.FK_Object_Object" />
+        <AssociationConnector Association="NPConContext.FK_projects_Objects" />
+        <AssociationConnector Association="NPConContext.FK_objecttype_p_units" />
+        <AssociationConnector Association="NPConContext.R_34" />
+        <AssociationConnector Association="NPConContext.FK_p_concrete_p_concr_binder" />
+        <AssociationConnector Association="NPConContext.FK_p_concrete_p_concr_class" />
+        <AssociationConnector Association="NPConContext.FK_p_concrete_p_concr_comp" />
+        <AssociationConnector Association="NPConContext.FK_p_concrete_p_concr_frost" />
+        <AssociationConnector Association="NPConContext.FK_p_concrete_p_concr_waterres" />
+        <AssociationConnector Association="NPConContext.FK_p_concrete_raw" />
+        <AssociationConnector Association="NPConContext.FK_p_hdpe_p_units" />
+        <AssociationConnector Association="NPConContext.FK_p_hdpe_raw" />
+        <AssociationConnector Association="NPConContext.FK__product__id_obje__2D27B809" />
+        <AssociationConnector Association="NPConContext.FK__RCP_nomen__id_ob__2DE40850" />
+        <AssociationConnector Association="NPConContext.FK__row__id_object__2F10007B" />
+        <AssociationConnector Association="NPConContext.FK_p_object_p_units" />
+        <AssociationConnector Association="NPConContext.FK_p_PEfilm_p_units" />
+        <AssociationConnector Association="NPConContext.FK_p_PEfilm_raw" />
+        <AssociationConnector Association="NPConContext.FK_parameter_p_units" />
+        <AssociationConnector Association="NPConContext.FK_raw_p_units1" />
+        <AssociationConnector Association="NPConContext.FK_parameter_sql_data_type" />
+        <AssociationConnector Association="NPConContext.FK_prod_work_file_product" />
+        <AssociationConnector Association="NPConContext.FK_prod_work_file_work_file" />
+        <AssociationConnector Association="NPConContext.FK_prod_work_file_wrk_file_type" />
+        <AssociationConnector Association="NPConContext.FK_product_modification_product" />
+        <AssociationConnector Association="NPConContext.FK__strip__id_object__300424B4" />
+        <AssociationConnector Association="NPConContext.FK_spiral_hose_raw" />
+        <AssociationConnector Association="NPConContext.FK_tube_raw" />
+        <AssociationConnector Association="NPConContext.FK_wood_raw" />
+        <AssociationConnector Association="NPConContext.FK_KZI_work_file" />
+        <AssociationConnector Association="NPConContext.FK_work_file_mark_type_work_file" />
+        <AssociationConnector Association="NPConContext.FK_work_file_work_file" />
+        <AssociationConnector Association="NPConContext.FK_Assembly_structure_Assembly" />
+        <AssociationConnector Association="NPConContext.FK_Assembly_structure_Assembly1" />
+        <AssociationConnector Association="NPConContext.FK_KZI_Assembly" />
+        <AssociationConnector Association="NPConContext.FK_nomenclature_color" />
+        <AssociationConnector Association="NPConContext.FK_floors_sections1" />
+        <AssociationConnector Association="NPConContext.FK_project_specific_floors1" />
+        <AssociationConnector Association="NPConContext.FK_floors_sections" />
+        <AssociationConnector Association="NPConContext.FK_project_specific_floors" />
+        <AssociationConnector Association="NPConContext.FK_nomenclature_all_Geometry" />
+        <AssociationConnector Association="NPConContext.FK_nomenclature_current_Geometry" />
+        <AssociationConnector Association="NPConContext.FK_KZI_KZI_Name" />
+        <AssociationConnector Association="NPConContext.FK_nomenclature_KZI_Name" />
+        <AssociationConnector Association="NPConContext.FK_project_specific_nomenclature" />
+        <AssociationConnector Association="NPConContext.FK_nomenclature_current_Parameters" />
+        <AssociationConnector Association="NPConContext.FK_project_specific_nomenclature_current" />
+        <AssociationConnector Association="NPConContext.FK_nomenclature_all_Parameters" />
+        <AssociationConnector Association="NPConContext.FK_project_specific_Parameters" />
+        <AssociationConnector Association="NPConContext.FK_Assembly_structure_Part" />
+        <AssociationConnector Association="NPConContext.FK_sections_projects1" />
+        <AssociationConnector Association="NPConContext.FK_sections_projects" />
+        <AssociationConnector Association="NPConContext.FK_modificators_Projects" />
+        <AssociationConnector Association="NPConContext.FK_modificators_SeriesId" />
+        <AssociationConnector Association="NPConContext.FK__RCP_consi__id_co__339CE1A6" />
+        <AssociationConnector Association="NPConContext.FK__RCP_nomen__id_co__2ED82C89" />
+        <AssociationConnector Association="NPConContext.FK__RCP_consi__id_RC__32A8BD6D" />
+        <AssociationConnector Association="NPConContext.permission4type" />
+        <AssociationConnector Association="NPConContext.productLayer" />
+        <AssociationConnector Association="NPConContext.wpf_control_property" />
+        <AssociationConnector Association="NPConContext.cmd_group_lisp" />
+        <AssociationConnector Association="NPConContext.cmd_userroles" />
+        <AssociationConnector Association="NPConContext.user_interface" />
+        <AssociationConnector Association="NPConContext.work_file_floors" />
+        <AssociationConnector Association="NPConContext.work_file_zone" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

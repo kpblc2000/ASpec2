@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -39,10 +38,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -67,13 +66,1444 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\addmods_from_C1.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\addmods_from_C1_ver2.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\addmods_from_C1_ver3.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\albName_exep.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\album.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\allLayer.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ALLPLAN_KB_differ.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ALLPLAN_mods_to_NPCon.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ALLPLAN_to_NPCon.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\angle.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\arm.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\arm_type.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\aspa_entity.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Assembly.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Assembly_structure.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\a_view_Shelf_mark_MaxID.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\base_changes_delete.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\base_ch_npcon.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\C1stg_modificators.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\charlistMark_to_type_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\chk_elements_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\classType.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\cmd_alias.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\cmd_groups.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\cmd_lisp.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\cmd_log.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\cmd_userdomains.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\cmd_userlogins.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\cmd_users.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\cmd_user_lisp.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\color.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\coloristic.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Colour_article.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Colour_index.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\concrType.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\C_v_entity_rem.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\C_v_relation_rem.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ecp_wip_rem.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\end_product_version.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\end_product_version_06_05_2020.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\end_product_version_20072020.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\end_product_version_temp.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\end_prod_ver_consist.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\end_prod_ver_consist_OS_26_02_2021.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\end_prod_ver_RawConsist.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\entity_mark_trim_rem.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ERRORS_IN_APERTURES.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ERRORS_IN_APERTURES_WD.cs">
       <DependentUpon>NPConDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\factory.cs">
       <DependentUpon>NPConDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\factory_lines.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\factory_lines_old.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\factory_old.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\findddldmltriggers_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\floor.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\floors_OLD.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\fnList_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\formingEquip.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\from_view_product_dim_1_Tbl.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\fstn_element.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\fstn_name.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\galvanized_iron.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Geometry.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\get_Zaklad_ByParam_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\IDMDM_ModId_from_1c.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\IDMDM_ModId_from_1c_ver2.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\IDMDM_ModId_from_1c_ver3.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\IdObjViewNPCChExpt.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\IdWorkFiles4Mark_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\IlastModsMarksfrom1C_ver2.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\IlastModsMarksfrom1C_ver3.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\job_files_4_Load_limitDate_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\KZI.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\KZI_Name.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\lastModsMarksfrom1C.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\last_changes_mark_ver.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Line.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\lines_old.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\lisp_interface.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\listalb.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\loaded_Job_Files.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\loaded_Marks_from_1C.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\loaded_Marks_from_1C_ver2.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\loaded_Marks_from_1C_ver3.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_16_072020_end.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_16_082020_end.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_16_082020_SH.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_16_082020_v2.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_17_072020_end.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_17_082020_end.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_17_082020_SH.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_17_082020_v2.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_18_072020_end.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_18_082020_SH.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_18_082020_v2.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_31_64_072020_end.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_31_73_082020_end.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_31_73_082020_SH.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_31_73_082020_v2.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_34_072020_end.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_34_082020_end.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_34_082020_SH.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_34_082020_v2.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_35_47_082020_end.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_35_47_082020_SH.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_35_47_082020_v2.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LOAD_T_47_072020_end.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Marks_and_modifications.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Marks_and_modifications_from_EXCEL.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Marks_and_modifications_MDMdeleted.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Marks_and_modifications_nm.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Marks_and_modifications_to_1C.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mark_geometry.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mark_type.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mdm_forming_dimension.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mdm_forming_dimension_v.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mdm_forming_lifting.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mdm_forming_lifting_v.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mdm_Forming_type.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mdm_Forming_type_v.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mdm_Item_colour.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mdm_Item_construction.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mdm_Item_construction_Forming.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mdm_Item_construction_modification.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mdm_Item_group_long_t.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mdm_Item_modification.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mdm_Item_modification_t.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mdm_Item_modification_type_t.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mdm_Layer_documents_state_actual_t.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mdm_object_plain.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mdm_Side.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\MetPref.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\modificationType4object_type.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\modificationType4object_type_COPY25102019.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\modification_parameter.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ModsMarksfrom1C.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ModsMarksfrom1C_ver2.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ModsMarksfrom1C_ver3.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mods_4_EPV_chk_KTD.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mods_loaded_from_1c.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mods_loaded_from_1c_05.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mods_loaded_from_1c_old.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mods_loaded_from_1c_ver2.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mods_loaded_from_1c_ver3.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mod_param_value_pool.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\mod_param_value_pool_07042020.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\m_box.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\nm_ST10_insert_mark_geometry_to_MMG_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\nomenclature.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\nomenclature_all.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\nomenclature_current.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\normdoc.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\no_weight_TEMP.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\NPConDataModel.Views.cs" />
+    <Compile Include="Data\npcon_changes.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\npcon_changes_13_02_2020.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\npcon_changes_18_02_2020.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\npcon_changes_20_02_2020.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\npcon_changes_22_12_2019.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\npcon_changes_23_04_2020.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\npcon_changes_24_12_2019.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\npcon_changes_24_12_2019_aftnn.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\npcon_changes_dev.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\npcon_changes_dev2.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\npcon_changes_er.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\npcon_changes_er_08_06_2020.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\npcon_changes_ok.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\npcon_ch_temp.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Object.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\objectconsist.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\objectmark.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\objectprefix.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\objecttype.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\parameter.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Parameter1.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\params_loaded_from_1c.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\params_loaded_from_1c_05.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\params_loaded_from_1c_old.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\params_loaded_from_1c_ver2.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\params_loaded_from_1c_ver3.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Part.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Permissions_4DB_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\product.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\product_20072020.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\product_2020_10_20.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\product_Dev.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\product_modification.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\product_modification1.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\product_modification_20072020.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\product_modification_deleted_14_09_2020.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\product_modification_test.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\product_OS_26_02_2021.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\prod_work_file.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\project.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\projects_OLD.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\project_specific.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\project_specific_OLD.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\p_concrete.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\p_concr_binder.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\p_concr_class.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\p_concr_comp.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\p_concr_frost.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\p_concr_waterres.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\p_hdpe.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\p_object.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\p_object_20072020.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\p_object_Dev.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\p_object_OS_26_02_2021.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\p_PEfilm.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\p_units.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\raw.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RCP_consistancy.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RCP_nomenclature.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RD.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\rds_ins.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\rep_prod.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\section.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sections_OLD.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\somemаrk.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\some_new_mods.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\spiral_hose.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_helpdiagrams_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sql_data_type.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ST6_W_D_to_chk_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ST7_chk_to_WINDOWS_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ST8_chk_to_DOORs_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\stage_1_2_mods.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\stage_1_2_mods_constr.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\stage_1_mods_KTD.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\steelClass.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\strip.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ST_AP_1_check_and_insert_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ST_AP_2_transfer_to__tabs_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ST_AP_3_mods_checking_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sysdiagram.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblModificator.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblModificators_OLD.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblNodeDepth.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblNodesContent.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblProject.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblSery.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbl_AspecificErrorLog.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbl_mark_code_type_C1P.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbl_mark_parsing.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbl_UserActivityLog.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbl_UserActivityStat.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbl_UserLispErrorLog.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbl_UserLoginForLogging.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Temp1C.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Temp1C_05.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\temporary1.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\temporary1_1.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\temporary2.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\temporary3.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\temporary4.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\temporary5.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\temporary6.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\temporary7.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\temporary8.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\temp_1C_PO.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_add_heater.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Temp_del_KTD__ASpecific_.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\temp_del_marks.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\temp_fio_makr.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\temp_load1C.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Temp_load_thickness.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_marks_mods_4_1C.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_newI_IDMDM_in_tableout.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\temp_NP_PO.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_OC_ALL.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Temp_PG_View_UnicEndProd.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_PR.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_PR_new_mods.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_PR_ver1.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_View_1_Rec.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_view_idSubObj4objType.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_View_Product.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_View_Row_Test.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_View_TypePrefix.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_View_Арматура.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_View_Дерево.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_View_Коробки.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_View_Крепёж.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_View_Полоска.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_View_Уголок.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_View_Утеплитель.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_Модификаторы_все.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_Модификаторы_используемые.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_Модификаторы_с_параметрами.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_Модификаторы_Типов_изделий.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_ОС_ОСг_АСг_ОСф.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_СК_МН_ЕстьВ_изделиях.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEMP_СкобаЗакладная.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Test_Error_LHW_07.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Test_Error_PVL_07.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Test_Error_V_07.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\test_mark06_del.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\test_mark07_end.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\test_mark08.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\test_mark08_ALL.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\test_mark09.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\test_mark10.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Test_mark1Layer.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TEST_TEMP.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tmp_DoubleModif_all.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tmp_DoubleModif_all_double.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tmp_DoubleModif_all_PO_num.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tmp_npcontmp_tbl_mark_parsing.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\toLocal_del.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\to_SerOfMarks_t.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tube.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\user.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\version_status.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ver_change_last_time_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view1.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\viewIfcModificator.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\viewNodesContent.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\viewProjectData.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_1C_mods.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_1C_mods_1.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_3D_Zakl_Stripe.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_4_ASPA_wf_Z.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_addNewMark.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_ALL_alias_4_login_users.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_ALL_alias_login_users_essential.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_angle.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_arm.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_arm_rope.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_ASPA_123.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_Building_Area_ASPA.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_Building_Area_ASPA_rem.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_cmd_group_lisp.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_cmd_lisp_alias.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_coloristics.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_concreteInObjects.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_Count_Ropes.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_Count_Ropes_4MaxVer.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_DOORS.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_dry_mix.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_elementobjecttype.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_EndPod_TotalDim.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_EndPod_TotalDim_2ASPA.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_endproduct.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_endproduct_cut.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_EndProd_Raw.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_end_prod_consist.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_end_prod_consist_2ASPA.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_end_prod_consist_Mark_2ASPA.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_end_prod_Status_fromExcel.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_end_prod_ver_allMass.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_end_prod_ver_RawConsist_Sum.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_end_prod_ver_RawConsist_SumKg.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_end_prod_ver_RawConsist_SumKg_2ASPA.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_entity_mark_trim_ASPA.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_entity_mark_trim_ASPA_rem.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_entity_mark_type_C1P.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_fact_lines.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_forming_type_C1P.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_forming_type_C1P_rem.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_fstn_element.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_galvanized_iron.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_GroupMarkOkStatus.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_group_alias_4_login_users.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_heater.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_idObType4MarkPref.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_ID_Bracket.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_id_modif_Bracket.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_id_object_SEM_3layers.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_id_object_SEM_REN_3layers.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_Id_outer_user_login.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_Id_PIC_user_login.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_ID_RDS.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_ItemConstModif.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_Item_construction_C1P.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_Item_construction_modification_list_C1P.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_item_const_forming_C1P.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_Item_modification_list_C1P.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_ItmConsID_by_idEndProdVer.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_ItmConsID_by_idEndProdVer2.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_ItmConsID_by_idEndProdVer3.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_ItmConsID_by_idEndProdVer4.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_ItmConsID_by_idEndProdVer5.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_ItmConsID_by_idEndProdVer6.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_ItmConsId_by_IdNPCon.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_job_files.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_job_files_4_Load.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_job_files_4_Load_limitDate_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_job_files_UUID_4_Load.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_ktd_heater_3d.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_lines.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_managed_outer_alias.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_managed_outer_command.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_managed_outer_group.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_managed_PIC_command.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_managed_PIC_group.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_mark4OSOSf.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_markName_Npcon_Mdm.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_markUnicNameT_cancel.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_markUnicNameT_status.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_mark_code_type_C1P.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_Max_ID_EndPodVer_4_ID_EndProd.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_mbox.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_MDM_NpCon_mark_C1P.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_modificators.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_modificators_oldver.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_modifType_4objType.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_modif_and_param_4add.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_MODS_TO_MDM.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_msaspa_taskmanager_items_ALL.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_msaspa_taskmanager_items_work.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_node.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_npcon_changed_idProd.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_npcon_changed_maxIdEndProdVer.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_npcon_changed_product.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_npcon_changed_product1.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_npcon_changed_product3.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_npcon_changed_product4.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_npcon_changed_product_22_06_2020.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_npcon_changed_product_alter.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_npcon_changed_product_chk_KTD.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_npcon_changed_product_reserve_del.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_NPCon_mods.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_NPCon_mods_1.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_objalbumorgost.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_objconsist.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_OS_Ropes.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_permtype.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_person_alias_4_login_users.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_product.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_product_dim_1.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_product_dim_1_Group.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_Product_Mark_C1P.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_product_modification.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_Raw_Units.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_RDS.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_Shelf_mark_MaxID.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_spiral_hose.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_strip.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_svod_ASPA.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_TEMP1C.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_TEMP_PR_last_UUID.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_test_mark07.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_tube.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_UserActivityStat.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_user_alias_lisp.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_user_domain.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_user_domain_roles.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_WINDOWS.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_wood.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_WrkFile_MarkMails.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_WrkFile_MarkPlans.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_WrkFile_MarkProducts.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_ПравильныеПроёмыМарок.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\view_РазницаПараметров2.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_РазницаПараметров3.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_РазницаПараметров4.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_РазницаПараметров5.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\View_СравнениеПараметров_1С_МДМ_NPCon.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\v_actual_ver_1c.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\v_factory_lines.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\v_ind_rods.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\v_ind_rods_fix.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\v_MARKS_MODS_to_delete_from_MDM.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\v_Marks_with_ends.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\v_Marks_with_tooth.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WINDOWS_DOORS_to_1C.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\wood.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WorkFiles4Mark_Result.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\work_file.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\work_file_mark_type.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\wpf_control.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\wpf_property.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\wrk_file_type.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ZAKL_ANKERA_all_comp.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\zone.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ГабаритыNPCon.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\каркасыДочерние.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\каркасыПовторение.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\каркасыРодительские.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\РолиУКРна_05_06_2019.cs">
+      <DependentUpon>NPConDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\AlbumViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
     <Page Include="MainWindow.xaml">
@@ -155,12 +1585,4 @@
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
-  </Target>
-  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
 </Project>
