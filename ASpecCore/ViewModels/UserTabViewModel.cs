@@ -15,19 +15,6 @@ namespace ASpecCore.ViewModels
     public class UserTabViewModel : ViewModel
     {
 
-        #region Title
-        private string _Title;
-        public string Title
-        {
-            get { return _Title; }
-            set
-            {
-                _Title = GeneralFunctionality.MakeDialogTitle(value);
-                OnPropertyChanged(nameof(Title));
-            }
-        }
-        #endregion
-
         #region Users
         private ObservableCollection<User> _Users;
         public ObservableCollection<User> Users
@@ -57,7 +44,7 @@ namespace ASpecCore.ViewModels
 
         public UserTabViewModel()
         {
-            Title = "Тестовое окно";
+            Title = "Пользователи";
 
             var lst = Enumerable.Range(1, 10)
                 .Select(i => new User
