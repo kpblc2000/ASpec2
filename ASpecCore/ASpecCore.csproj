@@ -61,6 +61,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Infrastructure\GeneralFunctionality.cs" />
+    <Compile Include="Models\Data\album.cs">
+      <DependentUpon>NPConDbFirstData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Data\factory.cs">
+      <DependentUpon>NPConDbFirstData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Data\factory_lines.cs">
+      <DependentUpon>NPConDbFirstData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Data\Line.cs">
+      <DependentUpon>NPConDbFirstData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Data\NPConDbFirstData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NPConDbFirstData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Data\NPConDbFirstData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NPConDbFirstData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Data\NPConDbFirstData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NPConDbFirstData.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Data\p_units.cs">
+      <DependentUpon>NPConDbFirstData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Themes\Generic.xaml.cs">
@@ -77,6 +107,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Models\Data\NPConDbFirstData.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NPConDbFirstData.Context.cs</LastGenOutput>
+      <DependentUpon>NPConDbFirstData.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Data\NPConDbFirstData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NPConDbFirstData.edmx</DependentUpon>
+      <LastGenOutput>NPConDbFirstData.cs</LastGenOutput>
+    </Content>
     <Content Include="Readme.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +136,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ASpecCore.ruleset" />
+    <EntityDeploy Include="Models\Data\NPConDbFirstData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NPConDbFirstData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\Data\NPConDbFirstData.edmx.diagram">
+      <DependentUpon>NPConDbFirstData.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
