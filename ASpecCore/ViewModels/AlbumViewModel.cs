@@ -17,7 +17,14 @@ namespace ASpecCore.ViewModels
 
             using (NPConEntities db = new NPConEntities())
             {
-                _Albums = new List<album>(db.albums);
+                _factoryVM = new FactoryViewModel();
+                List<album> resList = new List<album>();
+                foreach (var item in db.albums)
+                {
+                    item.factory = _factoryVM.GetFactoryById(item.id_fact);
+                    resList.Add(item);
+                }
+                _Albums = new List<album>(resList);
                 ShownAlbums = _Albums;
             }
         }
@@ -35,14 +42,7 @@ namespace ASpecCore.ViewModels
             {
                 if (Set(ref _ShowOnlyEndProductAlbums, value))
                 {
-                    if (value == null)
-                    {
-                        ShownAlbums = _Albums;
-                    }
-                    else
-                    {
-                        ShownAlbums = new List<album>(_Albums.Where(o => o.is_end_prod_alb == value));
-                    }
+                    RefillShownAlbums();
                 }
             }
         }
@@ -54,20 +54,15 @@ namespace ASpecCore.ViewModels
             {
                 if (Set(ref _ShowOnlyFactoryAlbums, value))
                 {
-                    if (value == null)
-                    {
-                        ShownAlbums = _Albums;
-                    }
-                    else if (value == true)
-                    {
-                        ShownAlbums = new List<album>(_Albums.Where(o => o.factory != null));
-                    }
-                    else
-                    {
-                        ShownAlbums = new List<album>(_Albums.Where(o => o.factory == null));
-                    }
+                    RefillShownAlbums();
                 }
             }
+        }
+
+        public album SelectedAlbum
+        {
+            get { return _SelectedAlbum; }
+            set { Set(ref _SelectedAlbum, value); }
         }
 
         private void RefillShownAlbums()
@@ -98,7 +93,7 @@ namespace ASpecCore.ViewModels
                     resList.Add(item);
                 }
             }
-            if (resList.Count==0)
+            if (resList.Count == 0)
             {
                 ShownAlbums = new List<album>();
             }
@@ -110,6 +105,8 @@ namespace ASpecCore.ViewModels
 
         private List<album> _Albums;
         private List<album> _ShownAlbums;
+        private album _SelectedAlbum;
+        private FactoryViewModel _factoryVM;
 
         private bool? _ShowOnlyEndProductAlbums;
         private bool? _ShowOnlyFactoryAlbums;
