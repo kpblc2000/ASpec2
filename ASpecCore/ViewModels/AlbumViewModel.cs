@@ -2,6 +2,7 @@
 using ASpecCore.ViewModels.Base;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,20 +14,20 @@ namespace ASpecCore.ViewModels
         public AlbumViewModel()
         {
             Title = "Альбомы";
-            //using (NPConDataContext db = new NPConDataContext())
-            //{
-            //    Albums = new List<album>(db.Albums);
-            //}
+
+            using (NPConEntities db = new NPConEntities())
+            {
+                Albums = new ObservableCollection<album>(db.albums);
+            }
         }
 
-        //public List<album> Albums
-        //{
-        //    get { return _Albums; }
-        //    set { Set(ref _Albums, value); }
-        //}
+        public ObservableCollection<album> Albums
+        {
+            get { return _Albums; }
+            set { Set(ref _Albums, value); }
+        }
 
-
-        //private List<album> _Albums;
+        private ObservableCollection<album> _Albums;
 
     }
 }
