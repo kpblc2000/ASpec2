@@ -96,9 +96,13 @@
     <Compile Include="Themes\Generic.xaml.cs">
       <DependentUpon>Generic.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AlbumViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
     <Compile Include="ViewModels\UserAddEditViewModel.cs" />
     <Compile Include="ViewModels\UserTabViewModel.cs" />
+    <Compile Include="Views\AlbumView.xaml.cs">
+      <DependentUpon>AlbumView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserAddEdit.xaml.cs">
       <DependentUpon>UserAddEdit.xaml</DependentUpon>
     </Compile>
@@ -121,6 +125,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AlbumView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
