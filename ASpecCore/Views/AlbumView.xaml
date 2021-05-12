@@ -34,7 +34,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <DataGrid Grid.Column="0"
-                      ItemsSource="{Binding Albums}"
+                      ItemsSource="{Binding ShownAlbums}"
                       AutoGenerateColumns="False"
                       VirtualizingPanel.IsVirtualizing="True"
                       VirtualizingPanel.VirtualizationMode="Recycling"
@@ -75,6 +75,16 @@
                         VerticalAlignment="Top">
                 <Button Content="Добавить"/>
                 <Button Content="Установить активным"/>
+                <CheckBox Content="Конечный продукт"
+                          IsThreeState="True"
+                          Margin="5,2,2,5"
+                          IsChecked="{Binding ShowOnlyEndProductAlbums}"
+                          />
+                <CheckBox Content="Отнесен к заводу"
+                          Margin="5,2,2,5"
+                          IsThreeState="True"
+                          IsChecked="{Binding ShowOnlyFactoryAlbums}"
+                          />
             </StackPanel>
         </Grid>
     </DockPanel>
