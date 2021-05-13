@@ -36,9 +36,29 @@
             </Grid.ColumnDefinitions>
             <DataGrid Grid.Column="0"
                       ItemsSource="{Binding Albums}"
-                      AutoGenerateColumns="True"
+                      VirtualizingPanel.IsVirtualizing="True"
+                      VirtualizingPanel.CacheLength="5"
+                      VirtualizingPanel.VirtualizationMode="Recycling"
+                      AutoGenerateColumns="False"
                       >
-                
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Завод"
+                                        Binding="{Binding factory.f_name}"/>
+                    <DataGridTextColumn Header="Id альбома" Binding="{Binding id_album}"/>
+                    <DataGridTextColumn Header="Альбом" Binding="{Binding name_alb}"/>
+                    <DataGridTextColumn Header="Описание альбома" 
+                                        Binding="{Binding description_alb}"/>
+                    <DataGridCheckBoxColumn Header="В разработке" 
+                                            Binding="{Binding in_design}"/>
+                    <DataGridCheckBoxColumn Binding="{Binding is_end_prod_alb}">
+                        <DataGridCheckBoxColumn.Header>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Конечная"/>
+                                <TextBlock Text="продукция"/>
+                            </StackPanel>
+                        </DataGridCheckBoxColumn.Header>
+                    </DataGridCheckBoxColumn>
+                </DataGrid.Columns>
             </DataGrid>
             <StackPanel Grid.Column="1"
                         Orientation="Vertical"
