@@ -1,4 +1,4 @@
-﻿using ASpecCore.Models.Data;
+﻿using ASpecCore.Models;
 using ASpecCore.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -13,9 +13,9 @@ namespace ASpecCore.ViewModels
         public AlbumViewModel()
         {
             Title = "Альбомы";
-            using (NPConDbFirstContext db = new NPConDbFirstContext())
+            using (NPConDataContext db = new NPConDataContext())
             {
-                Albums = new List<album>(db.albums);
+                Albums = new List<album>(db.Albums);
             }
         }
 

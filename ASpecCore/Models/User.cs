@@ -1,15 +1,31 @@
-﻿namespace ASpecCore.Models
+namespace ASpecCore.Models
 {
-    public class User
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("user")]
+    public partial class user
     {
-        public int Id { get; set; }
-        /// <summary>Имя</summary>
-        public string FirstName { get; set; }
-        /// <summary>Отчество</summary>
-        public string MiddleName { get; set; }
-        public string LastName { get; set; }
-        public string Login { get; set; }
-        public string Domain { get; set; }
-        public bool IsDeveloper { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public user()
+        {
+            lisp_interface = new HashSet<lisp_interface>();
+        }
+
+        [Key]
+        public int Id_user { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string UserLogin { get; set; }
+
+        [StringLength(50)]
+        public string UserDomain { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<lisp_interface> lisp_interface { get; set; }
     }
 }

@@ -16,16 +16,8 @@ namespace ASpecCore.ViewModels
     {
 
         #region Users
-        private ObservableCollection<User> _Users;
-        public ObservableCollection<User> Users
-        {
-            get { return _Users; }
-            set
-            {
-                _Users = value;
-                OnPropertyChanged(nameof(Users));
-            }
-        }
+        
+        
         #endregion
 
         #region SelectedUser
@@ -46,20 +38,11 @@ namespace ASpecCore.ViewModels
         {
             Title = "Пользователи";
 
-            var lst = Enumerable.Range(1, 10)
-                .Select(i => new User
-                {
-                    Id = i + 1,
-                    Domain = $"server{i}.com",
-                    FirstName = $"FirstName-{i}",
-                    LastName = $"LastName-{i}",
-                    MiddleName = $"MidName{i}",
-                    Login = $"login{i}",
-                    IsDeveloper = i % 4 == 0
-                })
-                .ToList();
+            using (NPConDataContext db = new NPConDataContext())
+            {
+                Users = new List<user>(db.users);
+            }
 
-            Users = new ObservableCollection<User>(lst);
         }
 
         #region ButtonClicks
@@ -79,7 +62,7 @@ namespace ASpecCore.ViewModels
                 return;
             }
             vm.Title = "Добавление нового пользователя";
-            vm.CurrentUser = new User();
+            vm.CurrentUser = new user();
 
             win.ShowDialog();
             if (win.DialogResult == true)
@@ -110,5 +93,17 @@ namespace ASpecCore.ViewModels
                 Users[idx] = vm.CurrentUser;
             }
         }
+
+        public List<user> Users
+        {
+            get { return _Users; }
+            set
+            {
+                _Users = value;
+                OnPropertyChanged(nameof(Users));
+            }
+        }
+
+        private List<user> _Users;
     }
 }
