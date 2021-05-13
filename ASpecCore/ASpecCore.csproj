@@ -98,6 +98,7 @@
     </Compile>
     <Compile Include="ViewModels\AlbumViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
+    <Compile Include="ViewModels\FactoryViewModel.cs" />
     <Compile Include="ViewModels\UserAddEditViewModel.cs" />
     <Compile Include="ViewModels\UserTabViewModel.cs" />
     <Compile Include="Views\AlbumView.xaml.cs">

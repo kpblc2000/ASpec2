@@ -1,10 +1,7 @@
 ﻿using ASpecCore.Models.Data;
 using ASpecCore.ViewModels.Base;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ASpecCore.ViewModels
 {
@@ -15,6 +12,7 @@ namespace ASpecCore.ViewModels
             Title = "Альбомы";
             using (NPConDbFirstContext db = new NPConDbFirstContext())
             {
+                _Factories = new List<factory>(db.factories);
                 Albums = new List<album>(db.albums);
             }
         }
@@ -22,9 +20,10 @@ namespace ASpecCore.ViewModels
         public List<album> Albums
         {
             get { return _Albums; }
-            set { Set(ref _Albums, value); }
+            private set { Set(ref _Albums, value); }
         }
 
         private List<album> _Albums;
+        private readonly List<factory> _Factories;
     }
 }
