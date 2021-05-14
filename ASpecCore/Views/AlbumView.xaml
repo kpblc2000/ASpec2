@@ -62,7 +62,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding factory.f_name, StringFormat='\{0\} '}"/>
+                                    <TextBlock Text="{Binding factory.f_name, StringFormat='\{0\}, краткое название завода: '}"/>
                                     <TextBlock Text="{Binding factory.f_prefix}"/>
                                 </StackPanel>
                             </DataTemplate>
