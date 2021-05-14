@@ -63,7 +63,6 @@
     <Compile Include="Models\Data\album.cs">
       <DependentUpon>NPConDbFirstData.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Data\CustomNPConDataContext.cs" />
     <Compile Include="Models\Data\factory.cs">
       <DependentUpon>NPConDbFirstData.tt</DependentUpon>
     </Compile>
