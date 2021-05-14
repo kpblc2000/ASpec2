@@ -8,8 +8,9 @@
         mc:Ignorable="d" 
         d:DesignHeight="450"
         d:DesignWidth="800"
-        WindowStartupLocation="CenterScreen"
         WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterScreen"
+        Title="{Binding Title}"
         >
     <Window.DataContext>
         <vm:AlbumViewModel/>
@@ -21,6 +22,9 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
+    <Window.DataContext>
+        <vm:AlbumViewModel/>
+    </Window.DataContext>
     <DockPanel>
         <StackPanel Orientation="Horizontal"
                     DockPanel.Dock="Bottom"
@@ -39,32 +43,40 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <DataGrid Grid.Column="0"
-                      ItemsSource="{Binding ShownAlbums}"
-                      AutoGenerateColumns="False"
+                      ItemsSource="{Binding Albums}"
                       VirtualizingPanel.IsVirtualizing="True"
+                      VirtualizingPanel.CacheLength="5"
                       VirtualizingPanel.VirtualizationMode="Recycling"
-                      IsReadOnly="True"
-                      SelectedItem="{Binding SelectedAlbum}"
+                      AutoGenerateColumns="False"
                       >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Альбом" 
-                                        Binding="{Binding name_alb}"
-                                        Width="Auto"
-                                        />
-                    <DataGridTextColumn Header="Описание" 
+                    <DataGridTextColumn Header="Id альбома" Binding="{Binding id_album}"/>
+                    <DataGridTextColumn Header="Альбом" Binding="{Binding name_alb}"/>
+                    <DataGridTextColumn Header="Описание альбома" 
+                                        Width="*"
                                         Binding="{Binding description_alb}"
                                         Width="*"
                                         />
+                    <DataGridCheckBoxColumn Header="В разработке" 
+                                            Binding="{Binding in_design}"/>
                     <DataGridCheckBoxColumn Binding="{Binding is_end_prod_alb}">
                         <DataGridCheckBoxColumn.Header>
-                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                                <TextBlock Text="Альбом"/>
-                                <TextBlock Text="изделий"/>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Конечная"/>
+                                <TextBlock Text="продукция"/>
                             </StackPanel>
                         </DataGridCheckBoxColumn.Header>
                     </DataGridCheckBoxColumn>
-                    <DataGridTextColumn Header="Завод" Binding="{Binding factory.f_name}"/>
-                    <DataGridTextColumn Header="Префикс" Binding="{Binding factory.f_prefix}" MinWidth="65"/>
+                    <DataGridTemplateColumn Header="Завод">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding factory.f_name, StringFormat='\{0\}, краткое название завода: '}"/>
+                                    <TextBlock Text="{Binding factory.f_prefix}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
             <StackPanel Grid.Column="1"

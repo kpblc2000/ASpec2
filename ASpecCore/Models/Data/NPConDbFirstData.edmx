@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище NPConModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="album">
+          <Key>
+            <PropertyRef Name="id_album" />
+          </Key>
+          <Property Name="id_album" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_alb" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="description_alb" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="in_design" Type="bit" />
+          <Property Name="compr_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="created_alb_orig_login" Type="nvarchar" MaxLength="50" />
+          <Property Name="file_path" Type="nvarchar(max)" />
+          <Property Name="is_end_prod_alb" Type="bit" />
+          <Property Name="id_fact" Type="int" />
+        </EntityType>
+        <EntityType Name="factory">
+          <Key>
+            <PropertyRef Name="id_fact" />
+          </Key>
+          <Property Name="id_fact" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="f_name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="f_prefix" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="factory_lines">
+          <Key>
+            <PropertyRef Name="id_fact_line" />
+          </Key>
+          <Property Name="id_fact_line" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_fact" Type="int" Nullable="false" />
+          <Property Name="id_line" Type="int" Nullable="false" />
+          <Property Name="actual" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lines">
+          <Key>
+            <PropertyRef Name="id_line" />
+          </Key>
+          <Property Name="_Вид_формования" Type="nvarchar(max)" />
+          <Property Name="_Распалубка" Type="nvarchar(max)" />
+          <Property Name="_Вид_армирования" Type="nvarchar(max)" />
+          <Property Name="_Класс_стали" Type="nvarchar(max)" />
+          <Property Name="_Тип_бетона" Type="nvarchar(max)" />
+          <Property Name="_CAD_данные" Type="nvarchar(max)" />
+          <Property Name="id_line" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_formEquip" Type="int" Nullable="false" />
+          <Property Name="forming_lifting_guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_arm_type" Type="int" Nullable="false" />
+          <Property Name="id_class_of_steel" Type="int" Nullable="false" />
+          <Property Name="id_type_of_concr" Type="int" Nullable="false" />
+          <Property Name="CAD" Type="bit" Nullable="false" />
+          <Property Name="actual" Type="bit" Nullable="false" />
+          <Property Name="line_name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="UID_1c" Type="nchar" MaxLength="36" />
+          <Property Name="short_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="row_ver" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="p_units">
+          <Key>
+            <PropertyRef Name="unitcode" />
+          </Key>
+          <Property Name="unitcode" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="unitname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="graphsymbol_rus" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="graphsymbol_int" Type="nvarchar" MaxLength="50" />
+          <Property Name="codesymbol_rus" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="codesymbol_int" Type="nvarchar" MaxLength="50" />
+          <Property Name="p_quantity" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_album_factory">
+          <End Role="factory" Type="Self.factory" Multiplicity="0..1" />
+          <End Role="album" Type="Self.album" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="factory">
+              <PropertyRef Name="id_fact" />
+            </Principal>
+            <Dependent Role="album">
+              <PropertyRef Name="id_fact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_factory_lines_factory">
+          <End Role="factory" Type="Self.factory" Multiplicity="1" />
+          <End Role="factory_lines" Type="Self.factory_lines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="factory">
+              <PropertyRef Name="id_fact" />
+            </Principal>
+            <Dependent Role="factory_lines">
+              <PropertyRef Name="id_fact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_factory_lines_Lines">
+          <End Role="Lines" Type="Self.Lines" Multiplicity="1" />
+          <End Role="factory_lines" Type="Self.factory_lines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lines">
+              <PropertyRef Name="id_line" />
+            </Principal>
+            <Dependent Role="factory_lines">
+              <PropertyRef Name="id_line" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище NPConModelContainer">
+          <EntitySet Name="album" EntityType="Self.album" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="factory" EntityType="Self.factory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="factory_lines" EntityType="Self.factory_lines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lines" EntityType="Self.Lines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="p_units" EntityType="Self.p_units" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_album_factory" Association="Self.FK_album_factory">
+            <End Role="factory" EntitySet="factory" />
+            <End Role="album" EntitySet="album" />
+          </AssociationSet>
+          <AssociationSet Name="FK_factory_lines_factory" Association="Self.FK_factory_lines_factory">
+            <End Role="factory" EntitySet="factory" />
+            <End Role="factory_lines" EntitySet="factory_lines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_factory_lines_Lines" Association="Self.FK_factory_lines_Lines">
+            <End Role="Lines" EntitySet="Lines" />
+            <End Role="factory_lines" EntitySet="factory_lines" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NPConModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="album">
+          <Key>
+            <PropertyRef Name="id_album" />
+          </Key>
+          <Property Name="id_album" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_alb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description_alb" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="in_design" Type="Boolean" />
+          <Property Name="compr_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="created_alb_orig_login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="file_path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="is_end_prod_alb" Type="Boolean" />
+          <Property Name="id_fact" Type="Int32" />
+          <NavigationProperty Name="factory" Relationship="Self.FK_album_factory" FromRole="album" ToRole="factory" />
+        </EntityType>
+        <EntityType Name="factory">
+          <Key>
+            <PropertyRef Name="id_fact" />
+          </Key>
+          <Property Name="id_fact" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="f_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="f_prefix" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="albums" Relationship="Self.FK_album_factory" FromRole="factory" ToRole="album" />
+          <NavigationProperty Name="factory_lines" Relationship="Self.FK_factory_lines_factory" FromRole="factory" ToRole="factory_lines" />
+        </EntityType>
+        <EntityType Name="factory_lines">
+          <Key>
+            <PropertyRef Name="id_fact_line" />
+          </Key>
+          <Property Name="id_fact_line" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_fact" Type="Int32" Nullable="false" />
+          <Property Name="id_line" Type="Int32" Nullable="false" />
+          <Property Name="actual" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="factory" Relationship="Self.FK_factory_lines_factory" FromRole="factory_lines" ToRole="factory" />
+          <NavigationProperty Name="Line" Relationship="Self.FK_factory_lines_Lines" FromRole="factory_lines" ToRole="Lines" />
+        </EntityType>
+        <EntityType Name="Line">
+          <Key>
+            <PropertyRef Name="id_line" />
+          </Key>
+          <Property Name="C_Вид_формования" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C_Распалубка" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C_Вид_армирования" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C_Класс_стали" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C_Тип_бетона" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C_CAD_данные" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id_line" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_formEquip" Type="Int32" Nullable="false" />
+          <Property Name="forming_lifting_guid" Type="Guid" Nullable="false" />
+          <Property Name="id_arm_type" Type="Int32" Nullable="false" />
+          <Property Name="id_class_of_steel" Type="Int32" Nullable="false" />
+          <Property Name="id_type_of_concr" Type="Int32" Nullable="false" />
+          <Property Name="CAD" Type="Boolean" Nullable="false" />
+          <Property Name="actual" Type="Boolean" Nullable="false" />
+          <Property Name="line_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UID_1c" Type="String" MaxLength="36" FixedLength="true" Unicode="true" />
+          <Property Name="short_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="row_ver" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="factory_lines" Relationship="Self.FK_factory_lines_Lines" FromRole="Lines" ToRole="factory_lines" />
+        </EntityType>
+        <Association Name="FK_album_factory">
+          <End Role="factory" Type="Self.factory" Multiplicity="0..1" />
+          <End Role="album" Type="Self.album" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="factory">
+              <PropertyRef Name="id_fact" />
+            </Principal>
+            <Dependent Role="album">
+              <PropertyRef Name="id_fact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_factory_lines_factory">
+          <End Role="factory" Type="Self.factory" Multiplicity="1" />
+          <End Role="factory_lines" Type="Self.factory_lines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="factory">
+              <PropertyRef Name="id_fact" />
+            </Principal>
+            <Dependent Role="factory_lines">
+              <PropertyRef Name="id_fact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_factory_lines_Lines">
+          <End Role="Lines" Type="Self.Line" Multiplicity="1" />
+          <End Role="factory_lines" Type="Self.factory_lines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lines">
+              <PropertyRef Name="id_line" />
+            </Principal>
+            <Dependent Role="factory_lines">
+              <PropertyRef Name="id_line" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NPConDbFirstContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="albums" EntityType="Self.album" />
+          <EntitySet Name="factories" EntityType="Self.factory" />
+          <EntitySet Name="factory_lines" EntityType="Self.factory_lines" />
+          <EntitySet Name="Lines" EntityType="Self.Line" />
+          <AssociationSet Name="FK_album_factory" Association="Self.FK_album_factory">
+            <End Role="factory" EntitySet="factories" />
+            <End Role="album" EntitySet="albums" />
+          </AssociationSet>
+          <AssociationSet Name="FK_factory_lines_factory" Association="Self.FK_factory_lines_factory">
+            <End Role="factory" EntitySet="factories" />
+            <End Role="factory_lines" EntitySet="factory_lines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_factory_lines_Lines" Association="Self.FK_factory_lines_Lines">
+            <End Role="Lines" EntitySet="Lines" />
+            <End Role="factory_lines" EntitySet="factory_lines" />
+          </AssociationSet>
+          <EntitySet Name="p_units" EntityType="NPConModel.p_units" />
+        </EntityContainer>
+        <EntityType Name="p_units">
+          <Key>
+            <PropertyRef Name="unitcode" />
+          </Key>
+          <Property Name="unitcode" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="unitname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="graphsymbol_rus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="graphsymbol_int" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="codesymbol_rus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="codesymbol_int" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="p_quantity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище NPConModelContainer" CdmEntityContainer="NPConDbFirstContext">
+          <EntitySetMapping Name="albums">
+            <EntityTypeMapping TypeName="NPConModel.album">
+              <MappingFragment StoreEntitySet="album">
+                <ScalarProperty Name="id_album" ColumnName="id_album" />
+                <ScalarProperty Name="name_alb" ColumnName="name_alb" />
+                <ScalarProperty Name="description_alb" ColumnName="description_alb" />
+                <ScalarProperty Name="in_design" ColumnName="in_design" />
+                <ScalarProperty Name="compr_name" ColumnName="compr_name" />
+                <ScalarProperty Name="created_alb_orig_login" ColumnName="created_alb_orig_login" />
+                <ScalarProperty Name="file_path" ColumnName="file_path" />
+                <ScalarProperty Name="is_end_prod_alb" ColumnName="is_end_prod_alb" />
+                <ScalarProperty Name="id_fact" ColumnName="id_fact" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="factories">
+            <EntityTypeMapping TypeName="NPConModel.factory">
+              <MappingFragment StoreEntitySet="factory">
+                <ScalarProperty Name="id_fact" ColumnName="id_fact" />
+                <ScalarProperty Name="f_name" ColumnName="f_name" />
+                <ScalarProperty Name="f_prefix" ColumnName="f_prefix" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="factory_lines">
+            <EntityTypeMapping TypeName="NPConModel.factory_lines">
+              <MappingFragment StoreEntitySet="factory_lines">
+                <ScalarProperty Name="id_fact_line" ColumnName="id_fact_line" />
+                <ScalarProperty Name="id_fact" ColumnName="id_fact" />
+                <ScalarProperty Name="id_line" ColumnName="id_line" />
+                <ScalarProperty Name="actual" ColumnName="actual" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lines">
+            <EntityTypeMapping TypeName="NPConModel.Line">
+              <MappingFragment StoreEntitySet="Lines">
+                <ScalarProperty Name="C_Вид_формования" ColumnName="_Вид_формования" />
+                <ScalarProperty Name="C_Распалубка" ColumnName="_Распалубка" />
+                <ScalarProperty Name="C_Вид_армирования" ColumnName="_Вид_армирования" />
+                <ScalarProperty Name="C_Класс_стали" ColumnName="_Класс_стали" />
+                <ScalarProperty Name="C_Тип_бетона" ColumnName="_Тип_бетона" />
+                <ScalarProperty Name="C_CAD_данные" ColumnName="_CAD_данные" />
+                <ScalarProperty Name="id_line" ColumnName="id_line" />
+                <ScalarProperty Name="id_formEquip" ColumnName="id_formEquip" />
+                <ScalarProperty Name="forming_lifting_guid" ColumnName="forming_lifting_guid" />
+                <ScalarProperty Name="id_arm_type" ColumnName="id_arm_type" />
+                <ScalarProperty Name="id_class_of_steel" ColumnName="id_class_of_steel" />
+                <ScalarProperty Name="id_type_of_concr" ColumnName="id_type_of_concr" />
+                <ScalarProperty Name="CAD" ColumnName="CAD" />
+                <ScalarProperty Name="actual" ColumnName="actual" />
+                <ScalarProperty Name="line_name" ColumnName="line_name" />
+                <ScalarProperty Name="UID_1c" ColumnName="UID_1c" />
+                <ScalarProperty Name="short_name" ColumnName="short_name" />
+                <ScalarProperty Name="row_ver" ColumnName="row_ver" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="p_units">
+            <EntityTypeMapping TypeName="NPConModel.p_units">
+              <MappingFragment StoreEntitySet="p_units">
+                <ScalarProperty Name="p_quantity" ColumnName="p_quantity" />
+                <ScalarProperty Name="codesymbol_int" ColumnName="codesymbol_int" />
+                <ScalarProperty Name="codesymbol_rus" ColumnName="codesymbol_rus" />
+                <ScalarProperty Name="graphsymbol_int" ColumnName="graphsymbol_int" />
+                <ScalarProperty Name="graphsymbol_rus" ColumnName="graphsymbol_rus" />
+                <ScalarProperty Name="unitname" ColumnName="unitname" />
+                <ScalarProperty Name="unitcode" ColumnName="unitcode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -61,40 +61,38 @@
   <ItemGroup>
     <Compile Include="Infrastructure\GeneralFunctionality.cs" />
     <Compile Include="Models\Data\album.cs">
-      <DependentUpon>NPConDataModel.tt</DependentUpon>
+      <DependentUpon>NPConDbFirstData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Data\CustomNPConDataContext.cs" />
     <Compile Include="Models\Data\factory.cs">
-      <DependentUpon>NPConDataModel.tt</DependentUpon>
+      <DependentUpon>NPConDbFirstData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Data\factory_lines.cs">
-      <DependentUpon>NPConDataModel.tt</DependentUpon>
+      <DependentUpon>NPConDbFirstData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Data\Line.cs">
-      <DependentUpon>NPConDataModel.tt</DependentUpon>
+      <DependentUpon>NPConDbFirstData.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Data\NPConDataModel.Context.cs">
+    <Compile Include="Models\Data\NPConDbFirstData.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NPConDataModel.Context.tt</DependentUpon>
+      <DependentUpon>NPConDbFirstData.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Data\NPConDataModel.cs">
+    <Compile Include="Models\Data\NPConDbFirstData.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NPConDataModel.tt</DependentUpon>
+      <DependentUpon>NPConDbFirstData.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Data\NPConDataModel.Designer.cs">
+    <Compile Include="Models\Data\NPConDbFirstData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NPConDataModel.edmx</DependentUpon>
+      <DependentUpon>NPConDbFirstData.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Data\p_units.cs">
+      <DependentUpon>NPConDbFirstData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
     <Compile Include="Themes\Generic.xaml.cs">
       <DependentUpon>Generic.xaml</DependentUpon>
     </Compile>
@@ -114,15 +112,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\Data\NPConDataModel.Context.tt">
+    <Content Include="Models\Data\NPConDbFirstData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NPConDataModel.edmx</DependentUpon>
-      <LastGenOutput>NPConDataModel.Context.cs</LastGenOutput>
+      <LastGenOutput>NPConDbFirstData.Context.cs</LastGenOutput>
+      <DependentUpon>NPConDbFirstData.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\Data\NPConDataModel.tt">
+    <Content Include="Models\Data\NPConDbFirstData.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NPConDataModel.edmx</DependentUpon>
-      <LastGenOutput>NPConDataModel.cs</LastGenOutput>
+      <DependentUpon>NPConDbFirstData.edmx</DependentUpon>
+      <LastGenOutput>NPConDbFirstData.cs</LastGenOutput>
     </Content>
     <Content Include="Readme.txt" />
   </ItemGroup>
@@ -147,18 +145,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ASpecCore.ruleset" />
-    <EntityDeploy Include="Models\Data\NPConDataModel.edmx">
+    <EntityDeploy Include="Models\Data\NPConDbFirstData.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NPConDataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>NPConDbFirstData.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\Data\NPConDataModel.edmx.diagram">
-      <DependentUpon>NPConDataModel.edmx</DependentUpon>
+    <None Include="Models\Data\NPConDbFirstData.edmx.diagram">
+      <DependentUpon>NPConDbFirstData.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
