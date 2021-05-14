@@ -51,6 +51,7 @@
                     <DataGridTextColumn Header="Описание альбома" 
                                         Width="*"
                                         Binding="{Binding description_alb}"
+                                        Width="*"
                                         />
                     <DataGridCheckBoxColumn Header="В разработке" 
                                             Binding="{Binding in_design}"/>
