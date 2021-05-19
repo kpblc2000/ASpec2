@@ -27,11 +27,11 @@ namespace ASpec2
             //} 
             #endregion
 
-            //UserTab win = new UserTab();
-            //win.ShowDialog();
+            UserTab win = new UserTab();
+            win.ShowDialog();
 
-            AlbumView winAlb = new AlbumView();
-            winAlb.ShowDialog();
+            //AlbumView winAlb = new AlbumView();
+            //winAlb.ShowDialog();
 
             //Console.WriteLine(typeof(Program).Assembly.GetName().Name);
 
