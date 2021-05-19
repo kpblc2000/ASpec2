@@ -59,6 +59,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\Commands\Base\Command.cs" />
+    <Compile Include="Infrastructure\Commands\RelayCommand.cs" />
     <Compile Include="Infrastructure\GeneralFunctionality.cs" />
     <Compile Include="Models\Data\album.cs">
       <DependentUpon>NPConDbFirstData.tt</DependentUpon>
