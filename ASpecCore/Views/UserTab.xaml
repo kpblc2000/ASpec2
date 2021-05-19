@@ -39,13 +39,19 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="1" VerticalAlignment="Top" Orientation="Vertical">
-                <Button Content="Добавить" Click="OnAddButtonClick"/>
+                <Button Content="Добавить"
+                        Command="{Binding CreateUserCommand}"
+                        />
                 <Button Content="Редактировать" Click="OnEditButtonClick"/>
-                <Button Content="Удалить" Click="OnEraseButtonClick"/>
+                <Button Content="Удалить"
+                        Command="{Binding EraseUserCommand}"
+                        CommandParameter="{Binding SelectedUser}"
+                        />
             </StackPanel>
             <DataGrid Name="UsersDataGrid" Grid.Column="0" AutoGenerateColumns="True"
                       ItemsSource="{Binding Users}"
                       SelectedItem="{Binding SelectedUser}"
+                      SelectedIndex="0"
                       >
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Width="*" Header="Полное имя пользователя">
