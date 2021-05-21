@@ -23,12 +23,15 @@ namespace ASpecCore.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=kpblc-vmware;Initial Catalog=NPCon;Integrated Security=True")]
         public string NPConConnectionString {
             get {
                 return ((string)(this["NPConConnectionString"]));
+            }
+            set {
+                this["NPConConnectionString"] = value;
             }
         }
     }

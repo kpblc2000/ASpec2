@@ -14,7 +14,7 @@ namespace ASpecCore.ViewModels
         public AlbumViewModel()
         {
             Title = "Альбомы";
-            using (NPConDbFirstContext db = new NPConDbFirstContext())
+            using (NPConDataModel db = new NPConDataModel())
             {
                 _Factories = new List<factory>(db.factories);
                 Albums = new List<album>(db.albums);

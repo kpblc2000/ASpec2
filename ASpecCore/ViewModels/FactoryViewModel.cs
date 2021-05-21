@@ -14,7 +14,7 @@ namespace ASpecCore.ViewModels
         {
             Title = "Заводы";
 
-            using (NPConDbFirstContext db = new NPConDbFirstContext())
+            using (NPConDataModel db = new NPConDataModel())
             {
                 Factories = new List<factory>(db.factories);
             }
