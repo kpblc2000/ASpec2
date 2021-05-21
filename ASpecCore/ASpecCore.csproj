@@ -60,6 +60,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Infrastructure\GeneralFunctionality.cs" />
+    <Compile Include="Migrations\202105211206178_InitialCreate.cs" />
+    <Compile Include="Migrations\202105211206178_InitialCreate.Designer.cs">
+      <DependentUpon>202105211206178_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105211207487_AddCanUeIfcToFactoryLines.cs" />
+    <Compile Include="Migrations\202105211207487_AddCanUeIfcToFactoryLines.Designer.cs">
+      <DependentUpon>202105211207487_AddCanUeIfcToFactoryLines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Data\album.cs" />
     <Compile Include="Models\Data\factory.cs" />
     <Compile Include="Models\Data\factory_lines.cs" />
@@ -123,6 +132,13 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202105211206178_InitialCreate.resx">
+      <DependentUpon>202105211206178_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105211207487_AddCanUeIfcToFactoryLines.resx">
+      <DependentUpon>202105211207487_AddCanUeIfcToFactoryLines.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -64,6 +64,9 @@ namespace ASpecCore.Models.Data
         [Timestamp]
         public byte[] row_ver { get; set; }
 
+        [Required]
+        public bool CanUseIfc { get; set; } = true;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<factory_lines> factory_lines { get; set; }
     }
