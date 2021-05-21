@@ -16,7 +16,7 @@ namespace ASpecCore.ViewModels
 
             using (NPConDataModel db = new NPConDataModel())
             {
-                Factories = new List<factory>(db.factories);
+                Factories = new List<factory>(db.Factories);
             }
         }
 

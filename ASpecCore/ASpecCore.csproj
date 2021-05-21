@@ -62,6 +62,8 @@
     <Compile Include="Infrastructure\GeneralFunctionality.cs" />
     <Compile Include="Models\Data\album.cs" />
     <Compile Include="Models\Data\factory.cs" />
+    <Compile Include="Models\Data\factory_lines.cs" />
+    <Compile Include="Models\Data\Line.cs" />
     <Compile Include="Models\Data\NPConDataModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

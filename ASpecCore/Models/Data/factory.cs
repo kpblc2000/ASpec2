@@ -13,6 +13,7 @@ namespace ASpecCore.Models.Data
         public factory()
         {
             albums = new HashSet<album>();
+            factory_lines = new HashSet<factory_lines>();
         }
 
         [Key]
@@ -28,5 +29,8 @@ namespace ASpecCore.Models.Data
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<album> albums { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<factory_lines> factory_lines { get; set; }
     }
 }
