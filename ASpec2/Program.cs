@@ -1,4 +1,5 @@
 ﻿using ASpecCore.Models;
+using ASpecCore.Models.Data;
 using ASpecCore.Views;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,6 @@ namespace ASpec2
         [STAThread]
         static void Main(string[] args)
         {
-
             // ToDo В основном коде проработать добавление пользователя, дополнение начального списка.
             // ToDo Проработать инициализацию - чтение и запись в файл
 
