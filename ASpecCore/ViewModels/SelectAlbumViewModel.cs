@@ -15,7 +15,7 @@ namespace ASpecCore.ViewModels
             Title = "Выберите альбом";
             using (NPConDataModel db = new NPConDataModel())
             {
-                Albums = db.Albums
+                Albums = db.albums
                             .OrderBy(o => o.name_alb)
                             .ToList();
             }

@@ -70,6 +70,10 @@
     <Compile Include="Migrations\202105211207487_AddCanUeIfcToFactoryLines.Designer.cs">
       <DependentUpon>202105211207487_AddCanUeIfcToFactoryLines.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105241324077_EmptyMigration.cs" />
+    <Compile Include="Migrations\202105241324077_EmptyMigration.Designer.cs">
+      <DependentUpon>202105241324077_EmptyMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Data\addmods_from_C1.cs" />
     <Compile Include="Models\Data\albName_exep.cs" />
@@ -438,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105211207487_AddCanUeIfcToFactoryLines.resx">
       <DependentUpon>202105211207487_AddCanUeIfcToFactoryLines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105241324077_EmptyMigration.resx">
+      <DependentUpon>202105241324077_EmptyMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

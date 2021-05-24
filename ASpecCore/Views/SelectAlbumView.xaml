@@ -8,6 +8,7 @@
         mc:Ignorable="d" 
         d:DesignHeight="450"
         d:DesignWidth="800"
+        Title="{Binding Title}"
         >
     <Window.Resources>
         <ResourceDictionary>
@@ -20,6 +21,35 @@
         <vm:SelectAlbumViewModel/>
     </Window.DataContext>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ComboBox Grid.Row="0"
+                  ItemsSource="{Binding Albums}"
+                  VirtualizingPanel.CacheLength="2"
+                  VirtualizingPanel.IsContainerVirtualizable="True"
+                  VirtualizingPanel.IsVirtualizing="True"
+                  VirtualizingPanel.VirtualizationMode="Recycling"
+                  >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding name_alb}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel/>
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
             
+        </ComboBox>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="OK" IsDefault="True"/>
+            <Button Content="Cancel" IsCancel="True"/>
+        </StackPanel>
     </Grid>
 </Window>

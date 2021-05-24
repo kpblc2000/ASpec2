@@ -8,7 +8,7 @@ namespace ASpecCore.Models.Data
     public partial class NPConDataModel : DbContext
     {
         public NPConDataModel()
-            : base("name=NPConDataModel")
+            : base(Properties.Settings.Default.NPConConnectionString)
         {
         }
 
