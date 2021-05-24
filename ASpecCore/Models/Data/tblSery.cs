@@ -9,12 +9,6 @@ namespace ASpecCore.Models.Data
     [Table("ifc.tblSeries")]
     public partial class tblSery
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblSery()
-        {
-            tblModificators_OLD = new HashSet<tblModificators_OLD>();
-        }
-
         public int id { get; set; }
 
         [Required]
@@ -27,8 +21,5 @@ namespace ASpecCore.Models.Data
         [Required]
         [StringLength(150)]
         public string CreateUser { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblModificators_OLD> tblModificators_OLD { get; set; }
     }
 }

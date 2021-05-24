@@ -7,9 +7,12 @@ namespace ASpecCore.Models.Data
 {
     public partial class NPConDataModel : DbContext
     {
-        public NPConDataModel() : base(Properties.Settings.Default.NPConConnectionString) { }
+        public NPConDataModel()
+            : base("name=NPConDataModel")
+        {
+        }
 
-        public virtual DbSet<album> Albums { get; set; }
+        public virtual DbSet<album> albums { get; set; }
         public virtual DbSet<allLayer> allLayers { get; set; }
         public virtual DbSet<angle> angles { get; set; }
         public virtual DbSet<arm> arms { get; set; }
@@ -26,13 +29,13 @@ namespace ASpecCore.Models.Data
         public virtual DbSet<end_prod_ver_consist> end_prod_ver_consist { get; set; }
         public virtual DbSet<end_prod_ver_RawConsist> end_prod_ver_RawConsist { get; set; }
         public virtual DbSet<end_product_version> end_product_version { get; set; }
-        public virtual DbSet<factory> Factories { get; set; }
-        public virtual DbSet<factory_lines> FactoryLinesLink { get; set; }
+        public virtual DbSet<factory> factories { get; set; }
+        public virtual DbSet<factory_lines> factory_lines { get; set; }
         public virtual DbSet<formingEquip> formingEquips { get; set; }
         public virtual DbSet<fstn_element> fstn_element { get; set; }
         public virtual DbSet<fstn_name> fstn_name { get; set; }
         public virtual DbSet<galvanized_iron> galvanized_iron { get; set; }
-        public virtual DbSet<Line> FactoryLines { get; set; }
+        public virtual DbSet<Line> Lines { get; set; }
         public virtual DbSet<lisp_interface> lisp_interface { get; set; }
         public virtual DbSet<listalb> listalbs { get; set; }
         public virtual DbSet<m_box> m_box { get; set; }
@@ -48,7 +51,6 @@ namespace ASpecCore.Models.Data
         public virtual DbSet<objectconsist> objectconsists { get; set; }
         public virtual DbSet<objectmark> objectmarks { get; set; }
         public virtual DbSet<objectprefix> objectprefixes { get; set; }
-        public virtual DbSet<Object> Objects { get; set; }
         public virtual DbSet<objecttype> objecttypes { get; set; }
         public virtual DbSet<p_concr_binder> p_concr_binder { get; set; }
         public virtual DbSet<p_concr_class> p_concr_class { get; set; }
@@ -99,7 +101,6 @@ namespace ASpecCore.Models.Data
         public virtual DbSet<project> projects { get; set; }
         public virtual DbSet<section> sections { get; set; }
         public virtual DbSet<tblModificator> tblModificators { get; set; }
-        public virtual DbSet<tblModificators_OLD> tblModificators_OLD { get; set; }
         public virtual DbSet<tblProject> tblProjects { get; set; }
         public virtual DbSet<tblSery> tblSeries { get; set; }
         public virtual DbSet<tbl_AspecificErrorLog> tbl_AspecificErrorLog { get; set; }
@@ -116,7 +117,6 @@ namespace ASpecCore.Models.Data
         public virtual DbSet<albName_exep> albName_exep { get; set; }
         public virtual DbSet<aspa_entity> aspa_entity { get; set; }
         public virtual DbSet<base_ch_npcon> base_ch_npcon { get; set; }
-        public virtual DbSet<base_changes_delete> base_changes_delete { get; set; }
         public virtual DbSet<cmd_log> cmd_log { get; set; }
         public virtual DbSet<factory_lines_old> factory_lines_old { get; set; }
         public virtual DbSet<factory_old> factory_old { get; set; }
@@ -143,12 +143,12 @@ namespace ASpecCore.Models.Data
         public virtual DbSet<MetPref> MetPrefs { get; set; }
         public virtual DbSet<mods_loaded_from_1c> mods_loaded_from_1c { get; set; }
         public virtual DbSet<ModsMarksfrom1C> ModsMarksfrom1C { get; set; }
-        public virtual DbSet<npcon_ch_temp> npcon_ch_temp { get; set; }
-        public virtual DbSet<p_object_Dev> p_object_Dev { get; set; }
+        public virtual DbSet<no_weight_TEMP> no_weight_TEMP { get; set; }
+        public virtual DbSet<npcon_changes_dev> npcon_changes_dev { get; set; }
+        public virtual DbSet<npcon_changes_er> npcon_changes_er { get; set; }
+        public virtual DbSet<npcon_changes_ok> npcon_changes_ok { get; set; }
         public virtual DbSet<params_loaded_from_1c> params_loaded_from_1c { get; set; }
         public virtual DbSet<product_Dev> product_Dev { get; set; }
-        public virtual DbSet<product_modification1> product_modification1 { get; set; }
-        public virtual DbSet<product_OS_26_02_2021> product_OS_26_02_2021 { get; set; }
         public virtual DbSet<some_new_mods> some_new_mods { get; set; }
         public virtual DbSet<to_SerOfMarks_t> to_SerOfMarks_t { get; set; }
         public virtual DbSet<toLocal_del> toLocal_del { get; set; }
@@ -156,12 +156,6 @@ namespace ASpecCore.Models.Data
         public virtual DbSet<work_file_mark_type> work_file_mark_type { get; set; }
         public virtual DbSet<Assembly_structure> Assembly_structure { get; set; }
         public virtual DbSet<nomenclature_all> nomenclature_all { get; set; }
-        public virtual DbSet<C1stg_modificators> C1stg_modificators { get; set; }
-        public virtual DbSet<ALLPLAN_KB_differ> ALLPLAN_KB_differ { get; set; }
-        public virtual DbSet<ALLPLAN_mods_to_NPCon> ALLPLAN_mods_to_NPCon { get; set; }
-        public virtual DbSet<ALLPLAN_to_NPCon> ALLPLAN_to_NPCon { get; set; }
-        public virtual DbSet<RD> RDS { get; set; }
-        public virtual DbSet<rds_ins> rds_ins { get; set; }
         public virtual DbSet<view_coloristics> view_coloristics { get; set; }
         public virtual DbSet<C_v_entity_rem> C_v_entity_rem { get; set; }
         public virtual DbSet<C_v_relation_rem> C_v_relation_rem { get; set; }
@@ -279,6 +273,7 @@ namespace ASpecCore.Models.Data
         public virtual DbSet<View_npcon_changed_idProd> View_npcon_changed_idProd { get; set; }
         public virtual DbSet<View_npcon_changed_maxIdEndProdVer> View_npcon_changed_maxIdEndProdVer { get; set; }
         public virtual DbSet<View_npcon_changed_product> View_npcon_changed_product { get; set; }
+        public virtual DbSet<View_npcon_changed_product_alter> View_npcon_changed_product_alter { get; set; }
         public virtual DbSet<View_npcon_changed_product_chk_KTD> View_npcon_changed_product_chk_KTD { get; set; }
         public virtual DbSet<View_npcon_changed_product_reserve_del> View_npcon_changed_product_reserve_del { get; set; }
         public virtual DbSet<view_NPCon_mods> view_NPCon_mods { get; set; }
@@ -298,9 +293,6 @@ namespace ASpecCore.Models.Data
         public virtual DbSet<view_spiral_hose> view_spiral_hose { get; set; }
         public virtual DbSet<view_strip> view_strip { get; set; }
         public virtual DbSet<view_svod_ASPA> view_svod_ASPA { get; set; }
-        public virtual DbSet<view_TEMP_PR_last_UUID> view_TEMP_PR_last_UUID { get; set; }
-        public virtual DbSet<View_TEMP1C> View_TEMP1C { get; set; }
-        public virtual DbSet<view_test_mark07> view_test_mark07 { get; set; }
         public virtual DbSet<view_tube> view_tube { get; set; }
         public virtual DbSet<view_user_alias_lisp> view_user_alias_lisp { get; set; }
         public virtual DbSet<view_user_domain> view_user_domain { get; set; }
@@ -310,7 +302,7 @@ namespace ASpecCore.Models.Data
         public virtual DbSet<view_WrkFile_MarkMails> view_WrkFile_MarkMails { get; set; }
         public virtual DbSet<view_WrkFile_MarkPlans> view_WrkFile_MarkPlans { get; set; }
         public virtual DbSet<view_WrkFile_MarkProducts> view_WrkFile_MarkProducts { get; set; }
-        public virtual DbSet<ZAKL_ANKERA_all_comp> ZAKL_ANKERA_all_comp { get; set; }
+        public virtual DbSet<viewNodesContent> viewNodesContents { get; set; }
         public virtual DbSet<viewIfcModificator> viewIfcModificators { get; set; }
         public virtual DbSet<viewProjectData> viewProjectDatas { get; set; }
         public virtual DbSet<view_UserActivityStat> view_UserActivityStat { get; set; }
@@ -521,20 +513,6 @@ namespace ASpecCore.Models.Data
                 .HasMany(e => e.objectconsists)
                 .WithOptional(e => e.objectmark)
                 .HasForeignKey(e => e.id_mark4subelem);
-
-            modelBuilder.Entity<Object>()
-                .Property(e => e.version)
-                .IsFixedLength();
-
-            modelBuilder.Entity<Object>()
-                .HasMany(e => e.Objects1)
-                .WithOptional(e => e.Object1)
-                .HasForeignKey(e => e.Object_id_parent);
-
-            modelBuilder.Entity<Object>()
-                .HasMany(e => e.projects)
-                .WithOptional(e => e.Object)
-                .HasForeignKey(e => e.ProjectId);
 
             modelBuilder.Entity<objecttype>()
                 .HasMany(e => e.modificationType4object_type)
@@ -923,17 +901,6 @@ namespace ASpecCore.Models.Data
                 .WithRequired(e => e.section)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<tblProject>()
-                .HasMany(e => e.tblModificators_OLD)
-                .WithRequired(e => e.tblProject)
-                .HasForeignKey(e => e.ProjectId)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<tblSery>()
-                .HasMany(e => e.tblModificators_OLD)
-                .WithOptional(e => e.tblSery)
-                .HasForeignKey(e => e.SeriesId);
-
             modelBuilder.Entity<Colour_article>()
                 .Property(e => e.length)
                 .HasPrecision(10, 4);
@@ -983,11 +950,6 @@ namespace ASpecCore.Models.Data
                 .IsUnicode(false);
 
             modelBuilder.Entity<base_ch_npcon>()
-                .Property(e => e.type)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<base_changes_delete>()
                 .Property(e => e.type)
                 .IsFixedLength()
                 .IsUnicode(false);
@@ -1148,6 +1110,10 @@ namespace ASpecCore.Models.Data
                 .Property(e => e.Item_modification_id)
                 .HasPrecision(10, 0);
 
+            modelBuilder.Entity<npcon_changes_dev>()
+                .Property(e => e.version)
+                .IsFixedLength();
+
             modelBuilder.Entity<params_loaded_from_1c>()
                 .Property(e => e.ID_MDM)
                 .HasPrecision(10, 0);
@@ -1184,185 +1150,9 @@ namespace ASpecCore.Models.Data
                 .Property(e => e.Weight_1С)
                 .HasPrecision(18, 4);
 
-            modelBuilder.Entity<product_modification1>()
-                .Property(e => e.version)
-                .IsFixedLength();
-
-            modelBuilder.Entity<product_OS_26_02_2021>()
-                .Property(e => e.prod_weight)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<product_OS_26_02_2021>()
-                .Property(e => e.volume)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<product_OS_26_02_2021>()
-                .Property(e => e.product_area_1С)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<product_OS_26_02_2021>()
-                .Property(e => e.Weight_1С)
-                .HasPrecision(18, 4);
-
             modelBuilder.Entity<to_SerOfMarks_t>()
                 .Property(e => e.id_mdm)
                 .HasPrecision(10, 0);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ОДлина_ош)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ГДлина_ош)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ОВысота_ош)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ГВысота_ош)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ОТолщина_ош)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ГТолщина_ош)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.Площадь_АП)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.Площадь_КБ)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.Площадь_ош)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.Объем_АП)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.Объем_КБ)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.Объем_ош)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.Вес_АП)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.Вес_КБ)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.Вес_ош)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.Канаты_ош)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ОбъемВнутреннегоСлоя_АП)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ОбъемВнутреннегоСлоя_КБ)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ОбъемВнутреннегоСлоя_ош)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ОбъемНаружногоСлоя_АП)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ОбъемНаружногоСлоя_КБ)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ОбъемНаружногоСлоя_ош)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ОбъемУтеплителя_АП)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ОбъемУтеплителя_КБ)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ОбъемУтеплителя_ош)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ТолщинаВнутреннегоСлоя_КБ)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ТолщинаВнутреннегоСлоя_ош)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ТолщинаНаружногоСлоя_КБ)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ТолщинаНаружногоСлоя_ош)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ТолщинаУтеплителя_КБ)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.ТолщинаУтеплителя_ош)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.Есть_несоответствия)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ALLPLAN_KB_differ>()
-                .Property(e => e.Несоответствия_АП_КБ)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ALLPLAN_to_NPCon>()
-                .Property(e => e.Площадь)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_to_NPCon>()
-                .Property(e => e.Объем)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_to_NPCon>()
-                .Property(e => e.Вес)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_to_NPCon>()
-                .Property(e => e.ОбъемВнутреннегоСлоя)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_to_NPCon>()
-                .Property(e => e.ОбъемНаружногоСлоя)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ALLPLAN_to_NPCon>()
-                .Property(e => e.ОбъемУтеплителя)
-                .HasPrecision(18, 4);
 
             modelBuilder.Entity<a_view_Shelf_mark_MaxID>()
                 .Property(e => e.blk_handle)
@@ -1740,6 +1530,22 @@ namespace ASpecCore.Models.Data
                 .Property(e => e.ОбъемТорецВерх_зуб)
                 .HasPrecision(18, 4);
 
+            modelBuilder.Entity<View_npcon_changed_product_alter>()
+                .Property(e => e.Площадь)
+                .HasPrecision(18, 4);
+
+            modelBuilder.Entity<View_npcon_changed_product_alter>()
+                .Property(e => e.Объем)
+                .HasPrecision(18, 4);
+
+            modelBuilder.Entity<View_npcon_changed_product_alter>()
+                .Property(e => e.Вес)
+                .HasPrecision(18, 4);
+
+            modelBuilder.Entity<View_npcon_changed_product_alter>()
+                .Property(e => e.КоличествоКанатов)
+                .HasPrecision(38, 4);
+
             modelBuilder.Entity<View_npcon_changed_product_chk_KTD>()
                 .Property(e => e.Площадь)
                 .HasPrecision(18, 4);
@@ -1864,26 +1670,6 @@ namespace ASpecCore.Models.Data
                 .Property(e => e.weight)
                 .HasPrecision(18, 4);
 
-            modelBuilder.Entity<view_TEMP_PR_last_UUID>()
-                .Property(e => e.UUID_file)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<View_TEMP1C>()
-                .Property(e => e.end_prod_volume)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<View_TEMP1C>()
-                .Property(e => e.end_prod_weight)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<View_TEMP1C>()
-                .Property(e => e.end_prod_area)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<View_TEMP1C>()
-                .Property(e => e.count_ropes)
-                .HasPrecision(38, 4);
-
             modelBuilder.Entity<view_tube>()
                 .Property(e => e.weight)
                 .HasPrecision(18, 4);
@@ -1898,10 +1684,6 @@ namespace ASpecCore.Models.Data
 
             modelBuilder.Entity<view_wood>()
                 .Property(e => e.weight)
-                .HasPrecision(18, 4);
-
-            modelBuilder.Entity<ZAKL_ANKERA_all_comp>()
-                .Property(e => e.Измеритель_составляющей)
                 .HasPrecision(18, 4);
         }
     }

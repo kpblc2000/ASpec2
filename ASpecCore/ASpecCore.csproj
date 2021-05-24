@@ -75,9 +75,6 @@
     <Compile Include="Models\Data\albName_exep.cs" />
     <Compile Include="Models\Data\album.cs" />
     <Compile Include="Models\Data\allLayer.cs" />
-    <Compile Include="Models\Data\ALLPLAN_KB_differ.cs" />
-    <Compile Include="Models\Data\ALLPLAN_mods_to_NPCon.cs" />
-    <Compile Include="Models\Data\ALLPLAN_to_NPCon.cs" />
     <Compile Include="Models\Data\angle.cs" />
     <Compile Include="Models\Data\arm.cs" />
     <Compile Include="Models\Data\arm_type.cs" />
@@ -85,9 +82,7 @@
     <Compile Include="Models\Data\Assembly.cs" />
     <Compile Include="Models\Data\Assembly_structure.cs" />
     <Compile Include="Models\Data\a_view_Shelf_mark_MaxID.cs" />
-    <Compile Include="Models\Data\base_changes_delete.cs" />
     <Compile Include="Models\Data\base_ch_npcon.cs" />
-    <Compile Include="Models\Data\C1stg_modificators.cs" />
     <Compile Include="Models\Data\classType.cs" />
     <Compile Include="Models\Data\cmd_alias.cs" />
     <Compile Include="Models\Data\cmd_groups.cs" />
@@ -170,10 +165,12 @@
     <Compile Include="Models\Data\nomenclature_all.cs" />
     <Compile Include="Models\Data\nomenclature_current.cs" />
     <Compile Include="Models\Data\normdoc.cs" />
+    <Compile Include="Models\Data\no_weight_TEMP.cs" />
     <Compile Include="Models\Data\NPConDataModel.cs" />
     <Compile Include="Models\Data\npcon_changes.cs" />
-    <Compile Include="Models\Data\npcon_ch_temp.cs" />
-    <Compile Include="Models\Data\Object.cs" />
+    <Compile Include="Models\Data\npcon_changes_dev.cs" />
+    <Compile Include="Models\Data\npcon_changes_er.cs" />
+    <Compile Include="Models\Data\npcon_changes_ok.cs" />
     <Compile Include="Models\Data\objectconsist.cs" />
     <Compile Include="Models\Data\objectmark.cs" />
     <Compile Include="Models\Data\objectprefix.cs" />
@@ -186,8 +183,6 @@
     <Compile Include="Models\Data\product.cs" />
     <Compile Include="Models\Data\product_Dev.cs" />
     <Compile Include="Models\Data\product_modification.cs" />
-    <Compile Include="Models\Data\product_modification1.cs" />
-    <Compile Include="Models\Data\product_OS_26_02_2021.cs" />
     <Compile Include="Models\Data\prod_work_file.cs" />
     <Compile Include="Models\Data\project.cs" />
     <Compile Include="Models\Data\project_specific.cs" />
@@ -199,14 +194,11 @@
     <Compile Include="Models\Data\p_concr_waterres.cs" />
     <Compile Include="Models\Data\p_hdpe.cs" />
     <Compile Include="Models\Data\p_object.cs" />
-    <Compile Include="Models\Data\p_object_Dev.cs" />
     <Compile Include="Models\Data\p_PEfilm.cs" />
     <Compile Include="Models\Data\p_units.cs" />
     <Compile Include="Models\Data\raw.cs" />
     <Compile Include="Models\Data\RCP_consistancy.cs" />
     <Compile Include="Models\Data\RCP_nomenclature.cs" />
-    <Compile Include="Models\Data\RD.cs" />
-    <Compile Include="Models\Data\rds_ins.cs" />
     <Compile Include="Models\Data\rep_prod.cs" />
     <Compile Include="Models\Data\section.cs" />
     <Compile Include="Models\Data\some_new_mods.cs" />
@@ -219,7 +211,6 @@
     <Compile Include="Models\Data\strip.cs" />
     <Compile Include="Models\Data\sysdiagram.cs" />
     <Compile Include="Models\Data\tblModificator.cs" />
-    <Compile Include="Models\Data\tblModificators_OLD.cs" />
     <Compile Include="Models\Data\tblNodeDepth.cs" />
     <Compile Include="Models\Data\tblNodesContent.cs" />
     <Compile Include="Models\Data\tblProject.cs" />
@@ -237,6 +228,7 @@
     <Compile Include="Models\Data\user.cs" />
     <Compile Include="Models\Data\version_status.cs" />
     <Compile Include="Models\Data\viewIfcModificator.cs" />
+    <Compile Include="Models\Data\viewNodesContent.cs" />
     <Compile Include="Models\Data\viewProjectData.cs" />
     <Compile Include="Models\Data\view_1C_mods.cs" />
     <Compile Include="Models\Data\view_1C_mods_1.cs" />
@@ -328,6 +320,7 @@
     <Compile Include="Models\Data\View_npcon_changed_idProd.cs" />
     <Compile Include="Models\Data\View_npcon_changed_maxIdEndProdVer.cs" />
     <Compile Include="Models\Data\View_npcon_changed_product.cs" />
+    <Compile Include="Models\Data\View_npcon_changed_product_alter.cs" />
     <Compile Include="Models\Data\View_npcon_changed_product_chk_KTD.cs" />
     <Compile Include="Models\Data\View_npcon_changed_product_reserve_del.cs" />
     <Compile Include="Models\Data\view_NPCon_mods.cs" />
@@ -347,9 +340,6 @@
     <Compile Include="Models\Data\view_spiral_hose.cs" />
     <Compile Include="Models\Data\view_strip.cs" />
     <Compile Include="Models\Data\view_svod_ASPA.cs" />
-    <Compile Include="Models\Data\View_TEMP1C.cs" />
-    <Compile Include="Models\Data\view_TEMP_PR_last_UUID.cs" />
-    <Compile Include="Models\Data\view_test_mark07.cs" />
     <Compile Include="Models\Data\view_tube.cs" />
     <Compile Include="Models\Data\view_UserActivityStat.cs" />
     <Compile Include="Models\Data\view_user_alias_lisp.cs" />
@@ -375,7 +365,6 @@
     <Compile Include="Models\Data\wpf_control.cs" />
     <Compile Include="Models\Data\wpf_property.cs" />
     <Compile Include="Models\Data\wrk_file_type.cs" />
-    <Compile Include="Models\Data\ZAKL_ANKERA_all_comp.cs" />
     <Compile Include="Models\Data\zone.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -390,10 +379,14 @@
     <Compile Include="ViewModels\AlbumViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
     <Compile Include="ViewModels\FactoryViewModel.cs" />
+    <Compile Include="ViewModels\SelectAlbumViewModel.cs" />
     <Compile Include="ViewModels\UserAddEditViewModel.cs" />
     <Compile Include="ViewModels\UserTabViewModel.cs" />
     <Compile Include="Views\AlbumView.xaml.cs">
       <DependentUpon>AlbumView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectAlbumView.xaml.cs">
+      <DependentUpon>SelectAlbumView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserAddEdit.xaml.cs">
       <DependentUpon>UserAddEdit.xaml</DependentUpon>
@@ -411,6 +404,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AlbumView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectAlbumView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -443,5 +440,6 @@
       <DependentUpon>202105211207487_AddCanUeIfcToFactoryLines.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

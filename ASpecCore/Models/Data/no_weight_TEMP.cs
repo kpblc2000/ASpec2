@@ -6,14 +6,13 @@ namespace ASpecCore.Models.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("report.RDS")]
-    public partial class RD
+    public partial class no_weight_TEMP
     {
         [Key]
-        [StringLength(255)]
-        public string RDS_name { get; set; }
+        [StringLength(50)]
+        public string dwg_mark { get; set; }
 
-        [StringLength(255)]
-        public string rds_param { get; set; }
+        [StringLength(50)]
+        public string right_mark { get; set; }
     }
 }
