@@ -1,0 +1,34 @@
+namespace ASpecCore.Models.Data
+{
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("ifc.tblSeries")]
+    public partial class tblSery
+    {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tblSery()
+        {
+            tblModificators_OLD = new HashSet<tblModificators_OLD>();
+        }
+
+        public int id { get; set; }
+
+        [Required]
+        [StringLength(20)]
+        public string SeriaName { get; set; }
+
+        [Column(TypeName = "datetime2")]
+        public DateTime CreateDate { get; set; }
+
+        [Required]
+        [StringLength(150)]
+        public string CreateUser { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblModificators_OLD> tblModificators_OLD { get; set; }
+    }
+}

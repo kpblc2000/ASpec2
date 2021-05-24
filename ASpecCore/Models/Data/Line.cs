@@ -11,7 +11,9 @@ namespace ASpecCore.Models.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Line()
         {
+            end_product_version = new HashSet<end_product_version>();
             factory_lines = new HashSet<factory_lines>();
+            rep_prod = new HashSet<rep_prod>();
         }
 
         [Column("_Вид_формования")]
@@ -64,10 +66,23 @@ namespace ASpecCore.Models.Data
         [Timestamp]
         public byte[] row_ver { get; set; }
 
-        [Required]
-        public bool CanUseIfc { get; set; } = true;
+        public bool CanUseIfc { get; set; }
+
+        public virtual arm_type arm_type { get; set; }
+
+        public virtual concrType concrType { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<end_product_version> end_product_version { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<factory_lines> factory_lines { get; set; }
+
+        public virtual formingEquip formingEquip { get; set; }
+
+        public virtual steelClass steelClass { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<rep_prod> rep_prod { get; set; }
     }
 }

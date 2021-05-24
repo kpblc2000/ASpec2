@@ -9,6 +9,14 @@ namespace ASpecCore.Models.Data
     [Table("album")]
     public partial class album
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public album()
+        {
+            tblNodeDepths = new HashSet<tblNodeDepth>();
+            tblNodesContents = new HashSet<tblNodesContent>();
+            listalbs = new HashSet<listalb>();
+        }
+
         [Key]
         public int id_album { get; set; }
 
@@ -35,5 +43,14 @@ namespace ASpecCore.Models.Data
         public int? id_fact { get; set; }
 
         public virtual factory factory { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblNodeDepth> tblNodeDepths { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblNodesContent> tblNodesContents { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<listalb> listalbs { get; set; }
     }
 }
