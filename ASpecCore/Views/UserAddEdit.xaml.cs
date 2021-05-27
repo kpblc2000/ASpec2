@@ -27,18 +27,5 @@ namespace ASpecCore.Views
             InitializeComponent();
         }
 
-        #region Button clicks
-        private void OnAcceptButtonClick(object sender, RoutedEventArgs e)
-        {
-            this.DialogResult = true;
-            Close();
-        }
-
-        private void OnCancelButtonClick(object sender, RoutedEventArgs e)
-        {
-            this.DialogResult = false;
-            Close();
-        }
-        #endregion
     }
 }

@@ -86,6 +86,7 @@ namespace ASpecCore.ViewModels
             return p is User curUser && Users.Contains(curUser);
         }
         #endregion
+
         #region CreateUserCommand
 
         public ICommand CreateUserCommand { get; }

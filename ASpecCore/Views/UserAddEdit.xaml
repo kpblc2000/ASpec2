@@ -1,11 +1,12 @@
 ﻿<Window x:Class="ASpecCore.Views.UserAddEdit"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:vm="clr-namespace:ASpecCore.ViewModels"
-             mc:Ignorable="d" 
-             d:DesignHeight="220" d:DesignWidth="400"
+        xmlns:commands="clr-namespace:ASpecCore.Infrastructure.Commands"
+        mc:Ignorable="d" 
+        d:DesignHeight="220" d:DesignWidth="400"
         WindowStyle="ToolWindow"
         WindowStartupLocation="CenterScreen"
         MinHeight="220"
@@ -33,10 +34,12 @@
         <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
             <Button Content="OK" Width="{Binding ElementName=CancelButton,Path=ActualWidth}" IsDefault="True"
                     TabIndex="6"
-                    Click="OnAcceptButtonClick"/>
+                    Command="{Binding AcceptCommand}"
+                    />
             <Button x:Name="CancelButton" Content="Закрыть" IsCancel="True" 
                     TabIndex="7"
-                    Click="OnCancelButtonClick"/>
+                    Command="{Binding CancelCommand}"
+                    />
         </StackPanel>
         <Grid>
             <Grid.Resources>
