@@ -11,7 +11,7 @@ namespace ASpecCore.ViewModels
 {
     public class UserAddEditViewModel : ViewModel
     {
-        private User _CurrentUser;
+        
         public User CurrentUser
         {
             get { return _CurrentUser; }
@@ -28,6 +28,8 @@ namespace ASpecCore.ViewModels
                 //OnPropertyChanged(nameof(CurrentUser));
                 Set(ref _CurrentUser, temp);
             }
-        }        
+        }
+
+        private User _CurrentUser;
     }
 }
