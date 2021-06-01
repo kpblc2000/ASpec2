@@ -53,23 +53,28 @@ namespace ASpecCore.ViewModels
                                     )
                                     .ToList();
             }
+            if (FilteredAlbums.Count > 0)
+            {
+                SelectedAlbum = FilteredAlbums[0];
+            }
+
         }
 
-        private bool CanFilterButtonCommandExecute(object p) => true; 
+        private bool CanFilterButtonCommandExecute(object p) => true;
         #endregion
 
         #region Public properties
         public List<album> FilteredAlbums
         {
             get { return _FilteredAlbums; }
-            set { Set(ref _FilteredAlbums, value); }
+            private set { Set(ref _FilteredAlbums, value); }
         }
 
         public album SelectedAlbum
         {
             get { return _SelectedAlbum; }
             set { Set(ref _SelectedAlbum, value); }
-        }       
+        }
         #endregion
 
         private List<album> _Albums;
