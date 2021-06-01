@@ -38,6 +38,8 @@
         </DockPanel>
         <ComboBox Grid.Row="1"
                   ItemsSource="{Binding FilteredAlbums}"
+                  SelectedValue="{Binding SelectedAlbum, Mode=TwoWay}"
+                  IsTextSearchEnabled="True"
                   VirtualizingPanel.CacheLength="2"
                   VirtualizingPanel.IsContainerVirtualizable="True"
                   VirtualizingPanel.IsVirtualizing="True"
