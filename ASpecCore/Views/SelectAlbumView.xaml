@@ -24,9 +24,18 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <ComboBox Grid.Row="0"
-                  ItemsSource="{Binding Albums}"
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Left"
+                       Text="Фильтровать по части имени / названия"/>
+            <Button DockPanel.Dock="Right"
+                    Content="Фильтр"
+                    Command="{Binding FilterButtonCommand}"/>
+            <TextBox Text="{Binding Filter}"/>
+        </DockPanel>
+        <ComboBox Grid.Row="1"
+                  ItemsSource="{Binding FilteredAlbums}"
                   VirtualizingPanel.CacheLength="2"
                   VirtualizingPanel.IsContainerVirtualizable="True"
                   VirtualizingPanel.IsVirtualizing="True"
@@ -36,6 +45,9 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding name_alb}"/>
+                        <TextBlock Text="{Binding description_alb, StringFormat=' \{0\}'}"
+                                   Foreground="Gray"
+                                   />
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
@@ -47,7 +59,7 @@
             </ComboBox.ItemsPanel>
             
         </ComboBox>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Content="OK" IsDefault="True"/>
             <Button Content="Cancel" IsCancel="True"/>
         </StackPanel>

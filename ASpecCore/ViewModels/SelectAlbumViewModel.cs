@@ -1,10 +1,13 @@
-﻿using ASpecCore.Models.Data;
+﻿using ASpecCore.Infrastructure.Commands;
+using ASpecCore.Models.Data;
 using ASpecCore.ViewModels.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace ASpecCore.ViewModels
 {
@@ -15,16 +18,46 @@ namespace ASpecCore.ViewModels
             Title = "Выберите альбом";
             using (NPConDataModel db = new NPConDataModel())
             {
-                Albums = db.albums
+                _Albums = db.albums
+                            .Where(o => !o.name_alb.ToUpper().StartsWith("INTERACTIVE")
+                            && !o.name_alb.ToUpper().StartsWith("ALLPLAN")
+                            && !o.name_alb.StartsWith("allplan")
+                            )
                             .OrderBy(o => o.name_alb)
                             .ToList();
+                FilteredAlbums = _Albums;
+            }
+
+            FilterButtonCommand = new RelayCommand(OnFilterButtonCommandExecuted, CanFilterButtonCommandExecute);
+        }
+
+        public ICommand FilterButtonCommand { get; }
+
+        private void OnFilterButtonCommandExecuted(object p)
+        {
+            if (string.IsNullOrEmpty( _Filter))
+            {
+                FilteredAlbums = _Albums;
+            }
+            else
+            {
+                string normFilter = Filter.Replace(".", "\\.");
+                Regex rx = new Regex($@"(.*){normFilter}(.*)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+                FilteredAlbums = _Albums
+                                    .Where(o => rx.Match(o.name_alb).Success
+                                               || rx.Match(o.description_alb).Success
+                                    )
+                                    .ToList();
             }
         }
 
-        public List<album> Albums
+        private bool CanFilterButtonCommandExecute(object p) => true;
+
+        #region Public properties
+        public List<album> FilteredAlbums
         {
-            get { return _Albums; }
-            private set { Set(ref _Albums, value); }
+            get { return _FilteredAlbums; }
+            set { Set(ref _FilteredAlbums, value); }
         }
 
         public album SelectedAlbum
@@ -33,14 +66,16 @@ namespace ASpecCore.ViewModels
             set { Set(ref _SelectedAlbum, value); }
         }
 
-        public bool SelectResult
+        public string Filter
         {
-            get { return _SelectResult; }
-            set { Set(ref _SelectResult, value); }
-        }
+            get { return _Filter; }
+            set { Set(ref _Filter, value); }
+        } 
+        #endregion
 
         private List<album> _Albums;
+        private List<album> _FilteredAlbums;
         private album _SelectedAlbum;
-        private bool _SelectResult;
+        private string _Filter;
     }
 }
