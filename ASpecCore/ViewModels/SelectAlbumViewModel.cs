@@ -31,17 +31,21 @@ namespace ASpecCore.ViewModels
             FilterButtonCommand = new RelayCommand(OnFilterButtonCommandExecuted, CanFilterButtonCommandExecute);
         }
 
+        #region FilterButtonCommand
         public ICommand FilterButtonCommand { get; }
 
         private void OnFilterButtonCommandExecuted(object p)
         {
-            if (string.IsNullOrEmpty( _Filter))
+
+            string criteria = p as string;
+
+            if (string.IsNullOrEmpty(criteria))
             {
                 FilteredAlbums = _Albums;
             }
             else
             {
-                string normFilter = Filter.Replace(".", "\\.");
+                string normFilter = criteria.Replace(".", "\\.");
                 Regex rx = new Regex($@"(.*){normFilter}(.*)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
                 FilteredAlbums = _Albums
                                     .Where(o => rx.Match(o.name_alb).Success
@@ -51,7 +55,8 @@ namespace ASpecCore.ViewModels
             }
         }
 
-        private bool CanFilterButtonCommandExecute(object p) => true;
+        private bool CanFilterButtonCommandExecute(object p) => true; 
+        #endregion
 
         #region Public properties
         public List<album> FilteredAlbums
@@ -64,18 +69,11 @@ namespace ASpecCore.ViewModels
         {
             get { return _SelectedAlbum; }
             set { Set(ref _SelectedAlbum, value); }
-        }
-
-        public string Filter
-        {
-            get { return _Filter; }
-            set { Set(ref _Filter, value); }
-        } 
+        }       
         #endregion
 
         private List<album> _Albums;
         private List<album> _FilteredAlbums;
         private album _SelectedAlbum;
-        private string _Filter;
     }
 }

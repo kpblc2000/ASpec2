@@ -31,8 +31,10 @@
                        Text="Фильтровать по части имени / названия"/>
             <Button DockPanel.Dock="Right"
                     Content="Фильтр"
-                    Command="{Binding FilterButtonCommand}"/>
-            <TextBox Text="{Binding Filter}"/>
+                    Command="{Binding FilterButtonCommand}"
+                    CommandParameter="{Binding ElementName=FilterCriteria, Path=Text}"
+                    />
+            <TextBox x:Name="FilterCriteria"/>
         </DockPanel>
         <ComboBox Grid.Row="1"
                   ItemsSource="{Binding FilteredAlbums}"
