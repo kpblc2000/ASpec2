@@ -64,8 +64,15 @@
             
         </ComboBox>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="OK" IsDefault="True"/>
-            <Button Content="Cancel" IsCancel="True"/>
+            <Button Content="OK"
+                    IsDefault="True"
+                    IsEnabled="{Binding CanAccept}"
+                    Click="OnAcceptButtonClick"
+                    />
+            <Button Content="Cancel" 
+                    IsCancel="True"
+                    Click="OnCancelButtonClick"
+                    />
         </StackPanel>
     </Grid>
 </Window>

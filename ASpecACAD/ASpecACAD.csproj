@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcadCommands\ASpecUserManage.cs" />
+    <Compile Include="AcadLisp\ASpecSelectAlbum.cs" />
     <Compile Include="AcadLisp\ASpecUserManage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

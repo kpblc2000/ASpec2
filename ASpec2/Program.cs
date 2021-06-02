@@ -1,5 +1,6 @@
 ﻿using ASpecCore.Models;
 using ASpecCore.Models.Data;
+using ASpecCore.ViewModels;
 using ASpecCore.Views;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,13 @@ namespace ASpec2
 
             SelectAlbumView winSelAlb = new SelectAlbumView();
             winSelAlb.ShowDialog();
+
+            if (winSelAlb.DialogResult == true)
+            {
+                SelectAlbumViewModel vm = winSelAlb.DataContext as SelectAlbumViewModel;
+                album selAlbum = vm.SelectedAlbum;
+                Console.WriteLine($"{selAlbum.name_alb}");
+            }
 
             //Console.WriteLine(typeof(Program).Assembly.GetName().Name);
 

@@ -24,5 +24,17 @@ namespace ASpecCore.Views
         {
             InitializeComponent();
         }
+
+        private void OnAcceptButtonClick(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+            Close();
+        }
+
+        private void OnCancelButtonClick(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            Close();
+        }
     }
 }

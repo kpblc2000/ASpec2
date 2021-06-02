@@ -26,6 +26,7 @@ namespace ASpecCore.ViewModels
                             .OrderBy(o => o.name_alb)
                             .ToList();
                 FilteredAlbums = _Albums;
+                SelectedAlbum = FilteredAlbums[0];
             }
 
             FilterButtonCommand = new RelayCommand(OnFilterButtonCommandExecuted, CanFilterButtonCommandExecute);
@@ -53,11 +54,7 @@ namespace ASpecCore.ViewModels
                                     )
                                     .ToList();
             }
-            if (FilteredAlbums.Count > 0)
-            {
-                SelectedAlbum = FilteredAlbums[0];
-            }
-
+            SelectedAlbum = FilteredAlbums.FirstOrDefault();
         }
 
         private bool CanFilterButtonCommandExecute(object p) => true;
@@ -73,8 +70,17 @@ namespace ASpecCore.ViewModels
         public album SelectedAlbum
         {
             get { return _SelectedAlbum; }
-            set { Set(ref _SelectedAlbum, value); }
+            set
+            {
+                if (Set(ref _SelectedAlbum, value))
+                {
+                    OnPropertyChanged(nameof(CanAccept));
+                }
+            }
         }
+
+        public bool CanAccept
+        { get { return _SelectedAlbum != null; } }
         #endregion
 
         private List<album> _Albums;
