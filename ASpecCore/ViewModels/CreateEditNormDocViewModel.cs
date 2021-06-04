@@ -13,15 +13,9 @@ namespace ASpecCore.ViewModels
 {
     public class CreateEditNormDocViewModel : ViewModel
     {
-        public CreateEditNormDocViewModel() : this(null, null, EditMode.UnKnownMode) { }
-
-        public CreateEditNormDocViewModel(List<normdoc> NormDocList, normdoc NormDocToEdit, EditMode DialogMode)
+        public CreateEditNormDocViewModel()
         {
-            DocList = NormDocList;
-            DocToEdit = NormDocToEdit;
-            CurrentMode = DialogMode;
             SaveNormDocCommand = new RelayCommand(OnSaveNormDocCommandExecuted, CanSaveNormDocCommandExecute);
-
         }
 
         #region Commands
@@ -34,21 +28,38 @@ namespace ASpecCore.ViewModels
             {
                 if (CurrentMode == EditMode.CreateMode)
                 {
-                    db.normdocs.Add(new normdoc
+
+                    normdoc newDoc = new normdoc
                     {
-                        description = DocDescription,
-                        doccode = DocNum,
-                        doctype = DocType
-                    }
-                    );
+                        description = DocDescription?.Trim(),
+                        doccode = DocNum?.Trim(),
+                        doctype = DocType?.Trim()
+                    };
+
+                    db.normdoc.Add(newDoc);
                     db.SaveChanges();
+                    _NeedUpdate = true;
+                    DocList.Add(newDoc);
                 }
                 else
                 {
-                    DocToEdit.description = DocDescription;
-                    DocToEdit.doccode = DocNum;
-                    DocToEdit.doctype = DocType;
-                    db.SaveChanges();
+                    normdoc curDoc = db.normdoc.Where(o => o.id_normdoc == DocToEdit.id_normdoc).FirstOrDefault();
+
+                    if (curDoc != null)
+                    {
+                        curDoc.description = DocDescription?.Trim();
+                        curDoc.doccode = DocNum?.Trim();
+                        curDoc.doctype = DocType?.Trim();
+                        db.SaveChanges();
+
+                        normdoc listDoc = DocList.Where(o => o.id_normdoc == DocToEdit.id_normdoc).FirstOrDefault();
+
+                        listDoc.description = DocDescription?.Trim();
+                        listDoc.doccode = DocNum?.Trim();
+                        listDoc.doctype = DocType?.Trim();
+
+                        _NeedUpdate = true;
+                    }
                 }
             }
         }
@@ -89,11 +100,19 @@ namespace ASpecCore.ViewModels
         public string DocType
         {
             get { return _DocType; }
-            set { Set(ref _DocType, value.Trim()); }
+            set { Set(ref _DocType, value); }
         }
-        public string DocNum { get => _DocNum; set => Set(ref _DocNum, value.Trim()); }
+        public string DocNum
+        {
+            get => _DocNum;
+            set { Set(ref _DocNum, value); }
+        }
 
-        public string DocDescription { get => _DocDescription; set => Set(ref _DocDescription, value.Trim()); }
+        public string DocDescription
+        {
+            get => _DocDescription;
+            set { Set(ref _DocDescription, value); }
+        }
 
         public List<normdoc> DocList
         {
@@ -104,8 +123,20 @@ namespace ASpecCore.ViewModels
         public normdoc DocToEdit
         {
             get { return _DocToEdit; }
-            set { Set(ref _DocToEdit, value); }
+            set
+            {
+                if (Set(ref _DocToEdit, value))
+                {
+                    DocDescription = _DocToEdit.description;
+                    DocType = _DocToEdit.doccode;
+                    DocNum = _DocToEdit.doctype;
+                }
+            }
         }
+
+        public bool NeedUpdate
+        { get { return _NeedUpdate; } }
+
         #endregion
 
         private EditMode _CurrentMode;
@@ -114,5 +145,6 @@ namespace ASpecCore.ViewModels
         private string _DocNum;
         private string _DocDescription;
         private normdoc _DocToEdit;
+        private bool _NeedUpdate;
     }
 }

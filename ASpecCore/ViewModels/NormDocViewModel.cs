@@ -14,10 +14,7 @@ namespace ASpecCore.ViewModels
         public NormDocViewModel()
         {
             Title = "Нормативные документы";
-            using (NPConDataModel db = new NPConDataModel())
-            {
-                DocList = db.normdocs.ToList();
-            }
+            UpdateList();
             CreateNormDocCommand = new RelayCommand(OnCreateNormDocCommandExecuted, CanCreateNormDocCommandExecute);
             EditNormDocCommand = new RelayCommand(OnEditNormDocCommandExecuted, CanEditNormDocCommandExecute);
         }
@@ -28,30 +25,46 @@ namespace ASpecCore.ViewModels
         public ICommand CreateNormDocCommand { get; }
         private void OnCreateNormDocCommandExecuted(object p)
         {
-            CreateEditNormDocViewModel vm = new CreateEditNormDocViewModel(DocList, EditMode.CreateMode);
-
             CreateEditNormDocView winCreate = new CreateEditNormDocView();
-            winCreate.DataContext = vm;
-            // CreateEditNormDocViewModel vm = winCreate.DataContext as CreateEditNormDocViewModel;
+            CreateEditNormDocViewModel vm = winCreate.DataContext as CreateEditNormDocViewModel;
+            vm.DocList = DocList;
             vm.CurrentMode = EditMode.CreateMode;
             winCreate.ShowDialog();
+            if (vm.NeedUpdate)
+            {
+                UpdateList();
+            }
         }
         private bool CanCreateNormDocCommandExecute(object p) => true;
         #endregion
+        #region EditNormDocCommand
         public ICommand EditNormDocCommand { get; }
 
         private void OnEditNormDocCommandExecuted(object p)
         {
-            CreateEditNormDocViewModel vm = new CreateEditNormDocViewModel(DocList, EditMode.EditMode);
-            
             CreateEditNormDocView winCreate = new CreateEditNormDocView();
-            winCreate.DataContext = vm;
-            //CreateEditNormDocViewModel vm = winCreate.DataContext as CreateEditNormDocViewModel;
+            CreateEditNormDocViewModel vm = winCreate.DataContext as CreateEditNormDocViewModel;
+            vm.DocList = DocList;
+            vm.DocToEdit = SelectedDoc;
             vm.CurrentMode = EditMode.EditMode;
             winCreate.ShowDialog();
+            if (vm.NeedUpdate)
+            {
+                UpdateList();
+            }
         }
         private bool CanEditNormDocCommandExecute(object p) => SelectedDoc != null;
         #endregion
+
+        #endregion
+
+        public void UpdateList()
+        {
+            using (NPConDataModel db = new NPConDataModel())
+            {
+                DocList = db.normdoc.ToList();
+            }
+        }
 
         #region Public properties
         public List<normdoc> DocList
@@ -64,7 +77,7 @@ namespace ASpecCore.ViewModels
         {
             get { return _SelectedDoc; }
             set { Set(ref _SelectedDoc, value); }
-        } 
+        }
         #endregion
 
         private List<normdoc> _DocList;
