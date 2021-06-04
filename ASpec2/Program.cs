@@ -34,6 +34,8 @@ namespace ASpec2
             //AlbumView winAlb = new AlbumView();
             //winAlb.ShowDialog();
 
+            #region Albums
+            /*
             SelectAlbumView winSelAlb = new SelectAlbumView();
             winSelAlb.ShowDialog();
 
@@ -42,7 +44,14 @@ namespace ASpec2
                 SelectAlbumViewModel vm = winSelAlb.DataContext as SelectAlbumViewModel;
                 album selAlbum = vm.SelectedAlbum;
                 Console.WriteLine($"{selAlbum.name_alb}");
-            }
+            } 
+            */
+            #endregion
+
+            #region NormDocs
+            NormDocView winNormDoc = new NormDocView();
+            winNormDoc.ShowDialog();
+            #endregion
 
             //Console.WriteLine(typeof(Program).Assembly.GetName().Name);
 

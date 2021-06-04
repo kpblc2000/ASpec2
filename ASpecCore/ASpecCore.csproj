@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Infrastructure\Commands\Base\Command.cs" />
     <Compile Include="Infrastructure\Commands\RelayCommand.cs" />
+    <Compile Include="Infrastructure\Enums\EditMode.cs" />
     <Compile Include="Infrastructure\GeneralFunctionality.cs" />
     <Compile Include="Migrations\202105211206178_InitialCreate.cs" />
     <Compile Include="Migrations\202105211206178_InitialCreate.Designer.cs">
@@ -382,12 +383,20 @@
     </Compile>
     <Compile Include="ViewModels\AlbumViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
+    <Compile Include="ViewModels\CreateEditNormDocViewModel.cs" />
     <Compile Include="ViewModels\FactoryViewModel.cs" />
+    <Compile Include="ViewModels\NormDocViewModel.cs" />
     <Compile Include="ViewModels\SelectAlbumViewModel.cs" />
     <Compile Include="ViewModels\UserAddEditViewModel.cs" />
     <Compile Include="ViewModels\UserTabViewModel.cs" />
     <Compile Include="Views\AlbumView.xaml.cs">
       <DependentUpon>AlbumView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateEditNormDocView.xaml.cs">
+      <DependentUpon>CreateEditNormDocView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NormDocView.xaml.cs">
+      <DependentUpon>NormDocView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SelectAlbumView.xaml.cs">
       <DependentUpon>SelectAlbumView.xaml</DependentUpon>
@@ -408,6 +417,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AlbumView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateEditNormDocView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NormDocView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
