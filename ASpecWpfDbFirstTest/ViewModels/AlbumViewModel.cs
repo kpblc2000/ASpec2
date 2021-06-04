@@ -16,7 +16,7 @@ namespace ASpecWpfDbFirstTest.ViewModels
             Title = "Альбомы";
             using (NPConConnectionString db = new NPConConnectionString())
             {
-                Albums = new ObservableCollection<album>(from o in db.albums
+                Albums = new ObservableCollection<album>(from o in db.album
                                                          where o.factory!= null
                                                          select o
                                                          );

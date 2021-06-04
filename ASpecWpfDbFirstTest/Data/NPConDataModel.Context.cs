@@ -27,8 +27,8 @@ namespace ASpecWpfDbFirstTest.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<album> albums { get; set; }
-        public virtual DbSet<factory> factories { get; set; }
+        public virtual DbSet<album> album { get; set; }
+        public virtual DbSet<factory> factory { get; set; }
         public virtual DbSet<allLayer> allLayers { get; set; }
         public virtual DbSet<angle> angles { get; set; }
         public virtual DbSet<arm> arms { get; set; }

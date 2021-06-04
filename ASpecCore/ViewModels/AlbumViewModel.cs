@@ -16,10 +16,10 @@ namespace ASpecCore.ViewModels
             Title = "Альбомы";
             using (NPConDataModel db = new NPConDataModel())
             {
-                _Factories = new List<factory>(db.factories);
-                _FactoryLines = new List<Line>(db.Lines);
+                _Factories = new List<factory>(db.factory);
+                _FactoryLines = new List<Lines>(db.Lines);
                 _FactoryLineLinks = new List<factory_lines>(db.factory_lines);
-                Albums = new List<album>(db.albums);
+                Albums = new List<album>(db.album);
             }
         }
 
@@ -38,7 +38,7 @@ namespace ASpecCore.ViewModels
         private List<album> _Albums;
         private readonly List<factory> _Factories;
         private album _SelectedAlbum;
-        private List<Line> _FactoryLines;
+        private List<Lines> _FactoryLines;
         private List<factory_lines> _FactoryLineLinks;
     }
 }

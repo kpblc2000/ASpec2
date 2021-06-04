@@ -17,7 +17,7 @@ namespace ASpecWpfDbFirstTest.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public factory()
         {
-            this.albums = new HashSet<album>();
+            this.album = new HashSet<album>();
             this.factory_lines = new HashSet<factory_lines>();
         }
     
@@ -26,7 +26,7 @@ namespace ASpecWpfDbFirstTest.Data
         public string f_prefix { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<album> albums { get; set; }
+        public virtual ICollection<album> album { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<factory_lines> factory_lines { get; set; }
     }

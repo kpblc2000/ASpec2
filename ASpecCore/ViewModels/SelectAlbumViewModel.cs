@@ -18,7 +18,7 @@ namespace ASpecCore.ViewModels
             Title = "Выберите альбом";
             using (NPConDataModel db = new NPConDataModel())
             {
-                _Albums = db.albums
+                _Albums = db.album
                             .Where(o => !o.name_alb.ToUpper().StartsWith("INTERACTIVE")
                             && !o.name_alb.ToUpper().StartsWith("ALLPLAN")
                             && !o.name_alb.StartsWith("allplan")

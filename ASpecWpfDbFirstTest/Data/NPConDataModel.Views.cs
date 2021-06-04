@@ -57,12 +57,12 @@ namespace Edm_EntityMappingGeneratedViews
                 return GetView1();
             }
 
-            if (extentName == "NPConConnectionString.albums")
+            if (extentName == "NPConConnectionString.album")
             {
                 return GetView2();
             }
 
-            if (extentName == "NPConConnectionString.factories")
+            if (extentName == "NPConConnectionString.factory")
             {
                 return GetView3();
             }
@@ -91,7 +91,7 @@ namespace Edm_EntityMappingGeneratedViews
             T.is_end_prod_alb AS [album.is_end_prod_alb], 
             T.id_fact AS [album.id_fact], 
             True AS _from0
-        FROM NPConConnectionString.albums AS T
+        FROM NPConConnectionString.album AS T
     ) AS T1");
         }
 
@@ -110,18 +110,18 @@ namespace Edm_EntityMappingGeneratedViews
             T.f_name AS [factory.f_name], 
             T.f_prefix AS [factory.f_prefix], 
             True AS _from0
-        FROM NPConConnectionString.factories AS T
+        FROM NPConConnectionString.factory AS T
     ) AS T1");
         }
 
         /// <summary>
-        /// Gets the view for NPConConnectionString.albums.
+        /// Gets the view for NPConConnectionString.album.
         /// </summary>
         /// <returns>The mapping view.</returns>
         private static DbMappingView GetView2()
         {
             return new DbMappingView(@"
-    SELECT VALUE -- Constructing albums
+    SELECT VALUE -- Constructing album
         [NPConContext.album](T1.[album.id_album], T1.[album.name_alb], T1.[album.description_alb], T1.[album.in_design], T1.[album.compr_name], T1.[album.created_alb_orig_login], T1.[album.file_path], T1.[album.is_end_prod_alb], T1.[album.id_fact])
     FROM (
         SELECT 
@@ -140,13 +140,13 @@ namespace Edm_EntityMappingGeneratedViews
         }
 
         /// <summary>
-        /// Gets the view for NPConConnectionString.factories.
+        /// Gets the view for NPConConnectionString.factory.
         /// </summary>
         /// <returns>The mapping view.</returns>
         private static DbMappingView GetView3()
         {
             return new DbMappingView(@"
-    SELECT VALUE -- Constructing factories
+    SELECT VALUE -- Constructing factory
         [NPConContext.factory](T1.[factory.id_fact], T1.[factory.f_name], T1.[factory.f_prefix])
     FROM (
         SELECT 

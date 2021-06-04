@@ -19708,11 +19708,11 @@
     <edmx:ConceptualModels>
       <Schema Namespace="NPConContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="NPConConnectionString" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="albums" EntityType="NPConContext.album" />
-          <EntitySet Name="factories" EntityType="NPConContext.factory" />
+          <EntitySet Name="album" EntityType="NPConContext.album" />
+          <EntitySet Name="factory" EntityType="NPConContext.factory" />
           <AssociationSet Name="FK_album_factory" Association="NPConContext.FK_album_factory">
-            <End Role="factory" EntitySet="factories" />
-            <End Role="album" EntitySet="albums" />
+            <End Role="factory" EntitySet="factory" />
+            <End Role="album" EntitySet="album" />
           </AssociationSet>
           <EntitySet Name="allLayers" EntityType="NPConContext.allLayer" />
           <EntitySet Name="angles" EntityType="NPConContext.angle" />
@@ -20172,15 +20172,15 @@
           <EntitySet Name="viewProjectDatas" EntityType="NPConContext.viewProjectData" />
           <EntitySet Name="view_UserActivityStat" EntityType="NPConContext.view_UserActivityStat" />
           <AssociationSet Name="FK_tblNodeDepth_album" Association="NPConContext.FK_tblNodeDepth_album">
-            <End Role="album" EntitySet="albums" />
+            <End Role="album" EntitySet="album" />
             <End Role="tblNodeDepth" EntitySet="tblNodeDepths" />
           </AssociationSet>
           <AssociationSet Name="FK_tblNodesContent_album" Association="NPConContext.FK_tblNodesContent_album">
-            <End Role="album" EntitySet="albums" />
+            <End Role="album" EntitySet="album" />
             <End Role="tblNodesContent" EntitySet="tblNodesContents" />
           </AssociationSet>
           <AssociationSet Name="R_8" Association="NPConContext.R_8">
-            <End Role="album" EntitySet="albums" />
+            <End Role="album" EntitySet="album" />
             <End Role="listalb" EntitySet="listalbs" />
           </AssociationSet>
           <AssociationSet Name="FK__angle__id_object__25869641" Association="NPConContext.FK__angle__id_object__25869641">
@@ -20252,7 +20252,7 @@
             <End Role="end_product_version" EntitySet="end_product_version" />
           </AssociationSet>
           <AssociationSet Name="FK_factory_lines_factory" Association="NPConContext.FK_factory_lines_factory">
-            <End Role="factory" EntitySet="factories" />
+            <End Role="factory" EntitySet="factory" />
             <End Role="factory_lines" EntitySet="factory_lines" />
           </AssociationSet>
           <AssociationSet Name="FK_factory_lines_Lines" Association="NPConContext.FK_factory_lines_Lines">
@@ -20916,7 +20916,7 @@
           <Property Name="id_fact" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="f_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="f_prefix" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="albums" Relationship="NPConContext.FK_album_factory" FromRole="factory" ToRole="album" />
+          <NavigationProperty Name="album" Relationship="NPConContext.FK_album_factory" FromRole="factory" ToRole="album" />
           <NavigationProperty Name="factory_lines" Relationship="NPConContext.FK_factory_lines_factory" FromRole="factory" ToRole="factory_lines" />
         </EntityType>
         <Association Name="FK_album_factory">
@@ -31593,7 +31593,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище NPConContextContainer" CdmEntityContainer="NPConConnectionString">
-          <EntitySetMapping Name="albums">
+          <EntitySetMapping Name="album">
             <EntityTypeMapping TypeName="NPConContext.album">
               <MappingFragment StoreEntitySet="album">
                 <ScalarProperty Name="id_fact" ColumnName="id_fact" />
@@ -31608,7 +31608,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="factories">
+          <EntitySetMapping Name="factory">
             <EntityTypeMapping TypeName="NPConContext.factory">
               <MappingFragment StoreEntitySet="factory">
                 <ScalarProperty Name="f_prefix" ColumnName="f_prefix" />
