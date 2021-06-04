@@ -1,0 +1,80 @@
+﻿<Window x:Class="ASpecCore.Views.CreateEditNormDocView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:ASpecCore.Views"
+        xmlns:vm="clr-namespace:ASpecCore.ViewModels"
+        mc:Ignorable="d" 
+        MinHeight="250"
+        MinWidth="400"
+        Height="450" 
+        Width="800"
+        MaxHeight="450"
+        MaxWidth="850"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="ToolWindow"
+        Title="{Binding Title}"
+        >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Themes\Generic.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.DataContext>
+        <vm:CreateEditNormDocViewModel/>
+    </Window.DataContext>
+    <DockPanel>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    DockPanel.Dock="Bottom">
+            <Button Content="Записать"
+                    Name="SaveButton"
+                    Command="{Binding SaveNormDocCommand}"
+                    />
+            <Button IsCancel="True"
+                    Width="{Binding ElementName=SaveButton}"
+                    Content="Закрыть"
+                    Click="OnCloseButtonClick"
+                    />
+        </StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0"
+                       Grid.Column="0"
+                       Text="Тип документа"
+                       />
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Text="Номер документа"
+                       />
+            <TextBlock Grid.Row="2"
+                       Grid.Column="0"
+                       Text="Описание"
+                       />
+            <TextBox Grid.Row="0"
+                     Grid.Column="1"
+                     Text="{Binding DocType, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                     />
+            <TextBox Grid.Row="1"
+                     Grid.Column="1"
+                     Text="{Binding DocNum, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                     />
+            <TextBox Grid.Row="2"
+                     Grid.Column="1"
+                     TextWrapping="Wrap"
+                     Text="{Binding DocDescription, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                     />
+        </Grid>
+    </DockPanel>
+</Window>
