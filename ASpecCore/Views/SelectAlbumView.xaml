@@ -5,10 +5,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:local="clr-namespace:ASpecCore.Views"
         xmlns:vm="clr-namespace:ASpecCore.ViewModels"
+        xmlns:ctrl="clr-namespace:ASpecCore.Views.UserControls"
         mc:Ignorable="d" 
-        d:DesignHeight="450"
-        d:DesignWidth="800"
         Title="{Binding Title}"
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterScreen"
         >
     <Window.Resources>
         <ResourceDictionary>
@@ -17,62 +18,33 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Window.DataContext>
+    <!--<Window.DataContext>
         <vm:SelectAlbumViewModel/>
-    </Window.DataContext>
+    </Window.DataContext>-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <DockPanel>
-            <TextBlock DockPanel.Dock="Left"
-                       Text="Фильтровать по части имени / названия"/>
-            <Button DockPanel.Dock="Right"
-                    Content="Фильтр"
-                    Command="{Binding FilterButtonCommand}"
-                    CommandParameter="{Binding ElementName=FilterCriteria, Path=Text}"
-                    />
-            <TextBox x:Name="FilterCriteria"/>
-        </DockPanel>
-        <ComboBox Grid.Row="1"
-                  ItemsSource="{Binding FilteredAlbums}"
-                  SelectedValue="{Binding SelectedAlbum, Mode=TwoWay}"
-                  IsTextSearchEnabled="True"
-                  VirtualizingPanel.CacheLength="2"
-                  VirtualizingPanel.IsContainerVirtualizable="True"
-                  VirtualizingPanel.IsVirtualizing="True"
-                  VirtualizingPanel.VirtualizationMode="Recycling"
-                  >
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding name_alb}"/>
-                        <TextBlock Text="{Binding description_alb, StringFormat=' \{0\}'}"
-                                   Foreground="Gray"
-                                   />
-                    </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-
-            <ComboBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <VirtualizingStackPanel/>
-                </ItemsPanelTemplate>
-            </ComboBox.ItemsPanel>
-            
-        </ComboBox>
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+        <ctrl:SelectAlbumUserControl Grid.Row="0"
+                                     >
+            <ctrl:SelectAlbumUserControl.DataContext>
+                <vm:SelectAlbumViewModel/>
+            </ctrl:SelectAlbumUserControl.DataContext>
+        </ctrl:SelectAlbumUserControl>
+        <UniformGrid Grid.Row="1" 
+                     HorizontalAlignment="Right"
+                     Rows="1"
+                     >
             <Button Content="OK"
                     IsDefault="True"
                     IsEnabled="{Binding CanAccept}"
                     Click="OnAcceptButtonClick"
                     />
-            <Button Content="Cancel" 
+            <Button Content="Отмена" 
                     IsCancel="True"
                     Click="OnCancelButtonClick"
                     />
-        </StackPanel>
+        </UniformGrid>
     </Grid>
 </Window>

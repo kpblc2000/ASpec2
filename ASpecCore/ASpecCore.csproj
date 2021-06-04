@@ -438,6 +438,9 @@
     <Compile Include="Views\UserAddEdit.xaml.cs">
       <DependentUpon>UserAddEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserControls\SelectAlbumUserControl.xaml.cs">
+      <DependentUpon>SelectAlbumUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserTab.xaml.cs">
       <DependentUpon>UserTab.xaml</DependentUpon>
     </Compile>
@@ -470,6 +473,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\UserControls\SelectAlbumUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\UserTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -492,5 +499,6 @@
       <DependentUpon>202106041156528_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

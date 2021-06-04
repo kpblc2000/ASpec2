@@ -13,7 +13,7 @@
         Title="{Binding Title}"
         >
     <Window.DataContext>
-        <vm:AlbumViewModel/>
+        <vm:SelectAlbumViewModel/>
     </Window.DataContext>
     <Window.Resources>
         <ResourceDictionary>
@@ -40,7 +40,8 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <DataGrid Grid.Column="0"
-                      ItemsSource="{Binding Albums}"
+                      ItemsSource="{Binding FilteredAlbums}"
+                      SelectedItem="{Binding SelectedAlbum}"
                       VirtualizingPanel.IsVirtualizing="True"
                       VirtualizingPanel.CacheLength="5"
                       VirtualizingPanel.VirtualizationMode="Recycling"
