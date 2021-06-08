@@ -26,16 +26,8 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <ctrl:SelectAlbumUserControl Grid.Row="0"
-                                     >
-            <ctrl:SelectAlbumUserControl.DataContext>
-                <vm:SelectAlbumViewModel/>
-            </ctrl:SelectAlbumUserControl.DataContext>
-        </ctrl:SelectAlbumUserControl>
-        <UniformGrid Grid.Row="1" 
-                     HorizontalAlignment="Right"
-                     Rows="1"
-                     >
+        <ctrl:SelectAlbumUserControl Grid.Row="0"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Content="OK"
                     IsDefault="True"
                     IsEnabled="{Binding CanAccept}"
