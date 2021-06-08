@@ -446,6 +446,9 @@
     <Compile Include="Views\UserTab.xaml.cs">
       <DependentUpon>UserTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ZZTop.xaml.cs">
+      <DependentUpon>ZZTop.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Readme.txt" />
@@ -484,6 +487,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ZZTop.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

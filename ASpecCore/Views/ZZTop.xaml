@@ -1,0 +1,51 @@
+﻿<Window x:Class="ASpecCore.Views.ZZTop"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:ASpecCore.Views"
+        xmlns:uc="clr-namespace:ASpecCore.Views.UserControls"
+        xmlns:vm="clr-namespace:ASpecCore.ViewModels"
+        mc:Ignorable="d" 
+        d:DesignHeight="450"
+        d:DesignWidth="800">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Generic.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <DockPanel HorizontalAlignment="Stretch" 
+                   Grid.Row="0">
+            <TextBlock Text="Введите название"
+                       DockPanel.Dock="Left"/>
+            <TextBox />
+        </DockPanel>
+        <uc:AlbumUserControl
+            Grid.Row="1">
+            <uc:AlbumUserControl.DataContext>
+                <vm:AlbumViewModel/>
+            </uc:AlbumUserControl.DataContext>
+        </uc:AlbumUserControl>
+        <uc:NormDocUserControl
+            Grid.Row="2">
+            <uc:NormDocUserControl.DataContext>
+                <vm:NormDocViewModel/>
+            </uc:NormDocUserControl.DataContext>
+        </uc:NormDocUserControl>
+        <UniformGrid Grid.Row="3"
+                     Rows="1"
+                     HorizontalAlignment="Right">
+            <Button Content="Cancel"
+                    IsCancel="True"/>
+        </UniformGrid>
+    </Grid>
+</Window>

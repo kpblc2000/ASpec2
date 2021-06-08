@@ -31,25 +31,30 @@ namespace ASpec2
             //UserTab win = new UserTab();
             //win.ShowDialog();
 
-            AlbumView winAlb = new AlbumView();
-            winAlb.ShowDialog();
+            //AlbumView winAlb = new AlbumView();
+            //winAlb.ShowDialog();
 
             #region Albums
-            
-            SelectAlbumView winSelAlb = new SelectAlbumView();
-            winSelAlb.ShowDialog();
 
-            if (winSelAlb.DialogResult == true)
-            {
-                AlbumViewModel vm = winSelAlb.DataContext as AlbumViewModel;
-                album selAlbum = vm.SelectedAlbum;
-                Console.WriteLine($"{selAlbum.name_alb}");
-            } 
+            //SelectAlbumView winSelAlb = new SelectAlbumView();
+            //winSelAlb.ShowDialog();
+
+            //if (winSelAlb.DialogResult == true)
+            //{
+            //    AlbumViewModel vm = winSelAlb.DataContext as AlbumViewModel;
+            //    album selAlbum = vm.SelectedAlbum;
+            //    Console.WriteLine($"{selAlbum.name_alb}");
+            //} 
             #endregion
 
             #region NormDocs
-            NormDocView winNormDoc = new NormDocView();
-            winNormDoc.ShowDialog();
+            //NormDocView winNormDoc = new NormDocView();
+            //winNormDoc.ShowDialog();
+            #endregion
+
+            #region ZZTop
+            ZZTop winZZ = new ZZTop();
+            winZZ.ShowDialog();
             #endregion
 
             //Console.WriteLine(typeof(Program).Assembly.GetName().Name);

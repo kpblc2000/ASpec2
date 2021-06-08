@@ -94,4 +94,7 @@
     <Style TargetType="TextBox">
         <Setter Property="Margin" Value="2"/>
     </Style>
+    <Style TargetType="ComboBox">
+        <Setter Property="Margin" Value="2"/>
+    </Style>
 </ResourceDictionary>
