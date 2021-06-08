@@ -16,6 +16,9 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
+    <Window.DataContext>
+        <vm:ZZTopViewModel/>
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -27,16 +30,18 @@
                    Grid.Row="0">
             <TextBlock Text="Введите название"
                        DockPanel.Dock="Left"/>
-            <TextBox />
+            <TextBox Text="{Binding Name}"/>
         </DockPanel>
         <uc:AlbumUserControl
-            Grid.Row="1">
-            <uc:AlbumUserControl.DataContext>
-                <vm:AlbumViewModel/>
-            </uc:AlbumUserControl.DataContext>
+            Grid.Row="1"
+            x:Name="AlbumUC"
+            DataContext="{Binding AlbumVM}"
+            >
         </uc:AlbumUserControl>
         <uc:NormDocUserControl
-            Grid.Row="2">
+            Grid.Row="2"
+            x:Name="NormDocUC"
+            >
             <uc:NormDocUserControl.DataContext>
                 <vm:NormDocViewModel/>
             </uc:NormDocUserControl.DataContext>
@@ -44,6 +49,12 @@
         <UniformGrid Grid.Row="3"
                      Rows="1"
                      HorizontalAlignment="Right">
+            <Button Content="Проверить"
+                    Command="{Binding CheckResultCommand}"
+                    />
+            <Button Content="OK"
+                    IsDefault="True"
+                    />
             <Button Content="Cancel"
                     IsCancel="True"/>
         </UniformGrid>
