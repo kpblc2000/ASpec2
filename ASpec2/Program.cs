@@ -31,21 +31,20 @@ namespace ASpec2
             //UserTab win = new UserTab();
             //win.ShowDialog();
 
-            //AlbumView winAlb = new AlbumView();
-            //winAlb.ShowDialog();
+            AlbumView winAlb = new AlbumView();
+            winAlb.ShowDialog();
 
             #region Albums
-            /*
+            
             SelectAlbumView winSelAlb = new SelectAlbumView();
             winSelAlb.ShowDialog();
 
             if (winSelAlb.DialogResult == true)
             {
-                SelectAlbumViewModel vm = winSelAlb.DataContext as SelectAlbumViewModel;
+                AlbumViewModel vm = winSelAlb.DataContext as AlbumViewModel;
                 album selAlbum = vm.SelectedAlbum;
                 Console.WriteLine($"{selAlbum.name_alb}");
             } 
-            */
             #endregion
 
             #region NormDocs

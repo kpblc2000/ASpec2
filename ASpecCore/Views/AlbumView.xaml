@@ -40,7 +40,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <DataGrid Grid.Column="0"
-                      ItemsSource="{Binding Albums}"
+                      ItemsSource="{Binding FilteredAlbums}"
                       VirtualizingPanel.IsVirtualizing="True"
                       VirtualizingPanel.CacheLength="5"
                       VirtualizingPanel.VirtualizationMode="Recycling"

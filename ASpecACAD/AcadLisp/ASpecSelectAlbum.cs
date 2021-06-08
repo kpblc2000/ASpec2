@@ -22,7 +22,7 @@ namespace ASpecACAD.AcadLisp
             winSelAlb.ShowDialog();
             if (winSelAlb.DialogResult == true)
             {
-                SelectAlbumViewModel vm = winSelAlb.DataContext as SelectAlbumViewModel;
+                AlbumViewModel vm = winSelAlb.DataContext as AlbumViewModel;
                 album selAlb = vm.SelectedAlbum;
 
                 Document doc = Application.DocumentManager.MdiActiveDocument;

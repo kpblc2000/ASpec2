@@ -415,12 +415,11 @@
     <Compile Include="Themes\Generic.xaml.cs">
       <DependentUpon>Generic.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\AlbumViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
     <Compile Include="ViewModels\CreateEditNormDocViewModel.cs" />
     <Compile Include="ViewModels\FactoryViewModel.cs" />
     <Compile Include="ViewModels\NormDocViewModel.cs" />
-    <Compile Include="ViewModels\SelectAlbumViewModel.cs" />
+    <Compile Include="ViewModels\AlbumViewModel.cs" />
     <Compile Include="ViewModels\UserAddEditViewModel.cs" />
     <Compile Include="ViewModels\UserTabViewModel.cs" />
     <Compile Include="Views\AlbumView.xaml.cs">
@@ -437,6 +436,12 @@
     </Compile>
     <Compile Include="Views\UserAddEdit.xaml.cs">
       <DependentUpon>UserAddEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\AlbumUserControl.xaml.cs">
+      <DependentUpon>AlbumUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\NormDocUserControl.xaml.cs">
+      <DependentUpon>NormDocUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserTab.xaml.cs">
       <DependentUpon>UserTab.xaml</DependentUpon>
@@ -467,6 +472,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserAddEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\AlbumUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\NormDocUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
