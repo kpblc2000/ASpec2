@@ -15,7 +15,7 @@ namespace ASpecCore.ViewModels
         public ZZTopViewModel()
         {
             _AlbumVM = new AlbumViewModel();
-
+            // _AlbumVM.SelectedAlbum = _AlbumVM.FilteredAlbums.Where(object => object.id_alb == 101212).FirstOrDefault();
             CheckResultCommand = new RelayCommand(OnCheckResultCommandExecuted, CanCheckResultCommandExecute);
         }
 
