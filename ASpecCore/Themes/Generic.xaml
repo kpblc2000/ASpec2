@@ -97,4 +97,8 @@
     <Style TargetType="ComboBox">
         <Setter Property="Margin" Value="2"/>
     </Style>
+    <Style TargetType="GroupBox">
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Padding" Value="1"/>
+    </Style>
 </ResourceDictionary>

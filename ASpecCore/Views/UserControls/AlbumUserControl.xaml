@@ -22,7 +22,7 @@
         </Grid.RowDefinitions>
         <DockPanel>
             <TextBlock DockPanel.Dock="Left"
-                       Text="Фильтровать по части имени / названия"/>
+                       Text="Фильтровать альбом по части имени / названия"/>
             <Button DockPanel.Dock="Right"
                     Content="Фильтр"
                     Command="{Binding FilterButtonCommand}"

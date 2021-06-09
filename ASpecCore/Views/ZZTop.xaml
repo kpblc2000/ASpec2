@@ -17,41 +17,127 @@
         </ResourceDictionary>
     </Window.Resources>
     <Window.DataContext>
-        <vm:ZZTopViewModel/>
+        <vm:EndProductViewModel/>
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <DockPanel HorizontalAlignment="Stretch" 
-                   Grid.Row="0">
-            <TextBlock Text="Введите название"
-                       DockPanel.Dock="Left"/>
-            <TextBox Text="{Binding Name}"/>
-        </DockPanel>
-        <uc:AlbumUserControl
-            Grid.Row="1"
-            x:Name="AlbumUC"
-            DataContext="{Binding AlbumVM}"
-            >
-        </uc:AlbumUserControl>
-        <uc:NormDocUserControl
-            Grid.Row="2"
-            x:Name="NormDocUC"
-            >
-            <uc:NormDocUserControl.DataContext>
-                <vm:NormDocViewModel/>
-            </uc:NormDocUserControl.DataContext>
-        </uc:NormDocUserControl>
-        <UniformGrid Grid.Row="3"
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"
+                              MinWidth="400"
+                              />
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"
+                              MinWidth="400"
+                              />
+        </Grid.ColumnDefinitions>
+        <GroupBox Grid.Row="0"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="3"
+                  Header="Фильтровать по альбому..."
+                  >
+            <DockPanel>
+                <Button DockPanel.Dock="Right">
+                    <StackPanel Orientation="Vertical"
+                                >
+                        <StackPanel.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock Text="Фильтровать"/>
+                        <TextBlock Text="по выбранному"/>
+                        <TextBlock Text="альбому"/>
+                    </StackPanel>
+                </Button>
+                <uc:AlbumUserControl VerticalAlignment="Center"
+                                     DataContext="{Binding AlbumVM}"
+                    />
+                
+            </DockPanel>
+        </GroupBox>
+        <GridSplitter Grid.Column="1"
+                      Grid.Row="1"
+                      Width="3"
+                      Background="DarkGray"
+                      ShowsPreview="False"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Stretch"
+                      />
+        <DataGrid Name="EndProductDataGrid"
+                  Grid.Row="1"
+                  Grid.Column="0"
+                  AutoGenerateColumns="False"
+                  VirtualizingPanel.IsVirtualizing="True"
+                  VirtualizingPanel.CacheLength="5"
+                  VirtualizingPanel.VirtualizationMode="Recycling"
+                  ItemsSource="{Binding EndProductList}"
+                  SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Марка"
+                                    Binding="{Binding unicname_trim}"/>
+                <DataGridTextColumn Header="Альбом"
+                                    Binding="{Binding name_alb}"/>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.Header>
+                        <StackPanel Orientation="Vertical" 
+                                    HorizontalAlignment="Center">
+                            <TextBlock Text="Форм."/>
+                            <TextBlock Text="Съем"/>
+                        </StackPanel>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical"
+                                        HorizontalAlignment="Left">
+                                <TextBlock Text="{Binding frm_dimension}"/>
+                                <TextBlock Text="{Binding frm_lifting}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Изм."
+                                    Binding="{Binding modification_num}"
+                                    />
+                <DataGridTextColumn Header="Статус"
+                                    Binding="{Binding status_name}"/>
+                <DataGridTextColumn Header="1С"
+                                    Binding="{Binding itm_conFrm_guid}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Grid.Row="1"
+                  Grid.Column="2"
+                  AutoGenerateColumns="False"
+                  VirtualizingPanel.IsVirtualizing="True"
+                  VirtualizingPanel.CacheLength="5"
+                  VirtualizingPanel.VirtualizationMode="Recycling"
+                  ItemsSource="{Binding ProductContentBySelectedProduct}"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Тип"
+                                    Binding="{Binding objecttypename}"/>
+                <DataGridTextColumn Header="Марка"
+                                    Binding="{Binding unicname_trim}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Right">
+                                <TextBlock Text="{Binding object_count}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <UniformGrid Grid.Row="2"
                      Rows="1"
                      HorizontalAlignment="Right">
-            <Button Content="Проверить"
-                    Command="{Binding CheckResultCommand}"
-                    />
+            <TextBlock Text="{Binding SelectedAlbum.name_alb}"/>
             <Button Content="OK"
                     IsDefault="True"
                     />
