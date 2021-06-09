@@ -1,4 +1,5 @@
-﻿using ASpecCore.Models.Data;
+﻿using ASpecCore.Infrastructure.Commands;
+using ASpecCore.Models.Data;
 using ASpecCore.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace ASpecCore.ViewModels
 {
@@ -15,16 +17,56 @@ namespace ASpecCore.ViewModels
         {
             using (NPConDataModel db = new NPConDataModel())
             {
-                EndProductList = new ObservableCollection<view_endproduct_cut>(db.view_endproduct_cut.
+                _EndProductList = new ObservableCollection<view_endproduct_cut>(db.view_endproduct_cut.
                                                                                     Where(o => !o.name_alb.ToUpper().StartsWith("ALLPLAN")
                                                                                             && !o.name_alb.ToUpper().StartsWith("INTER"))
                         );
-                // _EndProductConsistList = new ObservableCollection<view_end_prod_consist>(db.view_end_prod_consist);
-                SelectedProduct = EndProductList[0];
+                SelectedProduct = _EndProductList[0];
             }
+            _FilteredEndProductList = _EndProductList;
             AlbumVM = new AlbumViewModel();
+            _IsFiltered = false;
+
+            FilterProductByAlbumCommand = new RelayCommand(OnFilterProductByAlbumCommandExecuted, CanFilterProductByAlbumCommandExecute);
+            CancelFilterByAlbumCommand = new RelayCommand(OnCancelFilterByAlbumCommandExecuted, CanCancelFilterByAlbumCommandExecute);
         }
 
+
+
+        #region CancelFilterByAlbumCommand
+        public ICommand CancelFilterByAlbumCommand { get; }
+        private void OnCancelFilterByAlbumCommandExecuted(object obj)
+        {
+            _FilteredEndProductList = _EndProductList;
+            _IsFiltered = false;
+            OnPropertyChanged(nameof(EndProductList));
+        }
+        private bool CanCancelFilterByAlbumCommandExecute(object arg)
+        {
+            return _IsFiltered;
+        }
+        #endregion
+
+        #region FilterProductByAlbumCommand
+        public ICommand FilterProductByAlbumCommand { get; }
+        private void OnFilterProductByAlbumCommandExecuted(object p)
+        {
+            if (_AlbumVM.SelectedAlbum != null)
+            {
+                _FilteredEndProductList = new ObservableCollection<view_endproduct_cut>(_EndProductList.Where(o => o.name_alb.Contains(_AlbumVM.SelectedAlbum.name_alb)));
+                _IsFiltered = true;
+
+                SelectedProduct = _FilteredEndProductList == null ? null : _FilteredEndProductList[0];
+                OnPropertyChanged(nameof(EndProductList));
+            }
+        }
+        private bool CanFilterProductByAlbumCommandExecute(object p)
+        {
+            return _AlbumVM.SelectedAlbum != null;
+        }
+        #endregion
+
+        #region Public properties
         public view_endproduct_cut SelectedProduct
         {
             get { return _SelectedProduct; }
@@ -38,8 +80,8 @@ namespace ASpecCore.ViewModels
         }
         public ObservableCollection<view_endproduct_cut> EndProductList
         {
-            get { return _EndProductList; }
-            private set { Set(ref _EndProductList, value); }
+            get { return _FilteredEndProductList; }
+            private set { Set(ref _FilteredEndProductList, value); }
         }
 
         public ObservableCollection<view_end_prod_consist> ProductContentBySelectedProduct
@@ -64,21 +106,12 @@ namespace ASpecCore.ViewModels
             get { return _AlbumVM; }
             set { Set(ref _AlbumVM, value); }
         }
-
-        public album SelectedAlbum
-        {
-            get { return _AlbumVM.SelectedAlbum; }
-            set
-            {
-                _AlbumVM.SelectedAlbum = value;
-                OnPropertyChanged(nameof(SelectedAlbum));
-            }
-        }
+        #endregion
 
         private view_endproduct_cut _SelectedProduct;
         private ObservableCollection<view_endproduct_cut> _EndProductList;
-        private ObservableCollection<view_end_prod_consist> _EndProductConsistList;
+        private ObservableCollection<view_endproduct_cut> _FilteredEndProductList;
         private AlbumViewModel _AlbumVM;
-
+        private bool _IsFiltered;
     }
 }

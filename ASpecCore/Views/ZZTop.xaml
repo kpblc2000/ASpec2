@@ -40,7 +40,22 @@
                   Header="Фильтровать по альбому..."
                   >
             <DockPanel>
-                <Button DockPanel.Dock="Right">
+                <Button DockPanel.Dock="Right"
+                        Command="{Binding CancelFilterByAlbumCommand}"
+                        >
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock Text="Снять фильтрацию"/>
+                        <TextBlock Text="по альбому"/>
+                    </StackPanel>
+                </Button>
+                <Button DockPanel.Dock="Right"
+                        Command="{Binding FilterProductByAlbumCommand}"
+                        >
                     <StackPanel Orientation="Vertical"
                                 >
                         <StackPanel.Resources>
@@ -48,11 +63,10 @@
                                 <Setter Property="TextAlignment" Value="Center"/>
                             </Style>
                         </StackPanel.Resources>
-                        <TextBlock Text="Фильтровать"/>
-                        <TextBlock Text="по выбранному"/>
-                        <TextBlock Text="альбому"/>
+                        <TextBlock Text="Фильтровать изделия"/>
+                        <TextBlock Text="по выбранному альбому"/>
                     </StackPanel>
-                </Button>
+                </Button>                
                 <uc:AlbumUserControl VerticalAlignment="Center"
                                      DataContext="{Binding AlbumVM}"
                     />
@@ -137,7 +151,7 @@
         <UniformGrid Grid.Row="2"
                      Rows="1"
                      HorizontalAlignment="Right">
-            <TextBlock Text="{Binding SelectedAlbum.name_alb}"/>
+            <TextBlock Text="{Binding AlbumVM.SelectedAlbum.name_alb}"/>
             <Button Content="OK"
                     IsDefault="True"
                     />
