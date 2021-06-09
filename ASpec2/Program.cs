@@ -1,4 +1,5 @@
-﻿using ASpecCore.Models;
+﻿using ASpecCore.Infrastructure.Enums;
+using ASpecCore.Models;
 using ASpecCore.Models.Data;
 using ASpecCore.ViewModels;
 using ASpecCore.Views;
@@ -53,9 +54,48 @@ namespace ASpec2
             #endregion
 
             #region ZZTop
-            ZZTop winZZ = new ZZTop();
-            winZZ.ShowDialog();
+            //ZZTop winZZ = new ZZTop();
+            //winZZ.ShowDialog();
             #endregion
+
+
+            SqlUserRole role = SqlUserRole.Unknown;
+
+            using (NPConDataModel db = new NPConDataModel())
+            {
+                if (db.Database.SqlQuery<int>("select dbo.isuserrw()").Single() == 1)
+                {
+                    role |= SqlUserRole.ReadWrite;
+                }
+                if (db.Database.SqlQuery<int>("select dbo.isUserROnly()").Single() == 1)
+                {
+                    role |= SqlUserRole.ReadOnly;
+                }
+                if (db.Database.SqlQuery<int>("select dbo.isUser_EndProdAdmin()").Single() == 1)
+                {
+                    role |= SqlUserRole.EndProdAdmin;
+                }
+                if (db.Database.SqlQuery<int>("select dbo.isUser_RoleEqual(@roleName)",
+                    new System.Data.SqlClient.SqlParameter("@roleName", "NPCon_confirm_element")).Single() == 1)
+                {
+                    role |= SqlUserRole.ConfirmElements;
+                }
+                if (db.Database.SqlQuery<int>("select dbo.isUser_RoleEqual(@roleName)",
+                    new System.Data.SqlClient.SqlParameter("@roleName", "NPCon_DesignTeam")).Single() == 1)
+                {
+                    role |= SqlUserRole.DesignTeam;
+                }
+                if (db.Database.SqlQuery<int>("select dbo.isUser_RoleEqual(@roleName)",
+                    new System.Data.SqlClient.SqlParameter("@roleName", "NPCon_album_admin")).Single() == 1)
+                {
+                    role |= SqlUserRole.AlbumAdmin;
+                }
+#if DEBUG
+                role |= SqlUserRole.NetDeveloper;
+#endif
+            }
+
+            
 
             //Console.WriteLine(typeof(Program).Assembly.GetName().Name);
 
