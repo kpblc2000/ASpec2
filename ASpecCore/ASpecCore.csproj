@@ -417,6 +417,7 @@
     </Compile>
     <Compile Include="ViewModels\Base\ViewModel.cs" />
     <Compile Include="ViewModels\CreateEditNormDocViewModel.cs" />
+    <Compile Include="ViewModels\EndProductViewModel.cs" />
     <Compile Include="ViewModels\FactoryViewModel.cs" />
     <Compile Include="ViewModels\NormDocViewModel.cs" />
     <Compile Include="ViewModels\AlbumViewModel.cs" />
@@ -428,6 +429,9 @@
     </Compile>
     <Compile Include="Views\CreateEditNormDocView.xaml.cs">
       <DependentUpon>CreateEditNormDocView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EndProductView.xaml.cs">
+      <DependentUpon>EndProductView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\NormDocView.xaml.cs">
       <DependentUpon>NormDocView.xaml</DependentUpon>
@@ -464,6 +468,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CreateEditNormDocView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EndProductView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
