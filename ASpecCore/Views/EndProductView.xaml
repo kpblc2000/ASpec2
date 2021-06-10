@@ -12,8 +12,31 @@
         <vm:EndProductViewModel/>
     </Window.DataContext>
     <Grid>
-        <DataGrid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Grid.Column="0"
+                  VirtualizingPanel.CacheLength="2"
+                  VirtualizingPanel.IsVirtualizing="True"
+                  VirtualizingPanel.VirtualizationMode="Recycling"
+                  ItemsSource="{Binding EndProducts}"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  SelectedItem="{Binding SelectedProduct}"
+                  >            
+        </DataGrid>
+        <GridSplitter Grid.Column="1"
+                      Background="DarkGray"
+                      Width="3"
+                      />
+        <DataGrid Grid.Column="2"
+                  VirtualizingPanel.CacheLength="2"
+                  VirtualizingPanel.IsVirtualizing="True"
+                  VirtualizingPanel.VirtualizationMode="Recycling"
+                  ItemsSource="{Binding ProductContent}"
+                  >            
         </DataGrid>
     </Grid>
 </Window>

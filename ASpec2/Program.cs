@@ -52,6 +52,11 @@ namespace ASpec2
             //winNormDoc.ShowDialog();
             #endregion
 
+            #region EndProductView
+            EndProductView winEndProd = new EndProductView();
+            winEndProd.ShowDialog();
+            #endregion
+
             #region ZZTop
             ZZTop winZZ = new ZZTop();
             winZZ.ShowDialog();
