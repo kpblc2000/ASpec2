@@ -28,21 +28,80 @@
                   VirtualizingPanel.IsVirtualizing="True"
                   VirtualizingPanel.VirtualizationMode="Recycling"
                   ItemsSource="{Binding EndProducts}"
-                  IsReadOnly="True"
-                  SelectionMode="Single"
                   SelectedItem="{Binding SelectedProduct}"
                   >
+            <DataGrid.Columns>
+                <DataGridTemplateColumn SortMemberPath="unicname"
+                                        Width="*">
+                    <DataGridTemplateColumn.Header>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Марка"/>
+                            <TextBlock Text="Альбом"/>
+                        </StackPanel>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="{Binding unicname}"/>
+                                <TextBlock Text="{Binding name_alb}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Изм."
+                                    Binding="{Binding modification_num}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Создано"/>
+                            <TextBlock Text="Дата"/>
+                        </StackPanel>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="{Binding creator_username}"/>
+                                <TextBlock Text="{Binding created_at}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Формование"/>
+                            <TextBlock Text="Съём"/>
+                        </StackPanel>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="{Binding frm_dimension}"/>
+                                <TextBlock Text="{Binding frm_lifting}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Статус"
+                                    Binding="{Binding status_name}"
+                                    />
+                <DataGridTextColumn Header="1С"
+                                    Binding="{Binding itm_conFrm_guid}"
+                                    />
+            </DataGrid.Columns>
         </DataGrid>
         <GridSplitter Grid.Column="1"
                       Background="DarkGray"
                       Width="3"
                       />
-        <DataGrid Grid.Column="2"
-                  VirtualizingPanel.CacheLength="2"
+        <GroupBox Header="Состав"
+                  Grid.Column="2">
+            <DataGrid VirtualizingPanel.CacheLength="2"
                   VirtualizingPanel.IsVirtualizing="True"
                   VirtualizingPanel.VirtualizationMode="Recycling"
                   ItemsSource="{Binding ProductContent}"
                   >
-        </DataGrid>
+            </DataGrid>
+        </GroupBox>
     </Grid>
 </UserControl>

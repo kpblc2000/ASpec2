@@ -430,9 +430,6 @@
     <Compile Include="Views\CreateEditNormDocView.xaml.cs">
       <DependentUpon>CreateEditNormDocView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\EndProductView.xaml.cs">
-      <DependentUpon>EndProductView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\NormDocView.xaml.cs">
       <DependentUpon>NormDocView.xaml</DependentUpon>
     </Compile>
@@ -471,10 +468,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CreateEditNormDocView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\EndProductView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

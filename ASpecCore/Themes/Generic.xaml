@@ -35,9 +35,6 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
     
-    <Style TargetType="Window">
-        <Setter Property="WindowStyle" Value="ToolWindow"/>
-    </Style>
     <Style TargetType="Button">
         <Setter Property="Margin" Value="2"/>
         <Setter Property="Padding" Value="2"/>
@@ -61,6 +58,7 @@
         <Setter Property="SelectionUnit" Value="FullRow"/>
         <Setter Property="GridLinesVisibility" Value="Vertical"/>
         <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="SelectionMode" Value="Single"/>
     </Style>
     <!--Override Highlighting so that its easy to see what is selected even when the control is not focused-->
     <!--<Style TargetType="{x:Type DataGridCell}">
