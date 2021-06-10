@@ -422,6 +422,7 @@
     <Compile Include="ViewModels\AlbumViewModel.cs" />
     <Compile Include="ViewModels\UserAddEditViewModel.cs" />
     <Compile Include="ViewModels\UserTabViewModel.cs" />
+    <Compile Include="ViewModels\ZZTopViewModel.cs" />
     <Compile Include="Views\AlbumView.xaml.cs">
       <DependentUpon>AlbumView.xaml</DependentUpon>
     </Compile>
@@ -445,6 +446,9 @@
     </Compile>
     <Compile Include="Views\UserTab.xaml.cs">
       <DependentUpon>UserTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ZZTop.xaml.cs">
+      <DependentUpon>ZZTop.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -486,6 +490,10 @@
     <Page Include="Views\UserTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ZZTop.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
