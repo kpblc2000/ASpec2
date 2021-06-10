@@ -53,8 +53,8 @@ namespace ASpec2
             #endregion
 
             #region EndProductView
-            EndProductView winEndProd = new EndProductView();
-            winEndProd.ShowDialog();
+            //EndProductView winEndProd = new EndProductView();
+            //winEndProd.ShowDialog();
             #endregion
 
             #region ZZTop

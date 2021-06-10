@@ -48,6 +48,7 @@ namespace ASpecCore.ViewModels
             get { return _EndProducts; }
             set { Set(ref _EndProducts, value); }
         }
+
         public view_endproduct_cut SelectedProduct
         {
             get { return _SelectedProduct; }
