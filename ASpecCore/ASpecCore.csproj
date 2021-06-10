@@ -445,6 +445,9 @@
     <Compile Include="Views\UserControls\AlbumUserControl.xaml.cs">
       <DependentUpon>AlbumUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserControls\EndProductUserControl.xaml.cs">
+      <DependentUpon>EndProductUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserControls\NormDocUserControl.xaml.cs">
       <DependentUpon>NormDocUserControl.xaml</DependentUpon>
     </Compile>
@@ -488,6 +491,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserControls\AlbumUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\EndProductUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
