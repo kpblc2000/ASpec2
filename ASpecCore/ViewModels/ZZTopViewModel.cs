@@ -12,7 +12,7 @@ using System.Windows.Input;
 
 namespace ASpecCore.ViewModels
 {
-    public class ZZTopViewModel : ViewModel
+    public partial class ZZTopViewModel : ViewModel
     {
         public ZZTopViewModel()
         {
@@ -23,18 +23,14 @@ namespace ASpecCore.ViewModels
             CheckResultCommand = new RelayCommand(OnCheckResultCommandExecuted, CanCheckResultCommandExecute);
             FilterByAlbumCommand = new RelayCommand(OnFilterByAlbumCommandExecuted, CanFilterByAlbumCommandExecute);
             ClearFilterCommand = new RelayCommand(OnClearFilterCommandExecuted, CanClearFilterCommandExecute);
+
+            SetAlbumCommand = new RelayCommand(OnSetAlbumCommandExecuted, CanSetAlbumCommandExecute);
+            SetDocumentCommand = new RelayCommand(OnSetDocumentCommandExecuted, CanSetDocumentCommandExecute);
+            SetEndProductCommand = new RelayCommand(OnSetEndProductCommandExecuted, CanSetEndProductCommandExecute);
+            
         }
 
-        #region CheckResultCommand
-
-        public ICommand CheckResultCommand { get; }
-        private void OnCheckResultCommandExecuted(object obj)
-        {
-            MessageBox.Show($"{Name} : {_AlbumVM.SelectedAlbum.name_alb}");
-        }
-
-        private bool CanCheckResultCommandExecute(object arg) => true;
-        #endregion
+        
 
         #region FilterByAlbumCommand
         public ICommand FilterByAlbumCommand { get; }

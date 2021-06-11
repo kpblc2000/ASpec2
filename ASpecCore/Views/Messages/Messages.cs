@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace ASpecCore.Views.Messages
 {
-    internal class Messages
+    internal static class Messages
     {
         public static void ErrorMessage(string MessageText, string Title)
         {

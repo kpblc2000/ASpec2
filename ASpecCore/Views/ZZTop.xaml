@@ -25,7 +25,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <DockPanel Grid.Row="0">
+        <!--<DockPanel Grid.Row="0">
             <UniformGrid DockPanel.Dock="Right">
                 <Button Command="{Binding FilterByAlbumCommand}">
                     <Button.Content>
@@ -47,12 +47,37 @@
             <uc:AlbumUserControl DataContext="{Binding AlbumVM}"/>
         </DockPanel>
         <uc:EndProductUserControl Grid.Row="1"
-                                  DataContext="{Binding EndProdVM}"/>
+                                  DataContext="{Binding EndProdVM}"/>-->
+        <UniformGrid Grid.Row="0"
+                     HorizontalAlignment="Left"
+                     Rows="1"
+                     >
+            <Button Content="Документы"
+                    Command="{Binding SetDocumentCommand}"
+                    CommandParameter="{Binding ElementName=ParentContent}"
+                    />
+            <Button Content="Альбомы"
+                    Command="{Binding SetAlbumCommand}"
+                    CommandParameter="{Binding ElementName=ParentContent}"
+                    />
+            <Button Content="Изделия"
+                    Command="{Binding SetEndProductCommand}"
+                    CommandParameter="{Binding ElementName=ParentContent}"
+                    />
+        </UniformGrid>
+        <ContentControl x:Name="ParentContent"
+                        Grid.Row="1"
+                        >
+            
+        </ContentControl>
         <UniformGrid Grid.Row="2"
                     Rows="1"
                     HorizontalAlignment="Right"
                     >
-
+            <Button Content="Закрыть"
+                    IsDefault="True"
+                    IsCancel="True"
+                    />
         </UniformGrid>
     </Grid>
 </Window>
