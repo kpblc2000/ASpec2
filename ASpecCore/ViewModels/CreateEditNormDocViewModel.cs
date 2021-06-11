@@ -70,8 +70,9 @@ namespace ASpecCore.ViewModels
                 && !string.IsNullOrEmpty(DocNum)
                 && !string.IsNullOrEmpty(DocDescription)
                 && DocList.FirstOrDefault(o =>
-                                            o.doctype == DocType
-                                            && o.doccode == DocNum
+                                            o.doctype.Trim() == DocType.Trim()
+                                            && o.doccode.Trim() == DocNum.Trim()
+                                            && o.description.Trim() == DocDescription.Trim()
                                             ) == null;
         }
         #endregion
