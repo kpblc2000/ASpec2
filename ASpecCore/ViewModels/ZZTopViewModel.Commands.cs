@@ -37,7 +37,13 @@ namespace ASpecCore.ViewModels
         }
         private bool CanSetDocumentCommandExecute(object p)
         {
-            return true;
+            ContentControl obj = p as ContentControl;
+            if (obj == null)
+            {
+                return true;
+            }
+            NormDocUserControl dt = obj.Content as NormDocUserControl;
+            return obj != null && dt == null;
         }
         #endregion
 
@@ -54,7 +60,13 @@ namespace ASpecCore.ViewModels
         }
         private bool CanSetAlbumCommandExecute(object p)
         {
-            return true;
+            ContentControl obj = p as ContentControl;
+            if (obj == null)
+            {
+                return true;
+            }
+            AlbumUserControl dt = obj.Content as AlbumUserControl;
+            return obj != null && dt == null;
         }
         #endregion
 
@@ -71,7 +83,13 @@ namespace ASpecCore.ViewModels
         }
         private bool CanSetEndProductCommandExecute(object p)
         {
-            return true;
+            ContentControl obj = p as ContentControl;
+            if (obj == null)
+            {
+                return true;
+            }
+            EndProductUserControl dt = obj.Content as EndProductUserControl;
+            return obj != null && dt == null;
         }
         #endregion
     }

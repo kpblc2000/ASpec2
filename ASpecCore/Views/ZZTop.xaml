@@ -68,7 +68,6 @@
         <ContentControl x:Name="ParentContent"
                         Grid.Row="1"
                         >
-            
         </ContentControl>
         <UniformGrid Grid.Row="2"
                     Rows="1"
