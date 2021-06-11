@@ -32,7 +32,7 @@ namespace ASpecCore.ViewModels.Base
             get { return _Title; }
             set
             {
-                Set(ref _Title, GeneralFunctionality.MakeDialogTitle(value));
+                Set(ref _Title, GeneralFunc.MakeDialogTitle(value));
             }
         }
 

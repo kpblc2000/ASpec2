@@ -62,7 +62,7 @@
     <Compile Include="Infrastructure\Commands\Base\Command.cs" />
     <Compile Include="Infrastructure\Commands\RelayCommand.cs" />
     <Compile Include="Infrastructure\Enums\EditMode.cs" />
-    <Compile Include="Infrastructure\GeneralFunctionality.cs" />
+    <Compile Include="Infrastructure\GeneralFunc.cs" />
     <Compile Include="Migrations\202106041156528_InitialMigration.cs" />
     <Compile Include="Migrations\202106041156528_InitialMigration.Designer.cs">
       <DependentUpon>202106041156528_InitialMigration.cs</DependentUpon>
@@ -430,6 +430,7 @@
     <Compile Include="Views\CreateEditNormDocView.xaml.cs">
       <DependentUpon>CreateEditNormDocView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Messages\Messages.cs" />
     <Compile Include="Views\NormDocView.xaml.cs">
       <DependentUpon>NormDocView.xaml</DependentUpon>
     </Compile>
