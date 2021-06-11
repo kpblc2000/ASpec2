@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace ASpecCore.Infrastructure
 {
-    public class GeneralFunctionality
+    public class GeneralFunc
     {
         /// <summary>
         /// Создание стандартизированного заголовка окна
@@ -12,7 +12,7 @@ namespace ASpecCore.Infrastructure
         /// <returns>Строка заголовка с указанием имени и текущий версии сборки</returns>
         public static string MakeDialogTitle(string Title)
         {
-            Version temp = typeof(GeneralFunctionality).Assembly.GetName().Version;
+            Version temp = typeof(GeneralFunc).Assembly.GetName().Version;
             Title = Title.Trim();
 
             return $"ASpec {temp.Major}.{temp.Minor}.{temp.Build} : {Title}";
