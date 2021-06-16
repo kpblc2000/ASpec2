@@ -49,8 +49,8 @@ namespace ASpec2
             #endregion
 
             #region NormDocs
-            //NormDocView winNormDoc = new NormDocView();
-            //winNormDoc.ShowDialog();
+            NormDocView winNormDoc = new NormDocView();
+            winNormDoc.ShowDialog();
             #endregion
 
             #region EndProductView
