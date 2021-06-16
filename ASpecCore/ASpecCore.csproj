@@ -63,6 +63,7 @@
     <Compile Include="Infrastructure\Commands\RelayCommand.cs" />
     <Compile Include="Infrastructure\Enums\EditMode.cs" />
     <Compile Include="Infrastructure\GeneralFunc.cs" />
+    <Compile Include="Infrastructure\SqlUserRole.cs" />
     <Compile Include="Migrations\202106041156528_InitialMigration.cs" />
     <Compile Include="Migrations\202106041156528_InitialMigration.Designer.cs">
       <DependentUpon>202106041156528_InitialMigration.cs</DependentUpon>
@@ -416,6 +417,7 @@
       <DependentUpon>Generic.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AboutViewModel.cs" />
+    <Compile Include="ViewModels\ArmatureViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
     <Compile Include="ViewModels\CreateEditNormDocViewModel.cs" />
     <Compile Include="ViewModels\EndProductViewModel.cs" />
@@ -431,6 +433,9 @@
     </Compile>
     <Compile Include="Views\AlbumView.xaml.cs">
       <DependentUpon>AlbumView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ArmatureView.xaml.cs">
+      <DependentUpon>ArmatureView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CreateEditNormDocView.xaml.cs">
       <DependentUpon>CreateEditNormDocView.xaml</DependentUpon>
@@ -471,6 +476,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AlbumView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ArmatureView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
