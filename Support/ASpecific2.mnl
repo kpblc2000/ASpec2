@@ -41,7 +41,7 @@
                ) ;_ end of vl-remove
   ) ;_ end of setq
   (foreach dll (mapcar (function (lambda (file) (strcat local_path "\\" file)))
-                       (vl-directory-files local_path "*.dll")
+                       (vl-directory-files local_path "*ACAD*.dll")
                ) ;_ end of mapcar
     (vl-cmdf "_.netload" dll)
   ) ;_ end of foreach
