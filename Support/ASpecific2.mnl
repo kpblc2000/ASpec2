@@ -1,52 +1,120 @@
-;;;((lambda ()
-;;;   (princ "\n\t***ASpecific2.cuix loaded\t***\n\n")
-;;;   (princ)
-;;;   ))
-
-(defun pik-autoloader (/ reg server_path local_path dotnet_local sysvar)
-  (setq reg "HKEY_CURRENT_USER\\Software\\PIK\\ASpec2"
-        key "ServerPath"
-  ) ;_ end of setq
-  (setq server_path
-         (cond ((vl-registry-read reg key))
-               ((vl-registry-write reg key "C:\\Users\\kpblc\\source\\repos\\ASpec2\\ASpecACAD\\bin\\Debug"))
-         ) ;_ end of cond
-  ) ;_ end of setq
-  (setq key "LocalPath")
-  (setq local_path
-         (cond ((vl-registry-read reg key))
-               (t
-                (setq local_path (strcat (vl-string-right-trim "\\" (getenv "appdata")) "\\ASpecific2"))
-                (vl-mkdir local_path)
-                (vl-registry-write reg key local_path)
-               )
-         ) ;_ end of cond
-  ) ;_ end of setq
-  (setq dotnet_local (strcat (vl-string-right-trim "\\" local_path) "\\DotNet"))
-  (vl-mkdir dotnet_local)
-  (foreach dll (mapcar (function (lambda (file) (strcat server_path "\\" file)))
-                       (vl-directory-files server_path "*.dll")
-               ) ;_ end of mapcar
-    (vl-file-copy dll (strcat local_path "\\" (vl-filename-base dll) (vl-filename-extension dll)))
-  ) ;_ end of foreach
-  (setq sysvar (vl-remove nil
-                          (mapcar (function (lambda (x / temp)
-                                              (if (setq temp (getvar (car x)))
-                                                (progn (setvar (car x) (cdr x)) (cons (car x) temp))
-                                              ) ;_ end of if
-                                            ) ;_ end of lambda
-                                  ) ;_ end of function
-                                  '(("sysmon" . 0) ("cmdecho" . 0) ("menuecho" . 0) ("nomutt" . 1) ("secureload" . 0))
-                          ) ;_ end of mapcar
-               ) ;_ end of vl-remove
-  ) ;_ end of setq
-  (foreach dll (mapcar (function (lambda (file) (strcat local_path "\\" file)))
-                       (vl-directory-files local_path "*ACAD*.dll")
-               ) ;_ end of mapcar
-    (vl-cmdf "_.netload" dll)
-  ) ;_ end of foreach
-  (foreach item sysvar (setvar (car item) (cdr item)))
-  (princ)
-) ;_ end of defun
-
-(pik-autoloader)
+(vl-load-com)
+((lambda (/ fun_files-and-dates fun_get-files reg server_path local_path dotnet_local update_path sysvar server_files local_files def_path)
+   (defun fun_files-and-dates (file-list)
+                              ;|
+    * Маленькая тупенькая функция по полученю имен файлов и их дат в float-представлении
+    *    Параметры вызова:
+      file-list  ; список имен файлов. Наличие файла не проверяется
+    |;
+     (mapcar (function (lambda (file / date)
+                         (setq date (vl-file-systime file))
+                         (list (strcase (vl-filename-base file))
+                               file
+                               (atof (apply (function strcat)
+                                            (mapcar (function (lambda (x)
+                                                                (setq x (itoa (nth x date)))
+                                                                (if (< (strlen x) 2)
+                                                                  (setq x (strcat "0" x))
+                                                                  x
+                                                                ) ;_ end of if
+                                                              ) ;_ end of lambda
+                                                    ) ;_ end of function
+                                                    '(0 1 3 4 5 6)
+                                            ) ;_ end of mapcar
+                                     ) ;_ end of apply
+                               ) ;_ end of atof
+                         ) ;_ end of list
+                       ) ;_ end of lambda
+             ) ;_ end of function
+             file-list
+     ) ;_ end of mapcar
+   ) ;_ end of defun
+   (defun fun_get-files (path extension)
+     (if (not extension)
+       (setq extension "*.dll")
+     ) ;_ end of if
+     (mapcar (function (lambda (file) (strcat path "\\" file))) (vl-directory-files path extension))
+   ) ;_ end of defun
+   (setq reg "HKEY_CURRENT_USER\\Software\\PIK\\ASpec2"
+         key "ServerPath"
+   ) ;_ end of setq
+   (if (setq server_path
+              (cond ((vl-registry-read reg key))
+                    ((setq def_path (findfile "C:\\Users\\kpblc\\source\\repos\\ASpec2\\ASpecACAD\\bin\\Debug"))
+                     (vl-registry-write reg key def_path)
+                    )
+                    (t (alert "Не определен путь, откуда забирать dll"))
+              ) ;_ end of cond
+       ) ;_ end of setq
+     (progn (setq key "LocalPath")
+            (setq local_path
+                   (cond ((vl-registry-read reg key))
+                         (t
+                          (setq local_path (strcat (vl-string-right-trim "\\" (getenv "appdata")) "\\ASpecific2"))
+                          (vl-mkdir local_path)
+                          (vl-registry-write reg key local_path)
+                         )
+                   ) ;_ end of cond
+            ) ;_ end of setq
+            (setq dotnet_local (strcat (vl-string-right-trim "\\" local_path) "\\DotNet"))
+            (setq update_path (strcat dotnet_local "\\Updates"))
+            ;; 1 Проверяем даты dll из dotnet_local
+            ;; 2 проверяем даты dll из server_path
+            ;; 3 Находим те, у которых "серверная" часть более новая или вообще отсутствует в dotnet_local или есть только на сервере
+            ;; Если в (3) есть хоть что-то, скачивать ВСЕ библиотеки с сервера в update_path
+            ;;   Попробовать удалить все dll из dotnet_local
+            ;;   Если удалось, то обновляем из update_path и дальше загрузка, update_path - очистить от содержимого
+            ;;   Если не удалось, просто загружаем (и плевать, что загрузка стотыщ раз)
+            (if (or (not (vl-directory-files dotnet_local "*.dll"))
+                    (/= (length (setq server_files (fun_files-and-dates (fun_get-files server_path nil))))
+                        (length (setq local_files (fun_files-and-dates (fun_get-files dotnet_local nil))))
+                    ) ;_ end of /=
+                    (apply (function or)
+                           (mapcar (function (lambda (item / found)
+                                               (or (not (setq found (assoc (car item) local_files))) (< (last found) (last item)))
+                                             ) ;_ end of lambda
+                                   ) ;_ end of function
+                                   server_files
+                           ) ;_ end of mapcar
+                    ) ;_ end of apply
+                ) ;_ end of or
+              (progn (vl-mkdir dotnet_local)
+                     (vl-mkdir update_path)
+                     (foreach file (fun_get-files update_path nil) (vl-file-delete file))
+                     (foreach dll (fun_get-files server_path nil)
+                       (vl-file-copy dll (strcat update_path "\\" (vl-filename-base dll) (vl-filename-extension dll)))
+                     ) ;_ end of foreach
+                     (foreach dll (fun_get-files dotnet_local nil) (vl-file-delete dll))
+                     (if (not (vl-directory-files dotnet_local "*.dll"))
+                       (foreach dll (fun_get-files update_path nil)
+                         (if (vl-file-copy dll (strcat dotnet_local "\\" (vl-filename-base dll) (vl-filename-extension dll)))
+                           (vl-file-delete dll)
+                         ) ;_ end of if
+                       ) ;_ end of foreach
+                     ) ;_ end of if
+              ) ;_ end of progn
+            ) ;_ end of if
+            (setq sysvar (vl-remove nil
+                                    (mapcar (function (lambda (x / temp)
+                                                        (if (setq temp (getvar (car x)))
+                                                          (progn (setvar (car x) (cdr x)) (cons (car x) temp))
+                                                        ) ;_ end of if
+                                                      ) ;_ end of lambda
+                                            ) ;_ end of function
+                                            '(("sysmon" . 0) ("cmdecho" . 0) ("menuecho" . 0) ("nomutt" . 1) ("secureload" . 0))
+                                    ) ;_ end of mapcar
+                         ) ;_ end of vl-remove
+            ) ;_ end of setq
+            (foreach dll (mapcar (function (lambda (file) (strcat dotnet_local "\\" file)))
+                                 (vl-directory-files dotnet_local "*ACAD*.dll")
+                         ) ;_ end of mapcar
+              (vl-cmdf "_.netload" dll)
+            ) ;_ end of foreach
+            (foreach item sysvar (setvar (car item) (cdr item)))
+            (princ "\n\t***\tASpecific2.cuix loaded\t***\n\n")
+     ) ;_ end of progn
+     (princ "\nНе работаем и работать не будем")
+   ) ;_ end of if
+   (princ)
+ ) ;_ end of lambda
+)
