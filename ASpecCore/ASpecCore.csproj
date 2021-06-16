@@ -433,6 +433,9 @@
     <Compile Include="Views\AlbumView.xaml.cs">
       <DependentUpon>AlbumView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ArmatureView.xaml.cs">
+      <DependentUpon>ArmatureView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CreateEditNormDocView.xaml.cs">
       <DependentUpon>CreateEditNormDocView.xaml</DependentUpon>
     </Compile>
@@ -472,6 +475,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AlbumView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ArmatureView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
