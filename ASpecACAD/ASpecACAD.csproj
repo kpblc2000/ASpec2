@@ -77,6 +77,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcadCommands\ASpecAbout.cs" />
     <Compile Include="AcadCommands\ASpecUserManage.cs" />
     <Compile Include="AcadLisp\ASpecSelectAlbum.cs" />
     <Compile Include="AcadLisp\ASpecUserManage.cs" />

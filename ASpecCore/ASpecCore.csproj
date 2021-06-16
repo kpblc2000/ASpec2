@@ -415,6 +415,7 @@
     <Compile Include="Themes\Generic.xaml.cs">
       <DependentUpon>Generic.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
     <Compile Include="ViewModels\CreateEditNormDocViewModel.cs" />
     <Compile Include="ViewModels\EndProductViewModel.cs" />
@@ -425,6 +426,9 @@
     <Compile Include="ViewModels\UserTabViewModel.cs" />
     <Compile Include="ViewModels\ZZTopViewModel.cs" />
     <Compile Include="ViewModels\ZZTopViewModel.Commands.cs" />
+    <Compile Include="Views\AboutView.xaml.cs">
+      <DependentUpon>AboutView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AlbumView.xaml.cs">
       <DependentUpon>AlbumView.xaml</DependentUpon>
     </Compile>
@@ -459,6 +463,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AboutView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

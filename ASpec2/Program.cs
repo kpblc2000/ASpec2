@@ -17,6 +17,9 @@ namespace ASpec2
         static void Main(string[] args)
         {
 
+            AboutView winAbout = new AboutView();
+            winAbout.ShowDialog();
+
             #region Вывод польователей в консоль
             //List<User> userList = TestData.Users;
 

@@ -1,0 +1,3 @@
+(alert "ASpecific2.cuix loaded")
+
+(princ)
