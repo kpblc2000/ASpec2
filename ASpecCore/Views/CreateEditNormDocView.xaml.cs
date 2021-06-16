@@ -29,5 +29,10 @@ namespace ASpecCore.Views
         {
             Close();
         }
+
+        private void OnSaveButtonClick(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

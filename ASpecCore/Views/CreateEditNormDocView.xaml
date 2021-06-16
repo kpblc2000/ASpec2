@@ -27,19 +27,19 @@
         <vm:CreateEditNormDocViewModel/>
     </Window.DataContext>
     <DockPanel>
-        <StackPanel Orientation="Horizontal"
-                    HorizontalAlignment="Right"
-                    DockPanel.Dock="Bottom">
+        <UniformGrid DockPanel.Dock="Bottom"
+                     Rows="1"
+                     HorizontalAlignment="Right">
             <Button Content="Записать"
                     Name="SaveButton"
                     Command="{Binding SaveNormDocCommand}"
+                    Click="OnSaveButtonClick"
                     />
             <Button IsCancel="True"
-                    Width="{Binding ElementName=SaveButton}"
                     Content="Закрыть"
                     Click="OnCloseButtonClick"
                     />
-        </StackPanel>
+        </UniformGrid>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
