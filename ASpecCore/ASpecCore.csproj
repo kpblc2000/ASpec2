@@ -416,6 +416,7 @@
       <DependentUpon>Generic.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AboutViewModel.cs" />
+    <Compile Include="ViewModels\ArmatureViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
     <Compile Include="ViewModels\CreateEditNormDocViewModel.cs" />
     <Compile Include="ViewModels\EndProductViewModel.cs" />
