@@ -63,6 +63,7 @@
     <Compile Include="Infrastructure\Commands\RelayCommand.cs" />
     <Compile Include="Infrastructure\Enums\EditMode.cs" />
     <Compile Include="Infrastructure\GeneralFunc.cs" />
+    <Compile Include="Infrastructure\SqlUserRole.cs" />
     <Compile Include="Migrations\202106041156528_InitialMigration.cs" />
     <Compile Include="Migrations\202106041156528_InitialMigration.Designer.cs">
       <DependentUpon>202106041156528_InitialMigration.cs</DependentUpon>
