@@ -18,9 +18,9 @@ namespace ASpecCore.Views
     /// <summary>
     /// Логика взаимодействия для CreateEditNormDocView.xaml
     /// </summary>
-    public partial class CreateEditNormDocView : Window
+    public partial class NormDocViewCreateEdit : Window
     {
-        public CreateEditNormDocView()
+        public NormDocViewCreateEdit()
         {
             InitializeComponent();
         }

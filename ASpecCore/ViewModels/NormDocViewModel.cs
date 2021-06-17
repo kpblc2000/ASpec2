@@ -25,8 +25,8 @@ namespace ASpecCore.ViewModels
         public ICommand CreateNormDocCommand { get; }
         private void OnCreateNormDocCommandExecuted(object p)
         {
-            CreateEditNormDocView winCreate = new CreateEditNormDocView();
-            CreateEditNormDocViewModel vm = winCreate.DataContext as CreateEditNormDocViewModel;
+            NormDocViewCreateEdit winCreate = new NormDocViewCreateEdit();
+            NormDocViewModelCreateEdit vm = winCreate.DataContext as NormDocViewModelCreateEdit;
             vm.DocList = DocList;
             vm.CurrentMode = EditMode.CreateMode;
             winCreate.ShowDialog();
@@ -42,8 +42,8 @@ namespace ASpecCore.ViewModels
 
         private void OnEditNormDocCommandExecuted(object p)
         {
-            CreateEditNormDocView winCreate = new CreateEditNormDocView();
-            CreateEditNormDocViewModel vm = winCreate.DataContext as CreateEditNormDocViewModel;
+            NormDocViewCreateEdit winCreate = new NormDocViewCreateEdit();
+            NormDocViewModelCreateEdit vm = winCreate.DataContext as NormDocViewModelCreateEdit;
             vm.DocList = DocList;
             vm.DocToEdit = SelectedDoc;
             vm.CurrentMode = EditMode.EditMode;
