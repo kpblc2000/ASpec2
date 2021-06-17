@@ -20,8 +20,8 @@ namespace ASpec2
             //AboutView winAbout = new AboutView();
             //winAbout.ShowDialog();
 
-            ArmatureView winArm = new ArmatureView();
-            winArm.ShowDialog();
+            //ArmatureView winArm = new ArmatureView();
+            //winArm.ShowDialog();
 
             #region Вывод польователей в консоль
             //List<User> userList = TestData.Users;

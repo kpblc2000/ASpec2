@@ -27,11 +27,13 @@ namespace ASpecCore.Views
 
         private void OnCloseButtonClick(object sender, RoutedEventArgs e)
         {
+            DialogResult = true;
             Close();
         }
 
         private void OnSaveButtonClick(object sender, RoutedEventArgs e)
         {
+            DialogResult = false;
             Close();
         }
     }

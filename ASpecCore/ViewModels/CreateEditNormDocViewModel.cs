@@ -1,4 +1,5 @@
-﻿using ASpecCore.Infrastructure.Commands;
+﻿using ASpecCore.Infrastructure;
+using ASpecCore.Infrastructure.Commands;
 using ASpecCore.Infrastructure.Enums;
 using ASpecCore.Models.Data;
 using ASpecCore.ViewModels.Base;
@@ -66,7 +67,8 @@ namespace ASpecCore.ViewModels
 
         public bool CanSaveNormDocCommandExecute(object p)
         {
-            return !string.IsNullOrEmpty(DocType)
+            return !SqlUserRole.IsUserReadOnly
+                && !string.IsNullOrEmpty(DocType)
                 && !string.IsNullOrEmpty(DocNum)
                 && !string.IsNullOrEmpty(DocDescription)
                 && DocList.FirstOrDefault(o =>
@@ -101,7 +103,7 @@ namespace ASpecCore.ViewModels
         public string DocType
         {
             get { return _DocType; }
-            set { Set(ref _DocType, value); }
+            set { Set(ref _DocType, value.ToUpper()); }
         }
         public string DocNum
         {
