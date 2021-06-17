@@ -29,8 +29,11 @@ namespace ASpecCore.ViewModels
                 _Factories = new List<factory>(db.factory);
                 _FactoryLines = new List<Lines>(db.Lines);
                 _FactoryLineLinks = new List<factory_lines>(db.factory_lines);
+                
                 SelectedAlbum = FilteredAlbums[0];
             }
+
+            _FactoryVM = new FactoryViewModel();
 
             FilterButtonCommand = new RelayCommand(OnFilterButtonCommandExecuted, CanFilterButtonCommandExecute);
         }
@@ -84,6 +87,9 @@ namespace ASpecCore.ViewModels
             }
         }
 
+        public FactoryViewModel FactoryVM
+        { get { return _FactoryVM; } }
+
         public bool CanAccept
         { get { return _SelectedAlbum != null; } }
         #endregion
@@ -93,5 +99,6 @@ namespace ASpecCore.ViewModels
         private album _SelectedAlbum;
         private List<Lines> _FactoryLines;
         private List<factory_lines> _FactoryLineLinks;
+        private FactoryViewModel _FactoryVM;
     }
 }
