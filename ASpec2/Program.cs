@@ -20,8 +20,8 @@ namespace ASpec2
             //AboutView winAbout = new AboutView();
             //winAbout.ShowDialog();
 
-            ArmatureView winArm = new ArmatureView();
-            winArm.ShowDialog();
+            //ArmatureView winArm = new ArmatureView();
+            //winArm.ShowDialog();
 
             #region Вывод польователей в консоль
             //List<User> userList = TestData.Users;
@@ -49,11 +49,14 @@ namespace ASpec2
             //    album selAlbum = vm.SelectedAlbum;
             //    Console.WriteLine($"{selAlbum.name_alb}");
             //} 
+
+            //AlbumView winAlb = new AlbumView();
+            //winAlb.ShowDialog();
             #endregion
 
             #region NormDocs
-            NormDocView winNormDoc = new NormDocView();
-            winNormDoc.ShowDialog();
+            //NormDocView winNormDoc = new NormDocView();
+            //winNormDoc.ShowDialog();
             #endregion
 
             #region EndProductView
