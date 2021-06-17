@@ -63,6 +63,7 @@
     <Compile Include="Infrastructure\Commands\RelayCommand.cs" />
     <Compile Include="Infrastructure\Enums\EditMode.cs" />
     <Compile Include="Infrastructure\GeneralFunc.cs" />
+    <Compile Include="Infrastructure\ObjectExtensions.cs" />
     <Compile Include="Infrastructure\SqlUserRole.cs" />
     <Compile Include="Migrations\202106041156528_InitialMigration.cs" />
     <Compile Include="Migrations\202106041156528_InitialMigration.Designer.cs">
@@ -417,6 +418,7 @@
       <DependentUpon>Generic.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AboutViewModel.cs" />
+    <Compile Include="ViewModels\AlbumCreateEditViewModel.cs" />
     <Compile Include="ViewModels\ArmatureViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
     <Compile Include="ViewModels\CreateEditNormDocViewModel.cs" />
@@ -430,6 +432,9 @@
     <Compile Include="ViewModels\ZZTopViewModel.Commands.cs" />
     <Compile Include="Views\AboutView.xaml.cs">
       <DependentUpon>AboutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AlbumCreateEditView.xaml.cs">
+      <DependentUpon>AlbumCreateEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AlbumView.xaml.cs">
       <DependentUpon>AlbumView.xaml</DependentUpon>
@@ -478,6 +483,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AlbumCreateEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AlbumView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -487,8 +496,8 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CreateEditNormDocView.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\NormDocView.xaml">
       <SubType>Designer</SubType>
@@ -543,6 +552,9 @@
     <EmbeddedResource Include="Migrations\202106041156528_InitialMigration.resx">
       <DependentUpon>202106041156528_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

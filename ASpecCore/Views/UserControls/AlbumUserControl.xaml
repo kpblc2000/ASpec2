@@ -24,7 +24,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <DockPanel>
+        <DockPanel Grid.Row="0">
             <TextBlock DockPanel.Dock="Left"
                        Text="Фильтровать по части имени / названия"/>
             <Button DockPanel.Dock="Right"
@@ -38,7 +38,19 @@
             <TextBlock Text="Фильтр по заводу"/>
             <uc:FactoryUserControl DataContext="{Binding FactoryVM}"/>
         </DockPanel>
-        <ComboBox Grid.Row="2"
+        <DockPanel Grid.Row="2">
+            <UniformGrid DockPanel.Dock="Right"
+                         Rows="1">
+                <Button Content="+"
+                        ToolTip="Добавить альбом"
+                        Command="{Binding CreateAlbumCommand}"
+                        />
+                <Button Content="..."
+                        ToolTip="Редактировать выбранный альбом"
+                        Command="{Binding EditAlbumCommand}"
+                        />
+            </UniformGrid>
+            <ComboBox Grid.Row="1"
                   ItemsSource="{Binding FilteredAlbums}"
                   SelectedValue="{Binding SelectedAlbum, Mode=TwoWay}"
                   IsTextSearchEnabled="True"
@@ -47,22 +59,23 @@
                   VirtualizingPanel.IsVirtualizing="True"
                   VirtualizingPanel.VirtualizationMode="Recycling"
                   >
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding name_alb}"/>
-                        <TextBlock Text="{Binding description_alb, StringFormat=' \{0\}'}"
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding name_alb}"/>
+                            <TextBlock Text="{Binding description_alb, StringFormat=' \{0\}'}"
                                    Foreground="Gray"
                                    />
-                    </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-            <ComboBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <VirtualizingStackPanel/>
-                </ItemsPanelTemplate>
-            </ComboBox.ItemsPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel/>
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
 
-        </ComboBox>
+            </ComboBox>
+        </DockPanel>
     </Grid>
 </UserControl>
