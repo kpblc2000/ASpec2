@@ -1,4 +1,6 @@
-﻿using ASpecCore.Models.Data;
+﻿using ASpecCore.Infrastructure;
+using ASpecCore.Infrastructure.Commands;
+using ASpecCore.Models.Data;
 using ASpecCore.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -6,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace ASpecCore.ViewModels
 {
@@ -20,7 +23,20 @@ namespace ASpecCore.ViewModels
             }
 
             FilteredArmatures = _AllArmatures;
+            ArmatureCreateEditCommand = new RelayCommand(OnArmatureCreateEditCommandExecuted, CanArmatureCreateEditCommandExecute);
         }
+
+        #region ArmatureCreateEditCommand
+        public ICommand ArmatureCreateEditCommand { get; }
+        private void OnArmatureCreateEditCommandExecuted(object p)
+        {
+
+        }
+        private bool CanArmatureCreateEditCommandExecute(object p)
+        {
+            return !SqlUserRole.IsUserReadOnly;
+        }
+        #endregion
 
         public view_arm_all SelectedArmature
         {

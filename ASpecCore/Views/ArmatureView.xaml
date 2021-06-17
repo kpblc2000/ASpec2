@@ -27,7 +27,9 @@
                   >
             <DataGrid.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Редактировать арматуру"/>
+                    <MenuItem Header="Редактировать арматуру"
+                              Command="{Binding ArmatureCreateEditCommand}"
+                              />
                     <MenuItem Header="Отменить фильтр"/>
                     <Separator/>
                     <MenuItem Header="Удалить арматуру" 
