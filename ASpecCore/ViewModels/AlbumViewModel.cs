@@ -1,6 +1,9 @@
-﻿using ASpecCore.Infrastructure.Commands;
+﻿using ASpecCore.Infrastructure;
+using ASpecCore.Infrastructure.Commands;
+using ASpecCore.Infrastructure.Enums;
 using ASpecCore.Models.Data;
 using ASpecCore.ViewModels.Base;
+using ASpecCore.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,13 +32,15 @@ namespace ASpecCore.ViewModels
                 _Factories = new List<factory>(db.factory);
                 _FactoryLines = new List<Lines>(db.Lines);
                 _FactoryLineLinks = new List<factory_lines>(db.factory_lines);
-                
+
                 SelectedAlbum = FilteredAlbums[0];
             }
 
             _FactoryVM = new FactoryViewModel();
 
             FilterButtonCommand = new RelayCommand(OnFilterButtonCommandExecuted, CanFilterButtonCommandExecute);
+            CreateAlbumCommand = new RelayCommand(OnCreateAlbumCommandExecuted, CanCreateAlbumCommandExecute);
+            EditAlbumCommand = new RelayCommand(OnEditAlbumCommandExecuted, CanEditAlbumCommandExecute);
         }
 
         #region FilterButtonCommand
@@ -46,24 +51,116 @@ namespace ASpecCore.ViewModels
 
             string criteria = p as string;
 
-            if (string.IsNullOrEmpty(criteria))
+            if (string.IsNullOrEmpty(criteria) && _FactoryVM.SelectedFactory == null)
             {
                 FilteredAlbums = _Albums;
+            }
+            else if (string.IsNullOrEmpty(criteria) && _FactoryVM.SelectedFactory != null)
+            {
+                FilteredAlbums = new List<album>(_Albums
+                    .Where(o => o.id_fact == _FactoryVM.SelectedFactory.id_fact)
+                    );
+            }
+            else if (!string.IsNullOrEmpty(criteria) && _FactoryVM.SelectedFactory == null)
+            {
+                string normFilter = criteria.Replace(".", "\\.");
+                Regex rx = new Regex($@"(.*){normFilter}(.*)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+                FilteredAlbums = new List<album>(_Albums
+                                    .Where(o => rx.Match(o.name_alb).Success
+                                               || rx.Match(o.description_alb).Success
+                                    ));
             }
             else
             {
                 string normFilter = criteria.Replace(".", "\\.");
                 Regex rx = new Regex($@"(.*){normFilter}(.*)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-                FilteredAlbums = _Albums
+                FilteredAlbums = new List<album>(_Albums
                                     .Where(o => rx.Match(o.name_alb).Success
                                                || rx.Match(o.description_alb).Success
-                                    )
-                                    .ToList();
+                                               && o.id_fact == _FactoryVM.SelectedFactory.id_fact
+                                    ));
             }
             SelectedAlbum = FilteredAlbums.FirstOrDefault();
         }
 
         private bool CanFilterButtonCommandExecute(object p) => true;
+        #endregion
+
+        #region CreateAlbumCommand
+        public ICommand CreateAlbumCommand { get; }
+
+        private void OnCreateAlbumCommandExecuted(object p)
+        {
+            AlbumCreateEditView winAlbEdit = new AlbumCreateEditView();
+            AlbumCreateEditViewModel vm = winAlbEdit.DataContext as AlbumCreateEditViewModel;
+            vm.Mode = EditMode.CreateMode;
+            winAlbEdit.ShowDialog();
+            if (winAlbEdit.DialogResult == true)
+            {
+                using (NPConDataModel db = new NPConDataModel())
+                {
+                    db.album.Add(vm.ProceedAlbum);
+                    db.SaveChanges();
+                    _Albums = db.album
+                           .Where(o => !o.name_alb.ToUpper().StartsWith("INTERACTIVE")
+                           && !o.name_alb.ToUpper().StartsWith("ALLPLAN")
+                           && !o.name_alb.StartsWith("allplan")
+                           )
+                           .OrderBy(o => o.name_alb)
+                           .ToList();
+                }
+                OnFilterButtonCommandExecuted(null);
+            }
+        }
+
+        private bool CanCreateAlbumCommandExecute(object p)
+        {
+            return SqlUserRole.IsUserAlbumAdmin;
+        }
+        #endregion
+
+        #region EditAlbumCommand
+        public ICommand EditAlbumCommand { get; }
+        private void OnEditAlbumCommandExecuted(object p)
+        {
+            album copy = new album
+            {
+                id_album = _SelectedAlbum.id_album,
+                description_alb = _SelectedAlbum.description_alb,
+                is_end_prod_alb = _SelectedAlbum.is_end_prod_alb,
+                in_design = _SelectedAlbum.in_design,
+                name_alb = _SelectedAlbum.name_alb
+            };
+            AlbumCreateEditView winAlbEdit = new AlbumCreateEditView();
+            AlbumCreateEditViewModel vm = winAlbEdit.DataContext as AlbumCreateEditViewModel;
+            vm.Mode = EditMode.EditMode;
+            vm.ProceedAlbum = copy;
+            winAlbEdit.ShowDialog();
+            if (winAlbEdit.DialogResult == true)
+            {
+                using (NPConDataModel db = new NPConDataModel())
+                {
+                    var temp = db.album.Where(o => o.id_album == copy.id_album).FirstOrDefault();
+                    temp.in_design = copy.in_design;
+                    temp.is_end_prod_alb = copy.is_end_prod_alb;
+                    temp.description_alb = copy.description_alb.Trim();
+                    temp.name_alb = copy.name_alb.Trim();
+                    db.SaveChanges();
+                    _Albums = db.album
+                            .Where(o => !o.name_alb.ToUpper().StartsWith("INTERACTIVE")
+                            && !o.name_alb.ToUpper().StartsWith("ALLPLAN")
+                            && !o.name_alb.StartsWith("allplan")
+                            )
+                            .OrderBy(o => o.name_alb)
+                            .ToList();
+                }
+                OnFilterButtonCommandExecuted(null);
+            }
+        }
+        private bool CanEditAlbumCommandExecute(object p)
+        {
+            return SqlUserRole.IsUserAlbumAdmin;
+        }
         #endregion
 
         #region Public properties
