@@ -1,10 +1,14 @@
-﻿using ASpecCore.Models.Data;
+﻿using ASpecCore.Infrastructure.Commands;
+using ASpecCore.Models.Data;
 using ASpecCore.ViewModels.Base;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace ASpecCore.ViewModels
 {
@@ -16,14 +20,37 @@ namespace ASpecCore.ViewModels
 
             using (NPConDataModel db = new NPConDataModel())
             {
-                Factories = new List<factory>(db.factory);
+                Factories = new ObservableCollection<factory>(db.factory);
             }
+            ClearSelectedFacrotyCommand = new RelayCommand(OnClearSelectedFacrotyCommandExecuted, CanClearSelectedFacrotyCommandExecute);
         }
 
-        public List<factory> Factories
+        #region ClearSelectedFacrotyCommand
+        public ICommand ClearSelectedFacrotyCommand { get; }
+        private void OnClearSelectedFacrotyCommandExecuted(object p)
+        {
+            _SelectedFactory = null;
+            ComboBox cmb = p as ComboBox;
+            if(cmb!=null)
+            {
+                cmb.SelectedIndex = -1;
+            }
+        }
+        private bool CanClearSelectedFacrotyCommandExecute(object p)
+        {
+            return _SelectedFactory != null;
+        }
+        #endregion
+        public ObservableCollection<factory> Factories
         {
             get { return _Factories; }
             set { Set(ref _Factories, value); }
+        }
+
+        public factory SelectedFactory
+        {
+            get { return _SelectedFactory; }
+            set { Set(ref _SelectedFactory, value); }
         }
 
         public factory GetFactoryById(int? Id)
@@ -36,9 +63,9 @@ namespace ASpecCore.ViewModels
             {
                 return null;
             }
-
         }
 
-        private List<factory> _Factories;
+        private ObservableCollection<factory> _Factories;
+        private factory _SelectedFactory;
     }
 }

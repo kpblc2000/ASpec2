@@ -49,11 +49,14 @@ namespace ASpec2
             //    album selAlbum = vm.SelectedAlbum;
             //    Console.WriteLine($"{selAlbum.name_alb}");
             //} 
+
+            //AlbumView winAlb = new AlbumView();
+            //winAlb.ShowDialog();
             #endregion
 
             #region NormDocs
-            NormDocView winNormDoc = new NormDocView();
-            winNormDoc.ShowDialog();
+            //NormDocView winNormDoc = new NormDocView();
+            //winNormDoc.ShowDialog();
             #endregion
 
             #region EndProductView
