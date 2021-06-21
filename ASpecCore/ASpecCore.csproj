@@ -422,7 +422,7 @@
     <Compile Include="ViewModels\ArmatureCreateEditViewModel.cs" />
     <Compile Include="ViewModels\ArmatureViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
-    <Compile Include="ViewModels\NormDocViewModelCreateEdit.cs" />
+    <Compile Include="ViewModels\NormDocCreateEditViewModel.cs" />
     <Compile Include="ViewModels\EndProductViewModel.cs" />
     <Compile Include="ViewModels\FactoryViewModel.cs" />
     <Compile Include="ViewModels\NormDocViewModel.cs" />
