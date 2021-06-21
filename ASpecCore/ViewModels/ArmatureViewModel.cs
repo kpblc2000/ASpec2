@@ -2,6 +2,7 @@
 using ASpecCore.Infrastructure.Commands;
 using ASpecCore.Models.Data;
 using ASpecCore.ViewModels.Base;
+using ASpecCore.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -30,7 +31,8 @@ namespace ASpecCore.ViewModels
         public ICommand ArmatureCreateEditCommand { get; }
         private void OnArmatureCreateEditCommandExecuted(object p)
         {
-
+            ArmatureCreateEditView winArmCreate = new ArmatureCreateEditView();
+            // ToDo Вызов окна добавления новой арматуры
         }
         private bool CanArmatureCreateEditCommandExecute(object p)
         {
