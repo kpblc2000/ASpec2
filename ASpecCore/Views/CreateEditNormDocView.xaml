@@ -24,7 +24,7 @@
         </ResourceDictionary>
     </Window.Resources>
     <Window.DataContext>
-        <vm:CreateEditNormDocViewModel/>
+        <vm:NormDocCreateEditViewModel/>
     </Window.DataContext>
     <DockPanel>
         <UniformGrid DockPanel.Dock="Bottom"

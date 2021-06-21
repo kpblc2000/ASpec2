@@ -11,9 +11,9 @@ using System.Windows.Input;
 
 namespace ASpecCore.ViewModels
 {
-    public class CreateEditNormDocViewModel : ViewModel
+    public class NormDocCreateEditViewModel : ViewModel
     {
-        public CreateEditNormDocViewModel()
+        public NormDocCreateEditViewModel()
         {
             SaveNormDocCommand = new RelayCommand(OnSaveNormDocCommandExecuted, CanSaveNormDocCommandExecute);
         }
