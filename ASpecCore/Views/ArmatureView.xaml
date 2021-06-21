@@ -24,6 +24,7 @@
         <DataGrid ItemsSource="{Binding FilteredArmatures}"
                   IsReadOnly="True"
                   AutoGenerateColumns="False"
+                  SelectedItem="{Binding SelectedArmature}"
                   >
             <DataGrid.ContextMenu>
                 <ContextMenu>

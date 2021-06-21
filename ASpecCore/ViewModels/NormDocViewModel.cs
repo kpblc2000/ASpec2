@@ -78,6 +78,12 @@ namespace ASpecCore.ViewModels
             get { return _SelectedDoc; }
             set { Set(ref _SelectedDoc, value); }
         }
+
+        public void SetDocById(int Id)
+        {
+            _SelectedDoc = _DocList.Where(o => o.id_normdoc == Id).FirstOrDefault();
+            OnPropertyChanged(nameof(SelectedDoc));
+        }
         #endregion
 
         private List<normdoc> _DocList;

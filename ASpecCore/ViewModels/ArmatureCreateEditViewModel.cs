@@ -1,4 +1,6 @@
-﻿using ASpecCore.Infrastructure.Enums;
+﻿using ASpecCore.Infrastructure;
+using ASpecCore.Infrastructure.Enums;
+using ASpecCore.Models.Data;
 using ASpecCore.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -16,8 +18,26 @@ namespace ASpecCore.ViewModels
         }
 
         public NormDocViewModel NormDocVM
-        { get { return _NormDocVM;  }
+        {
+            get { return _NormDocVM; }
             private set { Set(ref _NormDocVM, value); }
+        }
+
+        public view_arm_all CurrentArm
+        {
+            get { return _CurrentArm; }
+            set {
+                view_arm_all localArm = _CurrentArm;
+                if (Set (ref localArm, value))
+                {
+                    _CurrentArm = localArm.Clone();
+                    if (_CurrentArm.id_normdoc!=null)
+                    {
+                        NormDocVM.SetDocById((int)_CurrentArm.id_normdoc);
+                    }
+                    OnPropertyChanged(nameof(NormDocVM));
+                }
+            }
         }
 
         public EditMode CurrentMode
@@ -46,5 +66,6 @@ namespace ASpecCore.ViewModels
 
         private NormDocViewModel _NormDocVM;
         private EditMode _CurrentMode;
+        private view_arm_all _CurrentArm;
     }
 }

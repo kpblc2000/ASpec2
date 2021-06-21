@@ -32,6 +32,10 @@ namespace ASpecCore.ViewModels
         private void OnArmatureCreateEditCommandExecuted(object p)
         {
             ArmatureCreateEditView winArmCreate = new ArmatureCreateEditView();
+            ArmatureCreateEditViewModel vm = winArmCreate.DataContext as ArmatureCreateEditViewModel;
+            vm.CurrentMode = Infrastructure.Enums.EditMode.EditMode;
+            vm.CurrentArm = SelectedArmature;
+            winArmCreate.ShowDialog();
             // ToDo Вызов окна добавления новой арматуры
         }
         private bool CanArmatureCreateEditCommandExecute(object p)

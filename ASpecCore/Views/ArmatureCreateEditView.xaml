@@ -38,25 +38,32 @@
             <WrapPanel>
                 <TextBlock Text="Диам."/>
                 <TextBox MinWidth="20"
+                         Text="{Binding CurrentArm.diam}"
                          />
                 <TextBlock Text="Тип"/>
                 <TextBox MinWidth="20"
+                         Text="{Binding CurrentArm.method}"
                          />
                 <TextBlock Text="Прочн."/>
                 <TextBox MinWidth="100"
+                         Text="{Binding CurrentArm.strength}"
                          />
                 <TextBlock Text="Свойство"/>
                 <TextBox MinWidth="80"
+                         Text="{Binding CurrentArm.armproperty}"
                          />
                 <TextBlock Text="Вес, кг/п.м."/>
                 <TextBox MinWidth="100"
+                         Text="{Binding CurrentArm.weight}"
                          />
             </WrapPanel>
             <DockPanel Grid.Row="1">
                 <TextBlock Text="Норм.док"
                            DockPanel.Dock="Left"
                            />
-                <uc:NormDocUserControl/>
+                <uc:NormDocUserControl
+                    DataContext="{Binding NormDocVM}"
+                    />
             </DockPanel>
         </Grid>
     </DockPanel>
