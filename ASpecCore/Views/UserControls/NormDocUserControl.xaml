@@ -28,6 +28,7 @@
                     />
             <ComboBox Grid.Row="0"
                       ItemsSource="{Binding DocList}"
+                      SelectedValue="{Binding SelectedDoc}"
                       >                
                 <ComboBox.ItemTemplate>
                     <DataTemplate>

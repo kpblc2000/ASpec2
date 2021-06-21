@@ -6,6 +6,7 @@ using ASpecCore.ViewModels.Base;
 using ASpecCore.Views;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -21,17 +22,16 @@ namespace ASpecCore.ViewModels
             Title = "Выберите альбом";
             using (NPConDataModel db = new NPConDataModel())
             {
-                _Albums = db.album
+                _Albums = new ObservableCollection<album>(db.album
                             .Where(o => !o.name_alb.ToUpper().StartsWith("INTERACTIVE")
                             && !o.name_alb.ToUpper().StartsWith("ALLPLAN")
                             && !o.name_alb.StartsWith("allplan")
                             )
-                            .OrderBy(o => o.name_alb)
-                            .ToList();
+                            .OrderBy(o => o.name_alb));
                 FilteredAlbums = _Albums;
-                _Factories = new List<factory>(db.factory);
-                _FactoryLines = new List<Lines>(db.Lines);
-                _FactoryLineLinks = new List<factory_lines>(db.factory_lines);
+                _Factories = new ObservableCollection<factory>(db.factory);
+                _FactoryLines = new ObservableCollection<Lines>(db.Lines);
+                _FactoryLineLinks = new ObservableCollection<factory_lines>(db.factory_lines);
 
                 SelectedAlbum = FilteredAlbums[0];
             }
@@ -57,7 +57,7 @@ namespace ASpecCore.ViewModels
             }
             else if (string.IsNullOrEmpty(criteria) && _FactoryVM.SelectedFactory != null)
             {
-                FilteredAlbums = new List<album>(_Albums
+                FilteredAlbums = new ObservableCollection<album>(_Albums
                     .Where(o => o.id_fact == _FactoryVM.SelectedFactory.id_fact)
                     );
             }
@@ -65,7 +65,7 @@ namespace ASpecCore.ViewModels
             {
                 string normFilter = criteria.Replace(".", "\\.");
                 Regex rx = new Regex($@"(.*){normFilter}(.*)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-                FilteredAlbums = new List<album>(_Albums
+                FilteredAlbums = new ObservableCollection<album>(_Albums
                                     .Where(o => rx.Match(o.name_alb).Success
                                                || rx.Match(o.description_alb).Success
                                     ));
@@ -74,10 +74,10 @@ namespace ASpecCore.ViewModels
             {
                 string normFilter = criteria.Replace(".", "\\.");
                 Regex rx = new Regex($@"(.*){normFilter}(.*)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-                FilteredAlbums = new List<album>(_Albums
-                                    .Where(o => rx.Match(o.name_alb).Success
-                                               || rx.Match(o.description_alb).Success
-                                               && o.id_fact == _FactoryVM.SelectedFactory.id_fact
+                FilteredAlbums = new ObservableCollection<album>(_Albums
+                                    .Where(o => (rx.Match(o.name_alb).Success
+                                                    || rx.Match(o.description_alb).Success)
+                                                    && o.id_fact == _FactoryVM.SelectedFactory.id_fact
                                     ));
             }
             SelectedAlbum = FilteredAlbums.FirstOrDefault();
@@ -101,13 +101,12 @@ namespace ASpecCore.ViewModels
                 {
                     db.album.Add(vm.ProceedAlbum);
                     db.SaveChanges();
-                    _Albums = db.album
+                    _Albums = new ObservableCollection<album>(db.album
                            .Where(o => !o.name_alb.ToUpper().StartsWith("INTERACTIVE")
                            && !o.name_alb.ToUpper().StartsWith("ALLPLAN")
                            && !o.name_alb.StartsWith("allplan")
                            )
-                           .OrderBy(o => o.name_alb)
-                           .ToList();
+                           .OrderBy(o => o.name_alb));
                 }
                 OnFilterButtonCommandExecuted(null);
             }
@@ -146,13 +145,12 @@ namespace ASpecCore.ViewModels
                     temp.description_alb = copy.description_alb.Trim();
                     temp.name_alb = copy.name_alb.Trim();
                     db.SaveChanges();
-                    _Albums = db.album
+                    _Albums = new ObservableCollection<album>(db.album
                             .Where(o => !o.name_alb.ToUpper().StartsWith("INTERACTIVE")
                             && !o.name_alb.ToUpper().StartsWith("ALLPLAN")
                             && !o.name_alb.StartsWith("allplan")
                             )
-                            .OrderBy(o => o.name_alb)
-                            .ToList();
+                            .OrderBy(o => o.name_alb));
                 }
                 OnFilterButtonCommandExecuted(null);
             }
@@ -164,13 +162,13 @@ namespace ASpecCore.ViewModels
         #endregion
 
         #region Public properties
-        public List<album> FilteredAlbums
+        public ObservableCollection<album> FilteredAlbums
         {
             get { return _FilteredAlbums; }
             private set { Set(ref _FilteredAlbums, value); }
         }
 
-        private List<factory> _Factories;
+        private ObservableCollection<factory> _Factories;
 
         public album SelectedAlbum
         {
@@ -191,11 +189,11 @@ namespace ASpecCore.ViewModels
         { get { return _SelectedAlbum != null; } }
         #endregion
 
-        private List<album> _Albums;
-        private List<album> _FilteredAlbums;
+        private ObservableCollection<album> _Albums;
+        private ObservableCollection<album> _FilteredAlbums;
         private album _SelectedAlbum;
-        private List<Lines> _FactoryLines;
-        private List<factory_lines> _FactoryLineLinks;
+        private ObservableCollection<Lines> _FactoryLines;
+        private ObservableCollection<factory_lines> _FactoryLineLinks;
         private FactoryViewModel _FactoryVM;
     }
 }

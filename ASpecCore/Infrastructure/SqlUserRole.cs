@@ -1,9 +1,5 @@
 ﻿using ASpecCore.Models.Data;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ASpecCore.Infrastructure
 {
@@ -13,7 +9,6 @@ namespace ASpecCore.Infrastructure
         {
             get
             {
-
                 int res;
                 using (NPConDataModel db = new NPConDataModel())
                 {
