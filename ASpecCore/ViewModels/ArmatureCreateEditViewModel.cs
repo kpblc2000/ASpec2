@@ -26,16 +26,14 @@ namespace ASpecCore.ViewModels
         public view_arm_all CurrentArm
         {
             get { return _CurrentArm; }
-            set {
-                view_arm_all localArm = _CurrentArm;
-                if (Set (ref localArm, value))
+            set
+            {
+                if (Set(ref _CurrentArm, value.Clone()))
                 {
-                    _CurrentArm = localArm.Clone();
-                    if (_CurrentArm.id_normdoc!=null)
+                    if (_CurrentArm.id_normdoc != null)
                     {
                         NormDocVM.SetDocById((int)_CurrentArm.id_normdoc);
                     }
-                    OnPropertyChanged(nameof(NormDocVM));
                 }
             }
         }

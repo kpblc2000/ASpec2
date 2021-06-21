@@ -65,13 +65,13 @@ namespace ASpec2
             #endregion
 
             #region Арматура
-            //ArmatureView winArm = new ArmatureView();
-            //winArm.ShowDialog();
+            ArmatureView winArm = new ArmatureView();
+            winArm.ShowDialog();
             #endregion
 
             #region ZZTop
-            ZZTop winZZ = new ZZTop();
-            winZZ.ShowDialog();
+            //ZZTop winZZ = new ZZTop();
+            //winZZ.ShowDialog();
             #endregion
 
             //Console.WriteLine(typeof(Program).Assembly.GetName().Name);

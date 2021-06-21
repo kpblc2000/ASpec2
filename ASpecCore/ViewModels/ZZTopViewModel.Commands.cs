@@ -34,9 +34,6 @@ namespace ASpecCore.ViewModels
             {
                 obj.Content = new NormDocUserControl();
                 obj.DataContext = new NormDocViewModel();
-                NormDocViewModel vm = obj.DataContext as NormDocViewModel;
-                normdoc item = vm.DocList.Where(o => o.id_normdoc == 55).FirstOrDefault();
-                vm.SetDocById(55);
             }
         }
         private bool CanSetDocumentCommandExecute(object p)

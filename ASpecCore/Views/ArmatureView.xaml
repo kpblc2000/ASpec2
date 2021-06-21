@@ -29,7 +29,7 @@
             <DataGrid.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Редактировать арматуру"
-                              Command="{Binding ArmatureCreateEditCommand}"
+                              Command="{Binding ArmatureCreateCommand}"
                               />
                     <MenuItem Header="Отменить фильтр"/>
                     <Separator/>

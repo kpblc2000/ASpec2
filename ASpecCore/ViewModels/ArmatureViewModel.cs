@@ -24,21 +24,20 @@ namespace ASpecCore.ViewModels
             }
 
             FilteredArmatures = _AllArmatures;
-            ArmatureCreateEditCommand = new RelayCommand(OnArmatureCreateEditCommandExecuted, CanArmatureCreateEditCommandExecute);
+            ArmatureCreateCommand = new RelayCommand(OnArmatureCreateCommandExecuted, CanArmatureCreateCommandExecute);
         }
 
-        #region ArmatureCreateEditCommand
-        public ICommand ArmatureCreateEditCommand { get; }
-        private void OnArmatureCreateEditCommandExecuted(object p)
+        #region ArmatureCreateCommand
+        public ICommand ArmatureCreateCommand { get; }
+        private void OnArmatureCreateCommandExecuted(object p)
         {
             ArmatureCreateEditView winArmCreate = new ArmatureCreateEditView();
             ArmatureCreateEditViewModel vm = winArmCreate.DataContext as ArmatureCreateEditViewModel;
             vm.CurrentMode = Infrastructure.Enums.EditMode.EditMode;
             vm.CurrentArm = SelectedArmature;
             winArmCreate.ShowDialog();
-            // ToDo Вызов окна добавления новой арматуры
         }
-        private bool CanArmatureCreateEditCommandExecute(object p)
+        private bool CanArmatureCreateCommandExecute(object p)
         {
             return !SqlUserRole.IsUserReadOnly;
         }

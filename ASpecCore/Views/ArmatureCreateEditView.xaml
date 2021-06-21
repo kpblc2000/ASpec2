@@ -22,6 +22,7 @@
     <DockPanel>
         <UniformGrid DockPanel.Dock="Bottom"
                      Rows="1"
+                     HorizontalAlignment="Right"
                      >
             <Button Content="ОК"
                     IsDefault="True"
@@ -38,23 +39,23 @@
             <WrapPanel>
                 <TextBlock Text="Диам."/>
                 <TextBox MinWidth="20"
-                         Text="{Binding CurrentArm.diam}"
+                         Text="{Binding CurrentArm.diam, UpdateSourceTrigger=PropertyChanged}"
                          />
                 <TextBlock Text="Тип"/>
                 <TextBox MinWidth="20"
-                         Text="{Binding CurrentArm.method}"
+                         Text="{Binding CurrentArm.method, UpdateSourceTrigger=PropertyChanged}"
                          />
                 <TextBlock Text="Прочн."/>
                 <TextBox MinWidth="100"
-                         Text="{Binding CurrentArm.strength}"
+                         Text="{Binding CurrentArm.strength, UpdateSourceTrigger=PropertyChanged}"
                          />
                 <TextBlock Text="Свойство"/>
                 <TextBox MinWidth="80"
-                         Text="{Binding CurrentArm.armproperty}"
+                         Text="{Binding CurrentArm.armproperty, UpdateSourceTrigger=PropertyChanged}"
                          />
                 <TextBlock Text="Вес, кг/п.м."/>
                 <TextBox MinWidth="100"
-                         Text="{Binding CurrentArm.weight}"
+                         Text="{Binding CurrentArm.weight, UpdateSourceTrigger=PropertyChanged}"
                          />
             </WrapPanel>
             <DockPanel Grid.Row="1">
