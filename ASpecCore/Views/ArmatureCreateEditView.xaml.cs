@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace ASpecCore.Views
 {
     /// <summary>
-    /// Логика взаимодействия для CreateEditNormDocView.xaml
+    /// Логика взаимодействия для ArmatureCreateEditView.xaml
     /// </summary>
-    public partial class CreateEditNormDocView : Window
+    public partial class ArmatureCreateEditView : Window
     {
-        public CreateEditNormDocView()
+        public ArmatureCreateEditView()
         {
             InitializeComponent();
-        }
-
-        private void OnCloseButtonClick(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-        private void OnSaveButtonClick(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
     }
 }

@@ -25,7 +25,7 @@ namespace ASpecCore.ViewModels
         public ICommand CreateNormDocCommand { get; }
         private void OnCreateNormDocCommandExecuted(object p)
         {
-            CreateEditNormDocView winCreate = new CreateEditNormDocView();
+            NormDocViewCreateEdit winCreate = new NormDocViewCreateEdit();
             NormDocCreateEditViewModel vm = winCreate.DataContext as NormDocCreateEditViewModel;
             vm.DocList = DocList;
             vm.CurrentMode = EditMode.CreateMode;
@@ -42,7 +42,7 @@ namespace ASpecCore.ViewModels
 
         private void OnEditNormDocCommandExecuted(object p)
         {
-            CreateEditNormDocView winCreate = new CreateEditNormDocView();
+            NormDocViewCreateEdit winCreate = new NormDocViewCreateEdit();
             NormDocCreateEditViewModel vm = winCreate.DataContext as NormDocCreateEditViewModel;
             vm.DocList = DocList;
             vm.DocToEdit = SelectedDoc;
@@ -77,6 +77,12 @@ namespace ASpecCore.ViewModels
         {
             get { return _SelectedDoc; }
             set { Set(ref _SelectedDoc, value); }
+        }
+
+        public void SetDocById(int Id)
+        {
+            _SelectedDoc = _DocList.Where(o => o.id_normdoc == Id).FirstOrDefault();
+            OnPropertyChanged(nameof(SelectedDoc));
         }
         #endregion
 

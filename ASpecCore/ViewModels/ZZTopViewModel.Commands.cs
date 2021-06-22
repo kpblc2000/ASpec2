@@ -1,4 +1,5 @@
-﻿using ASpecCore.Views;
+﻿using ASpecCore.Models.Data;
+using ASpecCore.Views;
 using ASpecCore.Views.Messages;
 using ASpecCore.Views.UserControls;
 using System;

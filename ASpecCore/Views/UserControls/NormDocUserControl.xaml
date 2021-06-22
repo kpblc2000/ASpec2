@@ -20,18 +20,25 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <ComboBox Grid.Row="0"
-                  ItemsSource="{Binding DocList}"
-                  SelectedValue="{Binding SelectedDoc}"
-                  >
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding doctype}"/>
-                        <TextBlock Text="{Binding doccode, StringFormat=' \{0\}'}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
+        <DockPanel Grid.Row="0">
+            <Button DockPanel.Dock="Right"
+                    Content="+"
+                    ToolTip="Добавить новый документ"
+                    Command="{Binding CreateNormDocCommand}"
+                    />
+            <ComboBox Grid.Row="0"
+                      ItemsSource="{Binding DocList}"
+                      SelectedValue="{Binding SelectedDoc}"
+                      >                
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding doctype}"/>
+                            <TextBlock Text="{Binding doccode, StringFormat=' \{0\}'}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </DockPanel>
     </Grid>
 </UserControl>

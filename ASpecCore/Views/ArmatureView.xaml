@@ -24,10 +24,13 @@
         <DataGrid ItemsSource="{Binding FilteredArmatures}"
                   IsReadOnly="True"
                   AutoGenerateColumns="False"
+                  SelectedItem="{Binding SelectedArmature}"
                   >
             <DataGrid.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Редактировать арматуру"/>
+                    <MenuItem Header="Редактировать арматуру"
+                              Command="{Binding ArmatureCreateCommand}"
+                              />
                     <MenuItem Header="Отменить фильтр"/>
                     <Separator/>
                     <MenuItem Header="Удалить арматуру" 

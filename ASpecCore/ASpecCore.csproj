@@ -419,6 +419,7 @@
     </Compile>
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\AlbumCreateEditViewModel.cs" />
+    <Compile Include="ViewModels\ArmatureCreateEditViewModel.cs" />
     <Compile Include="ViewModels\ArmatureViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
     <Compile Include="ViewModels\NormDocCreateEditViewModel.cs" />
@@ -439,11 +440,14 @@
     <Compile Include="Views\AlbumView.xaml.cs">
       <DependentUpon>AlbumView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ArmatureCreateEditView.xaml.cs">
+      <DependentUpon>ArmatureCreateEditView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ArmatureView.xaml.cs">
       <DependentUpon>ArmatureView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CreateEditNormDocView.xaml.cs">
-      <DependentUpon>CreateEditNormDocView.xaml</DependentUpon>
+    <Compile Include="Views\NormDocViewCreateEdit.xaml.cs">
+      <DependentUpon>NormDocViewCreateEdit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Messages\Messages.cs" />
     <Compile Include="Views\NormDocView.xaml.cs">
@@ -491,11 +495,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ArmatureCreateEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ArmatureView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\CreateEditNormDocView.xaml">
+    <Page Include="Views\NormDocViewCreateEdit.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
