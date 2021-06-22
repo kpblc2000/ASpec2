@@ -1,4 +1,5 @@
-﻿using ASpecCore.Models.Data;
+﻿using ASpecCore.Infrastructure.Commands;
+using ASpecCore.Models.Data;
 using ASpecCore.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -9,8 +10,10 @@ using System.Threading.Tasks;
 
 namespace ASpecCore.ViewModels
 {
-    public class EndProductViewModel : ViewModel
+    public partial class EndProductViewModel : ViewModel
     {
+       
+
         public EndProductViewModel()
         {
             using (NPConDataModel db = new NPConDataModel())
@@ -22,6 +25,9 @@ namespace ASpecCore.ViewModels
                                                         )
                                                 );
             }
+
+            MathToCurrentDwgCommand = new RelayCommand(OnMathToCurrentDwgCommandExecuted, CanMathToCurrentDwgCommandExecute);
+
         }
 
         public ObservableCollection<view_end_prod_consist> ProductContent
@@ -63,5 +69,6 @@ namespace ASpecCore.ViewModels
 
         private ObservableCollection<view_endproduct_cut> _EndProducts;
         private view_endproduct_cut _SelectedProduct;
+        
     }
 }

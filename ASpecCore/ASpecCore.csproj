@@ -421,7 +421,9 @@
     <Compile Include="ViewModels\AlbumCreateEditViewModel.cs" />
     <Compile Include="ViewModels\ArmatureCreateEditViewModel.cs" />
     <Compile Include="ViewModels\ArmatureViewModel.cs" />
+    <Compile Include="ViewModels\ASpecMainViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
+    <Compile Include="ViewModels\EndProductViewModelCommands.cs" />
     <Compile Include="ViewModels\NormDocCreateEditViewModel.cs" />
     <Compile Include="ViewModels\EndProductViewModel.cs" />
     <Compile Include="ViewModels\FactoryViewModel.cs" />
@@ -445,6 +447,9 @@
     </Compile>
     <Compile Include="Views\ArmatureView.xaml.cs">
       <DependentUpon>ArmatureView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ASpecMainView.xaml.cs">
+      <DependentUpon>ASpecMainView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\NormDocViewCreateEdit.xaml.cs">
       <DependentUpon>NormDocViewCreateEdit.xaml</DependentUpon>
@@ -500,6 +505,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ArmatureView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ASpecMainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

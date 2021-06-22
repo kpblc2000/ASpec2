@@ -29,9 +29,18 @@
                   VirtualizingPanel.CacheLength="2"
                   VirtualizingPanel.IsVirtualizing="True"
                   VirtualizingPanel.VirtualizationMode="Recycling"
+                  AutoGenerateColumns="False"
                   ItemsSource="{Binding EndProducts}"
                   SelectedItem="{Binding SelectedProduct}"
                   >
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Сопоставить текущему чертежу"
+                              Command="{Binding MathToCurrentDwgCommand}"
+                              CommandParameter="{Binding SelectedProduct}"
+                              />
+                </ContextMenu>
+            </DataGrid.ContextMenu>
             <DataGrid.Columns>
                 <DataGridTemplateColumn SortMemberPath="unicname"
                                         Width="*">
