@@ -11,5 +11,6 @@ namespace ASpecACAD.Interfaces
         bool Save(string Data);
 
         string Read();
+
     }
 }
