@@ -6,6 +6,11 @@ namespace ASpecACAD.Models.DwgData
 {
     class EndProduct : IDwgData
     {
+        public bool Erase(string Data)
+        {
+            throw new NotImplementedException();
+        }
+
         public string Read()
         {
             throw new NotImplementedException();
