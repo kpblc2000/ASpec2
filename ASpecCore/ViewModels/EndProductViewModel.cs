@@ -1,4 +1,5 @@
-﻿using ASpecCore.Models.Data;
+﻿using ASpecCore.Infrastructure.Commands;
+using ASpecCore.Models.Data;
 using ASpecCore.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ASpecCore.ViewModels
 {
-    public class EndProductViewModel : ViewModel
+    public partial class EndProductViewModel : ViewModel
     {
         public EndProductViewModel()
         {
@@ -22,6 +23,9 @@ namespace ASpecCore.ViewModels
                                                         )
                                                 );
             }
+
+            MatchToCurrentDwgCommand = new RelayCommand(OnMatchToCurrentDwgCommandExecuted, CanMatchToCurrentDwgCommandExecute);
+
         }
 
         public ObservableCollection<view_end_prod_consist> ProductContent

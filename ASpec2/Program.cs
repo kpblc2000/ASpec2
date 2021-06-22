@@ -65,8 +65,8 @@ namespace ASpec2
             #endregion
 
             #region Арматура
-            ArmatureView winArm = new ArmatureView();
-            winArm.ShowDialog();
+            //ArmatureView winArm = new ArmatureView();
+            //winArm.ShowDialog();
             #endregion
 
             #region ZZTop
@@ -74,11 +74,24 @@ namespace ASpec2
             //winZZ.ShowDialog();
             #endregion
 
+            #region ASpecMainView
+            ASpecMainView winASpecMain = new ASpecMainView();
+            ASpecMainViewModel winVM = winASpecMain.DataContext as ASpecMainViewModel;
+            winVM.EndProdVM.RegisterMatchToCurrentDwgHadler(ConsoleHandler);
+            winASpecMain.ShowDialog();
+            #endregion
+
             //Console.WriteLine(typeof(Program).Assembly.GetName().Name);
 
             Console.WriteLine("Press any key");
             Console.ReadKey();
 
+        }
+
+        private static bool ConsoleHandler(view_endproduct_cut CurrentEndProduct)
+        {
+            Console.WriteLine(CurrentEndProduct.id_endprod_ver);
+            return true;
         }
     }
 }
