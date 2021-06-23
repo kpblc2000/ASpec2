@@ -25,13 +25,13 @@
             <Button DockPanel.Dock="Right"
                     Command="{Binding ClearSelectedFacrotyCommand}"
                     CommandParameter="{Binding ElementName=SelectFactoryComboBox}"
+                    ToolTip="Очистить фильтр"
                     >
                 <Button.Content>
-                    <fa:ImageAwesome Icon="Solid_Broom"
+                    <fa:ImageAwesome Icon="Solid_SearchMinus" 
                                      Height="16"
+                                     Foreground="DarkRed"
                                      />
-                    <!--<fa:FontAwesome Icon="Solid_Broom"
-                                    Height="16"/>-->
                 </Button.Content>
             </Button>
             <ComboBox ItemsSource="{Binding Factories}"
