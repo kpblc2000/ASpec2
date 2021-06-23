@@ -40,8 +40,8 @@ namespace ASpec2
 
             #region Albums
 
-            //SelectAlbumView winSelAlb = new SelectAlbumView();
-            //winSelAlb.ShowDialog();
+            SelectAlbumView winSelAlb = new SelectAlbumView();
+            winSelAlb.ShowDialog();
 
             //if (winSelAlb.DialogResult == true)
             //{
