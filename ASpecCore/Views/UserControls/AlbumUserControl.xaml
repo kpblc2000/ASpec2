@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:ASpecCore.Views.UserControls" 
              xmlns:uc="clr-namespace:ASpecCore.Views.UserControls" 
              xmlns:viewmodels="clr-namespace:ASpecCore.ViewModels"
+             xmlns:fa="http://schemas.fontawesome.com/icons/"
              d:DataContext="{d:DesignInstance Type=viewmodels:AlbumViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450"
@@ -28,10 +29,16 @@
             <TextBlock DockPanel.Dock="Left"
                        Text="Фильтровать по части имени / названия"/>
             <Button DockPanel.Dock="Right"
-                    Content="Фильтр"
+                    ToolTip="Фильтровать"
                     Command="{Binding FilterButtonCommand}"
                     CommandParameter="{Binding ElementName=FilterCriteria, Path=Text}"
-                    />
+                    >
+                <Button.Content>
+                    <fa:ImageAwesome Icon="Solid_SearchPlus"
+                                     Height="16"
+                                     />
+                </Button.Content>
+            </Button>
             <TextBox x:Name="FilterCriteria"/>
         </DockPanel>
         <DockPanel Grid.Row="1">

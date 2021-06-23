@@ -50,6 +50,9 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    <Style TargetType="Button" x:Name="SearchButton">
+        
+    </Style>
     <Style TargetType="DataGrid">
         <Setter Property="CanUserAddRows" Value="False"/>
         <Setter Property="CanUserDeleteRows" Value="False"/>
